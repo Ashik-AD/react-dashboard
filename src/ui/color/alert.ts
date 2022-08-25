@@ -1,0 +1,12 @@
+export interface AlertColorType {
+    success: string;
+    info: string;
+    warning: string;
+    error: string;
+}
+export const alertColor = {
+    success: 'rgb(86, 202, 0)',
+    info: 'rgb(22, 177, 255)',
+    warning: 'rgb(255, 180, 0)',
+    error: 'rgb(255, 76, 81)'
+}
