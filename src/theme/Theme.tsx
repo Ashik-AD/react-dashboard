@@ -28,7 +28,7 @@ const Theme: FC<{ children: React.ReactNode }> = ({ children }) => {
             }
           : {
               name: "dark",
-              textColor: "#F6FBF4",
+              textColor: "#d3d3d3",
               background: "#1B2430",
               foreground: "#2C3639",
             },
