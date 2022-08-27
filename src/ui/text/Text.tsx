@@ -1,4 +1,5 @@
-import React, { FC } from "react";
+import { FC } from "react";
+import useTheme from "../../theme/useTheme";
 import TextType, { HeadingType } from "./text-type";
 import TextGlobal from "./text.styled";
 
@@ -11,22 +12,41 @@ const Text: FC<TextType> = ({
   heading,
   color,
 }) => {
+  const {
+    theme: {
+      mode: { textColor },
+    },
+  } = useTheme();
   return (
     <>
       <TextGlobal />
       {paragraph ? (
         <p
           className={`${varient}`}
-          style={{ fontSize: size, textAlign: align, color: color }}
+          style={{
+            fontSize: size,
+            textAlign: align,
+            color: color ? color : textColor,
+          }}
         >
           {children}
         </p>
       ) : heading ? (
-        <Heading varient={heading}>{children}</Heading>
+        <Heading
+          varient={heading}
+          color={color ? color : textColor}
+          align={align}
+        >
+          {children}
+        </Heading>
       ) : (
         <span
           className={`${varient}`}
-          style={{ fontSize: size, textAlign: align, color: color }}
+          style={{
+            fontSize: size,
+            textAlign: align,
+            color: color ? color : textColor,
+          }}
         >
           {children}
         </span>
