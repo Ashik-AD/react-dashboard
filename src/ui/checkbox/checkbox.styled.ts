@@ -18,7 +18,7 @@ export const Input = styled.input`
     opacity: 0;
     position: absolute;
 `
-export const Label = styled.label<{ hasLabel: boolean, disabled?: boolean }>`
+export const Label = styled.span<{ hasLabel: boolean, disabled?: boolean }>`
     display: inline-flex;
     align-items: center;
     ${({ hasLabel }) => hasLabel && `
