@@ -20,13 +20,13 @@ export type blue = {
 export interface Dark {
     name: 'dark';
     background: '#1B2430';
-    foreground: '#2C3639';
+    foreground: '#161b24';
     textColor: '#d3d3d3';
 }
 export interface Light {
     name: 'light';
-    background: '#F1F3F4';
-    foreground: '#F7F6F2';
+    background: '#DFDFDE';
+    foreground: '#fffffd';
     textColor: '#191919';
 }
 

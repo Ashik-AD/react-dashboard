@@ -4,8 +4,8 @@ const settings: SettingType = {
     mode: {
         name: 'dark',
         background: '#1B2430',
-        foreground: '#2C3639',
-        textColor: '#F6FBF4'
+        foreground: '#161b24',
+        textColor: '#d3d3d3'
     },
     layout: {
         appBarBlur: true,
@@ -25,6 +25,6 @@ const settings: SettingType = {
     skin: {
         type: 'default'
     }
-} 
+}
 
 export default settings;
