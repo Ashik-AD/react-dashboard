@@ -1,8 +1,6 @@
-import {PrimaryColor, ThemeMode} from "./colors";
+import { PrimaryColor, ThemeMode } from "./colors";
 
-export interface Skin {
-    type: 'default' | 'bordered'
-}
+export type Skin = 'default' | 'bordered'
 
 export type LayoutStyle = "fixed" | "static" | "hidden";
 

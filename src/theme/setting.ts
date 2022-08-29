@@ -4,7 +4,7 @@ const settings: SettingType = {
     mode: {
         name: 'dark',
         background: '#1B2430',
-        foreground: '#161b24',
+        foreground: '#252d3a',
         textColor: '#d3d3d3'
     },
     layout: {
@@ -22,9 +22,7 @@ const settings: SettingType = {
         toggle: 'accordion',
         visible: false
     },
-    skin: {
-        type: 'default'
-    }
+    skin: 'default'
 }
 
 export default settings;
