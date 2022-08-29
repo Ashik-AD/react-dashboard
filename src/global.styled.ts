@@ -1,4 +1,4 @@
-import {createGlobalStyle} from 'styled-components';
+import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
 
@@ -13,6 +13,13 @@ button {
     display: inline-flex;
     cursor: pointer;
     letter-spacing: 0.3px;
+}
+
+.input-radio, .input-checkbox {
+    position: absolute;
+    opacity: 0;
+    z-index: 0;
+    visibility: hidden;
 }
 `;
 
