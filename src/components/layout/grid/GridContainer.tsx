@@ -1,8 +1,9 @@
 import { FC } from "react";
-import { GridType } from "./grid-type";
+import { GridLayoutProps } from "./grid-type";
 import GridLayout from "./grid.styled";
 
-const Grid: FC<GridType> = (props) => {
+const GridContainer: FC<GridLayoutProps> = (props) => {
   return <GridLayout {...props}>{props.children}</GridLayout>;
 };
-export default Grid;
+
+export default GridContainer;
