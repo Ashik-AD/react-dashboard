@@ -1,6 +1,6 @@
 import { FC } from "react";
 import NormalButton from "./Button.style";
-import { ButtonType } from "./type";
+import { ButtonType } from ".";
 import useTheme from "../../theme/useTheme";
 const Button: FC<ButtonType> = ({
   varient = "text",
@@ -9,11 +9,11 @@ const Button: FC<ButtonType> = ({
   onClick,
 }) => {
   const {
-    theme: { primaryColor },
+    theme: { primaryColor, mode },
   } = useTheme();
   return (
     <NormalButton
-      theme={{ primaryColor }}
+      theme={{ primaryColor, mode }}
       varient={varient}
       color={color}
       onClick={onClick}
