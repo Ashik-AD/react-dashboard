@@ -5,6 +5,7 @@ import useTheme from "../../theme/useTheme";
 const Container = styled("main")`
   background: ${({ theme }) =>
     theme.skin === "bordered" ? theme.mode.foreground : theme.mode.background};
+  color: ${({ theme }) => theme.mode.textColor};
 `;
 
 const AppLayout: FC<{ children: ReactNode }> = ({ children }) => {
