@@ -2,7 +2,8 @@
 export interface TogglerProps {
     toggled?: boolean;
     label?: string;
-    onClick?: () => void;
+    onToggle?: () => void;
+    label2?: string;
 }
 
 export interface CircleProps {

@@ -3,17 +3,18 @@ import { Circle, Input, Label, ToggleWrapper, Track } from "./toggle.styled";
 import { TogglerProps } from "./type";
 import useTheme from "../../theme/useTheme";
 const Toggle: FC<TogglerProps> = (props) => {
-  const { toggled, label, onClick } = props;
+  const { toggled, label, onToggle, label2 } = props;
   const { theme } = useTheme();
   return (
-    <ToggleWrapper onClick={onClick} label={label}>
-      <span>
+    <ToggleWrapper onClick={onToggle} label={label}>
+      {label2 && <Label theme={{ mode: theme.mode }}>{label2}</Label>}
+      <div style={{ position: "relative" }}>
         <span>
           <Input
             type="checkbox"
             aria-label="On Off button"
             checked={toggled}
-            onChange={onClick}
+            onChange={onToggle}
           />
           <Track
             theme={{
@@ -24,7 +25,7 @@ const Toggle: FC<TogglerProps> = (props) => {
           />
         </span>
         <Circle theme={theme} toggled={toggled ? toggled : false} />
-      </span>
+      </div>
       {label && <Label theme={{ mode: theme.mode }}>{label}</Label>}
     </ToggleWrapper>
   );

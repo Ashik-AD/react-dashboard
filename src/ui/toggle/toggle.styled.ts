@@ -42,4 +42,5 @@ export const Track = styled.span<{ toggled: boolean; }>`
 
 export const Label = styled.span`
     color: ${({ theme }) => theme.mode.textColor};
+    font-size: 1rem;
 `
