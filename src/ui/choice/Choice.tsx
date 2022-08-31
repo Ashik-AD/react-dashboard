@@ -30,7 +30,7 @@ const Choice: FC<ChoiceProps> = ({
           value={value}
         />
       </ChoiceCircle>
-      <Text>{label}</Text>
+      <Text size={15}>{label}</Text>
     </ChoiceWrapper>
   );
 };

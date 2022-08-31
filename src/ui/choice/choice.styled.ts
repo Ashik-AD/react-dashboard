@@ -12,16 +12,16 @@ export const ChoiceCircle = styled.span<ChoiceCircleProps>`
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 25px;
-    width: 25px;
+    height: 22px;
+    width: 22px;
     background: transparent;
     border: 2px solid ${({ theme, selected }) => selected ? theme.primaryColor.color : theme.mode.textColor};
     border-radius: 50%;
 `
 export const Dot = styled.span<DotProps>`
     display: block;
-    width: 15px;
-    height: 15px;
+    width: 12px;
+    height: 12px;
     border-radius: 50%;
     background: ${({ theme, selected }) => selected ? theme.primaryColor.color : theme.mode.textColor};
     transform: ${({ selected }) => selected ? `scale(1)` : `scale(0)`};
