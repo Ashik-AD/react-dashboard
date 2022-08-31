@@ -3,6 +3,8 @@ import { PrimaryColor, ThemeMode } from "./colors";
 export type Skin = 'default' | 'bordered'
 
 export type LayoutStyle = "fixed" | "static" | "hidden";
+export type MenuLayout = 'x' | 'y';
+export type MenuOpenStyle = "collapse" | "accordion";
 
 export interface Layout {
     appBarPosition: LayoutStyle;
@@ -11,8 +13,8 @@ export interface Layout {
 }
 
 export interface MenuStyle {
-    layout: "x" | "y";
-    toggle: "collapse" | "accordion";
+    layout: MenuLayout;
+    openStyle: MenuOpenStyle
     collapse: boolean;
     visible: boolean;
 }

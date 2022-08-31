@@ -19,7 +19,7 @@ const settings: SettingType = {
     menuStyle: {
         collapse: false,
         layout: 'y',
-        toggle: 'accordion',
+        openStyle: 'accordion',
         visible: false
     },
     skin: 'default'

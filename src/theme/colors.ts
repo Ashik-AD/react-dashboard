@@ -32,3 +32,9 @@ export interface Light {
 
 export type ThemeMode = Dark | Light;
 export type PrimaryColor = red | green | purple | blue;
+export const colorPallets: PrimaryColor[] = [
+    { name: 'red', color: "#FD5D5D" },
+    { name: 'green', color: "#3CCF4E" },
+    { name: 'blue', color: "#00D7FF" },
+    { name: 'purple', color: "#A66CFF" }
+];

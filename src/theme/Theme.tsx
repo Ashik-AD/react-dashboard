@@ -56,12 +56,80 @@ const Theme: FC<{ children: React.ReactNode }> = ({ children }) => {
       },
     }));
   };
+  const handleAppFooterPosition = (
+    position: typeof themeSetting.layout.footerPositioin
+  ) => {
+    setThemeSetting((prevState) => ({
+      ...prevState,
+      layout: {
+        ...prevState.layout,
+        footerPositioin: position,
+      },
+    }));
+  };
+
+  const handleChangeAppBarBlur = () => {
+    setThemeSetting((prevState) => ({
+      ...prevState,
+      layout: {
+        ...prevState.layout,
+        appBarBlur: !prevState.layout.appBarBlur,
+      },
+    }));
+  };
+
+  const handleChangeMenuLayout = (
+    layout: typeof themeSetting.menuStyle.layout
+  ) => {
+    setThemeSetting((prevState) => ({
+      ...prevState,
+      menuStyle: {
+        ...prevState.menuStyle,
+        layout,
+      },
+    }));
+  };
+
+  const handleChangeMenuOpenStyle = (
+    style: typeof themeSetting.menuStyle.openStyle
+  ) => {
+    setThemeSetting((prevState) => ({
+      ...prevState,
+      menuStyle: {
+        ...prevState.menuStyle,
+        openStyle: style,
+      },
+    }));
+  };
+
+  const handleChangeMenuCollapse = () =>
+    setThemeSetting((prevState) => ({
+      ...prevState,
+      menuStyle: {
+        ...prevState.menuStyle,
+        collapse: !prevState.menuStyle.collapse,
+      },
+    }));
+  const handleChangeMenuHidden = () =>
+    setThemeSetting((prevState) => ({
+      ...prevState,
+      menuStyle: {
+        ...prevState.menuStyle,
+        visible: !prevState.menuStyle.visible,
+      },
+    }));
 
   const dispatch: ThemeActionType = {
     handleChangeTheme: changeTheme,
     handleChangePrimaryColor: changePrimaryColor,
     handleChangeSkin: changeSkin,
     handleAppBarPosition,
+    handleAppFooterPosition,
+    handleChangeAppBarBlur,
+    handleChangeMenuLayout,
+    handleChangeMenuOpenStyle,
+    handleChangeMenuCollapse,
+    handleChangeMenuHidden,
   };
   return (
     <ThemeContext.Provider value={{ state: themeSetting, dispatch }}>
