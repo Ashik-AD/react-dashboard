@@ -1,5 +1,5 @@
-import  {createGlobalStyle} from 'styled-components';
-
+import styled, { createGlobalStyle } from 'styled-components';
+import TextType from './type';
 const GlobalText = createGlobalStyle`
     h1, .h1 {
         font-size: 96px;
@@ -67,3 +67,17 @@ const GlobalText = createGlobalStyle`
 `;
 
 export default GlobalText;
+
+export const Paragraph = styled('p') <TextType>`
+    font-size: ${({ size }) => size ? size : 16}px;
+    text-align: ${({ align }) => align};
+    color: ${({ color, theme }) => color ? color : theme.mode.textColor};
+    letter-spacing: 0.15px;
+`;
+
+export const TextSpan = styled('span') <TextType>`
+font-size: ${({ size }) => size ? size : 16}px;
+text-align: ${({ align }) => align};
+color: ${({ color, theme }) => color ? color : theme.mode.textColor};
+letter-spacing: 0.15px;
+`;

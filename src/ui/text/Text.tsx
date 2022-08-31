@@ -1,7 +1,7 @@
 import { FC } from "react";
 import useTheme from "../../theme/useTheme";
-import TextType, { HeadingType } from "./text-type";
-import TextGlobal from "./text.styled";
+import TextType, { HeadingType } from "./type";
+import TextGlobal, { Paragraph, TextSpan } from "./text.styled";
 
 const Text: FC<TextType> = ({
   children,
@@ -11,45 +11,42 @@ const Text: FC<TextType> = ({
   varient = "inherit",
   heading,
   color,
+  styles,
 }) => {
-  const {
-    theme: {
-      mode: { textColor },
-    },
-  } = useTheme();
+  const { theme } = useTheme();
   return (
     <>
       <TextGlobal />
       {paragraph ? (
-        <p
+        <Paragraph
           className={`${varient}`}
-          style={{
-            fontSize: size,
-            textAlign: align,
-            color: color ? color : textColor,
-          }}
+          size={size}
+          align={align}
+          theme={{ mode: theme.mode }}
+          style={{ ...styles }}
         >
           {children}
-        </p>
+        </Paragraph>
       ) : heading ? (
         <Heading
           varient={heading}
-          color={color ? color : textColor}
+          color={color ? color : theme.mode.textColor}
           align={align}
+          styles={styles}
         >
           {children}
         </Heading>
       ) : (
-        <span
+        <TextSpan
           className={`${varient}`}
-          style={{
-            fontSize: size,
-            textAlign: align,
-            color: color ? color : textColor,
-          }}
+          size={size}
+          color={color}
+          align={align}
+          theme={{ mode: theme.mode }}
+          style={{ ...styles }}
         >
           {children}
-        </span>
+        </TextSpan>
       )}
     </>
   );
@@ -61,13 +58,14 @@ const Heading: FC<HeadingType> = ({
   align,
   size,
   color,
+  styles,
 }) => {
   switch (varient) {
     case "h1":
       return (
         <h1
           className={`${varient}`}
-          style={{ fontSize: size, color: color, textAlign: align }}
+          style={{ fontSize: size, color: color, textAlign: align, ...styles }}
         >
           {children}
         </h1>
@@ -76,7 +74,7 @@ const Heading: FC<HeadingType> = ({
       return (
         <h2
           className={`${varient}`}
-          style={{ fontSize: size, color: color, textAlign: align }}
+          style={{ fontSize: size, color: color, textAlign: align, ...styles }}
         >
           {children}
         </h2>
@@ -85,7 +83,7 @@ const Heading: FC<HeadingType> = ({
       return (
         <h3
           className={`${varient}`}
-          style={{ fontSize: size, color: color, textAlign: align }}
+          style={{ fontSize: size, color: color, textAlign: align, ...styles }}
         >
           {children}
         </h3>
@@ -94,7 +92,7 @@ const Heading: FC<HeadingType> = ({
       return (
         <h4
           className={`${varient}`}
-          style={{ fontSize: size, color: color, textAlign: align }}
+          style={{ fontSize: size, color: color, textAlign: align, ...styles }}
         >
           {children}
         </h4>
@@ -103,7 +101,7 @@ const Heading: FC<HeadingType> = ({
       return (
         <h5
           className={`${varient}`}
-          style={{ fontSize: size, color: color, textAlign: align }}
+          style={{ fontSize: size, color: color, textAlign: align, ...styles }}
         >
           {children}
         </h5>
@@ -112,7 +110,7 @@ const Heading: FC<HeadingType> = ({
       return (
         <h6
           className={`${varient}`}
-          style={{ fontSize: size, color: color, textAlign: align }}
+          style={{ fontSize: size, color: color, textAlign: align, ...styles }}
         >
           {children}
         </h6>
