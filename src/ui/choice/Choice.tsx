@@ -1,6 +1,11 @@
 import { FC } from "react";
 
-import { ChoiceWrapper, ChoiceCircle, Dot } from "./choice.styled";
+import {
+  ChoiceWrapper,
+  ChoiceCircle,
+  Dot,
+  CirclePlaceholder,
+} from "./choice.styled";
 import { ChoiceProps } from "./type";
 import Text from "../text/Text";
 import useTheme from "../../theme/useTheme";
@@ -28,6 +33,9 @@ const Choice: FC<ChoiceProps> = ({
           checked={isSelected}
           onChange={handleChoice}
           value={value}
+        />
+        <CirclePlaceholder
+          theme={{ mode: theme.mode, primaryColor: theme.primaryColor }}
         />
       </ChoiceCircle>
       <Text size={15}>{label}</Text>
