@@ -1,20 +1,32 @@
 import React, { useState } from "react";
+import "./global.css";
 import styled from "styled-components";
 import { PrimaryColor } from "./theme/colors";
 import useTheme from "./theme/useTheme";
 import Button from "./ui/buttons/Button";
-import { Flex, Grid } from "./components/layout/";
-import { Avtar, Checkbox, ChoiceGroup, CustomAvatar, Text } from "./ui";
+import { Flex, GridContainer, GridItem } from "./components/layout/";
+import {
+  Avtar,
+  Checkbox,
+  ChoiceGroup,
+  CustomAvatar,
+  IconButton,
+  Text,
+} from "./ui";
 import {
   Favorite,
   FavoriteBorder,
   FavoriteOutlined,
   FireTruck,
+  HeartBroken,
 } from "@mui/icons-material";
 import Toggle from "./ui/toggle/Toggle";
 import Choice from "./ui/choice/Choice";
 import Card from "./components/card/Card";
 import { Skin } from "./theme/setting-types";
+import AppLayout from "./components/layout/AppLayout";
+import CardTitle from "./components/card/CardTitle";
+import ThemeCustomizer from "./components/customizer/Customizer";
 const ColorBox = styled.span`
   background-color: ${(props) => props.color};
   height: 50px;
@@ -47,14 +59,7 @@ function App() {
     console.log(skin);
   };
   return (
-    <div
-      className="App"
-      style={{
-        background: mode.background,
-        minHeight: "100vh",
-        transition: "background .3s linear",
-      }}
-    >
+    <AppLayout>
       {colors.map((el) => (
         <ColorBox
           color={el.color}
@@ -98,8 +103,8 @@ function App() {
         size={28}
       />
       <br />
-      <Toggle onClick={handleToggle} toggled={toggle} />
-      <Toggle onClick={handleToggle} toggled={toggle} label="Change Theme" />
+      <Toggle onToggle={handleToggle} toggled={toggle} />
+      <Toggle onToggle={handleToggle} toggled={toggle} label="Change Theme" />
       <ChoiceGroup direction="column" gap="medium">
         <Choice
           name="test"
@@ -158,7 +163,32 @@ function App() {
           onChange={handleSkin}
         />
       </ChoiceGroup>
-    </div>
+
+      <GridContainer>
+        <GridItem lg={4} xs={12}>
+          <Card>
+            <CardTitle title="Total Expense" />
+          </Card>
+        </GridItem>
+        <GridItem lg={3}>Column 2</GridItem>
+        <GridItem>Column 3</GridItem>
+        <GridItem>Column 4</GridItem>
+        <GridItem>Column 5</GridItem>
+        <GridItem>Column 6</GridItem>
+        <GridItem>Column 7</GridItem>
+        <GridItem>Column 8</GridItem>
+        <GridItem>Column 9</GridItem>
+        <GridItem>Column 10</GridItem>
+        <GridItem>Column 11</GridItem>
+        <GridItem>Column 12</GridItem>
+        <GridItem>Column 13</GridItem>
+        <GridItem>Column 14</GridItem>
+      </GridContainer>
+      <IconButton>
+        <HeartBroken />
+      </IconButton>
+      <ThemeCustomizer />
+    </AppLayout>
   );
 }
 
