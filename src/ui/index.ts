@@ -6,3 +6,5 @@ export { default as ChoiceGroup } from './choice/ChoiceGroup';
 export { default as Choice } from './choice/Choice';
 export { default as Avtar } from './avatar/Avatar';
 export { default as CustomAvatar } from './avatar/CustomAvatar';
+export { default as Toggle } from './toggle/Toggle';
+export { default as Divider } from './divider/Divider';
