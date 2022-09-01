@@ -19,6 +19,7 @@ export const Input = styled.input`
 `;
 
 export const Circle = styled.span<CircleProps>`
+    position: relative;
     display: block;
     height: 20px;
     width: 20px;
@@ -29,6 +30,24 @@ export const Circle = styled.span<CircleProps>`
     top: 0.5px;
     left: ${({ toggled }) => toggled ? 20 : 0}px;
     transition: left 0.3s ease;
+    &:before {
+        position: absolute;
+        height: 40px;
+        width: 40px;
+        content: '';
+        background: ${({ theme }) => theme.primaryColor.color};
+        border-radius: 50%;
+        opacity: 0.1;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        visibility: hidden;
+    }
+
+    &:hover:before{
+        visibility: visible;
+    }
+
 `;
 
 export const Track = styled.span<{ toggled: boolean; }>`
