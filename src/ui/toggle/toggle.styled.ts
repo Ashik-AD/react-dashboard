@@ -7,6 +7,7 @@ display: inline-flex;
 align-items: center;
 ${({ label }) => label && 'gap: 10px;'}
 cursor: pointer;
+padding: 8px 0;
 user-select: none;
 `
 
@@ -30,7 +31,7 @@ export const Circle = styled.span<CircleProps>`
     top: 0.5px;
     left: ${({ toggled }) => toggled ? 20 : 0}px;
     transition: left 0.3s ease;
-    &:before {
+    &:before, &:after {
         position: absolute;
         height: 40px;
         width: 40px;
@@ -47,7 +48,6 @@ export const Circle = styled.span<CircleProps>`
     &:hover:before{
         visibility: visible;
     }
-
 `;
 
 export const Track = styled.span<{ toggled: boolean; }>`
