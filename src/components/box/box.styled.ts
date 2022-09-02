@@ -3,6 +3,14 @@ import styled
 import { BoxProps } from "./type";
 
 const box = styled('div') <BoxProps>`
+    display: ${({ display }) => display ? display : 'block'};
+    ${({ display, align, justify, flexDirection, space }) => display === 'flex' && `
+        align-items: ${align ? align : 'initial'}};
+        justify-content: ${justify ? justify : 'initial'}};
+        flex-direction: ${flexDirection ? flexDirection : 'row'};
+        gap: ${space}rem;
+        `
+    }
     ${({ margin }) => margin && `margin: ${margin}px;`}
     ${({ mx }) => mx && `margin-left: ${mx}px; margin-right: ${mx}px;`}
     ${({ my }) => my && `margin-top: ${my}px; margin-bottom: ${my}px;`}
@@ -18,6 +26,5 @@ const box = styled('div') <BoxProps>`
     ${({ pr }) => pr && `padding-right: ${pr}px;`}
     ${({ pb }) => pb && `padding-bottom: ${pb}px;`}
     ${({ pl }) => pl && `padding-left: ${pl}px;`}
-
  `
 export default box;
