@@ -24,56 +24,56 @@ const GridLayout = styled.section<GridLayoutProps>`
     @media screen and (min-width: 0px){
         & {
             ${({ spacing }) => typeof spacing === 'object' && `gap: ${spacing.xs}rem;`
-    }
+        }
             ${({ rowSpacing }) => typeof rowSpacing === 'object' && `row-gap: ${rowSpacing.xs};`
-    }
+        }
             ${({ columnSpacing }) => typeof columnSpacing === 'object' && `column-gap: ${columnSpacing.xs};`
-    }
+        }
         }
     }
 
     @media screen and (min-width: 600px){
         & {
             ${({ spacing }) => typeof spacing === 'object' && `gap: ${spacing.sm};`
-    }
+        }
 
             ${({ rowSpacing }) => typeof rowSpacing === 'object' && `row-gap: ${rowSpacing.sm};`
-    }
+        }
             ${({ columnSpacing }) => typeof columnSpacing === 'object' && `column-gap: ${columnSpacing.sm};`
-    }
+        }
         }
     }
     @media screen and (min-width: 900px){
         & {
             ${({ spacing }) => typeof spacing === 'object' && `gap: ${spacing.md};`
-    }
+        }
 
             ${({ rowSpacing }) => typeof rowSpacing === 'object' && `row-gap: ${rowSpacing.md};`
-    }
+        }
             ${({ columnSpacing }) => typeof columnSpacing === 'object' && `column-gap: ${columnSpacing.md};`
-    }
+        }
         }
     }
     @media screen and (min-width: 1200px){
         & {
             ${({ spacing }) => typeof spacing === 'object' && `gap: ${spacing.lg};`
-    }
+        }
 
             ${({ rowSpacing }) => typeof rowSpacing === 'object' && `row-gap: ${rowSpacing.lg};`
-    }
+        }
             ${({ columnSpacing }) => typeof columnSpacing === 'object' && `column-gap: ${columnSpacing.lg};`
-    }
+        }
         }
     }
     @media screen and (min-width: 1536px){
         & {
             ${({ spacing }) => typeof spacing === 'object' && `gap: ${spacing.xlg};`
-    }
+        }
 
             ${({ rowSpacing }) => typeof rowSpacing === 'object' && `row-gap: ${rowSpacing.xlg};`
-    }
+        }
             ${({ columnSpacing }) => typeof columnSpacing === 'object' && `column-gap: ${columnSpacing.xlg};`
-    }
+        }
         }
     }
 `;
