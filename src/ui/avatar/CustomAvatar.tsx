@@ -4,7 +4,7 @@ import { CustomeAvatarWrapper } from "./avatar.styled";
 import { CustomAvatarProps } from "./type";
 
 const CustomAvatar: FC<CustomAvatarProps> = (props) => {
-  const { children, classes, size, color, skin, varient } = props;
+  const { children, classes, size, color, skin, varient, styles } = props;
   const {
     theme: { mode },
   } = useTheme();
@@ -16,6 +16,7 @@ const CustomAvatar: FC<CustomAvatarProps> = (props) => {
       skin={skin}
       varient={varient ? varient : "circular"}
       theme={mode}
+      style={{ ...styles }}
     >
       {children}
     </CustomeAvatarWrapper>
