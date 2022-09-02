@@ -1,3 +1,51 @@
+.alert-error-bg {
+  background: rgb(211, 47, 47);
+}
+
+.alert-error-text {
+  color: rgb(211, 47, 47);
+}
+
+.alert-warning-bg {
+  background: rgb(245, 124, 0);
+}
+
+.alert-warning-text {
+  color: rgb(245, 124, 0);
+}
+
+.alert-info-bg {
+  background: rgb(2, 136, 209);
+}
+
+.alert-info-text {
+  color: rgb(2, 136, 209);
+}
+
+.alert-success-bg {
+  background: rgb(21, 158, 28);
+}
+
+.alert-success-text {
+  color: rgb(21, 158, 28);
+}
+
+.text-regular {
+  font-weight: 400 !important;
+}
+
+.text-medium {
+  font-weight: 500 !important;
+}
+
+.text-bold {
+  font-weight: 600 !important;
+}
+
+.text-extra-bold {
+  font-weight: 800 !important;
+}
+
 .grid-col-1 {
   flex-basis: 8.33%;
   flex-grow: 0;

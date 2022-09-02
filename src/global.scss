@@ -1,10 +1,43 @@
 @use "sass:list";
 @use "sass:meta";
+
 $xs: 0px;
 $sm: 600px;
 $md: 900px;
 $lg: 1200px;
 $xlg: 1536px;
+$alerts: (
+    "error": rgb(211, 47, 47),
+    "warning": rgb(245, 124, 0),
+    "info": rgb(2, 136, 209),
+    "success": rgb(21, 158, 28)
+);
+
+@each $name,
+$color in $alerts {
+    .alert-#{$name}-bg {
+        background: $color;
+    }
+
+    .alert-#{$name}-text {
+        color: $color;
+    }
+}
+
+$fontWeights: (
+    "regular" : 400,
+    "medium": 500,
+    "bold": 600,
+    "extra-bold": 800
+);
+
+@each $name,
+$size in $fontWeights {
+    .text-#{$name} {
+        font-weight: $size !important;
+    }
+}
+
 
 @mixin cols($count, $size, $breakpoint) {
     @if($breakpoint  !='') {
