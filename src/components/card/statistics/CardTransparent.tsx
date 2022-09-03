@@ -40,7 +40,7 @@ const CardTransparent: FC<PropsType> = (props) => {
           </Text>
           <Box display="flex" align="center" space={0.5}>
             <Text heading="h6" styles={{ fontWeight: 600 }}>
-              {formatNumber(total, 10000)}
+              {formatNumber(total, 1000)}
             </Text>
             <Box
               display="flex"
