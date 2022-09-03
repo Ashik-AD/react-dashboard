@@ -27,7 +27,7 @@ const CardMint: FC<PropsType> = (props) => {
           {title}
         </Text>
         <Box display="flex" mb={10} align="baseline">
-          <Text heading="h6" styles={{ fontWeight: 600 }}>
+          <Text heading="h5" styles={{ fontWeight: 500 }}>
             {currency && "$"}
             {formatNumber(total, 1000)}
           </Text>
