@@ -3,7 +3,7 @@ export default function formatNumber(value: number, divider?: number, option?: {
         return addComma(value);
     }
     else {
-        return `${Math.abs(value / divider).toFixed(option?.toFixed ? option.toFixed : 2)}${units(divider.toString().length)}`;
+        return `${value % divider > 0 ? Math.abs(value / divider).toFixed(option?.toFixed ? option.toFixed : 2) : value / divider}${units(divider.toString().length)}`;
     }
 }
 
