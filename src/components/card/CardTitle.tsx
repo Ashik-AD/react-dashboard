@@ -2,11 +2,12 @@ import { MoreVert } from "@mui/icons-material";
 import { FC, ReactNode } from "react";
 import { IconButton } from "../../ui";
 import { CardHeaderTitle } from "./card.styled";
-import styled from "styled-components";
+import styled, { CSSProperties } from "styled-components";
 
 interface Props {
-  title: string;
+  title: string | ReactNode;
   component?: ReactNode;
+  styles?: CSSProperties;
 }
 
 const TextWrapper = styled("span")`
@@ -15,7 +16,7 @@ const TextWrapper = styled("span")`
 
 const CardTitle: FC<Props> = (props) => {
   return (
-    <CardHeaderTitle>
+    <CardHeaderTitle style={{ ...props.styles }}>
       <TextWrapper className="card-header-title">
         <span>{props.title}</span>
       </TextWrapper>
