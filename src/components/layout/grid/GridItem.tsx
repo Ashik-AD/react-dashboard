@@ -15,7 +15,7 @@ const GridItem: FC<Props> = (props) => {
   const { children, xs, sm, md, lg, xlg } = props;
   return (
     <div
-      className={`grid-col-1 ${xs ? `grid-col-xs-${xs} ` : ""}${
+      className={`grid-item grid-col-1 ${xs ? `grid-col-xs-${xs} ` : ""}${
         sm ? `grid-col-sm-${sm} ` : ""
       }${md ? `grid-col-md-${md} ` : ""}${lg ? `grid-col-lg-${lg} ` : ""}${
         xlg ? `grid-col-xlg-${xlg}` : ""
