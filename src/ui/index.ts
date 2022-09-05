@@ -8,3 +8,4 @@ export { default as Avatar } from './avatar/Avatar';
 export { default as CustomAvatar } from './avatar/CustomAvatar';
 export { default as Toggle } from './toggle/Toggle';
 export { default as Divider } from './divider/Divider';
+export { default as Chip } from './chip/Chip';
