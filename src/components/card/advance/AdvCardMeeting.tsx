@@ -1,6 +1,6 @@
 import { CalendarTodayOutlined } from "@mui/icons-material";
 import { FC } from "react";
-import { Avatar, Text } from "../../../ui";
+import { Avatar, Chip, Text } from "../../../ui";
 import Box from "../../box/Box";
 import Card from "../Card";
 import CardTitle from "../CardTitle";
@@ -32,7 +32,12 @@ const AdvanceCardMeeting: FC<Props> = (props) => {
                 </Text>
               </Box>
             </Box>
-            <span>{item.tag}</span>
+            <Chip
+              label={item.tag}
+              skin="light"
+              color={item.color}
+              styles={{ fontSize: 12, fontWeight: 600 }}
+            />
           </Box>
         ))}
       </Box>
