@@ -12,6 +12,7 @@ const Text: FC<TextType> = ({
   heading,
   color,
   styles,
+  weight,
 }) => {
   const { theme } = useTheme();
   return (
@@ -23,7 +24,9 @@ const Text: FC<TextType> = ({
           size={size}
           align={align}
           theme={{ mode: theme.mode }}
+          weight={weight}
           style={{ ...styles }}
+          color={color}
         >
           {children}
         </Paragraph>
@@ -44,6 +47,7 @@ const Text: FC<TextType> = ({
           align={align}
           theme={{ mode: theme.mode }}
           style={{ ...styles }}
+          weight={weight}
         >
           {children}
         </TextSpan>
