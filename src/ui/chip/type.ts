@@ -6,7 +6,8 @@ export interface ChipProps {
     varient?: "outlined" | 'fill';
     skin?: "light" | 'glass';
     color?: string;
-    size?: "small" | 'large';
-    children?: ReactNode;
+    size?: "small" | 'medium';
+    icon?: ReactNode;
     styles?: CSSProperties;
+    avatar?: ReactNode;
 }

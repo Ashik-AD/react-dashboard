@@ -5,11 +5,12 @@ import { ChipProps } from './type'
 const ChipWrapper = styled("div") <ChipProps>`
     position: relative;
     display: flex;
+    align-items: center;
     width: fit-content;
     background: ${({ theme, varient, color, skin }) => varient === 'outlined' || skin ? 'transparent' : varient === 'fill' && color ? alertColor.hasOwnProperty(color) ? alertColor[color as keyof Colors] : color : theme.color};
     color: ${({ color, varient, theme, skin }) => varient === 'outlined' || skin === 'light' ? color ? alertColor.hasOwnProperty(color) ? alertColor[color as keyof Colors] : color : theme.color : "#fff"};
-    padding: 0 8px;
-    line-height: 1.8    ;
+    padding: ${({ size }) => size === "small" ? "0 10px" : "3px 12px"};
+    font-size: ${({ size }) => size === 'small' ? '12px' : '15px'};
     border-radius: 20px;
     max-height: 40px;
     border:2px solid ${({ varient, theme }) => varient === 'outlined' ? theme.color : 'transparent'};
@@ -31,5 +32,19 @@ const ChipWrapper = styled("div") <ChipProps>`
         }
         `
     }
+
+    & .avatar-icon-wrapper {
+        display: flex;
+        align-items: center;
+        margin-left: -8px;
+        margin-right: 5px;
+    }
+    & svg {
+        font-size: ${({ size }) => size === 'small' ? '1.2rem' : '1.5rem'};
+    }
+    & .avatar-icon-wrapper > * {
+        height: ${({ size }) => size === 'small' ? '1.2rem' : '1.5rem'};
+        width: ${({ size }) => size === 'small' ? '1.2rem' : '1.5rem'};
+    }
 `
-export default ChipWrapper
+export default ChipWrapper;

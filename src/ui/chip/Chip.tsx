@@ -13,8 +13,10 @@ const Chip: FC<ChipProps> = (props) => {
       theme={{ mode: mode.name, color: primaryColor.color }}
       style={{ ...props.styles }}
     >
-      {!props.children && props.label}
-      {props.children}
+      {(props.icon || props.avatar) && (
+        <div className="avatar-icon-wrapper">{props.avatar || props.icon}</div>
+      )}
+      {props.label}
     </ChipWrapper>
   );
 };
