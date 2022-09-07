@@ -48,24 +48,7 @@ export const CardHeaderTitle = styled('div')`
         line-height: 1;
         font-weight: 500;
         letter-spacing: 0.00125rem;
-    }
-
-    @media screen and (min-width: 600px){
-        & .card-header-title {
-            font-size: 1.3118rem;
-        }
-    }
-
-    @media screen and (min-width: 900px){
-        & .card-header-title {
-            font-size: 1.4993rem;
-        }
-    }
-
-    @media screen and (min-width: 1200px){
-        & .card-header-title {
-            font-size: 1.4993rem;
-        }
+        text-transform: capitalize;
     }
 
     & .current-action-dropdown {

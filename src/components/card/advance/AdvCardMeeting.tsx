@@ -36,7 +36,8 @@ const AdvanceCardMeeting: FC<Props> = (props) => {
               label={item.tag}
               skin="light"
               color={item.color}
-              styles={{ fontSize: 12, fontWeight: 600 }}
+              size="small"
+              styles={{ fontWeight: 600 }}
             />
           </Box>
         ))}

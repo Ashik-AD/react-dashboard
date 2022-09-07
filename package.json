@@ -11,13 +11,18 @@
   "dependencies": {
     "@emotion/styled": "^11.10.0",
     "@mui/icons-material": "^5.10.2",
+    "apexcharts": "^3.35.5",
     "react": "^18.2.0",
+    "react-apexcharts": "^1.4.0",
     "react-dom": "^18.2.0",
+    "react-icons": "^4.4.0",
+    "recharts": "^2.1.13",
     "styled-components": "^5.3.5"
   },
   "devDependencies": {
     "@types/react": "^18.0.17",
     "@types/react-dom": "^18.0.6",
+    "@types/recharts": "^1.8.23",
     "@types/styled-components": "^5.1.26",
     "@vitejs/plugin-react": "^2.0.1",
     "typescript": "^4.6.4",
