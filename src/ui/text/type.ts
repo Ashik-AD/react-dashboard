@@ -24,6 +24,7 @@ export default interface TextType {
     paragraph?: boolean;
     styles?: CSSProperties;
     weight?: weight;
+    secondary?: boolean;
 }
 
 export interface HeadingType {

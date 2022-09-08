@@ -1,7 +1,7 @@
 import { FC } from "react";
 import useTheme from "../../theme/useTheme";
 import TextType, { HeadingType } from "./type";
-import TextGlobal, { Paragraph, TextSpan } from "./text.styled";
+import { Paragraph, TextSpan } from "./text.styled";
 
 const Text: FC<TextType> = ({
   children,
@@ -13,11 +13,11 @@ const Text: FC<TextType> = ({
   color,
   styles,
   weight,
+  secondary,
 }) => {
   const { theme } = useTheme();
   return (
     <>
-      <TextGlobal />
       {paragraph ? (
         <Paragraph
           className={`${varient}`}
@@ -27,6 +27,7 @@ const Text: FC<TextType> = ({
           weight={weight}
           style={{ ...styles }}
           color={color}
+          secondary={secondary}
         >
           {children}
         </Paragraph>
@@ -48,6 +49,7 @@ const Text: FC<TextType> = ({
           theme={{ mode: theme.mode }}
           style={{ ...styles }}
           weight={weight}
+          secondary={secondary}
         >
           {children}
         </TextSpan>
