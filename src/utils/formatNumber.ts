@@ -1,9 +1,10 @@
-export default function formatNumber(value: number, divider?: number, option?: { toFixed: number }): string {
+export default function formatNumber(value: number, divider?: number, option?: { toFixed: number, currancy: boolean }): string {
     if (!divider || value < divider!) {
         return addComma(value);
     }
     else {
-        return `${value % divider > 0 ? Math.abs(value / divider).toFixed(option?.toFixed ? option.toFixed : 2) : value / divider}${units(divider.toString().length)}`;
+        const calc = value % divider > 0 ? +Math.abs(value / divider).toFixed(option?.toFixed ? option.toFixed : 2) : value / divider;
+        return `${addComma(calc)}${units(divider.toString().length)}`;
     }
 }
 
