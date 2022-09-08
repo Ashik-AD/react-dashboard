@@ -26,9 +26,9 @@ export const CustomeAvatarWrapper = styled('span') <CustomAvatarProps>`
     width: ${({ size }) => size ? size : 45}px;
     color: ${({ theme, color, skin }) => color ? skin ? alertColor.hasOwnProperty(color) ? alertColor[color as keyof Colors] : color : '#fff' : theme.textColor};
     border-radius: ${({ varient }) => varient === 'rounded' ? '10%' : varient === 'square' ? '1%' : "50%"};
-    font-size: ${({ size }) => size ? ((size * 100) / 20) * 0.16 : '20'}px;
+    font-size: ${({ size }) => size ? ((size * 50) / 100) : '20'}px;
     text-transform: uppercase;
-    letter-spacing: 1.5px;
+    letter-spacing: 0.5px;
     overflow: hidden;
     user-select: none;
     z-index: 1;

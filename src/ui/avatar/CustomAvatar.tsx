@@ -8,6 +8,7 @@ const CustomAvatar: FC<CustomAvatarProps> = (props) => {
   const {
     theme: { mode },
   } = useTheme();
+
   return (
     <CustomeAvatarWrapper
       className={classes ? classes : ""}
