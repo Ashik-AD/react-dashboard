@@ -14,7 +14,6 @@ const CardRanger: FC<PropsType> = (props) => {
         <Box display="flex" flexDirection="column">
           <Text
             varient="body1"
-            size={50}
             styles={{ textTransform: "capitalize", fontWeight: 500 }}
           >
             {title}
