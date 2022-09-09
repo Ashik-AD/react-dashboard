@@ -22,4 +22,5 @@ export default interface CardProps {
     position?: 'absolute' | 'relative' | 'fixed' | 'inherite';
     shadow?: 'small' | 'medium' | 'large';
     children?: ReactNode;
+    className?: string;
 }
