@@ -1,4 +1,4 @@
-export default function formatNumber(value: number, divider?: number, option?: { toFixed: number, currancy: boolean }): string {
+export default function formatNumber(value: number, divider?: number, option?: { toFixed?: number, currancy?: boolean }): string {
     if (!divider || value < divider!) {
         return addComma(value);
     }
