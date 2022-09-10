@@ -7,6 +7,7 @@ const Button: FC<ButtonType> = ({
   children,
   color,
   onClick,
+  className,
 }) => {
   const {
     theme: { primaryColor, mode },
@@ -17,6 +18,7 @@ const Button: FC<ButtonType> = ({
       varient={varient}
       color={color}
       onClick={onClick}
+      className={className ? className : ""}
     >
       {children}
     </NormalButton>

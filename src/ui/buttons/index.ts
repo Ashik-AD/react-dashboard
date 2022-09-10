@@ -9,6 +9,7 @@ export interface ButtonType {
   readonly children: string | ReactNode;
   readonly color?: Color | string;
   readonly onClick?: () => void;
+  readonly className?: string;
 }
 
 export interface IconButtonProps extends ButtonType {

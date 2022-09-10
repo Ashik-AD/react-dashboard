@@ -9,10 +9,15 @@ const Div = styled("hr")`
     theme.mode.name === "dark" ? "rgb(255 255 255 / 12%)" : "rgb(0 0 0 / 12%)"};
 `;
 
-const Divider: FC = () => {
+const Divider: FC<Props> = ({ className }) => {
   const {
     theme: { mode },
   } = useTheme();
-  return <Div theme={{ mode }} />;
+  return <Div theme={{ mode }} className={className ? className : ""} />;
 };
+
+interface Props {
+  className?: string;
+}
+
 export default Divider;
