@@ -28,7 +28,7 @@ export const Circle = styled.span<CircleProps>`
     background: ${({ theme, toggled }) => toggled ? theme.primaryColor.color : '#fff'};
     box-shadow: 0px 3px 4px ${({ theme }) => theme.mode.name === 'dark' ? '#484848' : '#8d8d8d'};
     position: absolute;
-    top: 0.5px;
+    top: -1.5px;
     left: ${({ toggled }) => toggled ? 20 : 0}px;
     transition: left 0.3s ease;
     &:before, &:after {
