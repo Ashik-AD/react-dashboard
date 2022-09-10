@@ -22,11 +22,12 @@ const CardTransaction: FC<PropsType> = (props) => {
                 <Box display="flex" flexDirection="column" space={0.3}>
                   <Text
                     varient="caption"
+                    secondary={true}
                     styles={{ textTransform: "capitalize", fontWeight: 500 }}
                   >
                     {item.title}
                   </Text>
-                  <Text heading="h6">
+                  <Text heading="h6" styles={{ fontWeight: 600 }}>
                     {item.currency && "$"}
                     {formatNumber(item.total, 1000)}
                   </Text>

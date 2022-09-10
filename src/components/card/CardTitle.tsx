@@ -4,16 +4,6 @@ import { IconButton } from "../../ui";
 import { CardHeaderTitle } from "./card.styled";
 import styled, { CSSProperties } from "styled-components";
 
-interface Props {
-  title: string | ReactNode;
-  component?: ReactNode;
-  styles?: CSSProperties;
-}
-
-const TextWrapper = styled("span")`
-  flex: 1 1 auto;
-`;
-
 const CardTitle: FC<Props> = (props) => {
   return (
     <CardHeaderTitle style={{ ...props.styles }}>
@@ -32,4 +22,13 @@ const CardTitle: FC<Props> = (props) => {
   );
 };
 
+interface Props {
+  title: string | ReactNode;
+  icons?: ReactNode;
+  component?: ReactNode;
+  styles?: CSSProperties;
+}
+const TextWrapper = styled("span")`
+  flex: 1 1 auto;
+`;
 export default CardTitle;

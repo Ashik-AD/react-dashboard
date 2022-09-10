@@ -2,7 +2,7 @@ import { FC, ReactNode } from "react";
 import Card from "../Card";
 import CardTitle from "../CardTitle";
 import Box from "../../box/Box";
-import { CustomAvatar, Text } from "../../../ui";
+import { Chip, CustomAvatar, Text } from "../../../ui";
 import { ExpandMore, ExpandLess } from "@mui/icons-material";
 import formatNumber from "../../../utils/formatNumber";
 
@@ -19,34 +19,38 @@ const CardMint: FC<PropsType> = (props) => {
         }}
         title={<CustomAvatar color={iconBackground}>{icon}</CustomAvatar>}
       />
-      <Box display="flex" flexDirection="column" px={16} pb={20}>
+      <Box display="flex" flexDirection="column" px={16} pb={20} space={0.4}>
         <Text
-          varient="body1"
+          varient="body2"
+          weight="bold"
           styles={{ textTransform: "capitalize", marginBottom: 4 }}
         >
           {title}
         </Text>
-        <Box display="flex" mb={10} align="baseline">
-          <Text heading="h5" styles={{ fontWeight: 500 }}>
+        <Box display="flex" mb={10} space={0.5}>
+          <Text heading="h6" styles={{ fontWeight: 500 }}>
             {currency && "$"}
             {formatNumber(total, 1000)}
           </Text>
           <sup>
             <Box
               display="flex"
-              align="center"
               className={
                 status === "inc" ? "alert-success-text" : "alert-error-text"
               }
             >
-              <span className="caption" style={{ display: "flex" }}>
-                {status === "inc" ? <ExpandLess /> : <ExpandMore />}
-              </span>
+              <sup className="caption" style={{ fontWeight: 600 }}>
+                {status === "inc" ? "+" : "-"}
+              </sup>
               <span className="text-bold caption">{growth}%</span>
             </Box>
           </sup>
         </Box>
-        <Text varient="caption" styles={{ textTransform: "capitalize" }}>
+        <Text
+          varient="caption"
+          secondary={true}
+          styles={{ textTransform: "capitalize" }}
+        >
           {tag}
         </Text>
       </Box>
