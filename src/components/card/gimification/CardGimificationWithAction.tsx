@@ -89,7 +89,6 @@ const Image = styled("img")<BannerOptions>`
   bottom: ${({ bottom }) => bottom && `${bottom}px`};
   left: ${({ left }) => left && `${left}px`};
   object-fit: contain;
-  z-index: 2;
 `;
 
 export default CardGimificationWithAction;
