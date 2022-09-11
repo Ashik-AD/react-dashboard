@@ -3,9 +3,15 @@ import { Text } from "../../ui";
 import Box from "../box/Box";
 
 const CardItemAnalyticsWithIcon: FC<Props> = (props) => {
-  const { icon, avatar, label, tag } = props;
+  const { icon, avatar, label, tag, marginBottom } = props;
   return (
-    <Box display="flex" align="center" space={0.8} px={20} mb={16}>
+    <Box
+      display="flex"
+      align="center"
+      space={0.8}
+      px={20}
+      mb={marginBottom ? marginBottom : 16}
+    >
       <Box display="flex">{avatar ? avatar : icon ? icon : ""}</Box>
       <Box display="flex" flexDirection="column">
         <Text heading="h6" weight="medium">
@@ -26,5 +32,6 @@ interface Props {
   avatar?: ReactNode;
   label: string;
   tag?: string;
+  marginBottom?: number;
 }
 export default CardItemAnalyticsWithIcon;
