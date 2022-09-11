@@ -36,36 +36,3 @@ export const CardWrapper = styled('div') <CardProps>`
     //shadow
     box-shadow: ${({ theme }) => theme.skin === 'default' && '0px 2px 10px 0px'} ${({ theme }) => theme.skin === 'default' ? theme.mode.name === 'light' ? "#f1f1f1" : "#1b24303b" : "none"};
 `;
-
-
-export const CardHeaderTitle = styled('div')`
-    display: flex;
-    align-items: center;
-    padding: 1.25rem;
-    
-    & .card-header-title {
-        font-size: 1.25rem;
-        line-height: 1;
-        font-weight: 500;
-        letter-spacing: 0.00125rem;
-        text-transform: capitalize;
-    }
-
-    & .current-action-dropdown {
-        position: absolute;
-        right: 0px;
-        min-width: 100px;
-        z-index: -1;
-        opacity: 0;
-        pointer-events: none;
-        transition: right 0.3s, opacity: .2s;
-    }
-
-   button:focus-within ~ .current-action-dropdown {
-        right: 0px;
-        z-index: 1!important;
-        opacity: 1!important;
-        pointer-events: auto;
-        transition: all .3s ease;
-    }
-`
