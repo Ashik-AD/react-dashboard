@@ -3,7 +3,7 @@ import { FC } from "react";
 import { Avatar, Chip, Text } from "../../../ui";
 import Box from "../../box/Box";
 import Card from "../Card";
-import CardTitle from "../CardTitle";
+import CardTitle from "../titles/CardTitle";
 
 const AdvanceCardMeeting: FC<Props> = (props) => {
   const { title, items } = props;

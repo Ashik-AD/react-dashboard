@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 import Box from "../../box/Box";
 import Card from "../Card";
-import CardTitle from "../CardTitle";
+import CardTitle from "../titles/CardTitle";
 
 const AdvanceCard = <T extends unknown>({
   title,

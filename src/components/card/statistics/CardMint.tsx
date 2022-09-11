@@ -1,17 +1,16 @@
 import { FC, ReactNode } from "react";
 import Card from "../Card";
-import CardTitle from "../CardTitle";
 import Box from "../../box/Box";
-import { Chip, CustomAvatar, Text } from "../../../ui";
-import { ExpandMore, ExpandLess } from "@mui/icons-material";
+import { CustomAvatar, Text } from "../../../ui";
 import formatNumber from "../../../utils/formatNumber";
+import CustomCardTitle from "../titles/CustomCardTitle";
 
 const CardMint: FC<PropsType> = (props) => {
   const { title, icon, total, status, growth, iconBackground, tag, currency } =
     props;
   return (
     <Card>
-      <CardTitle
+      <CustomCardTitle
         styles={{
           alignItems: "flex-start",
           paddingLeft: "1rem",

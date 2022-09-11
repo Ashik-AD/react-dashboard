@@ -4,7 +4,7 @@ import formatNumber from "../../../utils/formatNumber";
 import Box from "../../box/Box";
 import { GridContainer, GridItem } from "../../layout";
 import Card from "../Card";
-import CardTitle from "../CardTitle";
+import CardTitle from "../titles/CardTitle";
 
 const CardTransaction: FC<PropsType> = (props) => {
   const { title, items } = props;
@@ -14,9 +14,18 @@ const CardTransaction: FC<PropsType> = (props) => {
       <Box padding={20}>
         <GridContainer>
           {items.map((item) => (
-            <GridItem key={item.id} lg={3} md={3} xs={6}>
+            <GridItem
+              key={item.id}
+              lg={(12 / items.length) as any}
+              md={3}
+              xs={12}
+            >
               <Box display="flex" align="center" space={1} pt={5}>
-                <CustomAvatar color={item.color} varient="rounded">
+                <CustomAvatar
+                  color={item.color}
+                  varient="rounded"
+                  styles={{ minWidth: 45 }}
+                >
                   {item.icon}
                 </CustomAvatar>
                 <Box display="flex" flexDirection="column" space={0.3}>
