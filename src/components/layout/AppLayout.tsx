@@ -3,6 +3,9 @@ import styled from "styled-components";
 import useTheme from "../../theme/useTheme";
 
 const Container = styled("main")`
+  width: 100%;
+  height: 100%;
+  display: flex;
   background: ${({ theme }) =>
     theme.skin === "bordered" ? theme.mode.foreground : theme.mode.background};
   color: ${({ theme }) => theme.mode.textColor};
