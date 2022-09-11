@@ -7,7 +7,8 @@ const normalButton = styled.button<ButtonType>`
   background-color: ${props => props.varient === 'text' || props.varient === 'outlined' ? 'transparent' : (props.color ? alertColor[props.color as keyof Colors] : (props.color ? alertColor[props.color as keyof Colors] : props.theme.primaryColor.color))};
   // border
   border: 1.8px solid ${props => props.varient === 'outlined' ? (props.color ? alertColor[props.color as keyof Colors] : props.theme.primaryColor.color) : 'transparent'};
-
+  text-align: center;
+  justify-content: center;
   // color
   color: ${({ theme, color, varient }) => varient === 'outlined' || varient === 'text' ? color ? alertColor[color as keyof Colors] : theme.primaryColor.color : "#fff"};
 `;
