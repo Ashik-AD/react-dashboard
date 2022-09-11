@@ -27,7 +27,7 @@ export interface Light {
     name: 'light';
     background: '#f8f5ff';
     foreground: '#fffffd';
-    textColor: '#191919';
+    textColor: '#3a3541de';
 }
 
 export type ThemeMode = Dark | Light;
