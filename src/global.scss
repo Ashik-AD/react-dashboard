@@ -137,7 +137,7 @@ $size in $fontWeights {
 }
 
 $total: 12;
-$size: 8.33%;
+$size: 8.33333333333%;
 
 @for $i from 1 through $total {
     @include cols($i, calc($i * $size), '');

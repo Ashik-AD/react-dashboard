@@ -1,7 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
-
 const GlobalStyle = createGlobalStyle`
-
 button {
     text-transform: uppercase;
     font-size: 14px;
