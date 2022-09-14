@@ -46,6 +46,7 @@ const CardWidgetTotalRevenue = () => {
         colorPallets[1].color,
         colorPallets[4].color,
       ],
+      labels: ["Returning", "New Users", "Referrals"],
       plotOptions: {
         radialBar: {
           track: {
@@ -94,10 +95,10 @@ const CardWidgetTotalRevenue = () => {
           type="radialBar"
           options={chartOptions.option}
           series={chartOptions.series}
-          height={300}
+          height={275}
         />
 
-        <Box px={28} py={20} display="flex" justify="space-evenly" space={1}>
+        <Box px={28} pb={25} display="flex" justify="space-evenly" space={1}>
           {stat.map((item) => (
             <Tags key={item.total} {...item} />
           ))}
