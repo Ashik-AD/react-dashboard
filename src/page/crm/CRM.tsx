@@ -12,6 +12,7 @@ import CardWidgetPerformance from "../../components/card/widgets/CardWidgetPerfo
 import CardWidgetAnalytics from "../../components/card/widgets/CardWidgetAnalytics";
 import CardWidgetTotalProfitMinimal from "../../components/card/widgets/CardWidgetTotalProfitMinimal";
 import CardWidgetTotalSale from "../../components/card/widgets/CardWidgetTotalSale";
+import CardWidgetTotalVisits from "../../components/card/widgets/CardWidgetTotalVisits";
 
 const CRM = () => {
   return (
@@ -96,6 +97,9 @@ const CRM = () => {
         </GridItem>
         <GridItem xs={12} sm={3}>
           <CardWidgetTotalSale />
+        </GridItem>
+        <GridItem xs={12} sm={3}>
+          <CardWidgetTotalVisits />
         </GridItem>
       </GridContainer>
     </Flex>
