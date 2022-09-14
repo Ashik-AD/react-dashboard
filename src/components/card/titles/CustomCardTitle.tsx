@@ -36,6 +36,7 @@ interface Props {
   showIcon?: boolean;
 }
 const TextWrapper = styled("span")`
+  display: flex;
   flex: 1 1 auto;
   flex-direction: column;
 `;
