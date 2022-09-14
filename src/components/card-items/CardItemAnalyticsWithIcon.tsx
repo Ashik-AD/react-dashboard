@@ -14,11 +14,15 @@ const CardItemAnalyticsWithIcon: FC<Props> = (props) => {
     >
       <Box display="flex">{avatar ? avatar : icon ? icon : ""}</Box>
       <Box display="flex" flexDirection="column">
-        <Text heading="h6" weight="medium">
+        <Text heading="h6" weight="bold">
           {label}
         </Text>
         {tag && (
-          <Text varient="caption" styles={{ marginTop: 1 }}>
+          <Text
+            varient="caption"
+            secondary={true}
+            styles={{ marginTop: 1, textTransform: "capitalize" }}
+          >
             {tag}
           </Text>
         )}
