@@ -14,7 +14,7 @@ const settings: SettingType = {
     },
     primaryColor: {
         name: 'purple',
-        color: '#A66CFF'
+        color: 'rgba(166, 108, 255, 1)'
     },
     menuStyle: {
         collapse: false,

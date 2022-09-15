@@ -1,29 +1,29 @@
 export type red = {
     name: 'red',
-    color: '#FD5D5D'
+    color: 'rgba(253, 93, 93, 1)'
 }
 
 export type green = {
     name: 'green',
-    color: '#3CCF4E'
+    color: 'rgba(60, 207, 78, 1)'
 }
 
 export type purple = {
     name: 'purple',
-    color: '#A66CFF'
+    color: 'rgba(166, 108, 255, 1)'
 }
 export type blue = {
     name: 'blue',
-    color: '#00D7FF'
+    color: 'rgba(0, 215, 255, 1)'
 }
 
 export type orange = {
     name: 'orange',
-    color: '#FF5B00'
+    color: 'rgba(255, 91, 0, 1)'
 }
 export type pinky = {
     name: 'pinky',
-    color: '#F94892'
+    color: 'rgba(249, 72, 146, 1)'
 }
 
 export interface Dark {
@@ -42,10 +42,10 @@ export interface Light {
 export type ThemeMode = Dark | Light;
 export type PrimaryColor = red | green | purple | blue | orange | pinky;
 export const colorPallets: PrimaryColor[] = [
-    { name: 'red', color: "#FD5D5D" },
-    { name: 'green', color: "#3CCF4E" },
-    { name: 'blue', color: "#00D7FF" },
-    { name: 'purple', color: "#A66CFF" },
-    { name: 'orange', color: "#FF5B00" },
-    { name: 'pinky', color: "#F94892" },
+    { name: 'red', color: "rgba(253, 93, 93, 1)" },
+    { name: 'green', color: "rgba(60, 207, 78, 1)" },
+    { name: 'blue', color: "rgba(0, 215, 255, 1)" },
+    { name: 'purple', color: "rgba(166, 108, 255, 1)" },
+    { name: 'orange', color: "rgba(255, 91, 0, 1)" },
+    { name: 'pinky', color: "rgba(249, 72, 146, 1)" },
 ];
