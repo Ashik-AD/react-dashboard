@@ -44,6 +44,7 @@ const CardWidgetTotalVisits = () => {
       colors: [theme.primaryColor.color],
       type: "gradient",
       gradient: {
+        shadeIntensity: 1,
         opacityFrom: 1,
         opacityTo: 0.2,
         stops: [0, 100],

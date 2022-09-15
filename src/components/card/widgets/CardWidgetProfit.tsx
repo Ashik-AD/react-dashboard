@@ -25,11 +25,23 @@ const CardWidgetProfit = () => {
         zoom: { enabled: false },
         toolbar: { show: false },
       },
-
+      stroke: {
+        width: 6,
+        colors: [theme.mode.foreground],
+      },
       plotOptions: {
         bar: {
-          columnWidth: "20%",
-          borderRadius: 8,
+          columnWidth: "40%",
+          borderRadius: [8],
+          // distributed: true,
+        },
+      },
+      states: {
+        hover: {
+          filter: { type: "none" },
+        },
+        active: {
+          filter: { type: "none" },
         },
       },
       xaxis: {
@@ -38,6 +50,7 @@ const CardWidgetProfit = () => {
         axisTicks: { show: false },
         crosshairs: {
           show: false,
+          opacity: 0,
         },
         labels: {
           style: {
@@ -53,8 +66,10 @@ const CardWidgetProfit = () => {
           },
           formatter: (value) => value + "k",
         },
+        crosshairs: {
+          show: false,
+        },
       },
-
       legend: {
         show: false,
       },
@@ -68,7 +83,6 @@ const CardWidgetProfit = () => {
             ? "rgba(255, 255, 255, 0.1)"
             : "rgba(0,0,0,0.1)",
       },
-      tooltip: {},
     },
     series: [
       {

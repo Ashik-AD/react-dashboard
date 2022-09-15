@@ -1,4 +1,9 @@
-import { Devices, PersonOutline, TrendingUp } from "@mui/icons-material";
+import {
+  BusinessCenter,
+  Devices,
+  PersonOutline,
+  TrendingUp,
+} from "@mui/icons-material";
 import CardRanger from "../../components/card/statistics/CardRanger";
 import CardTransaction from "../../components/card/statistics/CardTransaction";
 import CardWidgetProfit from "../../components/card/widgets/CardWidgetProfit";
@@ -13,6 +18,10 @@ import CardWidgetAnalytics from "../../components/card/widgets/CardWidgetAnalyti
 import CardWidgetTotalProfitMinimal from "../../components/card/widgets/CardWidgetTotalProfitMinimal";
 import CardWidgetTotalSale from "../../components/card/widgets/CardWidgetTotalSale";
 import CardWidgetTotalVisits from "../../components/card/widgets/CardWidgetTotalVisits";
+import CardWidgetRevenueReport from "../../components/card/widgets/CardWidgetRevenueReport";
+import CardWidgetSalesOverview from "../../components/card/widgets/CardWidgetSalesOverview";
+import CardMint from "../../components/card/statistics/CardMint";
+import CardTotalRevenue from "../../components/card/statistics/CardTotalRevenue";
 
 const CRM = () => {
   return (
@@ -68,15 +77,40 @@ const CRM = () => {
             ]}
           />
         </GridItem>
+        <GridItem xs={12} sm={3}>
+          <CardWidgetTotalSale />
+        </GridItem>
+        <GridItem xs={12} sm={3}>
+          <CardWidgetRevenueReport />
+        </GridItem>
+        <GridItem xs={12} sm={6}>
+          <CardWidgetSalesOverview />
+        </GridItem>
+        <GridItem xs={12} sm={4}>
+          <CardWidgetWeeklySales />
+        </GridItem>
+        <GridItem xs={12} sm={2}>
+          <CardMint
+            icon={<BusinessCenter />}
+            title="New Project"
+            growth={18}
+            status="desc"
+            total={862}
+            tag="Yearly Project"
+            iconBackground="warning"
+          />
+        </GridItem>
+        <GridItem xs={12} sm={2}>
+          <CardTotalRevenue />
+        </GridItem>
+
         <GridItem xs={12} sm={8}>
           <CardWidgetProfit />
         </GridItem>
         <GridItem xs={12} sm={4}>
           <CardWidgetTotalVisitor />
         </GridItem>
-        <GridItem xs={12} sm={4}>
-          <CardWidgetWeeklySales />
-        </GridItem>
+
         <GridItem xs={12} sm={4}>
           <CardWidgetTotalRevenue />
         </GridItem>
@@ -94,9 +128,6 @@ const CRM = () => {
         </GridItem>
         <GridItem xs={12} sm={3}>
           <CardWidgetTotalProfitMinimal />
-        </GridItem>
-        <GridItem xs={12} sm={3}>
-          <CardWidgetTotalSale />
         </GridItem>
         <GridItem xs={12} sm={3}>
           <CardWidgetTotalVisits />

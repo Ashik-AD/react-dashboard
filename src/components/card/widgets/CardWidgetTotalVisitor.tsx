@@ -6,6 +6,7 @@ import CardTitle from "../titles/CardTitle";
 import ReactApexChart from "react-apexcharts";
 import { ApexOptions } from "apexcharts";
 import useTheme from "../../../theme/useTheme";
+import genColorShades from "../../../utils/genColorShades";
 
 const CardWidgetTotalVisitor = () => {
   const { theme } = useTheme();
@@ -16,7 +17,7 @@ const CardWidgetTotalVisitor = () => {
         height: 180,
         width: "100%",
       },
-      labels: ["USA", "JP", "IN", "FR"],
+      labels: ["JP", "IN", "FR", "USA"],
       dataLabels: {
         enabled: false,
       },
@@ -34,7 +35,11 @@ const CardWidgetTotalVisitor = () => {
           colors: theme.mode.textColor,
         },
       },
-
+      colors: [
+        theme.primaryColor.color,
+        ...genColorShades(theme.primaryColor.color, { total: 2, intensity: 2 }),
+        theme.mode.background,
+      ],
       plotOptions: {
         pie: {
           donut: {
@@ -75,7 +80,7 @@ const CardWidgetTotalVisitor = () => {
         show: false,
       },
     },
-    series: [50, 25, 15, 10],
+    series: [25, 15, 10, 50],
   };
   return (
     <Card>

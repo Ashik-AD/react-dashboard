@@ -22,8 +22,8 @@ const CardWidgetSaleState = () => {
       gradient: {
         shadeIntensity: 1,
         opacityTo: 0,
-        opacityFrom: 0.5,
-        stops: [0, 95, 100],
+        opacityFrom: 0.8,
+        stops: [20, 100],
       },
     },
     dataLabels: {

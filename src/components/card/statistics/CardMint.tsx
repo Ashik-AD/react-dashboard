@@ -18,7 +18,14 @@ const CardMint: FC<PropsType> = (props) => {
         }}
         title={<CustomAvatar color={iconBackground}>{icon}</CustomAvatar>}
       />
-      <Box display="flex" flexDirection="column" px={16} pb={20} space={0.4}>
+      <Box
+        display="flex"
+        flexDirection="column"
+        px={16}
+        pb={20}
+        pt={8}
+        space={0.4}
+      >
         <Text
           varient="body2"
           weight="bold"
@@ -48,6 +55,7 @@ const CardMint: FC<PropsType> = (props) => {
         <Text
           varient="caption"
           secondary={true}
+          weight="medium"
           styles={{ textTransform: "capitalize" }}
         >
           {tag}
