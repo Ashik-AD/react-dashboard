@@ -5,10 +5,11 @@ import { BoxProps } from "./type";
 const box = styled('div') <BoxProps>`
     position: relative;
     display: ${({ display }) => display ? display : 'block'};
-    ${({ display, align, justify, flexDirection, space }) => display === 'flex' && `
+    ${({ display, align, justify, flexDirection, space, wrap }) => display === 'flex' && `
         align-items: ${align ? align : 'initial'}};
         justify-content: ${justify ? justify : 'initial'}};
         flex-direction: ${flexDirection ? flexDirection : 'row'};
+        flex-wrap: ${wrap};
         gap: ${space}rem;
         `
     }

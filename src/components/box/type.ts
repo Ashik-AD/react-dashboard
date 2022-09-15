@@ -6,6 +6,7 @@ export interface BoxProps {
     justify?: 'space-between' | 'space-around' | 'space-evenly' | 'flex-start' | 'center' | 'flex-end';
     align?: 'flex-start' | 'center' | 'flex-end' | 'baseline' | 'stretch' | 'normal';
     flexDirection?: 'row' | 'column' | 'row-reverse' | 'column-reverse';
+    wrap?: "wrap" | 'nowrap';
     space?: number;
     className?: string;
     margin?: number;
