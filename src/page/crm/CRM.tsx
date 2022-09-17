@@ -21,7 +21,13 @@ import CardWidgetTotalVisits from "../../components/card/widgets/CardWidgetTotal
 import CardWidgetRevenueReport from "../../components/card/widgets/CardWidgetRevenueReport";
 import CardWidgetSalesOverview from "../../components/card/widgets/CardWidgetSalesOverview";
 import CardMint from "../../components/card/statistics/CardMint";
-import CardTotalRevenue from "../../components/card/statistics/CardTotalRevenue";
+import CardSession from "../../components/card/statistics/CardSession";
+import CardStatisticAreaChart from "../../components/charts/apex/statistics/StatisticAreaChart";
+import CardSessionNegative from "../../components/card/statistics/CardSessionNegative";
+import CardStatisticRevenue from "../../components/card/statistics/CardStatisticRevenue";
+import CardStatisticGrowth from "../../components/card/statistics/CardStatisticGrowth";
+import CardStatisticProfit from "../../components/card/statistics/CardStatisticProfit";
+import CardStatisticSales from "../../components/card/statistics/CardStatisticSales";
 
 const CRM = () => {
   return (
@@ -101,7 +107,33 @@ const CRM = () => {
           />
         </GridItem>
         <GridItem xs={12} sm={2}>
-          <CardTotalRevenue />
+          <CardMint
+            icon={<BusinessCenter />}
+            title="New Project"
+            growth={18}
+            status="desc"
+            total={862}
+            tag="Yearly Project"
+            iconBackground="warning"
+          />
+        </GridItem>
+        <GridItem xs={12} sm={2}>
+          <CardSession />
+        </GridItem>
+        <GridItem xs={12} sm={2}>
+          <CardSessionNegative />
+        </GridItem>
+        <GridItem xs={12} sm={2}>
+          <CardStatisticRevenue />
+        </GridItem>
+        <GridItem xs={12} sm={2}>
+          <CardStatisticGrowth />
+        </GridItem>
+        <GridItem xs={12} sm={2}>
+          <CardStatisticProfit />
+        </GridItem>
+        <GridItem xs={12} sm={2}>
+          <CardStatisticSales />
         </GridItem>
 
         <GridItem xs={12} sm={8}>
