@@ -1,30 +1,20 @@
-import { CSSProperties, FC } from "react";
-import styled from "styled-components";
+import { FC } from "react";
 import useTheme from "../../theme/useTheme";
+import DividerProps from "./type";
+import Div from "./styled";
 
-const Div = styled("hr")`
-  border-width: 0px 0px thin;
-  border-style: solid;
-  border-color: ${({ theme }) =>
-    theme.mode.name === "dark" ? "rgb(255 255 255 / 12%)" : "rgb(0 0 0 / 12%)"};
-`;
-
-const Divider: FC<Props> = ({ className, styles }) => {
+const Divider: FC<DividerProps> = ({ className, styles, vertical }) => {
   const {
     theme: { mode },
   } = useTheme();
   return (
     <Div
       theme={{ mode }}
+      vertical={vertical}
       className={className ? className : ""}
       style={{ ...styles }}
     />
   );
 };
-
-interface Props {
-  className?: string;
-  styles?: CSSProperties;
-}
 
 export default Divider;
