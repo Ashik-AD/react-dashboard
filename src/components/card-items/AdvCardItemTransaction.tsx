@@ -3,7 +3,7 @@ import Box from "../box/Box";
 import { CustomAvatar, Avatar, Text } from "../../ui";
 import { ExpandLess, ExpandMore } from "@mui/icons-material";
 
-const AdvCardItemTransaction: FC<Props> = (props) => {
+const AdvCardItemTransaction: FC<CardItemTransactionProps> = (props) => {
   const {
     title,
     tag,
@@ -59,7 +59,7 @@ const AdvCardItemTransaction: FC<Props> = (props) => {
   );
 };
 
-interface Props {
+export interface CardItemTransactionProps {
   avatar: {
     type: "icon" | "image";
     content: ReactNode | string;
