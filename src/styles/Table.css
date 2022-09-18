@@ -1,0 +1,22 @@
+.table-container {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+table td,
+table th {
+  font-size: 0.875rem;
+  display: table-cell;
+}
+table th {
+  font-weight: 500;
+}
+table td {
+  font-weight: 400;
+}
+table .table-cell:first-child {
+  padding-left: 1.2rem;
+}/*# sourceMappingURL=Table.css.map */
