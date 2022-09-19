@@ -2,7 +2,13 @@ import { CSSProperties, FC, ReactNode } from "react";
 import styled from "styled-components";
 import useTheme from "../../theme/useTheme";
 import genColorShades from "../../utils/genColorShades";
-const TableRow: FC<PropsType> = ({ classes, children, hover, selected }) => {
+const TableRow: FC<PropsType> = ({
+  classes,
+  children,
+  hover,
+  selected,
+  compact,
+}) => {
   const {
     theme: { primaryColor },
   } = useTheme();
@@ -13,6 +19,7 @@ const TableRow: FC<PropsType> = ({ classes, children, hover, selected }) => {
       selected={selected}
       className={`holy-table-row ${classes ? classes : ""}`}
       theme={{ primaryColor }}
+      compact={compact}
     >
       {children}
     </Tr>
@@ -37,10 +44,20 @@ const Tr = styled("tr")<StyledProps>`
         };
         transition: 0.2s linear background;
     }`}
+
+  ${({ compact }) =>
+    compact &&
+    `
+      td, th {
+        padding-top: 0.2rem;
+        padding-bottom: 0.2rem;
+      }
+    `}
 `;
 interface StyledProps {
   hover?: boolean;
   selected?: boolean;
+  compact?: boolean;
 }
 interface PropsType extends StyledProps {
   classes?: string;
