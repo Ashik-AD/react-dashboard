@@ -12,10 +12,13 @@ const Table = <T extends unknown, R extends unknown>({
   className,
   fields,
   renderField,
+  title,
 }: TableProps<T, R>) => {
   return (
     <Card className="table-container">
-      <CustomCardTitle title={<Text>Basic Table</Text>} showIcon={false} />
+      {title && (
+        <CustomCardTitle title={<Text>{title}</Text>} showIcon={false} />
+      )}
       <table className={`holy-table ${className ? className : ""}`}>
         {fields && renderField && (
           <TableHead>
@@ -44,5 +47,6 @@ interface TableProps<T, R> {
   row: T[];
   fields?: R[];
   className?: string;
+  title?: string;
 }
 export default Table;
