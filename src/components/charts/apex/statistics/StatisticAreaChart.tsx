@@ -5,7 +5,7 @@ import useTheme from "../../../../theme/useTheme";
 import genColorShades from "../../../../utils/genColorShades";
 import ApexDataSeries from "../../type/ApexSeries";
 
-const StatisticAreaChart: FC<ApexDataSeries> = ({ data }) => {
+const StatisticAreaChart: FC<Props> = ({ data, height, width }) => {
   const {
     theme: { primaryColor },
   } = useTheme();
@@ -30,10 +30,16 @@ const StatisticAreaChart: FC<ApexDataSeries> = ({ data }) => {
   return (
     <StatisticPlainChart
       chartOption={option}
-      // series={[{ data: [5, 12, 8, 24, 18, 29, 26] }]}
       series={data}
+      height={height}
+      width={width}
     />
   );
 };
+
+interface Props extends ApexDataSeries {
+  height?: number | string;
+  width?: number | string;
+}
 
 export default StatisticAreaChart;
