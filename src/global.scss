@@ -1,5 +1,6 @@
 @use "sass:list";
 @use "sass:meta";
+@import "./_variables";
 
 h1,
 .h1 {
@@ -80,17 +81,7 @@ h6,
     text-transform: uppercase;
 }
 
-$xs: 0px;
-$sm: 600px;
-$md: 900px;
-$lg: 1200px;
-$xlg: 1536px;
-$alerts: (
-    "error": rgb(211, 47, 47),
-    "warning": rgb(245, 124, 0),
-    "info": rgb(2, 136, 209),
-    "success": rgb(21, 158, 28)
-);
+
 
 @each $name,
 $color in $alerts {
@@ -102,13 +93,6 @@ $color in $alerts {
         color: $color;
     }
 }
-
-$fontWeights: (
-    "regular" : 400,
-    "medium": 500,
-    "bold": 600,
-    "extra-bold": 800
-);
 
 @each $name,
 $size in $fontWeights {
@@ -136,8 +120,6 @@ $size in $fontWeights {
     }
 }
 
-$total: 12;
-$size: 8.33333333333%;
 
 @for $i from 1 through $total {
     @include cols($i, calc($i * $size), '');
