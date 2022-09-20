@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
-import { GridLayoutProps } from "./grid-type";
+import { GridLayoutProps } from "./type";
 
-const GridLayout = styled.section<GridLayoutProps>`
+const GridLayout = styled('div') <GridLayoutProps>`
     display: flex;
     flex-wrap: wrap;
         width: 100%;
@@ -10,7 +10,7 @@ const GridLayout = styled.section<GridLayoutProps>`
 
     align-items: ${({ alignItems }) => alignItems === 'flex-start' ? 'flex-start' : alignItems === 'center' ? 'center' : alignItems === 'flex-end' ? 'flex-end' : alignItems === 'stretch' ? 'stretch' : alignItems === 'baseline' ? 'baseline' : 'flex-start'};
 
-    justify-content: ${({ justifyContent }) => justifyContent === 'flex-start' ? 'flex-start' : justifyContent === 'center' ? 'center' : justifyContent === 'flex-end' ? 'flex-end' : justifyContent === 'space-around' ? 'space-around' : justifyContent === 'space-between' ? 'space-between' : justifyContent === 'space-evenly' ? 'space-evenly' : 'flex-start'};
+    justify-content: ${({ justifyContent }) => justifyContent === 'flex-start' ? 'flex-start' : justifyContent === 'center' ? 'center' : justifyContent === 'flex-end' ? 'flex-end' : justifyContent === 'space-around' ? 'space-around' : justifyContent === 'space-between' ? 'space-between' : justifyContent === 'space-evenly' ? 'space-evenly' : 'initial'};
 
     // spacing
     ${({ spacing }) => typeof spacing === 'number' && `& > .grid-item {padding-left: ${spacing}rem; padding-bottom: ${spacing}rem;}`}
@@ -23,6 +23,7 @@ const GridLayout = styled.section<GridLayoutProps>`
 
     @media screen and (min-width: 0px){
         & {
+            margin-left: 0;
             ${({ spacing }) => typeof spacing === 'object' && `& > .grid-item {padding-left: ${spacing.xs}rem; padding-bottom: ${spacing.xs}rem;}`
         }
             ${({ rowSpacing }) => typeof rowSpacing === 'object' && `& > .grid-item {padding-bottom: ${rowSpacing.xs}rem;}`
@@ -34,6 +35,7 @@ const GridLayout = styled.section<GridLayoutProps>`
 
     @media screen and (min-width: 600px){
         & {
+            margin-left: 0;
             ${({ spacing }) => typeof spacing === 'object' && `& > .grid-item {padding-left: ${spacing.sm}rem; padding-bottom: ${spacing.sm}rem;}`
         }
             ${({ rowSpacing }) => typeof rowSpacing === 'object' && `& > .grid-item {padding-bottom: ${rowSpacing.sm}rem;}`
@@ -54,6 +56,8 @@ const GridLayout = styled.section<GridLayoutProps>`
     }
     @media screen and (min-width: 1200px){
         & {
+            ${({ spacing, columnSpacing }) => (spacing || columnSpacing) && `margin-left: -${(spacing || columnSpacing)}rem;`}
+            
             ${({ spacing }) => typeof spacing === 'object' && `& > .grid-item {padding-left: ${spacing.lg}rem; padding-bottom: ${spacing.lg}rem;}`
         }
             ${({ rowSpacing }) => typeof rowSpacing === 'object' && `& > .grid-item {padding-bottom: ${rowSpacing.lg}rem;}`
@@ -71,6 +75,10 @@ const GridLayout = styled.section<GridLayoutProps>`
             ${({ columnSpacing }) => typeof columnSpacing === 'object' && `& > .grid-item {padding-left: ${columnSpacing.xlg}rem;}`
         }
         }
+    }
+
+    & .grid-container {
+        margin-left: 0!important;
     }
 `;
 export default GridLayout;

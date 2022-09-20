@@ -6,6 +6,20 @@ interface Spacing {
     lg?: number;
     xlg?: number;
 }
+// interface Margins {
+//     margin?: number;
+//     ml?: number;
+//     mr?: number;
+//     mt?: number;
+//     mb?: number;
+// }
+// interface Paddings {
+//     padding?: number;
+//     pt?: number;
+//     pr?: number;
+//     pb?: number;
+//     pl?: number;
+// }
 export interface GridLayoutProps {
     children: ReactNode;
     direction?: 'row' | 'column' | 'row-reverse' | 'column-reverse';

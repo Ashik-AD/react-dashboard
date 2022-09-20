@@ -1,7 +1,7 @@
 import { FC } from "react";
 import useTheme from "../../theme/useTheme";
 import TextType, { HeadingType } from "./type";
-import { Paragraph, TextSpan } from "./text.styled";
+import { Paragraph, TextSpan } from "./styled";
 
 const Text: FC<TextType> = ({
   children,
