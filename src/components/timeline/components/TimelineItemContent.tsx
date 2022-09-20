@@ -4,7 +4,8 @@ import Box from "../../box/Box";
 import { BoxProps } from "../../box/type";
 
 const TimelineItemContent: FC<Props> = (props) => {
-  const { subject, timestamp, description, children, style, banner } = props;
+  const { subject, timestamp, description, children, style, banner, colors } =
+    props;
   return (
     <Box
       display="flex"
@@ -13,17 +14,23 @@ const TimelineItemContent: FC<Props> = (props) => {
       {...style}
       pl={16}
       pb={8}
+      flex="1 1 auto"
     >
       {banner && <Box display="flex">{banner}</Box>}
       <Box display="flex" pt={6}>
-        <Text weight="bold" varient="body1" styles={{ flex: "1 1 auto" }}>
+        <Text
+          weight="bold"
+          varient="body1"
+          styles={{ flex: "1 1 auto" }}
+          color={colors?.subject}
+        >
           {subject}
         </Text>
         <Text varient="caption" secondary={true}>
           {timestamp}
         </Text>
       </Box>
-      <Text varient="body2" paragraph={true}>
+      <Text varient="body2" paragraph={true} color={colors?.description}>
         {description}
       </Text>
       {children && (
@@ -42,6 +49,10 @@ interface Props {
   children?: ReactNode;
   style?: BoxProps;
   banner?: ReactNode;
+  colors?: {
+    subject?: string;
+    description?: string;
+  };
 }
 
 export default TimelineItemContent;

@@ -7,7 +7,7 @@ const Timeline: FC<Props> = ({ children, classes, style, banner }) => {
       {banner && banner}
       <ul
         className={`timeline-container ${classes ? classes : ""}`}
-        style={style}
+        style={{ display: "flex", flexDirection: "column", ...style }}
       >
         {children}
       </ul>
