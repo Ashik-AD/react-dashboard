@@ -30,9 +30,16 @@ const TimelineItemContent: FC<Props> = (props) => {
           {timestamp}
         </Text>
       </Box>
-      <Text varient="body2" paragraph={true} color={colors?.description}>
-        {description}
-      </Text>
+      {description && (
+        <Text
+          varient="body2"
+          paragraph={true}
+          secondary={true}
+          color={colors?.description}
+        >
+          {description}
+        </Text>
+      )}
       {children && (
         <Box display="flex" flexDirection="column">
           {children}
@@ -45,7 +52,7 @@ const TimelineItemContent: FC<Props> = (props) => {
 interface Props {
   subject: string;
   timestamp: string;
-  description: string;
+  description?: string;
   children?: ReactNode;
   style?: BoxProps;
   banner?: ReactNode;
