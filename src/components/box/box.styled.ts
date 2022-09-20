@@ -9,9 +9,9 @@ const box = styled('div') <BoxProps>`
         align-items: ${align ? align : 'initial'}};
         justify-content: ${justify ? justify : 'initial'}};
         flex-direction: ${flexDirection ? flexDirection : 'row'};
-        flex-wrap: ${wrap};
+        flex-wrap: ${wrap || 'initial'};
         gap: ${space}rem;
-        ${flex && `flex: ${flex};`}
+        flex: ${flex || 'initial'};
         `
     }
 
