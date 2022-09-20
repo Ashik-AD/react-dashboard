@@ -3,14 +3,18 @@ import styled from "styled-components";
 import useTheme from "../../../theme/useTheme";
 import { alertColor, AlertColorType } from "../../../ui/color/alert";
 
-const TimelineSeparator: FC<Props> = () => {
+const TimelineSeparator: FC<Props> = ({ color, component, varient }) => {
   const {
     theme: { mode, primaryColor },
   } = useTheme();
 
   return (
-    <StyledConnector theme={{ mode, primaryColor }}>
-      <span className="connect-circle" />
+    <StyledConnector
+      theme={{ mode, primaryColor }}
+      color={color}
+      varient={varient ? varient : "filled"}
+    >
+      <span className="connect-circle">{component}</span>
       <span className="connect-line" />
     </StyledConnector>
   );
@@ -34,12 +38,12 @@ const StyledConnector = styled("div")<Props>`
   }
 
   & .connect-circle {
-    ${({ varient, color, theme }) => `
-      background: ${
-        varient && varient === "filled" && color
+    background: ${({ varient, color, theme }) =>
+      varient !== "outlined"
+        ? color
           ? alertColor[color]
           : theme.primaryColor.color
-      }`};
+        : "transparent"};
     margin: 11px auto;
     height: 12px;
     width: 12px;
