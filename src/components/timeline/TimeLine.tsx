@@ -1,16 +1,29 @@
 import { FC, ReactNode, CSSProperties } from "react";
+import Box from "../box/Box";
 import Card from "../card/Card";
-
-const Timeline: FC<Props> = ({ children, classes, style, banner }) => {
+import CustomCardTitle from "../card/titles/CustomCardTitle";
+import { Text } from "../../ui";
+const Timeline: FC<Props> = ({ children, classes, style, banner, title }) => {
   return (
     <Card>
       {banner && banner}
-      <ul
-        className={`timeline-container ${classes ? classes : ""}`}
-        style={{ display: "flex", flexDirection: "column", ...style }}
-      >
-        {children}
-      </ul>
+      {title && (
+        <CustomCardTitle
+          title={
+            <Text heading="h5" weight="bold">
+              {title}
+            </Text>
+          }
+        />
+      )}
+      <Box px={20} pb={20}>
+        <ul
+          className={`timeline-container ${classes ? classes : ""}`}
+          style={{ display: "flex", flexDirection: "column", ...style }}
+        >
+          {children}
+        </ul>
+      </Box>
     </Card>
   );
 };
@@ -19,5 +32,6 @@ interface Props {
   banner?: ReactNode;
   classes?: string;
   style?: CSSProperties;
+  title?: string;
 }
 export default Timeline;
