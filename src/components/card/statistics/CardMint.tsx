@@ -16,15 +16,20 @@ const CardMint: FC<PropsType> = (props) => {
           paddingLeft: "1rem",
           paddingRight: "1rem",
         }}
-        title={<CustomAvatar color={iconBackground}>{icon}</CustomAvatar>}
+        title={
+          <CustomAvatar color={iconBackground} size={40}>
+            {icon}
+          </CustomAvatar>
+        }
       />
       <Box
         display="flex"
         flexDirection="column"
         px={16}
-        pb={20}
+        pb={26}
         pt={8}
         space={0.4}
+        className="car-body"
       >
         <Text
           varient="body2"
@@ -33,7 +38,7 @@ const CardMint: FC<PropsType> = (props) => {
         >
           {title}
         </Text>
-        <Box display="flex" mb={10} space={0.5}>
+        <Box display="flex" mb={16} space={0.5}>
           <Text heading="h6" styles={{ fontWeight: 500 }}>
             {currency && "$"}
             {formatNumber(total, 1000)}

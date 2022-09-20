@@ -67,7 +67,7 @@ const CardWidgetSalesOverview = () => {
   return (
     <Card>
       <CardTitle title="Sales Overview" />
-      <Box py={36}>
+      <Box py={34}>
         <GridContainer>
           <GridItem xs={12} sm={6}>
             <ReactApexChart
