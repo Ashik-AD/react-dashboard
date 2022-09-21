@@ -1,15 +1,15 @@
 import styled from 'styled-components';
 import { alertColor, Colors } from '../color/alert';
-import { CustomAvatarProps } from './type';
+import { CustomAvatarProps, StyleBaseProps } from './type';
 
-export const AvtarWrapper = styled.span<{ size?: number }>`
+export const AvtarWrapper = styled.span<StyleBaseProps>`
     position: relative;
-    display: inline-flex;
+    display: flex;
     min-height: ${({ size }) => size ? size : 40}px;    
     min-width: ${({ size }) => size ? size : 40}px;    
     height: ${({ size }) => size ? size : 40}px;    
     width: ${({ size }) => size ? size : 40}px;    
-    border-radius: 50%;
+    border-radius: ${({ varient }) => varient === 'rounded' ? '10%' : varient === 'square' ? '1%' : "50%"};
     overflow: hidden;
 `
 
@@ -45,7 +45,7 @@ export const CustomeAvatarWrapper = styled('span') <CustomAvatarProps>`
         top: 0;
         left: 0;
         background: ${({ theme, color }) => color ? alertColor.hasOwnProperty(color) ? alertColor[color as keyof Colors] : color : theme.name === 'dark' ? '#565555' : '#c8c5c5'};
-        ${({ skin }) => skin && skin === 'light' ? `filter: opacity(10%);` : ''}
+        ${({ skin }) => skin && skin === 'light' ? `filter: opacity(20%);` : ''}
         z-index: -1;
     }
 

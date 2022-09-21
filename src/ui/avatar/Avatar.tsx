@@ -3,9 +3,14 @@ import { AvatarImage, AvtarWrapper } from "./avatar.styled";
 import { AvatarProps } from "./type";
 
 const Avatar: FC<AvatarProps> = (props) => {
-  const { src, alt, size, styles } = props;
+  const { src, alt, size, styles, classes, varient } = props;
   return (
-    <AvtarWrapper size={size} style={{ ...styles }}>
+    <AvtarWrapper
+      size={size}
+      varient={varient}
+      style={{ ...styles }}
+      className={`avatar ${classes ? classes : {}}`}
+    >
       <AvatarImage src={src} alt={alt} />
     </AvtarWrapper>
   );
