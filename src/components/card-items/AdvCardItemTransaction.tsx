@@ -14,17 +14,17 @@ const AdvCardItemTransaction: FC<CardItemTransactionProps> = (props) => {
     arrow,
     iconColor,
     trending,
-    avatar: { type, content, alt },
+    avatar: { type, icon, image },
   } = props;
   return (
     <Box display="flex" justify="space-between" px={20} mb={16}>
       <Box display="flex" space={0.5}>
         {type === "icon" ? (
           <CustomAvatar varient="rounded" skin="light" color={iconColor}>
-            {content}
+            {icon}
           </CustomAvatar>
-        ) : type === "image" && typeof content === "string" ? (
-          <Avatar src={content} alt={alt ? alt : title} />
+        ) : type === "image" ? (
+          <>{image}</>
         ) : (
           ""
         )}
@@ -36,6 +36,7 @@ const AdvCardItemTransaction: FC<CardItemTransactionProps> = (props) => {
           <Text
             paragraph={true}
             varient="caption"
+            secondary={true}
             styles={{ marginTop: 5, opacity: 0.5 }}
           >
             {tag}
@@ -43,7 +44,7 @@ const AdvCardItemTransaction: FC<CardItemTransactionProps> = (props) => {
         </Box>
       </Box>
       <Box display="flex" align="center">
-        <Text paragraph={true} weight="bold" color={color}>
+        <Text paragraph={true} weight="bold" color={color} varient="body1">
           {trending && trending.show && (status === "increase" ? "+" : "-")}
           {currency && "$"}
           {total}
@@ -62,8 +63,8 @@ const AdvCardItemTransaction: FC<CardItemTransactionProps> = (props) => {
 export interface CardItemTransactionProps {
   avatar: {
     type: "icon" | "image";
-    content: ReactNode | string;
-    alt?: string;
+    icon?: ReactNode;
+    image?: ReactNode;
   };
   title: string;
   tag?: string;

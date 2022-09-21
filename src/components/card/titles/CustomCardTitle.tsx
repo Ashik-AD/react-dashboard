@@ -15,9 +15,13 @@ const CustomCardTitle: FC<Props> = (props) => {
         ""
       ) : (
         <span style={{ position: "relative" }}>
-          <IconButton varient="text">
-            <MoreVert />
-          </IconButton>
+          {props.icons ? (
+            props.icons
+          ) : (
+            <IconButton varient="text">
+              <MoreVert />
+            </IconButton>
+          )}
           {props.component && (
             <div className="current-action-dropdown">{props.component}</div>
           )}
@@ -39,5 +43,6 @@ const TextWrapper = styled("span")`
   display: flex;
   flex: 1 1 auto;
   flex-direction: column;
+  gap: 0.4rem;
 `;
 export default CustomCardTitle;

@@ -7,7 +7,7 @@ import { GridContainer, GridItem } from "../../layout";
 const CardGimificationLarge: FC<Props> = (props) => {
   const { greet, message, banner } = props;
   return (
-    <Card>
+    <Card className="overflow-unset-important">
       <GridContainer columnSpacing={1.5}>
         <GridItem xs={12} sm={6} lg={6}>
           <Box display="flex" flexDirection="column" space={1.3} py={25}>

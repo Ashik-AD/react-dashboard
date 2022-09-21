@@ -1,15 +1,15 @@
-import { ExpandLess, ExpandMore } from "@mui/icons-material";
 import { FC, ReactNode } from "react";
 import { Text } from "../../ui";
+import ArrowIndicator from "../../ui/arrow/ArrowIndicator";
 import Box from "../box/Box";
 
 const CardItemSalesWithIcon: FC<Props> = (props) => {
   const { label, total, icon, avatar, category, growth, status, tag } = props;
   return (
     <Box display="flex" align="center" justify="space-between" px={20} mb={16}>
-      <Box display="flex" align="center" space={0.5}>
+      <Box display="flex" align="center" space={0.8}>
         <Box display="flex">{avatar ? avatar : icon ? icon : ""}</Box>
-        <Box display="flex" flexDirection="column" space={0.3}>
+        <Box display="flex" flexDirection="column" space={0.1} pr={4}>
           <Box display="flex">
             <Text paragraph={true} weight="bold">
               {label}
@@ -18,22 +18,14 @@ const CardItemSalesWithIcon: FC<Props> = (props) => {
               display="flex"
               align="center"
               className={`${
-                status === "increase"
-                  ? "alert-success-text"
-                  : "alert-error-text"
+                status === "inc" ? "alert-success-text" : "alert-error-text"
               }`}
             >
-              {status === "increase" ? (
-                <ExpandLess />
-              ) : status === "decrease" ? (
-                <ExpandMore />
-              ) : (
-                ""
-              )}
+              {status ? <ArrowIndicator status={status} color={true} /> : ""}
               <Text
                 varient="caption"
                 weight="bold"
-                color={`${status === "increase" ? "success" : "error"}`}
+                color={`${status === "inc" ? "success" : "error"}`}
               >
                 {growth}%
               </Text>
@@ -72,7 +64,7 @@ interface Props {
   total: string | number;
   growth?: string | number;
   category?: string;
-  status?: "increase" | "decrease";
+  status?: "inc" | "dec";
 }
 
 export default CardItemSalesWithIcon;

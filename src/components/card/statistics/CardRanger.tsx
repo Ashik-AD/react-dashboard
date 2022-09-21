@@ -7,7 +7,7 @@ import formatNumber from "../../../utils/formatNumber";
 const CardRanger: FC<PropsType> = (props) => {
   const { title, tag, total, growth, status, ranger, color } = props;
   return (
-    <Card position="relative" mt="20px">
+    <Card position="relative" mt="20px" className="overflow-unset-important">
       <Box display="flex" px={16} py={20}>
         <Box display="flex" flexDirection="column">
           <Text

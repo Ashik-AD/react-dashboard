@@ -17,7 +17,7 @@ const CardGimificationWithAction: FC<Props> = (props) => {
   } = props;
   const { theme } = useTheme();
   return (
-    <Card>
+    <Card className="overflow-unset-important">
       <Box display="flex" flexDirection="column" padding={20}>
         <Box>
           <Text heading="h6" styles={{ fontWeight: 600 }}>
