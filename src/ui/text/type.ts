@@ -25,6 +25,7 @@ export default interface TextType {
     styles?: CSSProperties;
     weight?: weight;
     secondary?: boolean;
+    skinColor?: boolean;
 }
 
 export interface HeadingType {

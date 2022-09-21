@@ -14,6 +14,7 @@ const Text: FC<TextType> = ({
   styles,
   weight,
   secondary,
+  skinColor,
 }) => {
   const { theme } = useTheme();
   return (
@@ -23,11 +24,12 @@ const Text: FC<TextType> = ({
           className={`${varient}`}
           size={size}
           align={align}
-          theme={{ mode: theme.mode }}
+          theme={{ mode: theme.mode, primaryColor: theme.primaryColor }}
           weight={weight}
           style={{ ...styles }}
           color={color}
           secondary={secondary}
+          skinColor={skinColor}
         >
           {children}
         </Paragraph>
@@ -46,10 +48,11 @@ const Text: FC<TextType> = ({
           size={size}
           color={color}
           align={align}
-          theme={{ mode: theme.mode }}
+          theme={{ mode: theme.mode, primaryColor: theme.primaryColor }}
           style={{ ...styles }}
           weight={weight}
           secondary={secondary}
+          skinColor={skinColor}
         >
           {children}
         </TextSpan>
