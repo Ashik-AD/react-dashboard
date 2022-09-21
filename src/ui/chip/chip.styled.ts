@@ -2,14 +2,14 @@ import styled from 'styled-components'
 import { alertColor, Colors } from '../color/alert'
 import { ChipProps } from './type'
 
-const ChipWrapper = styled("div") <ChipProps>`
+const ChipWrapper = styled("span") <ChipProps>`
     position: relative;
     display: flex;
     align-items: center;
     width: fit-content;
     background: ${({ theme, varient, color, skin }) => varient === 'outlined' || skin ? 'transparent' : varient === 'fill' && color ? alertColor.hasOwnProperty(color) ? alertColor[color as keyof Colors] : color : theme.color};
     color: ${({ color, varient, theme, skin }) => varient === 'outlined' || skin === 'light' ? color ? alertColor.hasOwnProperty(color) ? alertColor[color as keyof Colors] : color : theme.color : "#fff"};
-    padding: ${({ size }) => size === "small" ? "0 10px" : "3px 12px"};
+    padding: ${({ size }) => size === "small" ? "0.5px 10px" : "3px 12px"};
     font-size: ${({ size }) => size === 'small' ? '12px' : '15px'};
     border-radius: 20px;
     max-height: 40px;
