@@ -81,6 +81,21 @@ h6,
     text-transform: uppercase;
 }
 
+.overflow-hidden {
+    overflow: hidden;
+}
+
+.overflow-x-hidden {
+    overflow-x: hidden;
+}
+
+.overflow-y-hidden {
+    overflow-y: hidden;
+}
+
+.overflow-unset-important {
+    overflow: unset !important;
+}
 
 
 @each $name,
