@@ -13,28 +13,32 @@ const Table = <T extends unknown, R extends unknown>({
   fields,
   renderField,
   title,
+  children,
 }: TableProps<T, R>) => {
   return (
     <Card className="table-container">
       {title && (
         <CustomCardTitle title={<Text>{title}</Text>} showIcon={false} />
       )}
-      <table className={`holy-table ${className ? className : ""}`}>
-        {fields && renderField && (
-          <TableHead>
-            <TableRow>
-              {fields.map((item) => (
-                <>{renderField(item)}</>
-              ))}
-            </TableRow>
-          </TableHead>
-        )}
-        <TableBody>
-          {row.map((item) => (
-            <>{renderRow(item)}</>
-          ))}
-        </TableBody>
-      </table>
+      {children && children}
+      <div className="table-wrapper">
+        <table className={`holy-table ${className ? className : ""}`}>
+          {fields && renderField && (
+            <TableHead>
+              <TableRow>
+                {fields.map((item) => (
+                  <>{renderField(item)}</>
+                ))}
+              </TableRow>
+            </TableHead>
+          )}
+          <TableBody>
+            {row.map((item) => (
+              <>{renderRow(item)}</>
+            ))}
+          </TableBody>
+        </table>
+      </div>
     </Card>
   );
 };
@@ -48,5 +52,6 @@ interface TableProps<T, R> {
   fields?: R[];
   className?: string;
   title?: string;
+  children?: ReactNode;
 }
 export default Table;

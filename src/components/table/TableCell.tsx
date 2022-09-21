@@ -1,11 +1,11 @@
-import { FC, ReactNode } from "react";
+import { FC, ReactNode, CSSProperties } from "react";
 import styled from "styled-components";
 import useTheme from "../../theme/useTheme";
 const TableCell: FC<PropsType> = (props) => {
   const {
     theme: { mode },
   } = useTheme();
-  const { value, label, align, border, compact, as, weight } = props;
+  const { value, label, align, border, compact, as, weight, style } = props;
   return (
     <Cell
       aria-label={`table-data ${label ? label : ""}`}
@@ -16,26 +16,38 @@ const TableCell: FC<PropsType> = (props) => {
       border={border}
       compact={compact}
       theme={{ mode }}
+      style={style}
     >
       {value}
     </Cell>
   );
 };
+const color = (mode: "dark" | "light") =>
+  mode === "dark" ? "rgb(84 84 84)" : "rgb(221 221 221)";
 
 const Cell = styled("td")<StyledProps>`
   padding: ${({ compact }) => (compact ? "0.2rem 1rem" : "1rem")};
   ${({ align }) => align && `text-align: ${align};`}
-  border-bottom: 1px solid
-    ${({ theme }) =>
-    theme.mode.name === "dark" ? "rgb(84 84 84)" : "rgb(221 221 221)"};
-  ${({ border }) =>
+  border-bottom: 1px solid ${({ theme }) => color(theme.mode.name)};
+  white-space: nowrap;
+  ${({ border, theme }) =>
     border &&
     `
         ${!border.show ? `border: none;` : ""}
-        ${border.top ? `border-top: 1px solid;` : ""}
-        ${border.right ? `border-right: 1px solid;` : ""}
-        ${border.bottom ? `border-bottom: 1px solid;` : ""}
-        ${border.left ? `border-left: 1px solid;` : ""}
+        ${border.top ? `border-top: 1px solid ${color(theme.mode.name)};` : ""}
+        ${
+          border.right
+            ? `border-right: 1px solid ${color(theme.mode.name)};`
+            : ""
+        }
+        ${
+          border.bottom
+            ? `border-bottom: 1px solid ${color(theme.mode.name)};`
+            : ""
+        }
+        ${
+          border.left ? `border-left: 1px solid ${color(theme.mode.name)};` : ""
+        }
     `}
   font-size: 0.875rem;
   font-weight: ${({ weight }) => (weight ? weight : 400)};
@@ -59,6 +71,7 @@ interface PropsType extends StyledProps {
   value: string | number | ReactNode;
   label?: string | number;
   as?: "td" | "th";
+  style?: CSSProperties;
 }
 
 export default TableCell;
