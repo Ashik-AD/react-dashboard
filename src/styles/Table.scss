@@ -2,6 +2,10 @@
     overflow-x: auto;
 }
 
+.table-wrapper {
+    overflow-x: auto;
+}
+
 table {
     width: 100%;
     border-collapse: collapse;
@@ -23,5 +27,6 @@ table {
 
     .table-cell:first-child {
         padding-left: 1.2rem;
+        text-align: left;
     }
 }
