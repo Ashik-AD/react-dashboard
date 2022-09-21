@@ -15,7 +15,11 @@ const ProgressLinear: FC<ProgressProps> = (props) => {
         <div className="progress-outer" />
         <div className="progress-inner" />
       </Progress>
-      {props.label && <Text>{props.label}</Text>}
+      {props.label && (
+        <Text varient="body2" secondary={true}>
+          {props.label}
+        </Text>
+      )}
     </Box>
   );
 };
