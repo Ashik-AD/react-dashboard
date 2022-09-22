@@ -15,6 +15,8 @@ const AdvCardItemTransaction: FC<CardItemTransactionProps> = (props) => {
     iconColor,
     trending,
     avatar: { type, icon, image },
+    titleStyle,
+    totalStyle,
   } = props;
   return (
     <Box display="flex" justify="space-between" px={20} mb={16}>
@@ -30,7 +32,11 @@ const AdvCardItemTransaction: FC<CardItemTransactionProps> = (props) => {
         )}
 
         <Box>
-          <Text paragraph={true} weight="medium">
+          <Text
+            paragraph={true}
+            weight={titleStyle?.fontWeight ? titleStyle.fontWeight : "medium"}
+            size={titleStyle?.fontSize && titleStyle.fontSize}
+          >
             {title}
           </Text>
           <Text
@@ -44,7 +50,13 @@ const AdvCardItemTransaction: FC<CardItemTransactionProps> = (props) => {
         </Box>
       </Box>
       <Box display="flex" align="center">
-        <Text paragraph={true} weight="bold" color={color} varient="body1">
+        <Text
+          paragraph={true}
+          weight={totalStyle?.fontWeight ? totalStyle.fontWeight : "bold"}
+          color={color}
+          varient="body2"
+          size={totalStyle?.fontSize && totalStyle.fontSize}
+        >
           {trending && trending.show && (status === "increase" ? "+" : "-")}
           {currency && "$"}
           {total}
@@ -60,6 +72,10 @@ const AdvCardItemTransaction: FC<CardItemTransactionProps> = (props) => {
   );
 };
 
+interface FontStyle {
+  fontSize?: number;
+  fontWeight?: "bold" | "medium" | "regular";
+}
 export interface CardItemTransactionProps {
   avatar: {
     type: "icon" | "image";
@@ -75,6 +91,8 @@ export interface CardItemTransactionProps {
   color?: string;
   arrow?: boolean;
   trending?: { show: boolean };
+  titleStyle?: FontStyle;
+  totalStyle?: FontStyle;
 }
 
 export default AdvCardItemTransaction;
