@@ -2,6 +2,7 @@ import { ReactNode } from "react";
 
 export interface BoxProps {
     children: ReactNode;
+    position?: "relative" | "absolute" | "fixed" | "sticky";
     display?: 'flex' | 'block' | 'inline-block';
     justify?: 'space-between' | 'space-around' | 'space-evenly' | 'flex-start' | 'center' | 'flex-end';
     align?: 'flex-start' | 'center' | 'flex-end' | 'baseline' | 'stretch' | 'normal';

@@ -3,7 +3,7 @@ import styled
 import { BoxProps } from "./type";
 
 const box = styled('div') <BoxProps>`
-    position: relative;
+    position: ${({ position }) => position ? position : 'relative'};
     display: ${({ display }) => display ? display : 'block'};
     ${({ display, align, justify, flexDirection, space, wrap, flex }) => display === 'flex' && `
         align-items: ${align ? align : 'initial'}};
