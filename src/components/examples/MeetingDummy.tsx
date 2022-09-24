@@ -81,5 +81,5 @@ const meetings = [
 ];
 
 export default function MeetingDummy() {
-  return <AdvanceCardMeeting title="Meetings" items={meetings} />;
+  return <AdvanceCardMeeting title="Meeting Schedule" items={meetings} />;
 }
