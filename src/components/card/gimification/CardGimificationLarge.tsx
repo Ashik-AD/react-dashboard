@@ -8,7 +8,7 @@ const CardGimificationLarge: FC<Props> = (props) => {
   const { greet, message, banner } = props;
   return (
     <Card className="overflow-unset-important">
-      <GridContainer columnSpacing={1.5}>
+      <GridContainer columnSpacing={1.5} noShifting={true}>
         <GridItem xs={12} sm={6} lg={6}>
           <Box display="flex" flexDirection="column" space={1.3} py={25}>
             <Text heading="h5" styles={{ fontWeight: 600 }}>

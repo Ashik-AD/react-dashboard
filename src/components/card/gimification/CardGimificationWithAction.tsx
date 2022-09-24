@@ -3,7 +3,8 @@ import styled from "styled-components";
 import useTheme from "../../../theme/useTheme";
 import { Text } from "../../../ui";
 import Box from "../../box/Box";
-import { GridContainer, GridItem } from "../../layout";
+import { GridItem } from "../../layout";
+import GridInnerContainer from "../../layout/grid/GridInnerContainer";
 import Card from "../Card";
 
 const CardGimificationWithAction: FC<Props> = (props) => {
@@ -20,20 +21,21 @@ const CardGimificationWithAction: FC<Props> = (props) => {
     <Card className="overflow-unset-important">
       <Box display="flex" flexDirection="column" padding={20}>
         <Box>
-          <Text heading="h6" styles={{ fontWeight: 600 }}>
+          <Text heading="h6" weight="medium">
             {greet}
           </Text>
           <Text varient="body2" secondary={true}>
             {message}
           </Text>
         </Box>
-        <GridContainer>
+        <GridInnerContainer>
           <GridItem xs={6}>
             <Box display="flex" flexDirection="column">
               <Text
                 heading="h5"
                 color={theme.primaryColor.color}
-                styles={{ fontWeight: 600, marginTop: 12 }}
+                weight="medium"
+                styles={{ marginTop: 12 }}
               >
                 {total}
               </Text>
@@ -52,7 +54,7 @@ const CardGimificationWithAction: FC<Props> = (props) => {
               <Image src={banner} {...bannerOption} />
             </Box>
           </GridItem>
-        </GridContainer>
+        </GridInnerContainer>
       </Box>
     </Card>
   );
@@ -63,7 +65,7 @@ interface Props {
   message: string;
   stat: {
     total: number | string;
-    description: string;
+    description?: string;
   };
   banner: string;
   bannerOption?: BannerOptions;
