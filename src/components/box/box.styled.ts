@@ -1,6 +1,7 @@
 import styled
     from "styled-components";
-import { BoxProps } from "./type";
+import { alertColor, AlertColorType } from "../../ui/color/alert";
+import { BoxProps, ColorBoxProps } from "./type";
 
 const box = styled('div') <BoxProps>`
     position: ${({ position }) => position ? position : 'relative'};
@@ -30,5 +31,21 @@ const box = styled('div') <BoxProps>`
     ${({ pr }) => pr && `padding-right: ${pr}px;`}
     ${({ pb }) => pb && `padding-bottom: ${pb}px;`}
     ${({ pl }) => pl && `padding-left: ${pl}px;`}
+ `
+
+export const StyledColorBox = styled(box) <ColorBoxProps>`
+    z-index: 1;
+
+    &:after {
+        position: absolute;
+        content: '';
+        background: ${({ theme, color }) => color ? alertColor.hasOwnProperty(color) ? alertColor[color as AlertColorType] : color : theme.primaryColor.color};
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        opacity: ${({ transparency }) => transparency ? `0.${transparency}` : 1};
+        z-index: -1;
+    }
  `
 export default box;

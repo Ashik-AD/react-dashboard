@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import { CSSProperties, ReactNode } from "react";
 
 export interface BoxProps {
     children: ReactNode;
@@ -25,4 +25,10 @@ export interface BoxProps {
     pr?: number;
     pb?: number;
     pl?: number;
+    style?: CSSProperties;
+}
+
+export interface ColorBoxProps extends BoxProps {
+    transparency?: number;
+    color?: string;
 }
