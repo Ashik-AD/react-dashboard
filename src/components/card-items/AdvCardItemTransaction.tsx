@@ -20,9 +20,14 @@ const AdvCardItemTransaction: FC<CardItemTransactionProps> = (props) => {
   } = props;
   return (
     <Box display="flex" justify="space-between" px={20} mb={16}>
-      <Box display="flex" space={0.5}>
+      <Box display="flex" space={0.8}>
         {type === "icon" ? (
-          <CustomAvatar varient="rounded" skin="light" color={iconColor}>
+          <CustomAvatar
+            varient="rounded"
+            skin="light"
+            color={iconColor}
+            fontSize={24}
+          >
             {icon}
           </CustomAvatar>
         ) : type === "image" ? (
@@ -57,12 +62,12 @@ const AdvCardItemTransaction: FC<CardItemTransactionProps> = (props) => {
           varient="body2"
           size={totalStyle?.fontSize && totalStyle.fontSize}
         >
-          {trending && trending.show && (status === "increase" ? "+" : "-")}
+          {trending && trending.show && (status === "inc" ? "+" : "-")}
           {currency && "$"}
           {total}
         </Text>
         {arrow &&
-          (status === "increase" ? (
+          (status === "inc" ? (
             <ExpandLess color="success" />
           ) : (
             <ExpandMore color="error" />
@@ -86,7 +91,7 @@ export interface CardItemTransactionProps {
   tag?: string;
   total: number | string;
   currency?: boolean;
-  status?: "increase" | "decrease";
+  status?: "inc" | "dec";
   iconColor?: string;
   color?: string;
   arrow?: boolean;
