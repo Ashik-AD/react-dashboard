@@ -28,4 +28,6 @@ export interface GridLayoutProps {
     columnSpacing?: number | Spacing;
     alignItems?: 'flex-start' | 'center' | 'flex-end' | 'stretch' | 'baseline';
     justifyContent?: 'flex-start' | 'center' | 'flex-end' | 'space-between' | 'space-evenly' | 'space-around';
+    classes?: string;
+    noShifting?: boolean;
 }
