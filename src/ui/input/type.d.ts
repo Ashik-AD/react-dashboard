@@ -1,4 +1,4 @@
-import { ChangeEvent, ReactNode } from "react";
+import { ChangeEvent, CSSProperties, ReactNode } from "react";
 import { AlertColorType } from "../color/alert";
 
 type InputType = "text" | "password" | "email" | "file" | "number" | "checkbox" | 'radio' | 'range';
@@ -23,4 +23,5 @@ export interface Inputs extends InputOptions {
     onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
     startAdornment?: ReactNode;
     endAdornment?: ReactNode;
+    style?: CSSProperties;
 }

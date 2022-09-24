@@ -21,6 +21,7 @@ const TextField: FC<Inputs> = (props) => {
     placeholder,
     startAdornment,
     endAdornment,
+    style,
   } = props;
   return (
     <InputWrapper
@@ -29,6 +30,7 @@ const TextField: FC<Inputs> = (props) => {
       color={color}
       disable={disable}
       error={error}
+      sizes={sizes}
     >
       <Input
         type={type}
@@ -45,6 +47,7 @@ const TextField: FC<Inputs> = (props) => {
         disabled={disable}
         error={error}
         placeholder={placeholder}
+        style={style}
       />
       <span
         className={`input-label floating-label body2 ${
