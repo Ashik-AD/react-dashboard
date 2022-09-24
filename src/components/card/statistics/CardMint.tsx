@@ -26,19 +26,18 @@ const CardMint: FC<PropsType> = (props) => {
         display="flex"
         flexDirection="column"
         px={16}
-        pb={26}
-        pt={8}
+        pb={22}
         space={0.4}
         className="car-body"
       >
         <Text
           varient="body2"
           weight="bold"
-          styles={{ textTransform: "capitalize", marginBottom: 4 }}
+          styles={{ textTransform: "capitalize" }}
         >
           {title}
         </Text>
-        <Box display="flex" mb={16} space={0.5}>
+        <Box display="flex" mb={8} space={0.5}>
           <Text heading="h6" styles={{ fontWeight: 500 }}>
             {currency && "$"}
             {formatNumber(total, 1000)}
