@@ -125,7 +125,11 @@ const CardWidgetProfit = () => {
   ];
   return (
     <Card>
-      <GridContainer>
+      <GridContainer
+        noShifting={true}
+        columnSpacing={0}
+        rowSpacing={{ lg: 1.6 }}
+      >
         <GridItem xs={12} sm={7}>
           <Box display="flex" flexDirection="column">
             <CardTitle title="Total profit" showIcon={false} />

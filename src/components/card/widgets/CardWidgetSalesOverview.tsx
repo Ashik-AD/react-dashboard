@@ -8,6 +8,7 @@ import formatNumber from "../../../utils/formatNumber";
 import genColorShades from "../../../utils/genColorShades";
 import Box from "../../box/Box";
 import { GridContainer, GridItem } from "../../layout";
+import GridInnerContainer from "../../layout/grid/GridInnerContainer";
 import Card from "../Card";
 import CardTitle from "../titles/CardTitle";
 
@@ -67,8 +68,8 @@ const CardWidgetSalesOverview = () => {
   return (
     <Card>
       <CardTitle title="Sales Overview" />
-      <Box py={34}>
-        <GridContainer>
+      <Box py={20}>
+        <GridInnerContainer>
           <GridItem xs={12} sm={6}>
             <ReactApexChart
               options={chartOption}
@@ -107,7 +108,7 @@ const CardWidgetSalesOverview = () => {
               </GridContainer>
             </Box>
           </GridItem>
-        </GridContainer>
+        </GridInnerContainer>
       </Box>
     </Card>
   );
