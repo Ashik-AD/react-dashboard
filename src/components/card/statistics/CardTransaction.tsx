@@ -4,13 +4,13 @@ import formatNumber from "../../../utils/formatNumber";
 import Box from "../../box/Box";
 import { GridContainer, GridItem } from "../../layout";
 import Card from "../Card";
-import CardTitle from "../titles/CardTitle";
+import CustomCardTitle from "../titles/CustomCardTitle";
 
 const CardTransaction: FC<PropsType> = (props) => {
-  const { title, items } = props;
+  const { title, items, subtitle } = props;
   return (
     <Card>
-      <CardTitle title={title} />
+      <CustomCardTitle title={title} subTitle={subtitle} />
       <Box padding={20}>
         <GridContainer>
           {items.map((item) => (
@@ -52,6 +52,7 @@ const CardTransaction: FC<PropsType> = (props) => {
 
 interface PropsType {
   title: string;
+  subtitle?: string | ReactNode;
   children?: ReactNode;
   items: {
     id: number | string;
