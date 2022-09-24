@@ -12,7 +12,7 @@ const ArrowIndicator: FC<Props> = (props) => {
             : "alert-error-text"
           : ""
       }
-      style={style}
+      style={{ display: "flex", ...style }}
     >
       {arrowFirst || arrowSecond ? (
         status === "inc" ? (
