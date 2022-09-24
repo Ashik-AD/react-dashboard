@@ -66,7 +66,9 @@ const CardExpense = () => {
           </Text>
         }
       />
-      <Box>{items}</Box>
+      <Box mt={12} pb={8}>
+        {items}
+      </Box>
     </Box>
   );
 };

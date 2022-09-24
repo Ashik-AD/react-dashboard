@@ -22,6 +22,7 @@ const AdvanceCardMeeting: FC<Props> = (props) => {
                 <Text
                   varient="caption"
                   styles={{ display: "flex", alignItems: "center" }}
+                  secondary={true}
                 >
                   <CalendarTodayOutlined
                     fontSize="inherit"
