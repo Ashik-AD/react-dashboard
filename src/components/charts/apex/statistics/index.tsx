@@ -35,7 +35,7 @@ const StatisticPlainChart: FC<Props> = ({
       type={chartOption?.chart?.type}
       options={defaultConfig}
       series={series}
-      height={height ? height : 110}
+      height={height ? height : 82}
       width={width ? width : "100%"}
     />
   );

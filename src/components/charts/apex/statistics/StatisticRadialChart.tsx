@@ -41,7 +41,7 @@ const StatisticRadialChart: FC<ApexDataSeries> = ({ data }) => {
     },
   };
   return (
-    <StatisticPlainChart chartOption={option} series={data} height={"190px"} />
+    <StatisticPlainChart chartOption={option} series={data} height={"140px"} />
   );
 };
 export default StatisticRadialChart;
