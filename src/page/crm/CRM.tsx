@@ -11,16 +11,19 @@ import { CardWidgetWeeklySales } from "../../components/card/widgets";
 import { CardWidgetTotalSale } from "../../components/card/widgets";
 import { CardWidgetRevenueReport } from "../../components/card/widgets";
 import { CardWidgetSalesOverview } from "../../components/card/widgets";
-import CardMint from "../../components/card/statistics/CardMint";
 import CardStatisticGrowth from "../../components/card/statistics/CardStatisticGrowth";
 import TimelineDummy from "../../components/examples/TimelineDummy";
 import MeetingDummy from "../../components/examples/MeetingDummy";
+import CardMeetup from "../../components/card/advance/CardMeetup";
+import CardPackagePlan from "../../components/card/advance/CardPackagePlan";
+import GridInnerContainer from "../../components/layout/grid/GridInnerContainer";
+import CardMint from "../../components/card/statistics/CardMint";
 
 const CRM = () => {
   return (
     <Flex direction="column" styles={{ width: "100%" }}>
       <GridContainer rowSpacing={1.5} columnSpacing={1.5} alignItems="stretch">
-        <GridContainer spacing={1.5} alignItems="flex-end">
+        <GridContainer spacing={1.5} alignItems="flex-end" noShifting={true}>
           <GridItem xs={12} sm={3}>
             <CardRanger
               title="Ratings"
@@ -57,16 +60,16 @@ const CRM = () => {
                 {
                   icon: <PersonOutline />,
                   id: 2,
-                  total: 323232,
+                  total: 120000,
                   title: "customers",
                   color: "success",
                 },
                 {
                   icon: <Devices />,
                   id: 3,
-                  total: 323232,
-                  title: "customers",
-                  color: "success",
+                  total: 3232,
+                  title: "Products",
+                  color: "warning",
                 },
               ]}
             />
@@ -88,7 +91,7 @@ const CRM = () => {
           <CardWidgetWeeklySales />
         </GridItem>
         <GridItem xs={12} sm={2}>
-          <GridContainer rowSpacing={1.5}>
+          <GridInnerContainer rowSpacing={1.5}>
             <GridItem xs={12}>
               <CardStatisticGrowth />
             </GridItem>
@@ -103,15 +106,19 @@ const CRM = () => {
                 iconBackground="warning"
               />
             </GridItem>
-          </GridContainer>
+          </GridInnerContainer>
         </GridItem>
-
+        <GridItem xs={12} md={4}>
+          <CardPackagePlan />
+        </GridItem>
         <GridItem xs={12} sm={6} md={4}>
           <MeetingDummy />
+        </GridItem>
+        <GridItem xs={12} sm={6} md={4}>
+          <CardMeetup />
         </GridItem>
       </GridContainer>
     </Flex>
   );
 };
-
 export default CRM;
