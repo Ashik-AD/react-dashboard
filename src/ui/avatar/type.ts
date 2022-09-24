@@ -20,7 +20,7 @@ export interface StyleBaseProps {
 }
 export interface CustomAvatarProps extends Base {
     children: ReactNode | string;
-    color?: string;
+    color?: string | 'skin';
     skin?: 'light' | 'light-static';
-
+    fontSize?: number;
 }
