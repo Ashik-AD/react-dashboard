@@ -11,6 +11,8 @@ const normalButton = styled.button<ButtonType>`
   justify-content: center;
   // color
   color: ${({ theme, color, varient }) => varient === 'outlined' || varient === 'text' ? color ? alertColor[color as keyof Colors] : theme.primaryColor.color : "#fff"};
+  font-size: 0.875rem;
+  font-weight: 500;
 `;
 export default normalButton;
 
