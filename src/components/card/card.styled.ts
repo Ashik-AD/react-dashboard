@@ -3,6 +3,7 @@ import CardProps from './type'
 
 export const CardWrapper = styled('div') <CardProps>`
     position: ${({ position }) => position};
+    ${({ width }) => width && `width: ${width};`}
     background: ${({ theme, background }) => background ? background : theme.mode.foreground};
     color: ${({ theme }) => theme.mode.textColor};
 
