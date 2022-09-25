@@ -1,4 +1,4 @@
-import { createRef } from "react";
+import { FC, memo, useEffect, useState } from "react";
 import useTheme from "../../theme/useTheme";
 import Card from "../card/Card";
 
@@ -6,56 +6,63 @@ import DropDownWrapper from "./styled";
 
 import DropDownProps from "./type";
 
-const DropDown = <T extends unknown>({
-  renderItem,
+const DropDown: FC<DropDownProps> = ({
   data,
   label,
-  extractKey,
   className,
   styles,
-}: DropDownProps<T>) => {
+  visible,
+  dropdownId,
+}) => {
+  const [show, setShow] = useState(visible);
+
   const {
     theme: { mode, skin },
   } = useTheme();
-  const drpItemContainer = createRef<HTMLDivElement>();
-  const drpBtn = createRef<HTMLDivElement>();
-  window.addEventListener("click", (eve: any) => {
-    if (!eve.target) {
-      return;
+  useEffect(() => {
+    window.addEventListener("click", windowHandler);
+    return () => {
+      window.removeEventListener("click", windowHandler);
+    };
+  }, []);
+  const windowHandler = (eve: any) => {
+    if (!eve.target.classList.contains(dropdownId)) {
+      setShow(false);
     }
-    const { classList } = eve.target;
-    if (classList.contains("dropdown-btn")) {
-      drpItemContainer.current?.classList.toggle("show");
-    } else if (classList.contains("dropdown-item-nothing")) {
-      return;
-    } else {
-      drpItemContainer.current?.classList.remove("show");
-    }
-  });
-  drpBtn.current?.addEventListener(
-    "click",
-    () => {
-      drpItemContainer.current?.classList.toggle("show");
-    },
-    false
-  );
+  };
   return (
     <DropDownWrapper theme={{ mode, skin }}>
-      <div className="drop-btn" ref={drpBtn}>
+      <div
+        className="drop-btn"
+        onClick={(eve) => {
+          eve.stopPropagation();
+          document
+            .querySelectorAll(".dropdown-items-container")
+            .forEach((el) => el.classList.replace("show", "hide"));
+          setShow((prevShow) => !prevShow);
+        }}
+      >
         {label}
       </div>
       <div
-        className={`dropdown-items-container fadeIn ${
-          className ? className : ""
+        className={`dropdown-items-container ${className ? className : ""} ${
+          show ? "show" : "hide"
         }`}
-        ref={drpItemContainer}
         style={{ ...styles }}
       >
         <Card>
           <ul>
-            {data.map((item) => (
-              <li key={extractKey(item)} className="dropdown-item">
-                {renderItem(item)}
+            {data.map((item, index) => (
+              <li
+                key={item.id ? item.id : index}
+                className="dropdown-item body2"
+                onClick={(eve) => {
+                  eve.stopPropagation();
+                  item.handler && item.handler(eve);
+                  setShow(false);
+                }}
+              >
+                {item.label}
               </li>
             ))}
           </ul>
@@ -65,4 +72,4 @@ const DropDown = <T extends unknown>({
   );
 };
 
-export default DropDown;
+export default memo(DropDown);
