@@ -22,7 +22,7 @@ export const iconButton = styled(normalButton) <IconButtonProps>`
   align-items: center;
   justify-content: center;
   border-radius: ${({ roundness }) => roundness === 'rounded' ? '0.5rem' : roundness === 'square' ? '0.1499rem' : '50%'};
-
+  ${({ fontSize }) => fontSize && `font-size: ${fontSize}px;`}
   height: ${({ size }) => size ? size : 32}px;
   min-width: auto;
   width: ${({ size }) => size ? size : 32}px;
@@ -35,6 +35,7 @@ export const iconButton = styled(normalButton) <IconButtonProps>`
 
   & svg {
     font-size: ${({ size }) => size ? (((size / 16) * 90) / 100) : '1.5'}rem;
+    ${({ fontSize }) => fontSize && `font-size: ${fontSize}px;`}
   }
 
  & .hover-layer {

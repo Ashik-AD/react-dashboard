@@ -15,4 +15,5 @@ export interface ButtonType {
 export interface IconButtonProps extends ButtonType {
   readonly size?: number;
   readonly roundness?: 'circle' | 'rounded' | 'square';
+  readonly fontSize?: number;
 }
