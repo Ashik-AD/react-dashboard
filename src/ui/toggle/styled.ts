@@ -1,13 +1,13 @@
 import styled from 'styled-components';
-import { CircleProps } from './type'
+import { ToggleElProps } from './type'
 
-export const ToggleWrapper = styled.span<{ label: string | undefined, onClick?: () => void; }>`
+export const ToggleWrapper = styled.span<{ label: string | undefined, size: 'small' | 'regular' }>`
 position: relative;
 display: inline-flex;
 align-items: center;
-${({ label }) => label && 'gap: 10px;'}
+${({ label, size }) => label && `gap: ${size === 'small' ? 6 : 10}px;`}
 cursor: pointer;
-padding: 8px 0;
+padding: ${({ size }) => size === 'small' ? 4 : 10}px 0;
 user-select: none;
 `
 
@@ -19,22 +19,27 @@ export const Input = styled.input`
     background: transparent;
 `;
 
-export const Circle = styled.span<CircleProps>`
+export const Circle = styled('span') <ToggleElProps>`
     position: relative;
     display: block;
-    height: 20px;
-    width: 20px;
+    min-height: ${({ size }) => size === 'small' ? 16 : 20}px;
+    min-width: ${({ size }) => size === 'small' ? 16 : 20}px;
+    max-height: ${({ size }) => size === 'small' ? 16 : 20}px;
+    max-width: ${({ size }) => size === 'small' ? 16 : 20}px;
     border-radius: 50%;
     background: ${({ theme, toggled }) => toggled ? theme.primaryColor.color : '#fff'};
     box-shadow: 0px 3px 4px ${({ theme }) => theme.mode.name === 'dark' ? '#484848' : '#8d8d8d'};
     position: absolute;
-    top: -1.5px;
-    left: ${({ toggled }) => toggled ? 20 : 0}px;
+    top: ${({ size }) => size === 'small' ? 3.5 : -1.5}px;
+    left: ${({ toggled, size }) => toggled ? size === "small" ? 14 : 20 : 0}px;
     transition: left 0.3s ease;
+
     &:before, &:after {
         position: absolute;
-        height: 40px;
-        width: 40px;
+    min-height: ${({ size }) => size === 'small' ? 25 : 40}px;
+    min-width: ${({ size }) => size === 'small' ? 25 : 40}px;
+    max-height: ${({ size }) => size === 'small' ? 25 : 40}px;
+    max-width: ${({ size }) => size === 'small' ? 25 : 40}px;
         content: '';
         background: ${({ theme }) => theme.primaryColor.color};
         border-radius: 50%;
@@ -50,16 +55,17 @@ export const Circle = styled.span<CircleProps>`
     }
 `;
 
-export const Track = styled.span<{ toggled: boolean; }>`
+export const Track = styled('span') <ToggleElProps>`
     display: inline-block;
-    width: 40px;
-    height: 14px;
+
+    width: ${({ size }) => size == 'small' ? 30 : 40}px;
+    height: ${({ size }) => size === 'small' ? 10 : 14}px;
     background: ${({ theme, toggled }) => toggled ? theme.primaryColor : theme.mode === 'dark' ? '#f4f9f96b' : '#000000'};
     border-radius: 10px;
     opacity: .5;
 `;
 
-export const Label = styled.span`
+export const Label = styled('span') <{ size?: "small" | "regular" }>`
     color: ${({ theme }) => theme.mode.textColor};
     font-size: 1rem;
 `

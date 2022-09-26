@@ -1,12 +1,16 @@
 import { FC } from "react";
-import { Circle, Input, Label, ToggleWrapper, Track } from "./toggle.styled";
+import { Circle, Input, Label, ToggleWrapper, Track } from "./styled";
 import { TogglerProps } from "./type";
 import useTheme from "../../theme/useTheme";
 const Toggle: FC<TogglerProps> = (props) => {
-  const { toggled, label, onToggle, label2 } = props;
+  const { toggled, label, onToggle, label2, size } = props;
   const { theme } = useTheme();
   return (
-    <ToggleWrapper onClick={onToggle} label={label}>
+    <ToggleWrapper
+      onClick={onToggle}
+      label={label}
+      size={size ? size : "regular"}
+    >
       {label2 && <Label theme={{ mode: theme.mode }}>{label2}</Label>}
       <div style={{ position: "relative" }}>
         <span>
@@ -22,11 +26,20 @@ const Toggle: FC<TogglerProps> = (props) => {
               mode: theme.mode.name,
             }}
             toggled={toggled ? toggled : false}
+            size={size}
           />
         </span>
-        <Circle theme={theme} toggled={toggled ? toggled : false} />
+        <Circle theme={theme} toggled={toggled ? toggled : false} size={size} />
       </div>
-      {label && <Label theme={{ mode: theme.mode }}>{label}</Label>}
+      {label && (
+        <Label
+          theme={{ mode: theme.mode }}
+          className="toggle-label"
+          size={size}
+        >
+          {label}
+        </Label>
+      )}
     </ToggleWrapper>
   );
 };
