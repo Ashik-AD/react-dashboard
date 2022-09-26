@@ -1,18 +1,32 @@
 import styled from "styled-components";
 import { ButtonType, IconButtonProps } from ".";
+import genColorShades, { addOpacityInHex } from "../../utils/genColorShades";
 import { alertColor, Colors } from "../color/alert";
 
+const skinColor = (color: string) => alertColor.hasOwnProperty(color) ? alertColor[color as keyof Colors] : color
+// const hoverColor = (color: string, varient: any) => {
+//   let genColor = alertColor.hasOwnProperty(color) ? varient === 'contained' ? genColorShades(color, { total: 1, intensity: 8 }) : genColorShades(color, { total: 1, intensity: 3 }) : varient === 'contained' ? addOpacityInHex(color, { initiator: 'e', follower: 'd' }) : addOpacityInHex(color, { initiator: 2 });
+//   console.log(genColor)
+//   return genColor?.toLocaleString();
+// }
 const normalButton = styled.button<ButtonType>`
   //background color
-  background-color: ${props => props.varient === 'text' || props.varient === 'outlined' ? 'transparent' : (props.color ? alertColor[props.color as keyof Colors] : (props.color ? alertColor[props.color as keyof Colors] : props.theme.primaryColor.color))};
+  position: relative;
+  background-color: ${({ varient, color, theme }) => (varient === 'text' || varient === 'outlined') ? 'transparent' : color ? skinColor(color) : theme.primaryColor.color};
+  box-sizing: border-box;
   // border
-  border: 1.8px solid ${props => props.varient === 'outlined' ? (props.color ? alertColor[props.color as keyof Colors] : props.theme.primaryColor.color) : 'transparent'};
+  border: 1.8px solid ${({ varient, color, theme }) => varient === 'outlined' ? (color ? skinColor(color) : theme.primaryColor.color) : 'transparent'};
   text-align: center;
   justify-content: center;
   // color
-  color: ${({ theme, color, varient }) => varient === 'outlined' || varient === 'text' ? color ? alertColor[color as keyof Colors] : theme.primaryColor.color : "#fff"};
+  color: ${({ theme, color, varient }) => varient === 'outlined' || varient === 'text' ? color ? skinColor(color) : theme.primaryColor.color : "#fff"};
   font-size: 0.875rem;
   font-weight: 500;
+  overflow: hidden;
+
+  &:hover {
+    background: ${({ theme, color, varient }) => varient === 'contained' ? genColorShades(color ? color : theme.primaryColor.color, { total: 1, intensity: 8 }).toString() : genColorShades(color ? color : theme.primaryColor.color, { total: 1, intensity: 3 }).toString()};
+  }
 `;
 export default normalButton;
 
