@@ -19,29 +19,22 @@ const DropDown: FC<DropDownProps> = ({
   const {
     theme: { mode, skin },
   } = useTheme();
-  useEffect(() => {
-    window.addEventListener("click", windowHandler);
-    return () => {
-      window.removeEventListener("click", windowHandler);
-    };
-  }, []);
-  const windowHandler = (eve: any) => {
-    if (!eve.target.classList.contains(dropdownId)) {
-      setShow(false);
-    }
+  const showMenu = (eve: MouseEvent) => {
+    eve.stopPropagation();
+    setShow((prevState) => {
+      document.addEventListener("click", handleCloseMenu);
+      return !prevState;
+    });
+  };
+  const handleCloseMenu = () => {
+    setShow(() => {
+      document.removeEventListener("click", handleCloseMenu);
+      return false;
+    });
   };
   return (
     <DropDownWrapper theme={{ mode, skin }}>
-      <div
-        className="drop-btn"
-        onClick={(eve) => {
-          eve.stopPropagation();
-          document
-            .querySelectorAll(".dropdown-items-container")
-            .forEach((el) => el.classList.replace("show", "hide"));
-          setShow((prevShow) => !prevShow);
-        }}
-      >
+      <div className="drop-btn" onClick={showMenu}>
         {label}
       </div>
       <div
