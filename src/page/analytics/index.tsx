@@ -18,6 +18,7 @@ import Card from "../../components/card/Card";
 import CardDeposit from "../../components/card/advance/CardDeposit";
 import CardExpense from "../../components/card/advance/CardExpense";
 import CardSalesByCountry from "../../components/card/advance/CardSalesByCountry";
+import DataGridMembers from "../../components/data-grid/DataGridMembers";
 
 const Analytics = () => {
   return (
@@ -101,6 +102,9 @@ const Analytics = () => {
         </GridItem>
         <GridItem xs={12} md={4}>
           <CardSalesByCountry />
+        </GridItem>
+        <GridItem xs={12} md={8}>
+          <DataGridMembers />
         </GridItem>
       </GridContainer>
     </Flex>

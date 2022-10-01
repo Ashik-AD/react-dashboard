@@ -20,6 +20,7 @@ import john from "../../image/john.png";
 import MeetingDummy from "../../components/examples/MeetingDummy";
 import CardStatisticQuaterlySales from "../../components/card/statistics/CardStatisticQuarterlySales";
 import CardNewVisitors from "../../components/card/advance/CardNewVisitors";
+import DataGridClientTransactionRecord from "../../components/data-grid/DataGridClientTransactionRecord";
 const Ecommerce = () => {
   return (
     <Flex styles={{ width: "100%" }} direction="column">
@@ -107,6 +108,9 @@ const Ecommerce = () => {
         </GridItem>
         <GridItem xs={12} md={4}>
           <CardSiteStatistic />
+        </GridItem>
+        <GridItem xs={12} md={8}>
+          <DataGridClientTransactionRecord />
         </GridItem>
         <GridItem xs={12} md={4}>
           <MeetingDummy />
