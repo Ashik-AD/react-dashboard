@@ -97,6 +97,13 @@ h6,
     overflow: unset !important;
 }
 
+.zIndex-1 {
+    z-index: 1;
+}
+
+.zIndex-2 {
+    z-index: 2;
+}
 
 @each $name,
 $color in $alerts {
