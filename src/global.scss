@@ -105,6 +105,16 @@ h6,
     z-index: 2;
 }
 
+.theme-dark-active-fade,
+.theme-dark-active-fade-hover:hover {
+    background: #ffffff14;
+}
+
+.theme-light-active-fade,
+.theme-dark-active-fade-hover:hover {
+    background: rgba(0, 0, 0, 0.03);
+}
+
 @each $name,
 $color in $alerts {
     .alert-#{$name}-bg {
