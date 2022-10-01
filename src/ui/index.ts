@@ -10,3 +10,5 @@ export { default as Toggle } from './toggle/Toggle';
 export { default as Divider } from './divider/Divider';
 export { default as Chip } from './chip/Chip';
 export { default as Dot } from './dot/Dot';
+export { default as Select, SelectItem } from './input/select/Select';
+export { default as TextField } from './input/text-field/TextField';

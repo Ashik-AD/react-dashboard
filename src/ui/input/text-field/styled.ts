@@ -27,18 +27,23 @@ export const InputWrapper = styled("div") <InputOptions>`
         transition: all .2s ease-in-out;
     }
 
-    input:focus + .floating-label {
+    input:focus + .floating-label,
+     .input-button:focus + .floating-label,
+     .input-button:focus-within + .floating-label {
         top: ${({ varient }) => varient === 'filled' ? 8 : -10}px;
         left: ${({ varient }) => varient === 'standard' ? 0 : 0.5}rem;
         color: ${({ theme, color, error }) => error ? alertColors('error') : color ? alertColors(color) : theme.primaryColor.color};
         transform: scale(0.9);
+        font-size:13px;
         font-weight: 400;
         transition: all .15s linear;
     }
     .floating-label-top {
         top: ${({ varient }) => varient === 'filled' ? 8 : -10}px;
         left: ${({ varient }) => varient === 'standard' ? 0 : 0.5}rem;
-        color: ${({ theme, disable, error }) => disable ? disableColor(theme.mode.name) : error ? alertColors('error') : theme.mode.textColor};
+        color: ${({ theme, disable, error }) => disable ? disableColor(theme.mode.name) : error ? alertColors('error') : theme.primaryColor.color};
+        font-size: 13px;
+        font-weight:500;
         transform: scale(0.9);
     }
 
@@ -60,7 +65,7 @@ export const InputWrapper = styled("div") <InputOptions>`
         }
 
     }
-    input:focus ~ .input-border:after  {
+    input:focus ~ .input-border:after, .input-button:focus ~ .input-border-after, .active-border-transition:after  {
         transform: scaleX(1)!important;
     }
 
@@ -104,7 +109,8 @@ export const Input = styled('input') <InputOptions>`
     border-radius: 8px;
     ${({ disable }) => disable && `pointer-events: none;`}
 
-    &:focus {
+    &:focus,
+    &:focus-visible {
         border-color: ${({ theme, varient }) => (varient === 'filled' || varient === 'standard') ? 'transparent' : theme.primaryColor.color};
         outline: ${({ theme, error }) => error ? alertColors('error') : theme.primaryColor.color} solid 2px;
         ${({ varient }) => (varient === 'filled' || varient === 'standard') ? 'outline: 0;' : ''}

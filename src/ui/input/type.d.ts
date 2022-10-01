@@ -24,4 +24,5 @@ export interface Inputs extends InputOptions {
     startAdornment?: ReactNode;
     endAdornment?: ReactNode;
     style?: CSSProperties;
+    autoFocus?: boolean;
 }

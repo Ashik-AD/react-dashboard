@@ -22,6 +22,7 @@ const TextField: FC<Inputs> = (props) => {
     startAdornment,
     endAdornment,
     style,
+    autoFocus,
   } = props;
   return (
     <InputWrapper
@@ -48,6 +49,7 @@ const TextField: FC<Inputs> = (props) => {
         error={error}
         placeholder={placeholder}
         style={style}
+        autoFocus={autoFocus}
       />
       <span
         className={`input-label floating-label body2 ${
