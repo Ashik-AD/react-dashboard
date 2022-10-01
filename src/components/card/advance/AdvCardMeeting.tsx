@@ -12,7 +12,13 @@ const AdvanceCardMeeting: FC<Props> = (props) => {
       <CardTitle title={title} />
       <Box px={20} display="flex" flexDirection="column">
         {items.map((item) => (
-          <Box display="flex" mb={28} justify="space-between" align="center">
+          <Box
+            display="flex"
+            mb={28}
+            justify="space-between"
+            align="center"
+            key={item.title}
+          >
             <Box display="flex" align="center" space={0.7}>
               <Avatar src={item.profile} alt="meeting person" />
               <Box display="flex" flexDirection="column" space={0.3}>
