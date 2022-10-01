@@ -10,6 +10,7 @@ export interface ButtonType {
   readonly color?: Color | string;
   readonly onClick?: () => void;
   readonly className?: string;
+  readonly disabled?: boolean;
 }
 
 export interface IconButtonProps extends ButtonType {

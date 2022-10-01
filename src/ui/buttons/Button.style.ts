@@ -22,6 +22,8 @@ const normalButton = styled.button<ButtonType>`
   color: ${({ theme, color, varient }) => varient === 'outlined' || varient === 'text' ? color ? skinColor(color) : theme.primaryColor.color : "#fff"};
   font-size: 0.875rem;
   font-weight: 500;
+  pointer-events: ${({ disabled }) => disabled ? 'none' : 'auto'};
+  opacity: ${({ disabled }) => disabled ? 0.5 : 1};
   overflow: hidden;
 
   &:hover {

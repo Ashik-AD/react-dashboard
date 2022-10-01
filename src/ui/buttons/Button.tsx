@@ -8,6 +8,7 @@ const Button: FC<ButtonType> = ({
   color,
   onClick,
   className,
+  disabled,
 }) => {
   const {
     theme: { primaryColor, mode },
@@ -19,6 +20,7 @@ const Button: FC<ButtonType> = ({
       color={color}
       onClick={onClick}
       className={className ? className : ""}
+      disabled={disabled}
     >
       {children}
     </NormalButton>
