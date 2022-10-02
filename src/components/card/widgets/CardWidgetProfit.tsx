@@ -8,7 +8,7 @@ import addCurrancy from "../../../utils/addCurrancy";
 import formatNumber from "../../../utils/formatNumber";
 import Box from "../../box/Box";
 import CardItemAnalyticsWithIcon from "../../card-items/CardItemAnalyticsWithIcon";
-import { GridContainer, GridItem } from "../../layout";
+import { GridInnerContainer, GridItem } from "../../layout";
 import Card from "../Card";
 import CardTitle from "../titles/CardTitle";
 import CustomCardTitle from "../titles/CustomCardTitle";
@@ -125,7 +125,7 @@ const CardWidgetProfit = () => {
   ];
   return (
     <Card>
-      <GridContainer
+      <GridInnerContainer
         noShifting={true}
         columnSpacing={0}
         rowSpacing={{ lg: 1.6 }}
@@ -187,7 +187,7 @@ const CardWidgetProfit = () => {
             </Box>
           </Box>
         </GridItem>
-      </GridContainer>
+      </GridInnerContainer>
     </Card>
   );
 };
