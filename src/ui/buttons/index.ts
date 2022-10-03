@@ -5,16 +5,17 @@ type Color = 'success' | 'info' | 'warning' | 'error';
 type Size = 'small' | 'medium' | 'large';
 
 export interface ButtonType {
-  readonly varient?: Varient;
-  readonly children: string | ReactNode;
-  readonly color?: Color | string;
-  readonly onClick?: () => void;
-  readonly className?: string;
-  readonly disabled?: boolean;
+  varient?: Varient;
+  children: string | ReactNode;
+  color?: Color | string;
+  onClick?: () => void;
+  className?: string;
+  disabled?: boolean;
+  width?: string;
 }
 
 export interface IconButtonProps extends ButtonType {
-  readonly size?: number;
-  readonly roundness?: 'circle' | 'rounded' | 'square';
-  readonly fontSize?: number;
+  size?: number;
+  roundness?: 'circle' | 'rounded' | 'square';
+  fontSize?: number;
 }

@@ -11,6 +11,8 @@ const skinColor = (color: string) => alertColor.hasOwnProperty(color) ? alertCol
 // }
 const normalButton = styled.button<ButtonType>`
   //background color
+  display: flex;
+  ${({ width }) => width ? `width: ${width};` : ''}
   position: relative;
   background-color: ${({ varient, color, theme }) => (varient === 'text' || varient === 'outlined') ? 'transparent' : color ? skinColor(color) : theme.primaryColor.color};
   box-sizing: border-box;
@@ -18,6 +20,7 @@ const normalButton = styled.button<ButtonType>`
   border: 1.8px solid ${({ varient, color, theme }) => varient === 'outlined' ? (color ? skinColor(color) : theme.primaryColor.color) : 'transparent'};
   text-align: center;
   justify-content: center;
+  vertical-align: middle;
   // color
   color: ${({ theme, color, varient }) => varient === 'outlined' || varient === 'text' ? color ? skinColor(color) : theme.primaryColor.color : "#fff"};
   font-size: 0.875rem;
@@ -33,7 +36,6 @@ const normalButton = styled.button<ButtonType>`
 export default normalButton;
 
 export const iconButton = styled(normalButton) <IconButtonProps>`
-  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
