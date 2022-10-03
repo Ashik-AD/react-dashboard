@@ -107,7 +107,7 @@ h6,
 }
 
 .theme-light-active-fade,
-.theme-dark-active-fade-hover:hover {
+.theme-light-active-fade-hover:hover {
   background: rgba(0, 0, 0, 0.03);
 }
 
