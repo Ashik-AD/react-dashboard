@@ -6,7 +6,8 @@ import useTheme from "../../../theme/useTheme";
 import { Text } from "../../../ui";
 import genColorShades from "../../../utils/genColorShades";
 
-const NavItem: FC<Props> = ({ label, path, icon }) => {
+const NavItem: FC<Props> = (props) => {
+  const { label, path, icon, varient } = props;
   const {
     theme: {
       mode,
@@ -19,6 +20,7 @@ const NavItem: FC<Props> = ({ label, path, icon }) => {
       skinColor={primaryColor.color}
       isNavCollapse={collapse}
       mode={mode.name}
+      varient={varient || "filled"}
     >
       <NavLink
         to={path}
@@ -29,7 +31,7 @@ const NavItem: FC<Props> = ({ label, path, icon }) => {
         <Text size={icon ? 22 : 14} styles={{ display: "flex" }}>
           {icon ? icon : <CircleOutlined />}
         </Text>
-        <Text styles={{ display: "flex" }}>
+        <Text textTransform="capitalize" styles={{ display: "flex" }}>
           <p className="nav-label">{label}</p>
         </Text>
       </NavLink>
@@ -41,6 +43,7 @@ const StyledNavItem = styled("li")<{
   skinColor: string;
   isNavCollapse: boolean;
   mode: "dark" | "light";
+  varient?: Varient;
 }>`
   display: flex;
   width: 100%;
@@ -63,27 +66,48 @@ const StyledNavItem = styled("li")<{
   }
 
   & > .nav-item-active {
-    background: linear-gradient(
-      270deg,
-      ${({ skinColor }) =>
-        `${skinColor}, ${genColorShades(skinColor, {
-          intensity: 7,
-          total: 1,
-        })}`}
-    ) !important;
+    position: relative;
+    background: ${({ varient, skinColor }) =>
+      varient === "filled"
+        ? `linear-gradient(270deg, ${skinColor}, ${genColorShades(skinColor, {
+            intensity: 7,
+            total: 1,
+          })}) !important`
+        : "none"};
 
     box-shadow: ${({ mode }) => (mode === "light" ? "#c5c5c5" : "#1a2130")} -3px
       3px 8px 0px;
+    ${({ varient }) => (varient === "bordered" ? `box-shadow: none;` : "")}
+
+    ${({ varient, skinColor }) =>
+      varient === "bordered"
+        ? `
+          &::after {
+            position: absolute;
+            content: '';
+            height: 100%;
+            width: 3px;
+            left: 0;
+            top: 0;
+            background: ${skinColor};
+          }
+    `
+        : ""}
   }
   & > .nav-item-active * {
     color: #f5f5f5;
+    ${({ varient, skinColor }) =>
+      varient === "bordered" ? `color: ${skinColor}!important;` : ""}
   }
 `;
+
+type Varient = "filled" | "bordered";
 
 interface Props {
   label: string;
   path: string;
   icon?: ReactNode;
+  varient?: Varient;
 }
 
 export default NavItem;
