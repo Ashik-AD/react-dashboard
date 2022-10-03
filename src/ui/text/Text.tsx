@@ -15,6 +15,7 @@ const Text: FC<TextType> = ({
   weight,
   secondary,
   skinColor,
+  textTransform,
 }) => {
   const { theme } = useTheme();
   return (
@@ -30,6 +31,7 @@ const Text: FC<TextType> = ({
           color={color}
           secondary={secondary}
           skinColor={skinColor}
+          textTransform={textTransform}
         >
           {children}
         </Paragraph>
@@ -44,6 +46,7 @@ const Text: FC<TextType> = ({
         </Heading>
       ) : (
         <TextSpan
+          as={"span"}
           className={`${varient}`}
           size={size}
           color={color}
@@ -53,6 +56,7 @@ const Text: FC<TextType> = ({
           weight={weight}
           secondary={secondary}
           skinColor={skinColor}
+          textTransform={textTransform}
         >
           {children}
         </TextSpan>

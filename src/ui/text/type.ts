@@ -5,6 +5,7 @@ export type Headings = | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 export type Varient = 'body1' | 'body2' | 'subtitle1' | 'subtitle2' | 'caption' | 'overline' | 'inherit';
 
 export type Alignment = 'left' | 'center' | 'right' | 'justify' | 'inherit';
+
 export enum fontWeight {
     light = 300,
     regular = 400,
@@ -14,6 +15,7 @@ export enum fontWeight {
 }
 
 type weight = "light" | 'regular' | 'medium' | 'bold' | 'extraBold';
+type TextTransform = "uppercase" | 'lowercase' | 'capitalize' | "none";
 export default interface TextType {
     size?: number;
     color?: string;
@@ -26,6 +28,7 @@ export default interface TextType {
     weight?: weight;
     secondary?: boolean;
     skinColor?: boolean;
+    textTransform?: TextTransform;
 }
 
 export interface HeadingType {
