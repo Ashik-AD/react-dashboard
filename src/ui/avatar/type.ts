@@ -8,6 +8,7 @@ export interface Base {
     styles?: CSSProperties;
     varient?: varient;
     size?: size;
+    onClick?: () => void;
 }
 
 export interface AvatarProps extends Base {
