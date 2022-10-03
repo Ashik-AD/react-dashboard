@@ -34,7 +34,7 @@ const ThemeCustomizer: FC = () => {
   const [isVisible, setVisibility] = useState(false);
   const changeSkin = (skin: string) => handleChangeSkin(skin as Skin);
   return (
-    <div className="theme-customizer">
+    <div className="theme-customizer" style={{ zIndex: 1500 }}>
       <CustomizerBody theme={theme.mode} visible={isVisible}>
         <Flex
           justify="between"
@@ -44,10 +44,11 @@ const ThemeCustomizer: FC = () => {
           <span>
             <Text
               heading="h6"
+              weight="bold"
+              textTransform="uppercase"
               styles={{
                 textTransform: "uppercase",
                 letterSpacing: 0.15,
-                fontWeight: 600,
               }}
             >
               Theme customizer

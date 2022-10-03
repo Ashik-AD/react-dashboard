@@ -43,7 +43,7 @@ export const CustomizerToggle = styled('div')`
     padding: 8px 16px 8px 8px;
     border-radius: 8px;
     cursor: pointer;
-    z-index: 1;
+    z-index: 1000;
 `
 
 export default CustomizerBody;
