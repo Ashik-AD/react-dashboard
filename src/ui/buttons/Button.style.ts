@@ -56,6 +56,10 @@ export const iconButton = styled(normalButton) <IconButtonProps>`
     ${({ fontSize }) => fontSize && `font-size: ${fontSize}px;`}
   }
 
+  & > .icon-button-content {
+    opacity: ${({ contentOpacity }) => contentOpacity ? `0.${contentOpacity}` : 1};
+  }
+
  & .hover-layer {
     position: absolute;
     display: block;
