@@ -129,13 +129,13 @@ $color in $alerts {
 @each $name,
 $size in $fontWeights {
     .text-#{$name} {
-        font-weight: $size  !important;
+        font-weight: $size !important;
     }
 }
 
 
 @mixin cols($count, $size, $breakpoint) {
-    @if($breakpoint  !='') {
+    @if($breakpoint !='') {
         .grid-col-#{$breakpoint}-#{$count} {
             flex-basis: $size;
             flex-grow: 0;
@@ -157,9 +157,31 @@ $size in $fontWeights {
     @include cols($i, calc($i * $size), '');
 }
 
+@mixin hidden {
+    display: none !important;
+    z-index: -1;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+@mixin visible {
+    display: initial !important;
+    z-index: auto;
+    visibility: visible;
+    pointer-events: all;
+}
+
 @media screen and (min-width: $xs) {
     @for $i from 1 through $total {
         @include cols($i, calc($i * $size), 'xs');
+    }
+
+    .xs-hidden {
+        @include hidden();
+    }
+
+    .xs-visible {
+        @include visible();
     }
 }
 
@@ -167,11 +189,27 @@ $size in $fontWeights {
     @for $i from 1 through $total {
         @include cols($i, calc($i * $size), 'sm');
     }
+
+    .sm-hidden {
+        @include hidden();
+    }
+
+    .sm-visible {
+        @include visible();
+    }
 }
 
 @media screen and (min-width: $md) {
     @for $i from 1 through $total {
         @include cols($i, calc($i * $size), 'md');
+    }
+
+    .md-hidden {
+        @include hidden();
+    }
+
+    .md-visible {
+        @include visible();
     }
 }
 
@@ -179,10 +217,26 @@ $size in $fontWeights {
     @for $i from 1 through $total {
         @include cols($i, calc($i * $size), 'lg');
     }
+
+    .lg-hidden {
+        @include hidden();
+    }
+
+    .lg-visible {
+        @include visible();
+    }
 }
 
 @media screen and (min-width: $xlg) {
     @for $i from 1 through $total {
         @include cols($i, calc($i * $size), 'xlg');
+    }
+
+    .xlg-hidden {
+        @include hidden();
+    }
+
+    .xlg-visible {
+        @include visible();
     }
 }
