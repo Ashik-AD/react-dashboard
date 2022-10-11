@@ -17,6 +17,13 @@ font-weight: ${({ weight }) => weight && fontWeight[weight]};
 
 text-transform: ${({ textTransform }) => textTransform ? textTransform : "none"};
 
+${({ textOverflow }) => textOverflow ? `
+    white-space: nowrap;
+    text-overflow: ${textOverflow};
+    overflow: hidden;
+` : ""}
+
+
 ${({ size }) => size && `font-size: ${size}px;`}
     & svg {
        ${({ size }) => size && `font-size: ${size}px`};

@@ -3,35 +3,29 @@ import useTheme from "../../theme/useTheme";
 import TextType, { HeadingType } from "./type";
 import { Paragraph, TextSpan } from "./styled";
 
-const Text: FC<TextType> = ({
-  children,
-  align = "inherit",
-  paragraph,
-  size,
-  varient = "inherit",
-  heading,
-  color,
-  styles,
-  weight,
-  secondary,
-  skinColor,
-  textTransform,
-}) => {
+const Text: FC<TextType> = (props) => {
+  const {
+    children,
+    align,
+    paragraph,
+    varient,
+    heading,
+    color,
+    styles,
+    classes,
+  } = props;
   const { theme } = useTheme();
   return (
     <>
       {paragraph ? (
         <Paragraph
-          className={`${varient}`}
-          size={size}
-          align={align}
+          {...props}
+          className={`${varient ? varient : "inherit"} ${
+            classes ? classes : ""
+          }`}
+          align={align ? align : "inherit"}
           theme={{ mode: theme.mode, primaryColor: theme.primaryColor }}
-          weight={weight}
           style={{ ...styles }}
-          color={color}
-          secondary={secondary}
-          skinColor={skinColor}
-          textTransform={textTransform}
         >
           {children}
         </Paragraph>
@@ -46,17 +40,14 @@ const Text: FC<TextType> = ({
         </Heading>
       ) : (
         <TextSpan
+          {...props}
           as={"span"}
-          className={`${varient}`}
-          size={size}
-          color={color}
-          align={align}
+          className={`${varient ? varient : "inherit"} ${
+            classes ? classes : ""
+          }`}
+          align={align ? align : "inherit"}
           theme={{ mode: theme.mode, primaryColor: theme.primaryColor }}
           style={{ ...styles }}
-          weight={weight}
-          secondary={secondary}
-          skinColor={skinColor}
-          textTransform={textTransform}
         >
           {children}
         </TextSpan>

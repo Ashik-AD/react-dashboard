@@ -7,6 +7,6 @@ const Dot: FC<DotProps> = (props) => {
   const {
     theme: { primaryColor },
   } = useTheme();
-  return <UiDot {...props} theme={{ primaryColor }} />;
+  return <UiDot {...props} style={props.styles} theme={{ primaryColor }} />;
 };
 export default Dot;

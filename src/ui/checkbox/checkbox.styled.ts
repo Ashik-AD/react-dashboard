@@ -2,15 +2,42 @@ import styled from "styled-components";
 import { alertColor, Colors } from "../color/alert";
 import { CheckPlaceholderProps, LabelTextProps } from "./type";
 
+const backgroundStyle = (themeColor: string, color?: string) => color ? alertColor.hasOwnProperty(color) ? alertColor[color as keyof Colors] : color : themeColor;
+
+
 export const CheckPlaceholder = styled.span<CheckPlaceholderProps>`
+    position: relative;
     display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
     color: ${({ theme, color, checked }) => color ? alertColor.hasOwnProperty(color) ? alertColor[color as keyof Colors] : color : !checked ? theme.mode.name === 'dark' ? '#A8A4CE' : '#14274E' : theme.primaryColor.color};
-    cursor: pointer;
+    border-radius: 50%;
+    background: transparent;
     ${({ size }) => size && `
     &, & svg {
         font-size: ${size === 'small' ? 20 : size === 'medium' ? 24 : size}px;
     }
     `}
+    cursor: pointer;
+    z-index: 1;
+    overflow: hidden;
+
+    &::after {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        content: '';
+        z-index: -1;
+        top: 0;
+        left: 0;
+        // background: #fff;
+    }
+
+     &:hover::after {
+        background: ${({ theme, color }) => backgroundStyle(theme.primaryColor.color, color)};
+        opacity: 0.2;
+    }
 `;
 
 export const Input = styled.input`

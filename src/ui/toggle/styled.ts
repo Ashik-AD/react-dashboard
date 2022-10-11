@@ -36,10 +36,10 @@ export const Circle = styled('span') <ToggleElProps>`
 
     &:before, &:after {
         position: absolute;
-    min-height: ${({ size }) => size === 'small' ? 25 : 40}px;
-    min-width: ${({ size }) => size === 'small' ? 25 : 40}px;
-    max-height: ${({ size }) => size === 'small' ? 25 : 40}px;
-    max-width: ${({ size }) => size === 'small' ? 25 : 40}px;
+        min-height: ${({ size }) => size === 'small' ? 25 : 40}px;
+        min-width: ${({ size }) => size === 'small' ? 25 : 40}px;
+        max-height: ${({ size }) => size === 'small' ? 25 : 40}px;
+        max-width: ${({ size }) => size === 'small' ? 25 : 40}px;
         content: '';
         background: ${({ theme }) => theme.primaryColor.color};
         border-radius: 50%;

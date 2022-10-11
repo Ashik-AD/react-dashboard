@@ -16,6 +16,9 @@ export enum fontWeight {
 
 type weight = "light" | 'regular' | 'medium' | 'bold' | 'extraBold';
 type TextTransform = "uppercase" | 'lowercase' | 'capitalize' | "none";
+
+type TextOverflow = "ellipsis" | "clip";
+
 export default interface TextType {
     size?: number;
     color?: string;
@@ -29,6 +32,8 @@ export default interface TextType {
     secondary?: boolean;
     skinColor?: boolean;
     textTransform?: TextTransform;
+    classes?: string;
+    textOverflow?: TextOverflow;
 }
 
 export interface HeadingType {
