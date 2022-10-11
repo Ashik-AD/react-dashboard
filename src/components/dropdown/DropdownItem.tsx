@@ -20,7 +20,12 @@ const DropdownItem: FC<Props> = ({ title, icon, onClickHandle }) => {
       }
     >
       <span className="drp-icon">{icon}</span>
-      <Text paragraph varient="body1" styles={{ display: "flex" }}>
+      <Text
+        paragraph
+        varient="body1"
+        textTransform="capitalize"
+        styles={{ display: "flex" }}
+      >
         {title}
       </Text>
     </StyledDrowpdownItem>

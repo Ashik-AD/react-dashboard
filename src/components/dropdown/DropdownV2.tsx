@@ -26,7 +26,11 @@ const DropdownV2: FC<DropdownV2Props> = (props) => {
   }, [shouldShow]);
 
   const toggleDropdown = () => setShouldShow((prevState) => !prevState);
-
+  // const buttonChildrens = React.isValidElement(labelContent)
+  //   ? React.Children.map(labelContent, (elements) =>
+  //       React.cloneElement(elements, { onClick: () => toggleDropdown() })
+  //     )
+  //   : labelContent;
   return (
     <StyledDropdownWrapper>
       <div onClick={toggleDropdown} className="dropdown-button" role="button">
@@ -44,12 +48,15 @@ const DropdownV2: FC<DropdownV2Props> = (props) => {
                     </Box>
                   );
                 } else if (item.type === "children" && item.children) {
-                  return React.cloneElement(item.children as ReactElement, {
-                    onClick: () => {
-                      toggleDropdown();
-                      item.onClickHandle && item.onClickHandle();
-                    },
-                  });
+                  const childrens = React.Children.map(item.children, (child) =>
+                    React.cloneElement(child as ReactElement, {
+                      onClick: () => {
+                        toggleDropdown();
+                        item.onClickHandle && item.onClickHandle();
+                      },
+                    })
+                  );
+                  return childrens;
                 } else {
                   return (
                     <DropdownItem
@@ -104,6 +111,7 @@ const StyledDropdownWrapper = styled("div")`
     z-index: 1200;
     transition: 300ms;
     overflow: hidden;
+    box-shadow: 2px 6px 9px 3px #00000024;
   }
 
   & > .dropdown-overlay {
