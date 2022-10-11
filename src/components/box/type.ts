@@ -26,9 +26,18 @@ export interface BoxProps {
     pb?: number;
     pl?: number;
     style?: CSSProperties;
+    onClick?: () => void;
 }
 
 export interface ColorBoxProps extends BoxProps {
     transparency?: number;
     color?: string;
+    border?: boolean;
+    borderSize?: number;
+    borderLeft?: boolean;
+    borderRight?: boolean;
+    borderBottom?: boolean;
+    borderTop?: boolean;
+    borderRadius?: number;
+    backgroundTheme?: "foreground" | "background";
 }

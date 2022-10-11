@@ -6,6 +6,7 @@ const Box: FC<BoxProps> = (props) => {
     <MyBox
       {...props}
       className={`holy-box ${props.className ? props.className : ""}`}
+      onClick={props.onClick}
     >
       {props.children}
     </MyBox>

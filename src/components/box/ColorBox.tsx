@@ -4,13 +4,13 @@ import { StyledColorBox } from "./box.styled";
 import { ColorBoxProps } from "./type";
 const ColorBox: FC<ColorBoxProps> = (props) => {
   const {
-    theme: { primaryColor },
+    theme: { primaryColor, mode },
   } = useTheme();
   return (
     <StyledColorBox
       {...props}
       className={`holy-color-box ${props.className ? props.className : ""}`}
-      theme={{ primaryColor }}
+      theme={{ primaryColor, mode: mode }}
       style={props.style}
     >
       {props.children}
