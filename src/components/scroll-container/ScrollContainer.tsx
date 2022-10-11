@@ -25,4 +25,5 @@ interface Props {
 const StyledScrollContainer = styled("div")<{ maxHeight: string }>`
   width: 100%;
   max-height: ${({ maxHeight }) => maxHeight};
+  overflow-y: auto;
 `;
