@@ -4,6 +4,7 @@ import CardProps from './type'
 export const CardWrapper = styled('div') <CardProps>`
     position: ${({ position }) => position};
     ${({ width }) => width && `width: ${width};`}
+    ${({ height }) => height && `height: ${height};`}
     background: ${({ theme, background }) => background ? background : theme.mode.foreground};
     color: ${({ theme }) => theme.mode.textColor};
 
@@ -36,4 +37,6 @@ export const CardWrapper = styled('div') <CardProps>`
 
     //shadow
     box-shadow: ${({ theme }) => theme.skin === 'default' && '0px 2px 10px 0px'} ${({ theme }) => theme.skin === 'default' ? theme.mode.name === 'light' ? "#f1f1f1" : "#1b24303b" : "none"};
+
+    ${({ theme }) => theme.skin === "bordered" ? `box-shadow: none!important;` : ""}
 `;
