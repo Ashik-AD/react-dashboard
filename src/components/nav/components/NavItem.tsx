@@ -7,7 +7,7 @@ import { Text } from "../../../ui";
 import genColorShades from "../../../utils/genColorShades";
 
 const NavItem: FC<Props> = (props) => {
-  const { label, path, icon, varient } = props;
+  const { label, path, icon, varient, compact, onClick } = props;
   const {
     theme: {
       mode,
@@ -15,12 +15,17 @@ const NavItem: FC<Props> = (props) => {
       menuStyle: { collapse },
     },
   } = useTheme();
+  const handleNavItemClick = () => {
+    onClick && onClick();
+  };
   return (
     <StyledNavItem
       skinColor={primaryColor.color}
       isNavCollapse={collapse}
       mode={mode.name}
       varient={varient || "filled"}
+      compact={compact}
+      onClick={handleNavItemClick}
     >
       <NavLink
         to={path}
@@ -44,6 +49,7 @@ const StyledNavItem = styled("li")<{
   isNavCollapse: boolean;
   mode: "dark" | "light";
   varient?: Varient;
+  compact?: boolean;
 }>`
   display: flex;
   width: 100%;
@@ -54,7 +60,7 @@ const StyledNavItem = styled("li")<{
     flex: 1;
     align-items: center;
     gap: 12px;
-    padding: 0.6rem 1.6rem;
+    padding: ${({ compact }) => (compact ? "0.3rem" : "0.6rem")} 1.6rem;
     border-top-right-radius: 1.4rem;
     border-bottom-right-radius: 1.4rem;
     margin-bottom: 6px;
@@ -108,6 +114,8 @@ interface Props {
   path: string;
   icon?: ReactNode;
   varient?: Varient;
+  compact?: boolean;
+  onClick?: () => void;
 }
 
 export default NavItem;

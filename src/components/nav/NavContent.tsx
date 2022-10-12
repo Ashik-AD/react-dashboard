@@ -65,11 +65,17 @@ const StyledNavContent = styled(Card)<{ isCollapsed: boolean }>`
   }
 
   &:hover {
-    width: ${({ isCollapsed }) => (isCollapsed ? "260px" : "inital")};
+    width: ${({ isCollapsed }) => (isCollapsed ? "260px" : "")};
   }
   &:hover .nav-label {
     opacity: 1;
     transition: 400ms;
+  }
+
+  @media screen and (max-width: 1200px) {
+    & {
+      left: -260px;
+    }
   }
 `;
 

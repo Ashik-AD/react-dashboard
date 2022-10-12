@@ -1,20 +1,26 @@
 import { createRef, FC, useCallback, useState } from "react";
 import styled from "styled-components";
-import NavOptions, { Parent } from "../type";
+import NavOptions from "../type";
 import NavGroupButton from "./NavGroupButton";
 import NavItem from "./NavItem";
 
-const NavGroup: FC<Props> = ({ navData: { childrens, parent } }) => {
+const NavGroup: FC<Props> = ({
+  navData: { childrens, parent },
+  onChildClick,
+}) => {
   const [isActive, setIsActive] = useState(false);
   const navItemContainer = createRef<HTMLUListElement>();
   useCallback(() => {
     if (isActive) {
-      navItemContainer!.current!.style!.height = "144px";
+      navItemContainer!.current!.style!.height = "100px";
       setTimeout(() => {
         navItemContainer!.current!.style.height = "auto";
-      }, 100);
+      }, 300);
     } else {
-      navItemContainer!.current!.style.height = "0px";
+      navItemContainer!.current!.style.height = "144px";
+      setTimeout(() => {
+        navItemContainer!.current!.style.height = "0px";
+      }, 200);
     }
   }, [isActive]);
   return (
@@ -39,17 +45,22 @@ const NavGroup: FC<Props> = ({ navData: { childrens, parent } }) => {
               return (
                 <>
                   <NavGroup
+                    {...item}
                     navData={{ parent: item.parent, childrens: item.childrens }}
                     key={key}
+                    onChildClick={onChildClick}
                   />
                 </>
               );
             }
             return (
               <NavItem
+                {...item}
                 label={item.label!}
                 path={item.path!}
                 icon={item?.icon}
+                key={i}
+                onClick={onChildClick}
               />
             );
           })}
@@ -61,6 +72,7 @@ export default NavGroup;
 
 interface Props {
   navData: NavOptions;
+  onChildClick?: () => void;
 }
 
 const StyledNavGroup = styled("ul")`

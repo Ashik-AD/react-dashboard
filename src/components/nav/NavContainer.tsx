@@ -1,5 +1,4 @@
-import { Widgets } from "@mui/icons-material";
-import { ReactNode, FC, cloneElement } from "react";
+import { ReactNode, FC } from "react";
 import styled from "styled-components";
 import useTheme from "../../theme/useTheme";
 const NavContainer: FC<{ children: ReactNode }> = ({ children }) => {
@@ -19,5 +18,10 @@ const StyledNavContainer = styled("div")<{ collapsed: boolean }>`
   transition: width 0.3s linear;
   z-index: 1000;
   overflow: hidden;
+
+  @media screen and (max-width: 1200px) {
+    transform: translateX(-260px);
+    display: none;
+  }
 `;
 export default NavContainer;
