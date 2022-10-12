@@ -1,4 +1,4 @@
-import { CSSProperties, ReactNode } from "react";
+import React, { CSSProperties, ReactNode } from "react";
 
 export interface BoxProps {
     children: ReactNode;
@@ -26,7 +26,7 @@ export interface BoxProps {
     pb?: number;
     pl?: number;
     style?: CSSProperties;
-    onClick?: () => void;
+    onClick?: (event: React.MouseEvent<HTMLDivElement>) => void;
 }
 
 export interface ColorBoxProps extends BoxProps {
