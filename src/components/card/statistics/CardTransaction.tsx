@@ -16,9 +16,10 @@ const CardTransaction: FC<PropsType> = (props) => {
           {items.map((item) => (
             <GridItem
               key={item.id}
-              lg={(12 / items.length) as any}
-              md={3}
               xs={12}
+              sm={4}
+              md={4}
+              lg={(12 / items.length) as any}
             >
               <Box display="flex" align="center" space={1} pt={5}>
                 <CustomAvatar
