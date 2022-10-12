@@ -24,7 +24,7 @@ const CRM = () => {
     <Flex direction="column" styles={{ width: "100%" }}>
       <GridContainer rowSpacing={1.5} columnSpacing={1.5} alignItems="stretch">
         <GridContainer spacing={1.5} alignItems="flex-end" noShifting={true}>
-          <GridItem xs={12} sm={3}>
+          <GridItem xs={12} sm={6} md={3}>
             <CardRanger
               title="Ratings"
               total={13700}
@@ -35,7 +35,7 @@ const CRM = () => {
               ranger="https://bit.ly/3esGX19"
             />
           </GridItem>
-          <GridItem xs={12} sm={3}>
+          <GridItem xs={12} sm={6} md={3}>
             <CardRanger
               title="Ratings"
               total={13700}
@@ -46,7 +46,7 @@ const CRM = () => {
               ranger="https://bit.ly/3L0nf9n"
             />
           </GridItem>
-          <GridItem xs={12} sm={6}>
+          <GridItem xs={12} md={6}>
             <CardTransaction
               title="statistics card"
               items={[
@@ -75,22 +75,22 @@ const CRM = () => {
             />
           </GridItem>
         </GridContainer>
-        <GridItem xs={12} sm={3}>
+        <GridItem xs={12} sm={6} md={3}>
           <CardWidgetTotalSale />
         </GridItem>
-        <GridItem xs={12} sm={3}>
+        <GridItem xs={12} sm={6} md={3}>
           <CardWidgetRevenueReport />
         </GridItem>
-        <GridItem xs={12} sm={6}>
+        <GridItem xs={12} md={6}>
           <CardWidgetSalesOverview />
         </GridItem>
-        <GridItem xs={12} sm={6}>
+        <GridItem xs={12} md={6}>
           <TimelineDummy />
         </GridItem>
-        <GridItem xs={12} sm={4}>
+        <GridItem xs={12} sm={8} md={4}>
           <CardWidgetWeeklySales />
         </GridItem>
-        <GridItem xs={12} sm={2}>
+        <GridItem xs={12} sm={4} md={2}>
           <GridInnerContainer rowSpacing={1.5}>
             <GridItem xs={12}>
               <CardStatisticGrowth />
@@ -108,13 +108,13 @@ const CRM = () => {
             </GridItem>
           </GridInnerContainer>
         </GridItem>
-        <GridItem xs={12} md={4}>
+        <GridItem xs={12} md={6} lg={4}>
           <CardPackagePlan />
         </GridItem>
-        <GridItem xs={12} sm={6} md={4}>
+        <GridItem xs={12} md={6} lg={4}>
           <MeetingDummy />
         </GridItem>
-        <GridItem xs={12} sm={6} md={4}>
+        <GridItem xs={12} md={6} lg={4}>
           <CardMeetup />
         </GridItem>
       </GridContainer>

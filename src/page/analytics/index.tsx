@@ -48,13 +48,13 @@ const Analytics = () => {
             </GridItem>
           </GridInnerContainer>
         </GridItem>
-        <GridItem xs={12} md={4}>
+        <GridItem xs={12} md={6} lg={4}>
           <CardWidgetWeeklyOverview />
         </GridItem>
-        <GridItem xs={12} md={4}>
+        <GridItem xs={12} md={6} lg={4}>
           <CardTotalEarning />
         </GridItem>
-        <GridItem xs={12} md={4}>
+        <GridItem xs={12} md={6} lg={4}>
           <GridInnerContainer spacing={1.6} rowSpacing={1.6}>
             <GridItem xs={12} md={6}>
               <CardStatisticRevenue />
@@ -85,7 +85,7 @@ const Analytics = () => {
             </GridItem>
           </GridInnerContainer>
         </GridItem>
-        <GridItem xs={12} md={4}>
+        <GridItem xs={12} md={6} lg={4}>
           <CardWidgetPerformance />
         </GridItem>
         <GridItem xs={12} md={8}>
@@ -103,7 +103,7 @@ const Analytics = () => {
         <GridItem xs={12} md={4}>
           <CardSalesByCountry />
         </GridItem>
-        <GridItem xs={12} md={8}>
+        <GridItem xs={12} lg={8}>
           <DataGridMembers />
         </GridItem>
       </GridContainer>
