@@ -11,12 +11,9 @@ const IconButton: FC<IconButtonProps> = (props) => {
       {...props}
       theme={{ mode, primaryColor }}
       style={{ ...props.styles }}
+      onClick={props.onClick && props.onClick}
     >
-      <span
-        className="icon-button-content"
-        style={{ display: "flex" }}
-        onClick={props.onClick && props.onClick}
-      >
+      <span className="icon-button-content" style={{ display: "flex" }}>
         {props.children}
       </span>
       <span className="hover-layer"></span>
