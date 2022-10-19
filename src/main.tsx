@@ -8,7 +8,8 @@ import "./index.css";
 import Theme from "./theme/Theme";
 import { BrowserRouter as Router } from "react-router-dom";
 
-// import "./api/server";
+import server from "./api/server";
+server();
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>

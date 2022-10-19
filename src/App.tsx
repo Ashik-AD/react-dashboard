@@ -4,7 +4,8 @@ import ThemeCustomizer from "./components/customizer/Customizer";
 import { Flex } from "./components/layout";
 import AppLayout from "./components/layout/AppLayout";
 import "./global.css";
-import "./styles/Table.css";
+import "./styles/table/Table.css";
+import "./styles/modal/Modal.css";
 import CRM from "./page/crm/CRM";
 import TestComponents from "./TestComponents";
 import Analytics from "./page/analytics";
@@ -13,6 +14,7 @@ import Duuu from "./page/Duuuu";
 import Nav from "./components/nav/Nav";
 import AppBar from "./components/appbar/AppBar";
 import Email from "./page/email";
+import Chat from "./page/chat";
 
 const App = () => {
   return (
@@ -35,6 +37,7 @@ const App = () => {
             <Route path="/analytics/" element={<Analytics />} />
             <Route path="/ecommerce/" element={<Ecommerce />} />
             <Route path="/apps/email/*" element={<Email />} />
+            <Route path="/apps/chat/*" element={<Chat />} />
             <Route path="/duu/" element={<Duuu />} />
           </Routes>
         </main>
