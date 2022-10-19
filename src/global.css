@@ -101,6 +101,10 @@ h6,
   z-index: 2;
 }
 
+.cursor-pointer {
+  cursor: pointer;
+}
+
 .theme-dark-active-fade,
 .theme-dark-active-fade-hover:hover {
   background: rgba(255, 255, 255, 0.0784313725);

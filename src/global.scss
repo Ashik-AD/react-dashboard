@@ -1,6 +1,7 @@
 @use "sass:list";
 @use "sass:meta";
 @import "./_variables";
+// @import "./styles/modal/Modal.scss";
 
 h1,
 .h1 {
@@ -103,6 +104,10 @@ h6,
 
 .zIndex-2 {
     z-index: 2;
+}
+
+.cursor-pointer {
+    cursor: pointer;
 }
 
 .theme-dark-active-fade,
