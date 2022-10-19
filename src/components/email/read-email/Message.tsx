@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { Divider, Text } from "../../../ui";
+import { Divider } from "../../../ui";
 import Box from "../../box/Box";
 import parseHTMLStringToComponent from "html-react-parser";
 import Attachments from "./Attachments";
