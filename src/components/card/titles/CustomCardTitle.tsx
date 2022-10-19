@@ -1,32 +1,44 @@
 import { MoreVert } from "@mui/icons-material";
-import { FC, ReactNode } from "react";
+import { FC, ReactNode, CSSProperties } from "react";
 import { IconButton } from "../../../ui";
 import CardHeaderTitle from "./styled";
-import styled, { CSSProperties } from "styled-components";
+import Box from "../../box/Box";
 
 const CustomCardTitle: FC<Props> = (props) => {
   return (
-    <CardHeaderTitle style={{ ...props.styles }}>
-      <TextWrapper className="card-header-title">
+    <CardHeaderTitle
+      style={{ ...props.styles }}
+      display="flex"
+      flexDirection="column"
+      padding={20}
+    >
+      <Box
+        display="flex"
+        justify="space-between"
+        space={0.4}
+        className="card-header-title"
+        align="center"
+        flex={1}
+      >
         {props.title}
-        {props.subTitle}
-      </TextWrapper>
-      {props.showIcon === false ? (
-        ""
-      ) : (
-        <span style={{ position: "relative" }}>
-          {props.icons ? (
-            props.icons
-          ) : (
-            <IconButton varient="text">
-              <MoreVert />
-            </IconButton>
-          )}
-          {props.component && (
-            <div className="current-action-dropdown">{props.component}</div>
-          )}
-        </span>
-      )}
+        {props.showIcon === false ? (
+          ""
+        ) : (
+          <span style={{ position: "relative" }}>
+            {props.icons ? (
+              props.icons
+            ) : (
+              <IconButton varient="text" contentOpacity={5}>
+                <MoreVert />
+              </IconButton>
+            )}
+            {props.component && (
+              <div className="current-action-dropdown">{props.component}</div>
+            )}
+          </span>
+        )}
+      </Box>
+      {props.subTitle}
     </CardHeaderTitle>
   );
 };
@@ -39,10 +51,5 @@ interface Props {
   styles?: CSSProperties;
   showIcon?: boolean;
 }
-const TextWrapper = styled("span")`
-  display: flex;
-  flex: 1 1 auto;
-  flex-direction: column;
-  gap: 0.4rem;
-`;
+
 export default CustomCardTitle;

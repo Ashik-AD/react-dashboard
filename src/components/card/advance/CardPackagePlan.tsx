@@ -120,19 +120,21 @@ const CreaditLists: FC<{
           varient="caption"
           secondary={true}
           weight="medium"
-          styles={{ lineHeight: 0 }}
+          lineHeight="0px"
         >
           {cardpin[0]} xxxx xxxx {cardpin[1]}
         </Text>
       </Box>
     </Box>
-    <TextField
-      type="number"
-      name={name}
-      label="CVC"
-      sizes="small"
-      style={{ width: "76px" }}
-    />
+    <Box display="flex">
+      <TextField
+        type="number"
+        name={name}
+        label="CVC"
+        sizes="small"
+        style={{ width: "76px" }}
+      />
+    </Box>
   </Box>
 );
 

@@ -6,8 +6,9 @@ const GridLayout = styled('div') <GridLayoutProps>`
     display: flex;
     flex-wrap: wrap;
     width: 100%;
+    height: 100%;
 
-    width: calc(100% + ${({ spacing, columnSpacing }) => (spacing || columnSpacing || 0) + "rem"});
+    width: calc(100% + ${({ spacing, columnSpacing }) => (spacing || columnSpacing || 0) + "rem"})};
     margin-left: ${({ spacing, columnSpacing }) => (spacing || columnSpacing) ? `-${(spacing || columnSpacing)}rem` : 0};
     ${({ noShifting }) => noShifting && "margin-left: 0rem; width: 100%;"}
 
@@ -25,6 +26,10 @@ const GridLayout = styled('div') <GridLayoutProps>`
 
     // column gap
     ${({ columnSpacing }) => typeof columnSpacing === 'number' && `& > .grid-item {padding-left: ${columnSpacing}rem;}`}
+
+        & > .grid-item {
+                height: 100%;
+        }
 
     @media screen and (min-width: 0px){
         & {

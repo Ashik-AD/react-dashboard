@@ -50,7 +50,12 @@ const CardGimificationWithAction: FC<Props> = (props) => {
             </Box>
           </GridItem>
           <GridItem xs={6}>
-            <Box display="flex" align="center" justify="center">
+            <Box
+              position="relative"
+              display="flex"
+              align="center"
+              justify="center"
+            >
               <Image src={banner} {...bannerOption} />
             </Box>
           </GridItem>

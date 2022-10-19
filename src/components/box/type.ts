@@ -39,5 +39,5 @@ export interface ColorBoxProps extends BoxProps {
     borderBottom?: boolean;
     borderTop?: boolean;
     borderRadius?: number;
-    backgroundTheme?: "foreground" | "background";
+    backgroundTheme?: "foreground" | "background" | "";
 }

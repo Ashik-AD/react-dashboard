@@ -4,7 +4,7 @@ import { alertColor, AlertColorType } from "../../ui/color/alert";
 import { BoxProps, ColorBoxProps } from "./type";
 
 const box = styled('div') <BoxProps>`
-    position: ${({ position }) => position ? position : 'relative'};
+    ${({ position }) => position ? `position: ${position};` : ""}
     display: ${({ display }) => display ? display : 'block'};
     ${({ display, align, justify, flexDirection, space, wrap, flex }) => display === 'flex' && `
         align-items: ${align ? align : 'initial'}};
@@ -34,7 +34,8 @@ const box = styled('div') <BoxProps>`
  `
 
 export const StyledColorBox = styled(box) <ColorBoxProps>`
-    ${({ border, borderSize, borderLeft, borderRight, borderBottom, borderTop, theme }) => border ? `
+position: ${({ position }) => position ? position : 'relative'};
+${({ border, borderSize, borderLeft, borderRight, borderBottom, borderTop, theme }) => border ? `
         border-style: solid;
         border-width: ${borderSize ? `${borderSize}` : 1}px;
         border-color: ${theme.mode === "dark" ? "rgb(255 255 255 / 12%)" : "rgb(0 0 0 / 12%)"};
@@ -45,7 +46,8 @@ export const StyledColorBox = styled(box) <ColorBoxProps>`
         ` : ""}};
     border-radius: ${({ borderRadius }) => borderRadius ? borderRadius : 0}px;
     z-index: 1;
-
+    overflow: hidden;
+    
     &:after {
         position: absolute;
         content: '';

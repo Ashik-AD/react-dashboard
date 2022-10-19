@@ -11,11 +11,6 @@ const CardMint: FC<PropsType> = (props) => {
   return (
     <Card>
       <CustomCardTitle
-        styles={{
-          alignItems: "flex-start",
-          paddingLeft: "1rem",
-          paddingRight: "1rem",
-        }}
         title={
           <CustomAvatar color={iconBackground} size={40}>
             {icon}
@@ -30,15 +25,11 @@ const CardMint: FC<PropsType> = (props) => {
         space={0.4}
         className="car-body"
       >
-        <Text
-          varient="body2"
-          weight="bold"
-          styles={{ textTransform: "capitalize" }}
-        >
+        <Text varient="body2" weight="bold" textTransform="capitalize">
           {title}
         </Text>
         <Box display="flex" mb={8} space={0.5}>
-          <Text heading="h6" styles={{ fontWeight: 500 }}>
+          <Text heading="h6" weight="medium">
             {currency && "$"}
             {formatNumber(total, 1000)}
           </Text>
@@ -60,7 +51,7 @@ const CardMint: FC<PropsType> = (props) => {
           varient="caption"
           secondary={true}
           weight="medium"
-          styles={{ textTransform: "capitalize" }}
+          textTransform="capitalize"
         >
           {tag}
         </Text>

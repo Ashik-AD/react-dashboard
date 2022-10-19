@@ -9,17 +9,18 @@ interface Props {
   lg?: columns;
   xlg?: columns;
   children: ReactNode;
+  classes?: string;
 }
 
 const GridItem: FC<Props> = (props) => {
-  const { children, xs, sm, md, lg, xlg } = props;
+  const { children, xs, sm, md, lg, xlg, classes } = props;
   return (
     <div
       className={`grid-item grid-col-1 ${xs ? `grid-col-xs-${xs} ` : ""}${
         sm ? `grid-col-sm-${sm} ` : ""
       }${md ? `grid-col-md-${md} ` : ""}${lg ? `grid-col-lg-${lg} ` : ""}${
         xlg ? `grid-col-xlg-${xlg}` : ""
-      }`}
+      } ${classes ? classes : ""}`}
     >
       {children}
     </div>

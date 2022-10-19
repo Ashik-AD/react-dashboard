@@ -1,10 +1,7 @@
 import styled from 'styled-components'
+import Box from '../../box/Box'
 
-const CardHeaderTitle = styled('div')`
-    display: flex;
-    align-items: center;
-    padding: 1.25rem;
-    
+const CardHeaderTitle = styled(Box)`
     & .card-header-title {
         font-size: 1.25rem;
         line-height: 1;
