@@ -8,11 +8,13 @@ const borderColor = (modeName: themeMode) => modeName === 'dark' ? '#b9b9b9d1' :
 const disableColor = (modeName: themeMode) => modeName === 'dark' ? "#7a7a7a" : "#b3b3b3";
 
 export const InputWrapper = styled("div") <InputOptions>`
+    min-width: 0px;
+    width: 100%;
     position: relative;
     display: flex;
     flex-direction: column;
     ${({ disable }) => disable && `pointer-events: none;`}
-
+    
     & .input-label {
         position: absolute;
         background: ${({ theme, varient }) => varient === 'filled' ? 'transparent' : theme.mode.foreground};
@@ -100,13 +102,15 @@ export const InputWrapper = styled("div") <InputOptions>`
 
 
 export const Input = styled('input') <InputOptions>`
+    min-width: 0px;
+    width: 100%;
     background: ${({ theme, varient }) => varient === 'filled' ? theme.mode.name === 'dark' ? "#7070702e" : "#dbdbdb73" : 'transparent'};
     color: ${({ theme, disable }) => disable ? disableColor(theme.mode.name) : theme.mode.textColor};
     border: 1.5px solid ${({ theme, varient, error }) => (varient === 'filled' || varient === 'standard') ? 'transparent' : error ? alertColors('error') : borderColor(theme.mode.name)};
     padding: ${({ sizes }) => sizes === 'small' ? 0.4 : 1}rem 0.8rem;
     ${({ varient }) => varient === 'filled' && `padding-bottom: 6px; padding-top: 26px; border-bottom-right-radius: 0px!important; border-bottom-left-radius: 0px!important;`}
     ${({ varient }) => varient === 'standard' && `padding: 4px 0px; padding-top: 16px;`}
-    border-radius: 8px;
+    border-radius: ${({ borderRadius }) => borderRadius ? borderRadius : '8px'};
     ${({ disable }) => disable && `pointer-events: none;`}
 
     &:focus,
@@ -116,7 +120,7 @@ export const Input = styled('input') <InputOptions>`
         ${({ varient }) => (varient === 'filled' || varient === 'standard') ? 'outline: 0;' : ''}
         outline-offset: -1px;   
     }
-    &::placeholder {opacity: 0;}
+    &::placeholder {opacity: ${({ hasLabel }) => hasLabel ? 0 : 1};}
     &:focus::placeholder {
         opacity: 1;
     }

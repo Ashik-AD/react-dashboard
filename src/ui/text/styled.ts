@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import TextType, { fontWeight } from './type';
 import { alertColor, Colors } from '../color/alert';
 
-export const Paragraph = styled('p') <TextType>`
+export const StyledText = styled('span') <TextType>`
 text-align: ${({ align }) => align};
 
 color: ${({ color, theme }) => color ? alertColor.hasOwnProperty(color) ? alertColor[color as keyof Colors] : color : theme.mode.textColor};
@@ -16,8 +16,10 @@ ${({ skinColor, theme }) => skinColor ? `color: ${theme.primaryColor.color};` : 
 font-weight: ${({ weight }) => weight && fontWeight[weight]};
 
 text-transform: ${({ textTransform }) => textTransform ? textTransform : "none"};
+${({ lineHeight }) => lineHeight ? `line-height: ${lineHeight};` : ""}
 
 ${({ textOverflow }) => textOverflow ? `
+    min-width: 0px;
     white-space: nowrap;
     text-overflow: ${textOverflow};
     overflow: hidden;
@@ -29,5 +31,4 @@ ${({ size }) => size && `font-size: ${size}px;`}
        ${({ size }) => size && `font-size: ${size}px`};
     }
 `;
-
-export const TextSpan = styled(Paragraph) <TextType>``;
+export default StyledText

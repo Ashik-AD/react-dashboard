@@ -41,8 +41,9 @@ export const iconButton = styled(normalButton) <IconButtonProps>`
   justify-content: center;
   border-radius: ${({ roundness }) => roundness === 'rounded' ? '0.5rem' : roundness === 'square' ? '0.1499rem' : '50%'};
   ${({ fontSize }) => fontSize && `font-size: ${fontSize}px;`}
+  min-height: ${({ size }) => size ? size : 32}px;
   height: ${({ size }) => size ? size : 32}px;
-  min-width: auto;
+  min-width: ${({ size }) => size ? `${size}` : 32}px;
   width: ${({ size }) => size ? size : 32}px;
   color: ${({ theme, color }) => color ? color : theme.mode.textColor};
   padding: 0px;

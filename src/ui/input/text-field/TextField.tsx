@@ -15,6 +15,7 @@ const TextField: FC<Inputs> = (props) => {
     defaultValue,
     label,
     onChange,
+    onKeyDown,
     color,
     hypertext,
     error,
@@ -23,6 +24,7 @@ const TextField: FC<Inputs> = (props) => {
     endAdornment,
     style,
     autoFocus,
+    borderRadius,
   } = props;
   return (
     <InputWrapper
@@ -45,11 +47,14 @@ const TextField: FC<Inputs> = (props) => {
         theme={{ mode, primaryColor }}
         value={defaultValue}
         onChange={onChange}
+        onKeyDown={onKeyDown}
         disabled={disable}
         error={error}
         placeholder={placeholder}
         style={style}
         autoFocus={autoFocus}
+        hasLabel={label ? true : false}
+        borderRadius={borderRadius}
       />
       <span
         className={`input-label floating-label body2 ${

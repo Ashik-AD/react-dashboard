@@ -34,13 +34,5 @@ export default interface TextType {
     textTransform?: TextTransform;
     classes?: string;
     textOverflow?: TextOverflow;
-}
-
-export interface HeadingType {
-    size?: number;
-    color?: string;
-    varient?: Headings;
-    align?: Alignment;
-    children: string | number | React.ReactNode;
-    styles?: CSSProperties;
+    lineHeight?: string;
 }
