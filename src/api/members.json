@@ -1,0 +1,66 @@
+
+[
+    {
+        "id": 483,
+        "name": "John Doe",
+        "userid": "@johndi",
+        "email": "johndoe@npcr.com",
+        "role": "Author",
+        "status": "active",
+        "avatarsrc": "/src/image/humans/2.png"
+    },
+    {
+        "id": 488,
+        "name": "Jane Doe",
+        "userid": "@janiee",
+        "email": "janedeo@mic.com",
+        "role": "Maintainer",
+        "status": "pending",
+        "avatarsrc": "/src/image/humans/1.png"
+    },
+    {
+        "id": 323,
+        "name": "William Mckinney",
+        "userid": "@micley32",
+        "email": "cikadaat@oho.com",
+        "role": "Subscriber",
+        "status": "active",
+        "avatarsrc": "/src/image/humans/4.png"
+    },
+    {
+        "id": 534,
+        "name": "Asly Cole",
+        "userid": "@asmors3",
+        "email": "ashlycolide@yama.com",
+        "role": "Editor",
+        "status": "inactive",
+        "icon": "AC"
+    },
+    {
+        "id": 543,
+        "name": "Isabela Corner",
+        "userid": "@belaco",
+        "email": "belaisa@outlook.com",
+        "role": "Author",
+        "status": "active",
+        "avatarsrc": "/src/image/humans/5.png"
+    },
+    {
+        "id": 123,
+        "name": "Powder Jinx",
+        "userid": "@jinxspo",
+        "email": "powderjnx@outlook.com",
+        "role": "Subscriber",
+        "status": "inactive",
+        "icon": "Pd"
+    },
+    {
+        "id": 342,
+        "name": "Paimon Sense",
+        "userid": "@piamon",
+        "email": "sensepaimon@gmail.com",
+        "role": "Author",
+        "status": "active",
+        "icon": "PS"
+    }
+]

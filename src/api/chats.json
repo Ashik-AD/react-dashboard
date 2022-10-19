@@ -1,0 +1,123 @@
+
+[
+    {
+        "uid": 439492,
+        "user_name": "Francis Yokahama",
+        "avatar_src": "/src/image/humans/1.png",
+        "role": "Frontend Developer",
+        "status": "Offline",
+        "about": "🥰 When one door of happiness closes, another opens, but often we look so long at the closed door that we do not see the one which has been opened for us.",
+        "chats": {
+            "lastMessage": {
+                "total": 1,
+                "message": "New react dashboard mockup is finished?",
+                "isSeen": false,
+                "time": "Oct 2 2022, 10:52 am"
+            },
+            "chat": [
+                {
+                    "senderId": 439492,
+                    "message": "Hey Jhon!",
+                    "isSent": true,
+                    "isDelivered": true,
+                    "isSeen": true,
+                    "time":"Oct 1 2022, 08:47 pm"
+                },
+                {
+                    "senderId": 728232,
+                    "message": "Hi, how can i help  you?",
+                    "isSent": true,
+                    "isDelivered": true,
+                    "isSeen": true,
+                    "time":"Oct 1 2022, 08:48 pm"
+                },
+                {
+                    "senderId": 439492,
+                    "message": "Hey John, I am looking for the best admin template. Could you please help me to find it out?",
+                    "isSent": true,
+                    "isDelivered": true,
+                    "isSeen": true,
+                    "time":"Oct 3 2022, 04:12 pm"
+                },
+                {
+                    "senderId": 439492,
+                    "message": "It should be MUI v5 compatible.",
+                    "isSent": true,
+                    "isDelivered": true,
+                    "isSeen": true,
+                    "time":"Oct 3 2022, 04:13 pm"
+                },
+                {
+                    "senderId": 728232,
+                    "message": "Absolutely",
+                    "isSent": true,
+                    "isDelivered": true,
+                    "isSeen": true,
+                    "time":"Oct 3 2022, 04:15 pm"
+                },
+                {
+                    "senderId": 728232,
+                    "message": "This admin template is built with MUI",
+                    "isSent": true,
+                    "isDelivered": true,
+                    "isSeen": true,
+                    "time":"Oct 3 2022, 04:16 pm"
+                },
+                {
+                    "senderId": 439492,
+                    "message": "Cool! 😎",
+                    "isSent": true,
+                    "isDelivered": true,
+                    "isSeen": true,
+                    "time":"Oct 3 2022, 04:17 pm"
+                },
+                {
+                    "senderId": 439492,
+                    "message": "It looks so clean and fresh UI 🥰😍",
+                    "isSent": true,
+                    "isDelivered": true,
+                    "isSeen": true,
+                    "time":"Oct 3 2022, 04:18 pm"
+                }
+
+            ]
+        }
+
+    },
+    {
+        "uid": 833443,
+        "user_name": "Erica Harbor",
+        "avatar_src": "/src/image/humans/5.png",
+        "role": "Product Manager",
+        "status": "Dnd",
+        "about": "I have always believed that each man makes his own happiness and is responsible for his own problems. It is a simple philosophy.",
+        "chats": {
+            "lastMessage": {
+                "total": 3,
+                "message": "We're looking for mockup design for our new Sass.",
+                "isSeen": false,
+                "time": "Oct 14 2022, 2:05 am"
+            },
+            "chat": [
+                {
+                    "senderId": 439492,
+                    "message": "Hey Jhon!",
+                    "isSent": true,
+                    "isDelivered": true,
+                    "isSeen": true,
+                    "time":"Oct 1 2022, 08:47 pm"
+                },
+                {
+                    "senderId": 833443,
+                    "message": "Hi, how can i help  you?",
+                    "isSent": true,
+                    "isDelivered": true,
+                    "isSeen": true,
+                    "time":"Oct 1 2022, 08:48 pm"
+                }
+
+            ]
+        }
+
+    }
+]

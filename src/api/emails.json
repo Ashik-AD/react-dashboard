@@ -1,0 +1,523 @@
+
+[
+    {
+      "id": 1,
+      "from": {
+        "email": "tommys@mail.com",
+        "full_name": "Tommy Sicilia",
+        "avatar_src": "/src/image/humans/1.png"
+      },
+      "to": [
+        {
+          "full_name": "me",
+          "email": "johndoe@mail.com"
+        }
+      ],
+      "subject": "How to Succeed with Your Shopify Store",
+      "cc": [],
+      "bcc": [],
+      "message": "<p>Hi John,</p><p>How to Choose the Perfect Shopify Theme and Build Your Online Store Fast! (keywords: how to create a shopify store, how to start selling on shopify)</p><p>Shopify Tutorials That Will Save You 5 Hours of Time and $150 A Month!</p><p>Can I Start My Own ECommerce Business Without Knowing How To Code?</p><p>The One Thing All Shopify Entrepreneurs Have in Common</p><p>Regrads,</p><p>Tommy Sicilia</p>",
+      "attachments": ["/src/image/attachment/att-1.jpg", "/src/image/attachment/att-2.jpg"],
+      "isStarred": false,
+      "labels": [
+        "private"
+      ],
+      "timestamp": "Mon Dec 10 2018 07:46:00 GMT+0000 (GMT)",
+      "replies": [],
+      "folder": "inbox",
+      "isRead": true,
+      "hasPreviousMail": false,
+      "hasNextMail": true
+    },
+    {
+      "id": 2,
+      "from": {
+        "email": "tressag@mail.com",
+        "full_name": "Tressa Gass",
+        "avatar_src": "/src/image/humans/2.png"
+      },
+      "to": [
+        {
+          "full_name": "me",
+          "email": "johndoe@mail.com"
+        }
+      ],
+      "subject": "Please find attached the latest Company Report",
+      "cc": [
+        "vrushankbrahmshatriya@mail.com"
+      ],
+      "bcc": [
+        "menka@mail.com"
+      ],
+      "message": " <p>Hello John,</p><p>I hope you are doing well.</p><p> I am sending over a company report for company. It is a PDF file.</p><p>Please let me know if you want to schedule a call or any other questions.</p><p>Regrads</p><p>Tressa Gass</p>",
+      "attachments": ["company-report.pdf"],
+      "isStarred": false,
+      "labels": [
+        "company",
+        "private"
+      ],
+      "timestamp": "Mon Dec 10 2018 07:55:00 GMT+0000 (GMT)",
+      "replies": [],
+      "folder": "inbox",
+      "isRead": true,
+      "hasPreviousMail": false,
+      "hasNextMail": true
+    },
+    {
+      "id": 4,
+      "from": {
+        "email": "louettae@mail.com",
+        "full_name": "Louetta Esses",
+        "avatar_src": "/src/image/humans/3.png"
+      },
+      "to": [
+        {
+          "full_name": "me",
+          "email": "johndoe@mail.com"
+        }
+      ],
+      "subject": "Update Can Change Your Personal Life",
+      "cc": [],
+      "bcc": [],
+      "message": "<p>Hi John,</p><p>5 Biggest Ways in Which the Latest iOS Update Can Change Your Personal Life</p><p>1.Group FaceTime</p><p>2. Memoji & Animoji </p><p>3. Person to Person Payments</p><p>4. Screen Time </p><p>5. Shortcuts App on Macs </p><p>Regrads,</p><p>Louetta Esses</p>",
+      "attachments": [
+           "update.doc",
+            "trip.mp4"
+      ],
+      "isStarred": false,
+      "labels": [
+        "important"
+      ],
+      "timestamp": "Mon Dec 11 2018 09:04:10 GMT+0000 (GMT)",
+      "replies": [],
+      "folder": "inbox",
+      "isRead": true
+    },
+    {
+      "id": 8,
+      "from": {
+        "email": "wmannering3@mozilla.org",
+        "full_name": "Waldemar Mannering",
+        "avatar_src": "/src/image/humans/4.png"
+      },
+      "to": [
+        {
+          "full_name": "me",
+          "email": "johndoe@sciencedaily.com"
+        }
+      ],
+      "subject": "Refer friends. Get rewards.",
+      "cc": [],
+      "bcc": [],
+      "message": "<p>Hi John, </p><p>At Auto Sales, we understand that our customers are our greatest resource, and the only real way that an automotive dealership can grow is through word of mouth.</p><p>If you had a wonderful experience with us, the greatest thanks you can give is to pass along your praise and positive experience with Auto Sales to your family, friends, and colleagues.</p><p>As a reward for promoting us, we will pay you $200 for every referral you send our way who purchases a pre-owned vehicle of under $15,000. For every purchase over $15,000, we will pay you a referral of $300.</p><p>Regards</p><p>Waldemar Mannering</p>",
+      "attachments": [],
+      "isStarred": false,
+      "labels": [
+        "private"
+      ],
+      "timestamp": "Tue Dec 15 2018 11:02:28 GMT+0000 (GMT)",
+      "replies": [],
+      "folder": "inbox",
+      "isRead": false
+    },
+    {
+      "id": 14,
+      "from": {
+        "email": "ebegg9@wikia.com",
+        "full_name": "Eb Begg",
+        "avatar_src": "/src/image/humans/5.png"
+      },
+      "to": [
+        {
+          "full_name": "me",
+          "email": "johndoe@51.la"
+        }
+      ],
+      "subject": "App Update",
+      "cc": [],
+      "bcc": [],
+      "message": "<p>Hello John, </p><p>We have released the update 8.6.1 for the app</p><p>Update your application. Don’t miss our new Feature</p><p>Regards</p><p>Eb Begg</p>",
+      "attachments": [],
+      "isStarred": false,
+      "labels": [
+        "company"
+      ],
+      "timestamp": "Tue Jan 06 2018 23:12:13 GMT+0000 (GMT)",
+      "replies": [],
+      "folder": "inbox",
+      "isRead": true
+    },
+    {
+      "id": 15,
+      "from": {
+        "email": "mspata@sina.com.cn",
+        "full_name": "Modestine Spat",
+        "avatar_src": "/src/image/humans/5.png"
+      },
+      "to": [
+        {
+          "full_name": "me",
+          "email": "johndoe@oracle.com"
+        }
+      ],
+      "subject": "Password Reset",
+      "cc": [],
+      "bcc": [],
+      "message": "<p>Hey John, </p><p>I just wanted to let you know that your password has been changed. You can safely ignore this email if you requested this change.</p><p>Otherwise, please do let us know and we will be here to help. </p><p>Regards</p><p>Modestine Spat</p>",
+      "attachments": [],
+      "isStarred": false,
+      "labels": [
+        "company"
+      ],
+      "timestamp": "Tue Jan 07 2018 12:25:03 GMT+0000 (GMT)",
+      "replies": [],
+      "folder": "inbox",
+      "isRead": false
+    },
+    {
+      "id": 21,
+      "from": {
+        "email": "abaldersong@utexas.edu",
+        "full_name": "Ardis Balderson",
+        "avatar_src": "/src/image/humans/6.png"
+      },
+      "to": [
+        {
+          "full_name": "me",
+          "email": "johndoe@ow.ly"
+        }
+      ],
+      "subject": "Bank transfer initiated.",
+      "cc": [],
+      "bcc": [],
+      "message": "<p>Hey John, </p><p>Bank transfers initiated before 7 PM ET on business days will typically be available in your bank account the next business day. Business days are Mon-Fri, excluding bank holidays.</p><p>Transfers are reviewed which may result in delays or funds being frozen or removed from your account. Learn more</p><p>Regards</p><p>Ardis Balderson</p>",
+      "attachments": [],
+      "isStarred": true,
+      "labels": [
+        "company"
+      ],
+      "timestamp": "2022-10-08T23:00:38.807Z",
+      "replies": [],
+      "folder": "inbox",
+      "isRead": false
+    },
+    {
+      "id": 24,
+      "from": {
+        "email": "douldcottj@yellowpages.com",
+        "full_name": "Dalila Ouldcott",
+        "avatar_src": "/src/image/humans/7.png"
+      },
+      "to": [
+        {
+          "full_name": "me",
+          "email": "johndoe@github.io"
+        }
+      ],
+      "subject": "Order Feedback",
+      "cc": [],
+      "bcc": [],
+      "message": "<p>Hey John, </p><p>What did you think o your recent purchase?</p><p> We\"d love to hear your feedback on your recent order. Please share your experience in a review to help other pet parents just like you.</p><p>Regards</p><p>Dalila Ouldcott</p>",
+      "attachments": [
+           "example.doc",
+           "config.js",
+            "tutorial.mp4"
+      ],
+      "isStarred": false,
+      "labels": [
+        "personal"
+      ],
+      "timestamp": "2022-10-09T05:30:38.807Z",
+      "replies": [
+        {
+          "id": 25,
+          "from": {
+            "email": "johndoe@mail.com",
+            "full_name": "John Doe",
+            "avatar_src": "/src/image/humans/8.png"
+          },
+          "to": [
+            {
+              "full_name": "me",
+              "email": "hettiem@mail.com"
+            }
+          ],
+          "subject": "🎯 Focused impactful open system",
+          "cc": [],
+          "bcc": [],
+          "message": "<p>Hello Hettie,</p><p>Marshmallow cookie jelly liquorice. Powder macaroon cake pastry biscuit. Cotton candy cotton candy jelly chocolate bar. Sesame snaps candy gummi bears cake cookie jujubes. Sweet I love sweet roll. Sesame snaps I love marzipan. Jelly powder tootsie roll. Marshmallow pudding cookie fruitcake liquorice powder. I love I love cookie chupa chups fruitcake ice cream I love biscuit I love. Tiramisu apple pie candy canes cookie gummies. Donut toffee bear claw topping jelly-o. Cupcake icing muffin. Cookie brownie wafer pie sweet. Icing sesame snaps halvah toffee marshmallow lemon drops jelly.</p><p>Tiramisu candy canes powder. Powder chocolate bar halvah liquorice cake I love danish. Cake wafer apple pie. Bear claw fruitcake I love marzipan dessert marzipan lollipop. Halvah gingerbread jelly chupa chups tiramisu I love wafer gummi bears. Candy powder caramels candy gummies. Tart tart cupcake brownie. Bear claw gummies toffee. Tiramisu donut cake chocolate bar. Halvah chocolate bar donut jelly-o. Icing candy brownie chocolate. Pastry bear claw halvah gummies chocolate bar chocolate. Apple pie danish wafer I love biscuit.</p><p>Regrads,</p><p>John Doe</p>",
+          "attachments": [],
+          "isStarred": false,
+          "labels": [],
+          "timestamp": "Mon Dec 10 2018 10:56:00 GMT+0000 (GMT)",
+          "replies": [],
+          "folder": "inbox",
+          "isRead": false
+        },
+        {
+          "id": 26,
+          "from": {
+            "email": "hettiem@mail.com",
+            "full_name": "Hettie Mcerlean",
+            "avatar_src": "/src/image/humans/1.png"
+          },
+          "to": [
+            {
+              "full_name": "me",
+              "email": "johndoe@mail.com"
+            }
+          ],
+          "subject": "Profound systemic alliance 🎉 🎊",
+          "cc": [],
+          "bcc": [],
+          "message": "<p>Oat cake tart danish jelly beans brownie I love. Liquorice I love lollipop chocolate cake carrot cake toffee. Tart muffin candy canes croissant sugar plum lollipop. Macaroon cheesecake marshmallow powder sweet roll bonbon candy apple pie candy canes.</p><p>Regrads,</p><p>Hettie Mcerlean</p>",
+          "attachments": [],
+          "isStarred": false,
+          "labels": [],
+          "timestamp": "Mon Dec 10 2018 11:25:00 GMT+0000 (GMT)",
+          "replies": [],
+          "folder": "inbox",
+          "isRead": false
+        }
+      ],
+      "folder": "inbox",
+      "isRead": true
+    },
+    {
+      "id": 27,
+      "from": {
+        "email": "lkubicek0@cdbaby.com",
+        "full_name": "Lockwood Kubicek",
+        "avatar_src": "/src/image/humans/2.png"
+      },
+      "to": [
+        {
+          "full_name": "me",
+          "email": "johndoe@github.io"
+        }
+      ],
+      "subject": "Finally Start Running",
+      "cc": [],
+      "bcc": [],
+      "message": "<p>Hey John, </p><p>How TO Finally Start Running</p><p>Order an individual training and nutrition program from our specialists! Only now there is a 20% discount! </p><p>Regards</p><p>Lockwood Kubicek</p>",
+      "attachments": [],
+      "isStarred": false,
+      "labels": [
+        "private"
+      ],
+      "timestamp": "2022-10-09T05:30:38.807Z",
+      "replies": [],
+      "folder": "inbox",
+      "isRead": true
+    },
+    {
+      "id": 28,
+      "from": {
+        "email": "mosgarby1@accuweather.com",
+        "full_name": "Milena Osgarby",
+        "avatar_src": "/src/image/humans/3.png"
+      },
+      "to": [
+        {
+          "full_name": "me",
+          "email": "johndoe@github.io"
+        }
+      ],
+      "subject": "Eco Food",
+      "cc": [],
+      "bcc": [],
+      "message": "<p>Hey John, </p><p>Hey! We replenish our assortment with healthy eco food. On this occasion, we really want to play the same game with you! Can you guess what category of new products we are adding?🍯🍓🍵</p><p>Test your intuition, answer the letter!🔮 All members will receive a discount 20% on purchases in the next email!💌</p><p>Regards</p><p>Milena Osgarby</p>",
+      "attachments": [],
+      "isStarred": false,
+      "labels": [
+        "important"
+      ],
+      "timestamp": "2022-10-09T05:30:38.807Z",
+      "replies": [
+        {
+          "id": 50,
+          "from": {
+            "email": "johndoe@mail.com",
+            "full_name": "John Doe",
+            "avatar_src": "/src/image/humans/4.png"
+          },
+          "to": [
+            {
+              "full_name": "me",
+              "email": "hettiem@mail.com"
+            }
+          ],
+          "subject": "It was the best sandcastle he had ever seen.",
+          "cc": [],
+          "bcc": [],
+          "message": "<p>Hello Hettie,</p><p>Marshmallow cookie jelly liquorice. Powder macaroon cake pastry biscuit. Cotton candy cotton candy jelly chocolate bar. Sesame snaps candy gummi bears cake cookie jujubes. Sweet I love sweet roll. Sesame snaps I love marzipan. Jelly powder tootsie roll. Marshmallow pudding cookie fruitcake liquorice powder. I love I love cookie chupa chups fruitcake ice cream I love biscuit I love. Tiramisu apple pie candy canes cookie gummies. Donut toffee bear claw topping jelly-o. Cupcake icing muffin. Cookie brownie wafer pie sweet. Icing sesame snaps halvah toffee marshmallow lemon drops jelly.</p><p>Tiramisu candy canes powder. Powder chocolate bar halvah liquorice cake I love danish. Cake wafer apple pie. Bear claw fruitcake I love marzipan dessert marzipan lollipop. Halvah gingerbread jelly chupa chups tiramisu I love wafer gummi bears. Candy powder caramels candy gummies. Tart tart cupcake brownie. Bear claw gummies toffee. Tiramisu donut cake chocolate bar. Halvah chocolate bar donut jelly-o. Icing candy brownie chocolate. Pastry bear claw halvah gummies chocolate bar chocolate. Apple pie danish wafer I love biscuit.</p><p>Regrads,</p><p>John Doe</p>",
+          "attachments": [],
+          "isStarred": false,
+          "labels": [],
+          "timestamp": "Mon Dec 15 2018 10:56:00 GMT+0000 (GMT)",
+          "replies": [],
+          "folder": "inbox",
+          "isRead": false
+        },
+        {
+          "id": 51,
+          "from": {
+            "email": "hettiem@mail.com",
+            "full_name": "Hettie Mcerlean",
+            "avatar_src": "/src/image/humans/5.png"
+          },
+          "to": [
+            {
+              "full_name": "me",
+              "email": "johndoe@mail.com"
+            }
+          ],
+          "subject": "I’m a living furnace.",
+          "cc": [],
+          "bcc": [],
+          "message": "<p>Oat cake tart danish jelly beans brownie I love. Liquorice I love lollipop chocolate cake carrot cake toffee. Tart muffin candy canes croissant sugar plum lollipop. Macaroon cheesecake marshmallow powder sweet roll bonbon candy apple pie candy canes.</p><p>Regrads,</p><p>Hettie Mcerlean</p>",
+          "attachments": [],
+          "isStarred": false,
+          "labels": [],
+          "timestamp": "Mon Dec 16 2018 11:25:00 GMT+0000 (GMT)",
+          "replies": [],
+          "folder": "inbox",
+          "isRead": false
+        }
+      ],
+      "folder": "inbox",
+      "isRead": true
+    },
+    {
+      "id": 29,
+      "from": {
+        "email": "pBuffay@email.com",
+        "full_name": "Pheoebe Buffay",
+        "avatar_src": "/src/image/humans/6.png"
+      },
+      "to": [
+        {
+          "full_name": "me",
+          "email": "johndoe@github.io"
+        }
+      ],
+      "subject": "Personal Insurance",
+      "cc": [],
+      "bcc": [],
+      "message": "<p>Hey John, </p><p>Your personal insurance agent</p><p>If you have any problems with questions about your insurance, you can contact your personal agent.</p><p>Regards</p><p>Pheoebe Buffay</p>",
+      "attachments": [],
+      "isStarred": false,
+      "labels": [
+        "personal"
+      ],
+      "timestamp": "2022-10-09T05:30:38.807Z",
+      "replies": [],
+      "folder": "inbox",
+      "isRead": true
+    },
+    {
+      "id": 30,
+      "from": {
+        "email": "gabramow2@elegantthemes.com",
+        "full_name": "Gabriel Abramow",
+        "avatar_src": "/src/image/humans/7.png"
+      },
+      "to": [
+        {
+          "full_name": "me",
+          "email": "johndoe@github.io"
+        }
+      ],
+      "subject": "Forgot your password?",
+      "cc": [],
+      "bcc": [],
+      "message": "<p>Hey John, </p><p>There was a request to change your password!</p><p>If did not make this request, just ignore this email. Otherwise, please click the button below to change your","password": "</p><p>Regards</p><p>Gabriel Abramow</p>",
+      "attachments": [],
+      "isStarred": false,
+      "labels": [
+        "company"
+      ],
+      "timestamp": "2022-10-09T05:30:38.807Z",
+      "replies": [],
+      "folder": "inbox",
+      "isRead": true
+    },
+    {
+      "id": 31,
+      "from": {
+        "email": "tolrenshaw3@twitpic.com",
+        "full_name": "Temple Olrenshaw",
+        "avatar_src": "/src/image/humans/8.png"
+      },
+      "to": [
+        {
+          "full_name": "me",
+          "email": "johndoe@github.io"
+        }
+      ],
+      "subject": "April Fools Day Movies",
+      "cc": [],
+      "bcc": [],
+      "message": "<p>Hey John, </p><p>The Best Movies on April Fool’s Day</p><p>Finding any genuine April Fool’s moments in movies is kind of like trying to peek through a wheat field to find individual stalks, but at the very least there are a few movies that seem to have the spirit of April Fool’s Day down when it comes to their sense of humor.</p><p>So instead of finding individual scenes about the day in question it seems like more fun to go ahead and treat the reader to a few films that might be great to watch this coming Sunday when the day of fools is upon us.</p><p>Regards</p><p>Temple Olrenshaw</p>",
+      "attachments": [],
+      "isStarred": false,
+      "labels": [
+        "company"
+      ],
+      "timestamp": "2022-10-09T05:30:38.807Z",
+      "replies": [
+        {
+          "id": 32,
+          "from": {
+            "email": "johndoe@mail.com",
+            "full_name": "John Doe",
+            "avatar_src": "/src/image/humans/9.png"
+          },
+          "to": [
+            {
+              "full_name": "me",
+              "email": "hettiem@mail.com"
+            }
+          ],
+          "subject": "The underground bunker was filled with chips and candy.",
+          "cc": [],
+          "bcc": [],
+          "message": "<p>Hello Hettie,</p><p>Marshmallow cookie jelly liquorice. Powder macaroon cake pastry biscuit. Cotton candy cotton candy jelly chocolate bar. Sesame snaps candy gummi bears cake cookie jujubes. Sweet I love sweet roll. Sesame snaps I love marzipan. Jelly powder tootsie roll. Marshmallow pudding cookie fruitcake liquorice powder. I love I love cookie chupa chups fruitcake ice cream I love biscuit I love. Tiramisu apple pie candy canes cookie gummies. Donut toffee bear claw topping jelly-o. Cupcake icing muffin. Cookie brownie wafer pie sweet. Icing sesame snaps halvah toffee marshmallow lemon drops jelly.</p><p>Tiramisu candy canes powder. Powder chocolate bar halvah liquorice cake I love danish. Cake wafer apple pie. Bear claw fruitcake I love marzipan dessert marzipan lollipop. Halvah gingerbread jelly chupa chups tiramisu I love wafer gummi bears. Candy powder caramels candy gummies. Tart tart cupcake brownie. Bear claw gummies toffee. Tiramisu donut cake chocolate bar. Halvah chocolate bar donut jelly-o. Icing candy brownie chocolate. Pastry bear claw halvah gummies chocolate bar chocolate. Apple pie danish wafer I love biscuit.</p><p>Regrads,</p><p>John Doe</p>",
+          "attachments": [],
+          "isStarred": false,
+          "labels": [],
+          "timestamp": "Mon Jan 5 2019 10:56:00 GMT+0000 (GMT)",
+          "replies": [],
+          "folder": "inbox",
+          "isRead": false
+        },
+        {
+          "id": 33,
+          "from": {
+            "email": "hettiem@mail.com",
+            "full_name": "Hettie Mcerlean",
+            "avatar_src": "/src/image/humans/4.png"
+          },
+          "to": [
+            {
+              "full_name": "me",
+              "email": "johndoe@mail.com"
+            }
+          ],
+          "subject": "The truth is that you pay for your lifestyle in hours.",
+          "cc": [],
+          "bcc": [],
+          "message": "<p>Oat cake tart danish jelly beans brownie I love. Liquorice I love lollipop chocolate cake carrot cake toffee. Tart muffin candy canes croissant sugar plum lollipop. Macaroon cheesecake marshmallow powder sweet roll bonbon candy apple pie candy canes.</p><p>Regrads,</p><p>Hettie Mcerlean</p>",
+          "attachments": [],
+          "isStarred": false,
+          "labels": [],
+          "timestamp": "Mon Jan 8 2019 11:25:00 GMT+0000 (GMT)",
+          "replies": [],
+          "folder": "inbox",
+          "isRead": false
+        }
+      ],
+      "folder": "inbox",
+      "isRead": true
+    }
+  ]

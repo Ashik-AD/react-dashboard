@@ -1,0 +1,86 @@
+[
+    {
+        "id": 939238,
+        "party": {
+            "profile_url": "/src/image/humans/5.png",
+            "full_name": "John Doe",
+            "address": "johndoe@gmail.com"
+        },
+        "subject": "Everything going nicely & smooth 🥰",
+        "labels": ["personal", "private"],
+        "markedRead": false,
+        "starred": true,
+        "timestamp": "13 feb",
+        "folder": "inbox"
+    },
+    {
+        "id": 4784783,
+        "party": {
+            "profile_url": "/src/image/humans/2.png",
+            "full_name": "Isabela Rodrigo",
+            "address": "belaisa@outlook.com"
+        },
+        "subject": "Reactjs Conf. will be happening at july 23",
+        "labels": ["company", "important"],
+        "markedRead": true,
+        "starred": false,
+        "timestamp": "15:43 PM",
+        "folder": "inbox"
+    },
+    {
+        "id": 873494,
+        "party": {
+            "icon": "UL",
+            "full_name": "Urmila Limbu",
+            "address": "urmila@outlook.com"
+        },
+        "subject": "Wishing you all the good things",
+        "labels": ["private", "important", "personal"],
+        "markedRead": false,
+        "starred": true,
+        "timestamp": "12:32 AM",
+        "folder": "draft"
+    },
+    {
+        "id": 95645,
+        "party": {
+            "icon": "AD",
+            "full_name": "Ashik Dhimal",
+            "address": "ashik@outlook.com"
+        },
+        "subject": "It's a great plesure to nice to mmet you",
+        "labels": ["company"],
+        "markedRead": true,
+        "starred": false,
+        "timestamp": "5:34 PM",
+        "folder": "trash"
+    },
+    {
+        "id": 32532,
+        "party": {
+            "profile_url": "/src/image/humans/3.png",
+            "full_name": "Lyla Bloix",
+            "address": "lyla@outlook.com"
+        },
+        "subject": "Please update settings",
+        "labels": ["important", "personal"],
+        "markedRead": true,
+        "starred": false,
+        "timestamp": "10:34 AM",
+        "folder": "inbox"
+    },
+    {
+        "id": 51324,
+        "party": {
+            "profile_url": "/src/image/humans/1.png",
+            "full_name": "Asther Bolsik",
+            "address": "asther@gmail.com"
+        },
+        "subject": "Email & password change",
+        "labels": ["private", "important", "personal"],
+        "markedRead": false,
+        "starred": false,
+        "timestamp": "12:32 AM",
+        "folder": "inbox"
+    }
+]
