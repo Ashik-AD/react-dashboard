@@ -29,9 +29,9 @@ const NavItem: FC<Props> = (props) => {
     >
       <NavLink
         to={path}
-        className={({ isActive }): string => {
-          return isActive ? "nav-item-active nav-item" : "nav-item";
-        }}
+        className={({ isActive }): string =>
+          isActive ? "nav-item-active nav-item" : "nav-item"
+        }
       >
         <Text size={icon ? 22 : 14} styles={{ display: "flex" }}>
           {icon ? icon : <CircleOutlined />}

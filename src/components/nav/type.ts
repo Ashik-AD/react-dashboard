@@ -1,11 +1,9 @@
 import { ReactNode } from "react";
-
-
 export interface Parent {
     title: string;
     icon: ReactNode;
-}
 
+}
 export interface Childrens {
     parent?: Parent;
     label?: string;
