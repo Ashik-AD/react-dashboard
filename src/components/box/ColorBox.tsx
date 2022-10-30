@@ -1,6 +1,6 @@
 import { FC } from "react";
 import useTheme from "../../theme/useTheme";
-import { StyledColorBox } from "./box.styled";
+import { StyledColorBox } from "./styled";
 import { ColorBoxProps } from "./type";
 const ColorBox: FC<ColorBoxProps> = (props) => {
   const {

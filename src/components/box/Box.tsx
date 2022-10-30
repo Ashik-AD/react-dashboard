@@ -1,5 +1,5 @@
 import { FC } from "react";
-import MyBox from "./box.styled";
+import MyBox from "./styled";
 import { BoxProps } from "./type";
 const Box: FC<BoxProps> = (props) => {
   return (

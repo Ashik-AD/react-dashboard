@@ -31,23 +31,25 @@ const box = styled('div') <BoxProps>`
     ${({ pr }) => pr && `padding-right: ${pr}px;`}
     ${({ pb }) => pb && `padding-bottom: ${pb}px;`}
     ${({ pl }) => pl && `padding-left: ${pl}px;`}
+
  `
 
 export const StyledColorBox = styled(box) <ColorBoxProps>`
 position: ${({ position }) => position ? position : 'relative'};
-${({ border, borderSize, borderLeft, borderRight, borderBottom, borderTop, theme }) => border ? `
-        border-style: solid;
-        border-width: ${borderSize ? `${borderSize}` : 1}px;
-        border-color: ${theme.mode === "dark" ? "rgb(255 255 255 / 12%)" : "rgb(0 0 0 / 12%)"};
-        border-left-width: ${borderLeft ? `${borderLeft}px` : 'auto'};
-        border-right-width: ${borderRight ? `${borderRight}px` : 'auto'};
-        border-bottom-width: ${borderBottom ? `${borderBottom}px` : 'auto'};
-        border-top-width: ${borderTop ? `${borderTop}px` : 'auto'};
-        ` : ""}};
-    border-radius: ${({ borderRadius }) => borderRadius ? borderRadius : 0}px;
+
+    ${({ border, theme }) => border?.show ? `
+    border-style: solid;
+    border-width: ${border.size ? `${border.size}` : `1px`};
+    border-color: ${border.color ? alertColor.hasOwnProperty(border.color) ? alertColor[border.color as AlertColorType] : border.color : theme.mode.name === "dark" ? "rgb(255 255 255 / 12%)" : "rgb(0 0 0 / 12%)"};
+    border-left-width: ${border.left ? `${border.left}` : border.size};
+    border-right-width: ${border.right ? `${border.right}` : border.size};
+    border-bottom-width: ${border.bottom ? `${border.bottom}` : border.size};
+    border-top-width: ${border.top ? `${border.top}` : border.size};
+    border-radius: ${border.radius ? border.radius : 0};
+    ` : ""}};
+
     z-index: 1;
     overflow: hidden;
-    
     &:after {
         position: absolute;
         content: '';

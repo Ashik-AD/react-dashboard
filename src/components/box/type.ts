@@ -32,12 +32,15 @@ export interface BoxProps {
 export interface ColorBoxProps extends BoxProps {
     transparency?: number;
     color?: string;
-    border?: boolean;
-    borderSize?: number;
-    borderLeft?: boolean;
-    borderRight?: boolean;
-    borderBottom?: boolean;
-    borderTop?: boolean;
-    borderRadius?: number;
+    border?: {
+        show: boolean;
+        size: string;
+        top?: string;
+        right?: string;
+        bottom?: string;
+        left?: string;
+        radius?: string;
+        color?: string;
+    };
     backgroundTheme?: "foreground" | "background" | "";
 }
