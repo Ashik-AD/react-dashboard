@@ -1,14 +1,14 @@
 import styled from 'styled-components';
 import { ToggleElProps } from './type'
 
-export const ToggleWrapper = styled.span<{ label: string | undefined, size: 'small' | 'regular' }>`
-position: relative;
-display: inline-flex;
-align-items: center;
-${({ label, size }) => label && `gap: ${size === 'small' ? 6 : 10}px;`}
-cursor: pointer;
-padding: ${({ size }) => size === 'small' ? 4 : 10}px 0;
-user-select: none;
+export const ToggleWrapper = styled('div') <{ label: string | undefined, size: 'small' | 'regular' }>`
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    ${({ label, size }) => label && `gap: ${size === 'small' ? 6 : 10}px;`}
+    cursor: pointer;
+    padding: ${({ size }) => size === 'small' ? 4 : 8}px 0;
+    user-select: none;
 `
 
 export const Input = styled.input`
@@ -28,9 +28,9 @@ export const Circle = styled('span') <ToggleElProps>`
     max-width: ${({ size }) => size === 'small' ? 16 : 20}px;
     border-radius: 50%;
     background: ${({ theme, toggled }) => toggled ? theme.primaryColor.color : '#fff'};
-    box-shadow: 0px 3px 4px ${({ theme }) => theme.mode.name === 'dark' ? '#484848' : '#8d8d8d'};
+    box-shadow: 0px 1.5px 3px ${({ theme }) => theme.mode.name === 'dark' ? '#484848' : '#8d8d8d'};
     position: absolute;
-    top: ${({ size }) => size === 'small' ? 3.5 : -1.5}px;
+    top: ${({ size }) => size === 'small' ? 3.5 : -0.5}px;
     left: ${({ toggled, size }) => toggled ? size === "small" ? 14 : 20 : 0}px;
     transition: left 0.3s ease;
 
@@ -57,10 +57,9 @@ export const Circle = styled('span') <ToggleElProps>`
 
 export const Track = styled('span') <ToggleElProps>`
     display: inline-block;
-
     width: ${({ size }) => size == 'small' ? 30 : 40}px;
     height: ${({ size }) => size === 'small' ? 10 : 14}px;
-    background: ${({ theme, toggled }) => toggled ? theme.primaryColor : theme.mode === 'dark' ? '#f4f9f96b' : '#000000'};
+    background: ${({ theme, toggled }) => toggled ? theme.primaryColor : theme.mode === 'dark' ? '#f4f9f96b' : '#818181'};
     border-radius: 10px;
     opacity: .5;
 `;
@@ -68,4 +67,5 @@ export const Track = styled('span') <ToggleElProps>`
 export const Label = styled('span') <{ size?: "small" | "regular" }>`
     color: ${({ theme }) => theme.mode.textColor};
     font-size: 1rem;
+    line-height: 0px;
 `

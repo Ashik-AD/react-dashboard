@@ -4,13 +4,14 @@ import { InputOptions } from '../type';
 
 type themeMode = 'dark' | 'light';
 const alertColors = (colorName: AlertColorType) => alertColor[colorName];
-const borderColor = (modeName: themeMode) => modeName === 'dark' ? '#b9b9b9d1' : "#8f8f8fc4";
+const borderColor = (modeName: themeMode) => modeName === 'dark' ? '#878787d1' : "#8f8f8fc4";
 const disableColor = (modeName: themeMode) => modeName === 'dark' ? "#7a7a7a" : "#b3b3b3";
 
 export const InputWrapper = styled("div") <InputOptions>`
-    min-width: 0px;
-    width: 100%;
     position: relative;
+    min-width: ${({ width }) => width ? width : '0px'};
+    width: ${({ width }) => width ? width : '100%'};
+    ${({ maxWidth }) => maxWidth ? `max-width: ${maxWidth};` : ''}
     display: flex;
     flex-direction: column;
     ${({ disable }) => disable && `pointer-events: none;`}
@@ -124,4 +125,10 @@ export const Input = styled('input') <InputOptions>`
     &:focus::placeholder {
         opacity: 1;
     }
-`
+`;
+
+export const StyledTextare = styled(Input) <InputOptions>`
+    padding-top: 8px;
+    padding-bottom: 8px;
+    resize: none;
+`; 

@@ -2,8 +2,11 @@ import styled from 'styled-components'
 import genColorShades from '../../../utils/genColorShades';
 import { Input, InputWrapper } from '../text-field/styled';
 
-const StyledSelectWrapper = styled(InputWrapper) <{ width?: string }>`
+const StyledSelectWrapper = styled(InputWrapper) <{ width?: string; containerWidth?: string }>`
     position: relative;
+    width: ${({ containerWidth }) => containerWidth ? containerWidth : 'auto'};
+    min-width: ${({ containerWidth }) => containerWidth || '100%'};
+    cursor: pointer;
 
     & .select-status-arrow {
         position: absolute;
@@ -29,7 +32,7 @@ const StyledSelectWrapper = styled(InputWrapper) <{ width?: string }>`
         min-width: ${({ width }) => width ? width : '100px'};
         border-radius: 6px;
         box-shadow: ${({ theme }) => theme.mode.name === 'dark' ? '#0f10146e' : "#dddddd73"} 0px 3px 7px 1px;
-        top: 60px;
+        top: 100%;
         left:0;
         padding: 2px 0;
         transform: scale(.9);
@@ -51,7 +54,7 @@ const StyledSelectWrapper = styled(InputWrapper) <{ width?: string }>`
 
     .select-option-item {
         position: relative;
-        padding: 6px 12px;
+        padding: ${({ sizes }) => sizes === 'small' ? '6px' : '8px'} 12px;
         cursor: pointer;
         text-transform: capitalize;
         z-index: 2;
@@ -68,7 +71,8 @@ const StyledSelectWrapper = styled(InputWrapper) <{ width?: string }>`
 }`;
 export const StyledSelectButton = styled(Input) <{ width?: string }>`
     height: ${({ sizes }) => sizes === 'small' ? "40px" : "56px"};
-    width:${({ width }) => width ? width : "100px"};
-    cursor: default;
+    width:${({ width }) => width ? width : "100%"};
+    text-transform: capitalize;
+    cursor: pointer;
 `;
 export default StyledSelectWrapper

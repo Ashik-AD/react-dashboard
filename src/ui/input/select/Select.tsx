@@ -7,6 +7,7 @@ import {
   useContext,
   useState,
 } from "react";
+import Box from "../../../components/box/Box";
 import useTheme from "../../../theme/useTheme";
 import { InputVarient } from "../type";
 import StyledSelectWrapper, { StyledSelectButton } from "./styled";
@@ -16,7 +17,7 @@ interface DefaultProps {
   currentSelection: string;
 }
 interface SelectProp {
-  label: string;
+  label?: string;
   defaultValue: string;
   classes?: string;
   selectId?: string;
@@ -25,6 +26,7 @@ interface SelectProp {
   varient?: InputVarient;
   labelWidth?: string;
   width?: string;
+  containerWidth?: string;
   sizes?: "small" | "normal";
 }
 const SelectCtx = createContext<DefaultProps | undefined>(undefined);
@@ -43,6 +45,7 @@ const Select: FC<SelectProp> = (props) => {
     labelWidth,
     sizes,
     width,
+    containerWidth,
   } = props;
   const [selectOpen, setSelectOpen] = useState(false);
   const [selectedItem, setSelectedItem] = useState({
@@ -80,11 +83,9 @@ const Select: FC<SelectProp> = (props) => {
       id={selectId ? selectId : ""}
       width={width}
       sizes={sizes}
+      containerWidth={containerWidth}
     >
-      <div
-        onClick={handleSelectOpen}
-        style={{ display: "flex", flexDirection: "column" }}
-      >
+      <Box display="flex" flexDirection="column" onClick={handleSelectOpen}>
         <StyledSelectButton
           theme={{ mode, primaryColor }}
           as="div"
@@ -117,7 +118,7 @@ const Select: FC<SelectProp> = (props) => {
             }`}
           ></span>
         )}
-      </div>
+      </Box>
 
       <SelectCtx.Provider
         value={{

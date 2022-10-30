@@ -3,14 +3,14 @@ import useTheme from "../../theme/useTheme";
 import DividerProps from "./type";
 import Div from "./styled";
 
-const Divider: FC<DividerProps> = ({ className, styles, horizontal }) => {
+const Divider: FC<DividerProps> = ({ className, styles, vertical }) => {
   const {
     theme: { mode },
   } = useTheme();
   return (
     <Div
       theme={{ mode }}
-      horizontal={horizontal}
+      vertical={vertical}
       className={className ? className : ""}
       style={{ ...styles }}
     />

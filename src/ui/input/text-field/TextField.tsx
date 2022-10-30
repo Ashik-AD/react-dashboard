@@ -1,8 +1,10 @@
-import { FC, memo } from "react";
+import { FC, forwardRef, memo } from "react";
 import { Inputs } from "../type";
-import { Input, InputWrapper } from "./styled";
+import { Input, InputWrapper, StyledTextare } from "./styled";
 import useTheme from "../../../theme/useTheme";
-const TextField: FC<Inputs> = (props) => {
+type InputRef = HTMLInputElement;
+
+const TextField = forwardRef<InputRef, Inputs>((props, ref) => {
   const {
     theme: { mode, primaryColor },
   } = useTheme();
@@ -25,6 +27,10 @@ const TextField: FC<Inputs> = (props) => {
     style,
     autoFocus,
     borderRadius,
+    width,
+    maxWidth,
+    multiRow,
+    value,
   } = props;
   return (
     <InputWrapper
@@ -34,28 +40,46 @@ const TextField: FC<Inputs> = (props) => {
       disable={disable}
       error={error}
       sizes={sizes}
+      width={width}
+      maxWidth={maxWidth}
     >
-      <Input
-        type={type}
-        name={name}
-        className={`form-input body1 ${
-          startAdornment ? "adornment-left" : ""
-        } ${endAdornment ? "adornment-right" : ""}`}
-        disable={disable}
-        sizes={sizes}
-        varient={varient ? varient : "regular"}
-        theme={{ mode, primaryColor }}
-        value={defaultValue}
-        onChange={onChange}
-        onKeyDown={onKeyDown}
-        disabled={disable}
-        error={error}
-        placeholder={placeholder}
-        style={style}
-        autoFocus={autoFocus}
-        hasLabel={label ? true : false}
-        borderRadius={borderRadius}
-      />
+      {!multiRow ? (
+        <Input
+          type={type}
+          name={name}
+          className={`form-input body1 ${
+            startAdornment ? "adornment-left" : ""
+          } ${endAdornment ? "adornment-right" : ""}`}
+          disable={disable}
+          sizes={sizes}
+          varient={varient ? varient : "regular"}
+          theme={{ mode, primaryColor }}
+          value={value}
+          defaultValue={defaultValue}
+          onChange={onChange}
+          onKeyDown={onKeyDown}
+          disabled={disable}
+          error={error}
+          placeholder={placeholder}
+          style={style}
+          autoFocus={autoFocus}
+          hasLabel={label ? true : false}
+          borderRadius={borderRadius}
+          maxWidth={maxWidth}
+          ref={ref}
+        />
+      ) : (
+        <StyledTextare
+          {...props}
+          as={"textarea"}
+          value={value}
+          defaultValue={defaultValue}
+          varient={varient ? varient : "regular"}
+          className="form-input body1"
+          theme={{ mode, primaryColor }}
+          hasLabel={label ? true : false}
+        ></StyledTextare>
+      )}
       <span
         className={`input-label floating-label body2 ${
           varient === "filled" ? "label-unfill" : ""
@@ -77,6 +101,6 @@ const TextField: FC<Inputs> = (props) => {
       )}
     </InputWrapper>
   );
-};
+});
 
 export default memo(TextField);

@@ -8,7 +8,7 @@ export interface ButtonType {
   varient?: Varient;
   children: string | ReactNode;
   color?: Color | string;
-  onClick?: (eve: React.MouseEvent) => void;
+  onClick?: (eve: React.MouseEvent<HTMLElement>) => void;
   className?: string;
   disabled?: boolean;
   width?: string;

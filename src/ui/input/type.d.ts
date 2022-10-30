@@ -11,10 +11,12 @@ export interface InputOptions {
     error?: boolean;
     hasLabel?: boolean;
     borderRadius?: string;
+    width?: string;
+    maxWidth?: string;
 
 }
 export interface Inputs extends InputOptions {
-    type: InputType;
+    type?: InputType;
     name: string;
     defaultValue?: string | number;
     placeholder?: string;
@@ -29,4 +31,6 @@ export interface Inputs extends InputOptions {
     endAdornment?: ReactNode;
     style?: CSSProperties;
     autoFocus?: boolean;
+    multiRow?: boolean;
+    value?: number;
 }
