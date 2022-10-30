@@ -1,18 +1,17 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { shallowEqual, useSelector } from "react-redux";
 import EmailListItem from "../../../components/email/EmailListItem";
 import NotFound from "../../../components/email/NotFound";
 import ScrollContainer from "../../../components/scroll-container/ScrollContainer";
 import emailFilterSelector from "../../../features/emails/emailSelector";
 
 const EmailContent = () => {
-  const selectedId = useSelector(emailFilterSelector);
+  const selectedId = useSelector(emailFilterSelector, shallowEqual);
   const renderEmailList = selectedId.map((mail) => (
-    <EmailListItem mailId={mail.id} key={mail.id} />
+    <EmailListItem mailId={mail} key={mail} />
   ));
-
   return (
-    <ScrollContainer maxHeight="63vh">
+    <ScrollContainer maxHeight="62vh">
       {selectedId.length === 0 ? <NotFound /> : renderEmailList}
     </ScrollContainer>
   );

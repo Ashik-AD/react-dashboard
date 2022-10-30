@@ -31,7 +31,7 @@ const Content = () => {
       transparency={5}
       style={{ height: "100%" }}
     >
-      <Divider className="xs-hidden md-visible" horizontal />
+      <Divider className="xs-hidden md-visible" vertical />
       <Box display="flex" flexDirection="column" flex={1}>
         {isChatSelected ? (
           <>
