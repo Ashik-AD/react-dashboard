@@ -29,7 +29,7 @@ const Cell = styled("td")<StyledProps>`
   padding: ${({ compact }) => (compact ? "0.2rem 1rem" : "1rem")};
   ${({ align }) => align && `text-align: ${align};`}
   border-bottom: 1px solid ${({ theme }) => color(theme.mode.name)};
-  white-space: nowrap;
+  white-space: wrap;
   ${({ border, theme }) =>
     border &&
     `
