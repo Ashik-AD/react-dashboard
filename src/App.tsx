@@ -15,6 +15,7 @@ import Nav from "./components/nav/Nav";
 import AppBar from "./components/appbar/AppBar";
 import Email from "./page/email";
 import Chat from "./page/chat";
+import Invoice from "./page/invoice";
 
 const App = () => {
   return (
@@ -38,6 +39,7 @@ const App = () => {
             <Route path="/ecommerce/" element={<Ecommerce />} />
             <Route path="/apps/email/*" element={<Email />} />
             <Route path="/apps/chat/*" element={<Chat />} />
+            <Route path="/invoice/*" element={<Invoice />} />
             <Route path="/duu/" element={<Duuu />} />
           </Routes>
         </main>
