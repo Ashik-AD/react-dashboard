@@ -1,5 +1,5 @@
 
-const formatDataGridColumn = (fieldId: string, label: string, width: number) => ({
+const formatDataGridColumn = (fieldId: string, label: string, width: string) => ({
     fieldId, label, width
 })
 export default formatDataGridColumn;

@@ -25,10 +25,10 @@ interface Members {
 }
 
 const columns: DataGridColoumn[] = [
-  formatDataGridColumn("name", "Name", 220),
-  formatDataGridColumn("email", "Email", 200),
-  formatDataGridColumn("role", "Role", 150),
-  formatDataGridColumn("status", "Status", 130),
+  formatDataGridColumn("name", "Name", "220px"),
+  formatDataGridColumn("email", "Email", "200px"),
+  formatDataGridColumn("role", "Role", "150px"),
+  formatDataGridColumn("status", "Status", "130px"),
 ];
 
 const DataGridMembers = () => {

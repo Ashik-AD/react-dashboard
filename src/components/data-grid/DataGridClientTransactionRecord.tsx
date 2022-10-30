@@ -14,11 +14,11 @@ import {
 import DataGridUserDetail from "./DataGridUserDetail";
 import formatNumber from "../../utils/formatNumber";
 const gridColumns = [
-  formatDataGridColumn("id", "ID", 100),
-  formatDataGridColumn("actionLabel", "ID", 80),
-  formatDataGridColumn("client", "Client", 230),
-  formatDataGridColumn("total", "Total", 140),
-  formatDataGridColumn("balance", "Balance", 150),
+  formatDataGridColumn("id", "ID", "100px"),
+  formatDataGridColumn("actionLabel", "ID", "80px"),
+  formatDataGridColumn("client", "Client", "230px"),
+  formatDataGridColumn("total", "Total", "140px"),
+  formatDataGridColumn("balance", "Balance", "150px"),
 ];
 const DataGridClientTransactionRecord = () => {
   const clientTransactions: Transactions[] = transactions;

@@ -1,5 +1,6 @@
 import {
   createContext,
+  memo,
   MouseEvent,
   useEffect,
   useMemo,
@@ -19,6 +20,8 @@ import DataGridOptions, {
   DataGridColoumn,
 } from "./type";
 import DataGridFooterContainer from "../../data-grid-item/DataGridFooterContainer";
+import ScrollContainer from "../../scroll-container/ScrollContainer";
+import { Text } from "../../../ui";
 
 export const DataGridOptionContext = createContext<DataOptionContext | null>(
   null
@@ -45,7 +48,6 @@ const DataGrid = <T extends unknown>({
   const [columnHiderOpen, setColumnHiderOpen] = useState(false);
   const [showFilter, setShowFilter] = useState(false);
   const [dataList, setDataList] = useState(rows);
-
   const [footerOption, setFooterOption] = useState({
     next: rowPerPage!,
     passedRows: 1,
@@ -57,10 +59,12 @@ const DataGrid = <T extends unknown>({
     }
     const sorted = sortLists(dataList as SortableData);
     return sorted(sortOption.fieldName, sortOption.by);
-  }, [sortOption]);
+  }, [sortOption, rows]);
 
   useEffect(() => {
-    setDataList(sortedList);
+    if (sortedList.length > 0) {
+      setDataList(sortedList);
+    }
   }, [sortedList]);
 
   const handleSelectRow = (eve: MouseEvent<HTMLDivElement>) => {
@@ -130,7 +134,7 @@ const DataGrid = <T extends unknown>({
   };
 
   return (
-    <StyledDataGrid className="data-grid" width={width} height={height}>
+    <StyledDataGrid className="data-grid" width={width}>
       <DataGridOptionContext.Provider
         value={{
           sortByAsc: handleSortBy(setSortOption, "asc"),
@@ -186,27 +190,38 @@ const DataGrid = <T extends unknown>({
       </DataGridOptionContext.Provider>
 
       {/*  Render data list */}
-      <Box display="flex" flexDirection="column" className="data_grid_body">
+      <Box className="data_grid_body">
         {/* Loop through data list */}
-        {dataList
-          .slice(footerOption.passedRows - 1, footerOption.next)
-          .map((item, index) => (
-            <DataGridRow
-              dataId={item[columns[0].fieldId] as string}
-              rowId={index}
-              selected={selectedId === item[columns[0].fieldId]}
-              key={index}
-              onClick={handleSelectRow}
-            >
-              {renderGridData(
-                item,
-                columns.reduce<Record<string, DataGridColoumn>>((acc, cur) => {
-                  acc[cur.fieldId] = cur;
-                  return acc;
-                }, {})
-              )}
-            </DataGridRow>
-          ))}
+        {dataList.length > 0 ? (
+          dataList
+            .slice(footerOption.passedRows - 1, footerOption.next)
+            .map((item, index) => (
+              <DataGridRow
+                dataId={item[columns[0].fieldId] as string}
+                rowId={index}
+                selected={selectedId === item[columns[0].fieldId]}
+                key={index}
+                onClick={handleSelectRow}
+              >
+                {renderGridData(
+                  item,
+                  columns.reduce<Record<string, DataGridColoumn>>(
+                    (acc, cur) => {
+                      acc[cur.fieldId] = cur;
+                      return acc;
+                    },
+                    {}
+                  )
+                )}
+              </DataGridRow>
+            ))
+        ) : (
+          <Box padding={56}>
+            <Text align="center" paragraph>
+              No rows :(
+            </Text>
+          </Box>
+        )}
       </Box>
       {pagination && (
         <DataGridFooterContainer
@@ -219,4 +234,4 @@ const DataGrid = <T extends unknown>({
     </StyledDataGrid>
   );
 };
-export default DataGrid;
+export default memo(DataGrid);

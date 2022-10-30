@@ -1,5 +1,5 @@
 import { ArrowDownward, ArrowUpward, MoreVert } from "@mui/icons-material";
-import { FC, ReactNode } from "react";
+import { FC, memo, ReactNode } from "react";
 import styled from "styled-components";
 import { IconButton, Text } from "../../ui";
 import Box from "../box/Box";
@@ -23,20 +23,31 @@ const DataGridColumnHead: FC<Props> = (props) => {
       }}
     >
       <Box display="flex" align="center">
-        <Text size={12} weight="bold" styles={{ textTransform: "uppercase" }}>
-          {label}
-        </Text>
-        <span className={`icon-wrapper ${sorted ? "show-icon" : ""}`}>
-          {sorted ? (
-            sortDir === "asc" ? (
-              <SortIcon icon={<ArrowUpward />} />
-            ) : (
-              <SortIcon icon={<ArrowDownward />} />
-            )
+        <>
+          {typeof label === "string" ? (
+            <Text
+              size={12}
+              weight="bold"
+              textTransform="uppercase"
+              textOverflow="ellipsis"
+            >
+              {label}
+            </Text>
           ) : (
-            <SortIcon icon={<ArrowUpward />} />
+            label
           )}
-        </span>
+          <span className={`icon-wrapper ${sorted ? "show-icon" : ""}`}>
+            {sorted ? (
+              sortDir === "asc" ? (
+                <SortIcon icon={<ArrowUpward />} />
+              ) : (
+                <SortIcon icon={<ArrowDownward />} />
+              )
+            ) : (
+              <SortIcon icon={<ArrowUpward />} />
+            )}
+          </span>
+        </>
       </Box>
 
       <DataGridDropDownMain
@@ -47,6 +58,7 @@ const DataGridColumnHead: FC<Props> = (props) => {
             fontSize={20}
             size={30}
             className="head-more-option dropdown-btn"
+            contentOpacity={7}
           >
             <MoreVert />
           </IconButton>
@@ -55,7 +67,7 @@ const DataGridColumnHead: FC<Props> = (props) => {
     </StyleDataGridHead>
   );
 };
-export default DataGridColumnHead;
+export default memo(DataGridColumnHead);
 
 const SortIcon: FC<{ icon: ReactNode }> = ({ icon }) => (
   <IconButton varient="text" fontSize={18} size={30}>
@@ -64,7 +76,7 @@ const SortIcon: FC<{ icon: ReactNode }> = ({ icon }) => (
 );
 
 interface StyleOption {
-  width: number;
+  width: string;
   sorted: boolean;
 }
 
@@ -79,9 +91,9 @@ interface Props extends StyleOption {
 const StyleDataGridHead = styled("div")<StyleOption>`
   position: relative;
   display: flex;
-  width: ${({ width }) => width}px;
-  min-width: ${({ width }) => width}px;
-  max-width: ${({ width }) => width}px;
+  width: ${({ width }) => width};
+  min-width: ${({ width }) => width};
+  max-width: ${({ width }) => width};
   justify-content: space-between;
   align-items: center;
   vertical-alignment: middle;
@@ -110,7 +122,7 @@ const StyleDataGridHead = styled("div")<StyleOption>`
     height: 15px;
     width: 2px;
     content: "";
-    background: #747474;
+    background: #6d6d6d7d;
     right: 0;
     top: 17.5px;
   }

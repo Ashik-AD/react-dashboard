@@ -18,14 +18,14 @@ const DataGridFooter: FC<Props> = (props) => {
     <Box display="flex" align="center" justify="flex-end" px={20} space={2}>
       {rowPerPageOptions.length > 1 && (
         <Box display="flex" align="center" space={0.3} justify="space-evenly">
-          <Text varient="body2" secondary={true}>
+          <Text varient="body2" textOverflow="ellipsis" secondary>
             Rows per page:
           </Text>
           <Select
             defaultValue={rowPerPage.toString()}
             label=""
             labelWidth="60px"
-            width="60px"
+            containerWidth="60px"
             sizes="small"
             onChange={(value) => handleRowOptSelect(+value)}
           >

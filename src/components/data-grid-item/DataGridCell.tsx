@@ -1,9 +1,10 @@
-import { Children, FC, ReactNode } from "react";
+import { FC, memo, ReactNode } from "react";
 import { Text } from "../../ui";
 import Box from "../box/Box";
 
 const DataGridCell: FC<Props> = ({ value, width, hidden, children }) => {
   if (hidden) return <></>;
+  const cellWidth = typeof width === "number" ? `${width}px` : width;
   return (
     <Box
       display="flex"
@@ -11,9 +12,9 @@ const DataGridCell: FC<Props> = ({ value, width, hidden, children }) => {
       wrap="nowrap"
       className="data-grid-cell"
       style={{
-        width: width,
-        minWidth: width,
-        maxWidth: width,
+        width: `${cellWidth}`,
+        minWidth: `${cellWidth}`,
+        maxWidth: `${cellWidth}`,
         minHeight: 50,
         maxHeight: 50,
       }}
@@ -26,12 +27,10 @@ const DataGridCell: FC<Props> = ({ value, width, hidden, children }) => {
     </Box>
   );
 };
-
+export default memo(DataGridCell);
 interface Props {
   value?: string | number;
-  width: number;
+  width: number | string;
   hidden?: boolean;
   children?: ReactNode;
 }
-
-export default DataGridCell;
