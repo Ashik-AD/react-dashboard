@@ -16,6 +16,7 @@ import AppBar from "./components/appbar/AppBar";
 import Email from "./page/email";
 import Chat from "./page/chat";
 import Invoice from "./page/invoice";
+import Users from "./page/users";
 
 const App = () => {
   return (
@@ -40,6 +41,7 @@ const App = () => {
             <Route path="/apps/email/*" element={<Email />} />
             <Route path="/apps/chat/*" element={<Chat />} />
             <Route path="/invoice/*" element={<Invoice />} />
+            <Route path="/user/*" element={<Users />} />
             <Route path="/duu/" element={<Duuu />} />
           </Routes>
         </main>

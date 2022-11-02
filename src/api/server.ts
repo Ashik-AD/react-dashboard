@@ -1,7 +1,8 @@
 import { createServer, Response } from 'miragejs';
 import chats from '../api/chats.json'
 import chatContact from "./chatContact.json";
-import invocices from './invoice.json'
+import invocices from './invoice.json';
+import users from './users.json'
 export default function () {
     return createServer({
         routes() {
@@ -21,7 +22,7 @@ export default function () {
                 this.get('/api/chat/chats', () => chats)
             this.get('/api/chat/contacts', () => chatContact)
             this.get('/api/invoices', () => invocices)
-
+            this.get('/api/user/users', () => users)
         }
     })
 }
