@@ -1,6 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 const GlobalStyle = createGlobalStyle`
 button {
+    color: inherit;
     text-transform: uppercase;
     font-size: 14px;
     font-weight: 500;
