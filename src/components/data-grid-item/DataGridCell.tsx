@@ -20,10 +20,12 @@ const DataGridCell: FC<Props> = ({ value, width, hidden, children }) => {
       }}
       padding={24}
     >
-      <div className="datacell-content body2">
-        {value && !children && <Text varient="body2">{value}</Text>}
-        {children && children}
-      </div>
+      {value && !children && (
+        <Text varient="body2" textOverflow="ellipsis" paragraph>
+          {value}
+        </Text>
+      )}
+      {children && children}
     </Box>
   );
 };
