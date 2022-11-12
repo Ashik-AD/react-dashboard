@@ -10,7 +10,6 @@ const MsgBox: FC<Props> = ({ msg, from }) => {
       transparency={8}
       px={16}
       py={8}
-      borderRadius={8}
       className="overflow-hidden"
       mb={6}
     >
@@ -28,7 +27,8 @@ interface Props {
 
 const StyledMsgBox = styled(ColorBox)`
   max-width: calc(100% - 3rem);
-
+  border-radius: 8px;
+  border-top-left-radius: 4px;
   @media screen and (min-width: 600px) {
     max-width: 65%;
   }

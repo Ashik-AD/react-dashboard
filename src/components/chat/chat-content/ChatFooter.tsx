@@ -41,7 +41,7 @@ const ChatFooter = () => {
       <ColorBox
         display="flex"
         transparency={3}
-        borderRadius={40}
+        borderRadius={"26px"}
         className="overflow-hidden"
         flex={1}
       >
@@ -57,17 +57,17 @@ const ChatFooter = () => {
           }
           onChange={handleMessageChange}
           onKeyDown={handleEnterKeyPress}
+          width="100%"
           style={{
             padding: "12px 40px 12px 20px",
             border: 0,
             outline: 0,
-            width: "100%",
           }}
         />
       </ColorBox>
       <ColorBox
         display="flex"
-        borderRadius={26}
+        borderRadius={"26px"}
         className="overflow-hidden"
         padding={6}
         transparency={4}
