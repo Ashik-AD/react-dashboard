@@ -5,7 +5,7 @@ import { Input, InputWrapper } from '../text-field/styled';
 const StyledSelectWrapper = styled(InputWrapper) <{ width?: string; containerWidth?: string }>`
     position: relative;
     width: ${({ containerWidth }) => containerWidth ? containerWidth : 'auto'};
-    min-width: ${({ containerWidth }) => containerWidth || '100%'};
+    min-width: 0px;//${({ containerWidth }) => containerWidth || '100%'};
     cursor: pointer;
 
     & .select-status-arrow {
@@ -41,6 +41,7 @@ const StyledSelectWrapper = styled(InputWrapper) <{ width?: string; containerWid
         visibility: hidden;
         transtion: all 0.2s linear;
         overflow: hidden;
+        z-index: 1500;
     }
 
     & .show-select-item {
@@ -70,7 +71,7 @@ const StyledSelectWrapper = styled(InputWrapper) <{ width?: string; containerWid
 
 }`;
 export const StyledSelectButton = styled(Input) <{ width?: string }>`
-    height: ${({ sizes }) => sizes === 'small' ? "40px" : "56px"};
+    height: ${({ sizes }) => sizes === 'small' ? "46px" : "56px"};
     width:${({ width }) => width ? width : "100%"};
     text-transform: capitalize;
     cursor: pointer;

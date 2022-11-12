@@ -1,10 +1,12 @@
 import { ArrowDropDown } from "@mui/icons-material";
 import {
+  Children,
   createContext,
   FC,
   ReactNode,
   SyntheticEvent,
   useContext,
+  useEffect,
   useState,
 } from "react";
 import Box from "../../../components/box/Box";
@@ -52,6 +54,20 @@ const Select: FC<SelectProp> = (props) => {
     label: "",
     value: "",
   });
+
+  useEffect(() => {
+    if (defaultValue) {
+      Children.forEach(
+        children as any,
+        (ele: { props: { label: string; value: string } }) => {
+          if (ele.props.value === defaultValue) {
+            setSelectedItem({ label: ele.props.label, value: ele.props.value });
+          }
+        }
+      );
+    }
+  }, []);
+
   const handleSelectOpen = (eve: SyntheticEvent) => {
     eve.preventDefault();
     eve.stopPropagation();
