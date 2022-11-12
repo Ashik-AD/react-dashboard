@@ -12,3 +12,8 @@ export { default as Chip } from './chip/Chip';
 export { default as Dot } from './dot/Dot';
 export { default as Select, SelectItem } from './input/select/Select';
 export { default as TextField } from './input/text-field/TextField';
+export { default as Tab } from './tab/index';
+export { default as TabList } from './tab/components/TabList';
+export { default as TabItem } from './tab/components/TabItem';
+export { default as TabContent } from './tab/components/TabContent';
+export { default as TabScroller } from './tab/components/TabScroller';
