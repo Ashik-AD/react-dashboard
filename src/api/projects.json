@@ -1,0 +1,65 @@
+[
+    {
+        "id": 1,
+        "name": "Dashboard Design",
+        "toolname": "React",
+        "avatar": "/src/image/logo/react.png",
+        "totalTask": 323,
+        "completeTask": 230,
+        "workHours": "12:21"
+    },
+    {
+        "id": 2,
+        "name": "Xorox Logo Design",
+        "toolname": "Figma",
+        "avatar": "/src/image/logo/figma.png",
+        "totalTask": 32,
+        "completeTask": 12,
+        "workHours": "6:12"
+    },
+    {
+        "id": 3,
+        "name": "Halo Website",
+        "toolname": "HTML",
+        "avatar": "/src/image/logo/html.png",
+        "totalTask": 150,
+        "completeTask": 120,
+        "workHours": "79:43"
+    },
+    {
+        "id": 4,
+        "name": "Verca eCommerce App",
+        "toolname": "Vue",
+        "avatar": "/src/image/logo/vue.png",
+        "totalTask": 54,
+        "completeTask": 23,
+        "workHours": "133:32"
+    },
+    {
+        "id": 5,
+        "name": "Bammbee Prototype Design",
+        "toolname": "Sketch",
+        "avatar": "/src/image/logo/sketch.png",
+        "totalTask": 100,
+        "completeTask": 43,
+        "workHours": "32:56"
+    },
+    {
+        "id": 6,
+        "name": "MaxiFit Inventory System",
+        "toolname": "Paython",
+        "avatar": "/src/image/logo/python.png",
+        "totalTask": 500,
+        "completeTask": 350,
+        "workHours": "435:983"
+    },
+    {
+        "id": 7,
+        "name": "Micha Compilor Dev.",
+        "toolname": "Rust",
+        "avatar": "/src/image/logo/rust.png",
+        "totalTask": 2343,
+        "completeTask": 1234,
+        "workHours": "1200:34343"
+    }
+]
