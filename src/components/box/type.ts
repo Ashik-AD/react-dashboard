@@ -28,6 +28,7 @@ export interface BoxProps {
     pl?: number;
     style?: CSSProperties;
     onClick?: (event: React.MouseEvent<HTMLDivElement>) => void;
+    borderRadius?: string;
 }
 
 export interface ColorBoxProps extends BoxProps {

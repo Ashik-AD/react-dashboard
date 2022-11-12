@@ -32,12 +32,12 @@ const box = styled('div') <BoxProps>`
     ${({ pr }) => pr && `padding-right: ${pr}px;`}
     ${({ pb }) => pb && `padding-bottom: ${pb}px;`}
     ${({ pl }) => pl && `padding-left: ${pl}px;`}
+    ${({ borderRadius }) => borderRadius ? `border-radius: ${borderRadius};` : ""}
 
  `
 
 export const StyledColorBox = styled(box) <ColorBoxProps>`
-position: ${({ position }) => position ? position : 'relative'};
-
+    position: ${({ position }) => position ? position : 'relative'};
     ${({ border, theme }) => border?.show ? `
     border-style: solid;
     border-width: ${border.size ? `${border.size}` : `1px`};
@@ -61,6 +61,7 @@ position: ${({ position }) => position ? position : 'relative'};
         left: 0;
         top: 0;
         opacity: ${({ transparency }) => transparency ? `0.${transparency}` : 1};
+        ${({ borderRadius }) => borderRadius ? `border-radius: ${borderRadius};` : ""}
         z-index: -1;
     }
  `
