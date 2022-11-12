@@ -1,6 +1,6 @@
 import { FC, forwardRef, memo } from "react";
 import { Inputs } from "../type";
-import { Input, InputWrapper, StyledTextare } from "./styled";
+import { Input, InputWrapper, StyledTextarea } from "./styled";
 import useTheme from "../../../theme/useTheme";
 type InputRef = HTMLInputElement;
 
@@ -31,6 +31,12 @@ const TextField = forwardRef<InputRef, Inputs>((props, ref) => {
     maxWidth,
     multiRow,
     value,
+    classes,
+    maxLength,
+    maxValue,
+    minValue,
+    minLength,
+    pattern,
   } = props;
   return (
     <InputWrapper
@@ -67,23 +73,32 @@ const TextField = forwardRef<InputRef, Inputs>((props, ref) => {
           borderRadius={borderRadius}
           maxWidth={maxWidth}
           ref={ref}
+          pattern={pattern}
+          max={maxValue}
+          min={minValue}
+          maxLength={maxLength}
+          minLength={minLength}
         />
       ) : (
-        <StyledTextare
+        <StyledTextarea
           {...props}
-          as={"textarea"}
+          as="textarea"
           value={value}
           defaultValue={defaultValue}
           varient={varient ? varient : "regular"}
           className="form-input body1"
           theme={{ mode, primaryColor }}
           hasLabel={label ? true : false}
-        ></StyledTextare>
+          onChange={onChange}
+          onKeyDown={onKeyDown}
+        />
       )}
       <span
         className={`input-label floating-label body2 ${
           varient === "filled" ? "label-unfill" : ""
-        }${defaultValue || startAdornment ? " floating-label-top" : " "}`}
+        }${
+          defaultValue || value || startAdornment ? " floating-label-top" : " "
+        }`}
       >
         {label}
       </span>

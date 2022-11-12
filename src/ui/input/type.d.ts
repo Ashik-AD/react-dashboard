@@ -32,5 +32,10 @@ export interface Inputs extends InputOptions {
     style?: CSSProperties;
     autoFocus?: boolean;
     multiRow?: boolean;
-    value?: number;
+    value?: number | string | undefined;
+    maxValue?: number;
+    minValue?: number;
+    minLength?: number;
+    maxLength?: number;
+    pattern?: string;
 }

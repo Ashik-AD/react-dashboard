@@ -10,7 +10,6 @@ const disableColor = (modeName: themeMode) => modeName === 'dark' ? "#7a7a7a" : 
 export const InputWrapper = styled("div") <InputOptions>`
     position: relative;
     min-width: ${({ width }) => width ? width : '0px'};
-    width: ${({ width }) => width ? width : '100%'};
     ${({ maxWidth }) => maxWidth ? `max-width: ${maxWidth};` : ''}
     display: flex;
     flex-direction: column;
@@ -21,7 +20,7 @@ export const InputWrapper = styled("div") <InputOptions>`
         background: ${({ theme, varient }) => varient === 'filled' ? 'transparent' : theme.mode.foreground};
         ${({ disable, theme, error }) => (disable) && `color: ${error ? alertColors('error') : disableColor(theme.mode.name)};`}
         left: ${({ varient }) => varient === 'standard' ? 0 : 0.6}rem;
-        top: ${({ sizes }) => sizes === 'small' ? 0.6 : 1.2}rem;
+        top: ${({ sizes }) => sizes === 'small' ? 0.8 : 1.2}rem;
         text-transform: capitalize;
         font-weight: 400;
         letter-spacing: 0.168px;
@@ -41,7 +40,7 @@ export const InputWrapper = styled("div") <InputOptions>`
         font-weight: 400;
         transition: all .15s linear;
     }
-    .floating-label-top {
+    & .floating-label-top {
         top: ${({ varient }) => varient === 'filled' ? 8 : -10}px;
         left: ${({ varient }) => varient === 'standard' ? 0 : 0.5}rem;
         color: ${({ theme, disable, error }) => disable ? disableColor(theme.mode.name) : error ? alertColors('error') : theme.primaryColor.color};
@@ -108,7 +107,7 @@ export const Input = styled('input') <InputOptions>`
     background: ${({ theme, varient }) => varient === 'filled' ? theme.mode.name === 'dark' ? "#7070702e" : "#dbdbdb73" : 'transparent'};
     color: ${({ theme, disable }) => disable ? disableColor(theme.mode.name) : theme.mode.textColor};
     border: 1.5px solid ${({ theme, varient, error }) => (varient === 'filled' || varient === 'standard') ? 'transparent' : error ? alertColors('error') : borderColor(theme.mode.name)};
-    padding: ${({ sizes }) => sizes === 'small' ? 0.4 : 1}rem 0.8rem;
+    padding: ${({ sizes }) => sizes === 'small' ? 0.6 : 1}rem 0.8rem;
     ${({ varient }) => varient === 'filled' && `padding-bottom: 6px; padding-top: 26px; border-bottom-right-radius: 0px!important; border-bottom-left-radius: 0px!important;`}
     ${({ varient }) => varient === 'standard' && `padding: 4px 0px; padding-top: 16px;`}
     border-radius: ${({ borderRadius }) => borderRadius ? borderRadius : '8px'};
@@ -127,7 +126,7 @@ export const Input = styled('input') <InputOptions>`
     }
 `;
 
-export const StyledTextare = styled(Input) <InputOptions>`
+export const StyledTextarea = styled(Input) <InputOptions>`
     padding-top: 8px;
     padding-bottom: 8px;
     resize: none;
