@@ -5,6 +5,7 @@ import { BoxProps, ColorBoxProps } from "./type";
 
 const box = styled('div') <BoxProps>`
     ${({ position }) => position ? `position: ${position};` : ""}
+    ${({ width }) => width ? `width: ${width};` : ""}
     display: ${({ display }) => display ? display : 'block'};
     ${({ display, align, justify, flexDirection, space, wrap, flex }) => display === 'flex' && `
         align-items: ${align ? align : 'initial'}};
