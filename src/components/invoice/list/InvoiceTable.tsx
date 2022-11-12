@@ -4,20 +4,15 @@ import DataGrid from "../../layout/data-grid/DataGrid";
 import DataGridCell from "../../data-grid-item/DataGridCell";
 import InvoiceListItemStatus from "./InvoiceListItemStatus";
 import DataGridUserDetail from "../../data-grid/DataGridUserDetail";
-import { Text, IconButton, Chip } from "../../../ui";
-import Box from "../../box/Box";
+import { Text, Chip } from "../../../ui";
 
-import {
-  TrendingUp,
-  DeleteOutline,
-  VisibilityOutlined,
-  EditOutlined,
-} from "@mui/icons-material";
+import { TrendingUp } from "@mui/icons-material";
 
 import type { DataGridColoumn } from "../../layout/data-grid/type";
 import { InvoiceList } from "../../../features/invoices/types/definition";
 import { RootState } from "../../../store/store";
 import { useAppSelector } from "../../../hooks";
+import InvoiceListAction from "./InvoiceListAction";
 
 const columns: DataGridColoumn[] = [
   {
@@ -100,41 +95,9 @@ const InvoiceTable = () => {
               row.balance
             )}
           </DataGridCell>
-          <DataGridCell
-            width={field["actions"].width}
-            children={
-              <Box display="flex">
-                <IconButton
-                  varient="text"
-                  size={30}
-                  fontSize={21}
-                  contentOpacity={5}
-                >
-                  <DeleteOutline />
-                </IconButton>
-                <Link to={`/invoice/preview/${row.id}/`}>
-                  <IconButton
-                    varient="text"
-                    size={30}
-                    fontSize={21}
-                    contentOpacity={5}
-                  >
-                    <VisibilityOutlined />
-                  </IconButton>
-                </Link>
-                <Link to={`/invoice/edit/${row.id}/`}>
-                  <IconButton
-                    varient="text"
-                    size={30}
-                    fontSize={21}
-                    contentOpacity={5}
-                  >
-                    <EditOutlined />
-                  </IconButton>
-                </Link>
-              </Box>
-            }
-          />
+          <DataGridCell width={field["actions"].width}>
+            <InvoiceListAction invoiceId={row.id} />
+          </DataGridCell>
         </>
       )}
       columns={columns}
