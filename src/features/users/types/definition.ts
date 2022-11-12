@@ -24,11 +24,12 @@ export interface UserList {
     status: UserStatus;
     avatar: string | null;
     avatarColor?: string;
+    country: string;
 }
 
 export interface UserListState {
-    data: Partial<Array<UserList>>;
+    data: Array<UserList> | [];
     total: number;
-    allData: Partial<Array<UserList>>;
+    allData: Array<UserList> | [];
     params: UserListParams;
 }
