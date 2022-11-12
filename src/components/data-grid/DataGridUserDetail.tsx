@@ -3,7 +3,7 @@ import { Avatar, Text, CustomAvatar } from "../../ui";
 import Box from "../box/Box";
 
 const DataGridUserDetail: FC<Props> = (props) => {
-  const { avatarsrc, icon, userName, userid, avatarColor } = props;
+  const { avatarsrc, userName, userid, avatarColor } = props;
   const avatar = avatarsrc ? avatarsrc : userName.match(/\b(\w)/g)?.join("");
   return (
     <Box display="flex" align="center" space={0.6}>
@@ -19,11 +19,11 @@ const DataGridUserDetail: FC<Props> = (props) => {
           {avatar}
         </CustomAvatar>
       )}
-      <Box>
-        <Text weight="bold" paragraph={true} styles={{ lineHeight: 0.9 }}>
+      <Box display="flex" flexDirection="column">
+        <Text varient="body2" weight="bold" textOverflow="ellipsis" paragraph>
           {userName}
         </Text>
-        <Text varient="body2" size={12} styles={{ lineHeight: 0 }}>
+        <Text varient="body2" size={12}>
           {userid}
         </Text>
       </Box>
@@ -35,7 +35,6 @@ interface Props {
   userName: string;
   userid: string | number;
   avatarsrc?: string;
-  icon?: string | ReactNode;
   avatarColor?: string;
 }
 
