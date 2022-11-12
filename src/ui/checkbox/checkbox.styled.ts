@@ -49,7 +49,6 @@ export const Label = styled.span<{ hasLabel: boolean, disabled?: boolean }>`
     display: inline-flex;
     align-items: center;
     ${({ hasLabel }) => hasLabel && `
-            gap: 10px;
             font-size: 14px;
         `
     }
