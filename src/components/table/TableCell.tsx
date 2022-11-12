@@ -1,15 +1,17 @@
 import { FC, ReactNode, CSSProperties } from "react";
 import styled from "styled-components";
 import useTheme from "../../theme/useTheme";
+import { Varient } from "../../ui/text/type";
 const TableCell: FC<PropsType> = (props) => {
   const {
     theme: { mode },
   } = useTheme();
-  const { value, label, align, border, compact, as, weight, style } = props;
+  const { value, label, align, border, compact, as, weight, style, fontSize } =
+    props;
   return (
     <Cell
       aria-label={`table-data ${label ? label : ""}`}
-      className="table-cell"
+      className={`table-cell ${fontSize ? fontSize : ""}`}
       as={as ? as : "td"}
       align={align}
       weight={weight}
@@ -26,10 +28,12 @@ const color = (mode: "dark" | "light") =>
   mode === "dark" ? "rgb(84 84 84)" : "rgb(221 221 221)";
 
 const Cell = styled("td")<StyledProps>`
-  padding: ${({ compact }) => (compact ? "0.2rem 1rem" : "1rem")};
+  padding: ${({ compact }) => (compact ? "0.4rem 1rem" : "1rem")};
   ${({ align }) => align && `text-align: ${align};`}
   border-bottom: 1px solid ${({ theme }) => color(theme.mode.name)};
-  white-space: wrap;
+  vertical-align: middle;
+  white-space: nowrap;
+
   ${({ border, theme }) =>
     border &&
     `
@@ -56,6 +60,7 @@ const Cell = styled("td")<StyledProps>`
 interface StyledProps {
   align?: "center" | "left" | "right";
   weight?: number;
+  fontSize?: Varient;
   border?: {
     show?: boolean;
     size?: string | number;

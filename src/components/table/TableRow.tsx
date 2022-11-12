@@ -49,8 +49,8 @@ const Tr = styled("tr")<StyledProps>`
     compact &&
     `
       td, th {
-        padding-top: 0.2rem;
-        padding-bottom: 0.2rem;
+        padding-top: 0.4rem;
+        padding-bottom: 0.4rem;
       }
     `}
 `;
