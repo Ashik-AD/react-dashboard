@@ -1,5 +1,5 @@
 import { ReactElement } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../../../hooks";
 import { removeUserFromList } from "../../../features/users/creator";
 import { Chip, Text } from "../../../ui";
@@ -8,19 +8,9 @@ import DataGridUserDetail from "../../data-grid/DataGridUserDetail";
 import DataGrid from "../../layout/data-grid/DataGrid";
 import UserListActions from "./UserListActions";
 import UsersRole from "./UserRole";
-
+import userRole from "../user-role/userRole.list";
 import type { RootState } from "../../../store/store";
-import type { UserRole } from "../../../features/users/types/definition";
-import type { AlertColorType } from "../../../ui/color/alert";
 import type { DataGridColoumn } from "../../layout/data-grid/type";
-
-import {
-  ComputerRounded,
-  DonutLargeSharp,
-  EditOutlined,
-  SettingsOutlined,
-  PersonOutline,
-} from "@mui/icons-material";
 
 const columns: DataGridColoumn[] = [
   {
@@ -55,29 +45,6 @@ const columns: DataGridColoumn[] = [
   },
 ];
 
-const role: Record<UserRole, { icon: ReactElement; color: AlertColorType }> = {
-  admin: {
-    icon: <ComputerRounded />,
-    color: "error",
-  },
-  author: {
-    icon: <SettingsOutlined />,
-    color: "warning",
-  },
-  maintainer: {
-    icon: <DonutLargeSharp />,
-    color: "success",
-  },
-  editor: {
-    icon: <EditOutlined />,
-    color: "info",
-  },
-  subscriber: {
-    icon: <PersonOutline />,
-    color: "error",
-  },
-};
-
 const selectUserList = (state: RootState) => state.user.data;
 const UserListTable = () => {
   const userList = useAppSelector(selectUserList);
@@ -89,7 +56,7 @@ const UserListTable = () => {
   };
 
   const redirectToViewuser = (uid: number) =>
-    void navigate(`/user/view/${uid}`);
+    void navigate(`/user/view/`, { state: { uid } });
 
   if (userList.length === 0) return <></>;
   return (
@@ -101,16 +68,18 @@ const UserListTable = () => {
         renderGridData={(item, field) => (
           <>
             <DataGridCell width={field["fullName"].width}>
-              <DataGridUserDetail
-                userName={item.fullName}
-                userid={item.username}
-                avatarsrc={item.avatar}
-                avatarColor={item.avatarColor}
-              />
+              <Link to={`/user/view/`} state={{ uid: item.id }}>
+                <DataGridUserDetail
+                  userName={item.fullName}
+                  userid={item.username}
+                  avatarsrc={item.avatar}
+                  avatarColor={item.avatarColor}
+                />
+              </Link>
             </DataGridCell>
             <DataGridCell value={item.email} width={field["email"].width} />
             <DataGridCell width={field["role"].width}>
-              <UsersRole {...role[item.role]} role={item.role} />
+              <UsersRole {...userRole[item.role]} role={item.role} />
             </DataGridCell>
             <DataGridCell
               width={field["currentPlan"].width}
