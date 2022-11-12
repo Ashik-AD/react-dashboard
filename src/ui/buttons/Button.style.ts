@@ -12,8 +12,9 @@ const skinColor = (color: string) => alertColor.hasOwnProperty(color) ? alertCol
 const normalButton = styled.button<ButtonType>`
   //background color
   display: flex;
+  flex: 0 0 auto;
   align-items: center;
-  ${({ width }) => width ? `width: ${width};` : ''}
+  ${({ width }) => width ? `min-width: ${width}; width: ${width};` : ''}
   position: relative;
   background-color: ${({ varient, color, theme }) => (varient === 'text' || varient === 'outlined') ? 'transparent' : color ? skinColor(color) : theme.primaryColor.color};
   box-sizing: border-box;
@@ -30,9 +31,11 @@ const normalButton = styled.button<ButtonType>`
   pointer-events: ${({ disabled }) => disabled ? 'none' : 'auto'};
   opacity: ${({ disabled }) => disabled ? 0.5 : 1};
   overflow: hidden;
+  transition: 300ms background ease-out;
 
   &:hover {
     background: ${({ theme, color, varient }) => varient === 'contained' ? genColorShades(color ? color : theme.primaryColor.color, { total: 1, intensity: 8 }).toString() : genColorShades(color ? color : theme.primaryColor.color, { total: 1, intensity: 3 }).toString()};
+    transition: 200ms ease;
   }
 `;
 export default normalButton;
@@ -47,9 +50,9 @@ export const iconButton = styled(normalButton) <IconButtonProps>`
   height: ${({ size }) => size ? size : 32}px;
   min-width: ${({ size }) => size ? `${size}` : 32}px;
   width: ${({ size }) => size ? size : 32}px;
-  color: ${({ theme, color }) => color ? color : theme.mode.textColor};
+  color: ${({ varient, theme, color }) => color ? color : varient === "contained" ? "#fff" : theme.mode.textColor};
   padding: 0px;
-  border: ${({ varient }) => varient === 'outlined' ? 1.8 : 0}px;
+  // border: ${({ varient }) => varient === 'outlined' ? 1.8 : 0}px;
   user-select: none;
   overflow: hidden;
   z-index: 1;
