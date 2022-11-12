@@ -28,6 +28,10 @@ interface Props extends BoxProps {
 }
 
 const StyledScrollContainer = styled("div")<{ maxHeight: string }>`
+  width: 100%;
+  min-width: 0px;
+  display: contents;
+
   & .scroll-content {
     width: 100%;
     height: ${({ maxHeight }) => maxHeight};
