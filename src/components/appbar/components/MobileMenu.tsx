@@ -68,6 +68,9 @@ interface Props {
 const StyledMenuWpr = styled(ColorBox)`
   width: 260px;
   min-height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
 
   &.hide {
     transform: translateX(-260px);
