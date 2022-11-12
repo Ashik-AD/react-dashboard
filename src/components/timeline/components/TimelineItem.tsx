@@ -14,7 +14,7 @@ const TimelineItem: FC<Props> = ({ children, style, classes }) => {
 
 const StyledItem = styled("li")`
   display: flex;
-  overflow-x: hidden;
+  min-height: 80px;
 `;
 
 interface Props {

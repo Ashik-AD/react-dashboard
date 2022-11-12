@@ -20,23 +20,18 @@ const TimelineItemContent: FC<Props> = (props) => {
       <Box display="flex" pt={6}>
         <Text
           weight="bold"
-          varient="body1"
+          varient="body2"
           styles={{ flex: "1 1 auto" }}
           color={colors?.subject}
         >
           {subject}
         </Text>
-        <Text varient="caption" secondary={true}>
+        <Text varient="caption" weight="medium" secondary>
           {timestamp}
         </Text>
       </Box>
       {description && (
-        <Text
-          varient="body2"
-          paragraph={true}
-          secondary={true}
-          color={colors?.description}
-        >
+        <Text varient="body2" color={colors?.description} secondary paragraph>
           {description}
         </Text>
       )}

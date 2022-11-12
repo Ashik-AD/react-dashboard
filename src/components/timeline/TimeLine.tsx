@@ -19,7 +19,12 @@ const Timeline: FC<Props> = ({ children, classes, style, banner, title }) => {
       <Box px={20} pb={20}>
         <ul
           className={`timeline-container ${classes ? classes : ""}`}
-          style={{ display: "flex", flexDirection: "column", ...style }}
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            paddingLeft: 4,
+            ...style,
+          }}
         >
           {children}
         </ul>

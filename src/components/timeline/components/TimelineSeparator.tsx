@@ -41,7 +41,11 @@ const StyledConnector = styled("div")<Props>`
     background: ${({ varient, color, theme }) =>
       varient !== "outlined"
         ? color
-          ? alertColor[color]
+          ? color === "skin"
+            ? theme.primaryColor.color
+            : alertColor.hasOwnProperty(color)
+            ? alertColor[color]
+            : color
           : theme.primaryColor.color
         : "transparent"};
     margin: 11px auto;
@@ -50,7 +54,11 @@ const StyledConnector = styled("div")<Props>`
     border-color: ${({ varient, color, theme }) =>
       varient === "outlined"
         ? color
-          ? alertColor[color]
+          ? color === "skin"
+            ? theme.primaryColor.color
+            : alertColor.hasOwnProperty(color)
+            ? alertColor[color]
+            : color
           : theme.primaryColor.color
         : "transparent"};
     border-radius: 50%;
@@ -67,7 +75,7 @@ const StyledConnector = styled("div")<Props>`
 
 interface Props {
   varient?: "filled" | "outlined";
-  color?: AlertColorType;
+  color?: AlertColorType | "skin";
   component?: ReactNode;
 }
 
