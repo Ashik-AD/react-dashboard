@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import CardProps from './type'
+import { alertColor, AlertColorType } from '../../ui/color/alert';
 
 export const CardWrapper = styled('div') <CardProps>`
     position: ${({ position }) => position};
@@ -33,6 +34,7 @@ export const CardWrapper = styled('div') <CardProps>`
     // border
     ${({ theme }) => theme.skin === 'bordered' && (`border: 1px solid ${theme.mode.name === 'dark' ? ' #3d3e48' : '#e7e7e7'};`)}
     ${({ border }) => border && `border: ${border};`}
+    ${({ borderColor, theme }) => borderColor ? `border-color: ${borderColor === 'skin' ? theme.primaryColor.color : alertColor.hasOwnProperty(borderColor) ? alertColor[borderColor as AlertColorType] : borderColor};` : ""}
     border-radius: 6px;
 
     //shadow

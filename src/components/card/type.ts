@@ -4,6 +4,7 @@ export default interface CardProps {
     height?: string;
     width?: string;
     border?: string;
+    borderColor?: "skin" | string;
     margin?: string;
     mt?: string;
     ml?: string;

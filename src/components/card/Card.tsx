@@ -4,9 +4,15 @@ import CardProps from "./type";
 import { CardWrapper } from "./card.styled";
 
 const Card: FC<CardProps> = (props) => {
-  const { theme } = useTheme();
+  const {
+    theme: { mode, primaryColor, skin },
+  } = useTheme();
   return (
-    <CardWrapper theme={theme} {...props} className={props.className}>
+    <CardWrapper
+      theme={{ mode, primaryColor, skin }}
+      {...props}
+      className={props.className}
+    >
       {props.children}
     </CardWrapper>
   );
