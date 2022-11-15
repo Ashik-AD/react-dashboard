@@ -1,0 +1,42 @@
+[
+    {
+        "id": 1,
+        "teamName": "React Developers",
+        "totalMember": 324,
+        "avatar": "/src/image/logo/react.png",
+        "role": "Developer",
+        "roleColor": "error"
+    },
+    {
+        "id": 2,
+        "teamName": "Support Team",
+        "totalMember": 176,
+        "avatar": "/src/image/support-team.png",
+        "role": "Support",
+        "roleColor": "success"
+    },
+    {
+        "id": 3,
+        "teamName": "UI Designer",
+        "totalMember": 21,
+        "avatar": "/src/image/logo/figma.png",
+        "role": "Designer",
+        "roleColor": "info"
+    },
+    {
+        "id": 4,
+        "teamName": "Vue Developer",
+        "totalMember": 342,
+        "avatar": "/src/image/logo/vue.png",
+        "role": "Developer",
+        "roleColor": "error"
+    },
+    {
+        "id": 5,
+        "teamName": "Digital Marketing",
+        "totalMember": 23,
+        "avatar": "/src/image/logo/twitter.png",
+        "role": "Marketing",
+        "roleColor": "lightgray"
+    }
+]

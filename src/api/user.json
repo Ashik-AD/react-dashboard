@@ -1,0 +1,45 @@
+{
+    "about": {
+        "fullName": "John Doe",
+        "profileAvatar": "/src/image/humans/3.png",
+        "role": "Developer",
+        "job": "Frontend Developer",
+        "status": "active",
+        "address": {
+            "country": "Nepal",
+            "location": "Damak"
+        },
+        "language": "English",
+        "contacts": {
+            "phone": "+977-98-24965817",
+            "email": "infoashikdhimal@gmail.com",
+            "others": [
+                {"id": 1, "type": "Skype", "value": "Ashik.Dhimal"}
+            ]
+        },
+        "joinAt": "February 13 2001"
+    },
+    "teams": [
+       {
+            "id": 1,
+            "title": "CSS Engineer",
+            "totalMember": 132
+        },
+        {
+            "id": 2,
+            "title": "React Developer",
+            "totalMember": 432
+        },
+        {
+            "id": 3,
+            "title": "Backend Developer",
+            "totalMember": 123
+        }
+    ],
+    "overview": [
+        {"id": 1, "title": "Task Compiled", "total": 34332},
+        {"id": 2, "title": "Connections", "total": 764},
+        {"id": 3, "title": "Project Compiled", "total": 123}
+    ]
+}
+

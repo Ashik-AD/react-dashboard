@@ -17,6 +17,7 @@ import Email from "./page/email";
 import Chat from "./page/chat";
 import Invoice from "./page/invoice";
 import Users from "./page/users";
+import Pages from "./page/pages/Pages";
 
 const App = () => {
   return (
@@ -42,7 +43,9 @@ const App = () => {
             <Route path="/apps/chat/*" element={<Chat />} />
             <Route path="/invoice/*" element={<Invoice />} />
             <Route path="/user/*" element={<Users />} />
+            <Route path="/pages/*" element={<Pages />} />
             <Route path="/duu/" element={<Duuu />} />
+            <Route path="/*" element={<h1>404 Not Found :(</h1>} />
           </Routes>
         </main>
       </Flex>
