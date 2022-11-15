@@ -10,7 +10,7 @@ const Timeline: FC<Props> = ({ children, classes, style, banner, title }) => {
       {title && (
         <CustomCardTitle
           title={
-            <Text heading="h5" weight="bold">
+            <Text heading="h6" weight="bold" textTransform="capitalize">
               {title}
             </Text>
           }
