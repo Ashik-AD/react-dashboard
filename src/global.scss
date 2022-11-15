@@ -120,6 +120,14 @@ h6,
     background: rgba(0, 0, 0, 0.03);
 }
 
+.scroll__horizontal-hidden {
+    overflow-x: auto;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
 @each $name,
 $color in $alerts {
     .alert-#{$name}-bg {

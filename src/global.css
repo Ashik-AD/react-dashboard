@@ -115,6 +115,13 @@ h6,
   background: rgba(0, 0, 0, 0.03);
 }
 
+.scroll__horizontal-hidden {
+  overflow-x: auto;
+}
+.scroll__horizontal-hidden::-webkit-scrollbar {
+  display: none;
+}
+
 .alert-error-bg {
   background: rgb(211, 47, 47);
 }
