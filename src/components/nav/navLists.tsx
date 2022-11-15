@@ -3,11 +3,15 @@ import { NavItemType } from "./type";
 import NavOptions from "./type";
 
 import {
+  AccountCircleOutlined,
   CalendarTodayOutlined,
   ChatBubbleOutlineRounded,
+  CircleOutlined,
+  ContactPageOutlined,
   DescriptionOutlined,
   EmailOutlined,
   Home,
+  PersonOutline,
 } from "@mui/icons-material";
 
 const format = (label: string, path: string, icon?: ReactNode): NavItemType => {
@@ -35,17 +39,30 @@ const navList: NavOptions[] = [
     icon: <ChatBubbleOutlineRounded />,
   },
   {
-    label: "Calendar",
-    path: "/apps/calendar/",
-    icon: <CalendarTodayOutlined />,
-  },
-  {
     parent: formatGroupButton("Invoice", <DescriptionOutlined />),
     childrens: [
       format("List", "/invoice/list/"),
       format("Preview", "/invoice/preview/"),
       format("Edit", "/invoice/edit/"),
       format("Add", "/invoice/add/"),
+    ],
+  },
+  {
+    parent: formatGroupButton("User", <PersonOutline />),
+    childrens: [format("List", "/user/list/"), format("View", "/user/view/")],
+  },
+  {
+    parent: formatGroupButton("Pages", <ContactPageOutlined />),
+    childrens: [
+      {
+        parent: formatGroupButton("User Profile", <AccountCircleOutlined />),
+        childrens: [
+          format("Profile", "/pages/user-profile/profile/"),
+          format("Teams", "/pages/user-profile/teams/"),
+          format("Projects", "/pages/user-profile/projects/"),
+          format("Connections", "/pages/user-profile/connections/"),
+        ],
+      },
     ],
   },
 ];

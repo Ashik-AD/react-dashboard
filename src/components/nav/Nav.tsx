@@ -1,3 +1,4 @@
+import ScrollContainer from "../scroll-container/ScrollContainer";
 import NavGroup from "./components/NavGroup";
 import NavHeading from "./components/NavHeading";
 import NavItem from "./components/NavItem";
@@ -10,25 +11,27 @@ const Nav = () => {
     <NavContainer>
       <NavContent>
         <NavHeading />
-        {navList.map((nav, index) => {
-          if (nav.childrens) {
-            return (
-              <NavGroup
-                navData={{ parent: nav.parent!, childrens: nav.childrens }}
-                key={index}
-              />
-            );
-          } else {
-            return (
-              <NavItem
-                label={nav.label!}
-                path={nav.path!}
-                icon={nav.icon}
-                key={index}
-              />
-            );
-          }
-        })}
+        <ScrollContainer maxHeight="calc(100% - 128px)">
+          {navList.map((nav, index) => {
+            if (nav.childrens) {
+              return (
+                <NavGroup
+                  navData={{ parent: nav.parent!, childrens: nav.childrens }}
+                  key={index}
+                />
+              );
+            } else {
+              return (
+                <NavItem
+                  label={nav.label!}
+                  path={nav.path!}
+                  icon={nav.icon}
+                  key={index}
+                />
+              );
+            }
+          })}
+        </ScrollContainer>
       </NavContent>
     </NavContainer>
   );
