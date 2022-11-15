@@ -20,12 +20,14 @@ const progress = styled('div') <ProgressProps>`
         z-index: 1;
         opacity: 0.3;
     }
-
+    
     & .progress-outer {
         position: relative;
         height: 100%;
         width: ${({ start }) => start}%;
         background: ${({ theme, color }) => color ? alertColor.hasOwnProperty(color) ? alertColor[color as keyof Colors] : color : theme.primaryColor.color};
+        border-radius: ${({ varient }) => varient === 'rounded' ? 1 : 0.1}rem;
+        transition: 200ms width ease-out;
         z-index: 2;
     }
 `;
