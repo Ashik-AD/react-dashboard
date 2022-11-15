@@ -17,7 +17,7 @@ export enum fontWeight {
 type weight = "light" | 'regular' | 'medium' | 'bold' | 'extraBold';
 type TextTransform = "uppercase" | 'lowercase' | 'capitalize' | "none";
 
-type TextOverflow = "ellipsis" | "clip";
+type TextOverflow = "ellipsis" | "clip" | "unset";
 
 export default interface TextType {
     size?: number;

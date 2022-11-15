@@ -18,7 +18,7 @@ font-weight: ${({ weight }) => weight && fontWeight[weight]};
 text-transform: ${({ textTransform }) => textTransform ? textTransform : "none"};
 ${({ lineHeight }) => lineHeight ? `line-height: ${lineHeight};` : ""}
 
-${({ textOverflow }) => textOverflow ? `
+${({ textOverflow }) => textOverflow && textOverflow !== "unset" ? `
     min-width: 0px;
     white-space: nowrap;
     text-overflow: ${textOverflow};
