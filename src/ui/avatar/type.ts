@@ -14,6 +14,8 @@ export interface Base {
 export interface AvatarProps extends Base {
     src: string;
     alt: string;
+    avatar?: string;
+    name?: string;
 }
 export interface StyleBaseProps {
     size?: size;
