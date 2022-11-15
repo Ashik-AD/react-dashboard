@@ -13,6 +13,7 @@ const normalButton = styled.button<ButtonType>`
   //background color
   display: flex;
   flex: 0 0 auto;
+  gap: 8px;
   align-items: center;
   ${({ width }) => width ? `min-width: ${width}; width: ${width};` : ''}
   position: relative;
@@ -50,7 +51,7 @@ export const iconButton = styled(normalButton) <IconButtonProps>`
   height: ${({ size }) => size ? size : 32}px;
   min-width: ${({ size }) => size ? `${size}` : 32}px;
   width: ${({ size }) => size ? size : 32}px;
-  color: ${({ varient, theme, color }) => color ? color : varient === "contained" ? "#fff" : theme.mode.textColor};
+  // color: ${({ varient, theme, color }) => color ? color : varient === "contained" ? "#fff" : theme.mode.textColor};
   padding: 0px;
   // border: ${({ varient }) => varient === 'outlined' ? 1.8 : 0}px;
   user-select: none;
