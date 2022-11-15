@@ -62,6 +62,7 @@ const DropdownV2: FC<DropdownV2Props> = (props) => {
                     <DropdownItem
                       key={idx}
                       title={item.title!}
+                      titleAlt={item.titleAlt}
                       icon={item.icon}
                       onClickHandle={() => {
                         item.onClickHandle && item.onClickHandle();
@@ -87,6 +88,7 @@ export interface DropdownV2Item {
   content?: ReactNode;
   icon?: ReactNode;
   title?: string;
+  titleAlt?: ReactNode;
   onClickHandle?: () => void;
   children?: ReactNode;
 }
@@ -108,18 +110,18 @@ const StyledDropdownWrapper = styled("div")`
   & > .dropdown {
     top: 120%;
     right: 0px;
-    z-index: 1200;
+    z-index: 1400;
     transition: 300ms;
     overflow: hidden;
     box-shadow: 2px 6px 9px 3px #00000024;
   }
 
   & > .dropdown-overlay {
-    height: 100%;
-    width: 100%;
+    height: 100vh;
+    width: 100vw;
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 1100;
+    z-index: 1300;
   }
 `;

@@ -3,7 +3,7 @@ import styled from "styled-components";
 import useTheme from "../../theme/useTheme";
 import { Text } from "../../ui";
 
-const DropdownItem: FC<Props> = ({ title, icon, onClickHandle }) => {
+const DropdownItem: FC<Props> = ({ title, icon, titleAlt, onClickHandle }) => {
   const {
     theme: {
       mode: { name },
@@ -20,21 +20,26 @@ const DropdownItem: FC<Props> = ({ title, icon, onClickHandle }) => {
       }
     >
       <span className="drp-icon">{icon}</span>
-      <Text
-        paragraph
-        varient="body1"
-        textTransform="capitalize"
-        styles={{ display: "flex" }}
-      >
-        {title}
-      </Text>
+      {title ? (
+        <Text
+          paragraph
+          varient="body1"
+          textTransform="capitalize"
+          styles={{ display: "flex" }}
+        >
+          {title}
+        </Text>
+      ) : (
+        titleAlt
+      )}
     </StyledDrowpdownItem>
   );
 };
 export default DropdownItem;
 interface Props {
-  title: string;
+  title: string | "";
   icon?: ReactNode;
+  titleAlt?: ReactNode;
   onClickHandle: () => void;
 }
 
