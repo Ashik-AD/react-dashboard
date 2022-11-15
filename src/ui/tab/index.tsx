@@ -1,4 +1,4 @@
-import { createContext, FC, useState } from "react";
+import { createContext, FC, useEffect, useState } from "react";
 import styled from "styled-components";
 import { TabsProps } from "./type";
 
@@ -10,8 +10,12 @@ interface Tabs {
 export const TabProvider = createContext<Tabs | null>(null);
 
 const Tbs: FC<TabsProps> = (props) => {
-  const { children, direction, value } = props;
-  const [selectTab, setSelectTab] = useState(value);
+  const { children, direction } = props;
+  const [selectTab, setSelectTab] = useState(props.value);
+
+  useEffect(() => {
+    setSelectTab(props.value);
+  }, [props.value]);
 
   const handleSelectTab = (tabIndex: number) => {
     setSelectTab(tabIndex);

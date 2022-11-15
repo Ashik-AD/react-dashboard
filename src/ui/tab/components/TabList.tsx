@@ -5,6 +5,7 @@ import React, {
   FC,
   ReactNode,
   useContext,
+  useEffect,
 } from "react";
 import styled from "styled-components";
 import { TabProvider } from "..";
@@ -37,7 +38,7 @@ interface Props {
 
 const TbsLst: FC<Props> = ({ children, varient = "default" }) => {
   const indicatorRef = createRef<HTMLSpanElement>();
-
+  const containerRef = createRef<HTMLDivElement>();
   const {
     theme: {
       primaryColor: { color },
@@ -46,21 +47,19 @@ const TbsLst: FC<Props> = ({ children, varient = "default" }) => {
 
   const tab = useContext(TabProvider);
 
-  const handleClickTabItem = (
-    eve: React.MouseEvent<HTMLButtonElement>,
-    tabIndex: number
-  ) => {
-    if (indicatorRef.current) {
-      const { clientWidth, offsetLeft, offsetTop } = eve.currentTarget;
+  useEffect(() => {
+    const el = containerRef.current?.querySelector(
+      "button[aria-selected=true]"
+    ) as HTMLButtonElement;
+    if (el && indicatorRef.current) {
       if (varient !== "vertical") {
-        indicatorRef.current.style.width = `${clientWidth}px`;
-        indicatorRef.current.style.left = `${offsetLeft}px`;
-      } else {
-        indicatorRef.current.style.top = `${offsetTop}px`;
+        indicatorRef.current.style.width = `${el.clientWidth}px`;
+        indicatorRef.current.style.left = `${el.offsetLeft}px`;
+        return;
       }
+      indicatorRef.current.style.top = `${el.offsetTop}`;
     }
-    tab?.handleChangeTab(tabIndex);
-  };
+  }, [tab?.value]);
 
   const tabItemWidth = (val: string | number, opt: ActiveTabOptions) => {
     if (indicatorRef.current) {
@@ -73,7 +72,7 @@ const TbsLst: FC<Props> = ({ children, varient = "default" }) => {
 
   const mapChildren = Children.map(children, (tabItem: any) =>
     cloneElement(tabItem, {
-      changeTab: handleClickTabItem,
+      changeTab: tab?.handleChangeTab,
       selectedIndex: tab?.value,
       activeColor: color,
       getWidth: tabItemWidth,
@@ -85,6 +84,7 @@ const TbsLst: FC<Props> = ({ children, varient = "default" }) => {
       className="tab-list-wrapper"
       role="tablist"
       style={{ transition: "transform 300ms ease", marginBottom: "1.4rem" }}
+      ref={containerRef}
     >
       {mapChildren}
       <StyledTabIndicator
