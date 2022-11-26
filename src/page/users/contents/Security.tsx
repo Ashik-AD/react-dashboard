@@ -8,7 +8,7 @@ const RecentLoggedDevices = lazy(
   () => import("../../../components/users/security/RecentLoggedDevices")
 );
 const TwoStepAuth = lazy(
-  () => import("../../../components/users/security/TwoStepAuth")
+  () => import("../../../components/security/TwoStepAuth")
 );
 
 const Security = () => {
@@ -19,7 +19,7 @@ const Security = () => {
           <ChangePassword />
         </GridItem>
         <GridItem xs={12}>
-          <TwoStepAuth />
+          <TwoStepAuth isEnabled={true} value={"+977-9824965817"} />
         </GridItem>
         <GridItem xs={12}>
           <RecentLoggedDevices />

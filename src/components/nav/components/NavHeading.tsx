@@ -7,7 +7,7 @@ function NavHeading() {
     theme: {
       menuStyle: { collapse },
     },
-    dispatch: { handleChangeMenuCollapse },
+    dispatch,
   } = useTheme();
   return (
     <Box display="flex" justify="space-between" px={20} mt={8} py={16}>
@@ -15,7 +15,7 @@ function NavHeading() {
       <Toggle
         toggled={!collapse}
         size="small"
-        onToggle={handleChangeMenuCollapse}
+        onToggle={dispatch?.handleChangeMenuCollapse}
       />
     </Box>
   );

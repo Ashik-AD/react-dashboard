@@ -11,7 +11,7 @@ export const CheckPlaceholder = styled.span<CheckPlaceholderProps>`
     align-items: center;
     justify-content: center;
     padding: 8px;
-    color: ${({ theme, color, checked }) => color ? alertColor.hasOwnProperty(color) ? alertColor[color as keyof Colors] : color : !checked ? theme.mode.name === 'dark' ? '#A8A4CE' : '#14274E' : theme.primaryColor.color};
+    color: ${({ theme, color, checked }) => color ? alertColor.hasOwnProperty(color) ? alertColor[color as keyof Colors] : color : !checked ? theme.mode.name === 'dark' ? '#A8A4CE' : '#808080' : theme.primaryColor.color};
     border-radius: 50%;
     background: transparent;
     ${({ size }) => size && `

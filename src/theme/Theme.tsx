@@ -1,20 +1,23 @@
-import React, { createContext, FC, useState } from "react";
-import settings from "./setting";
-import SettingType, { Skin } from "./setting-types";
+import React, { createContext, FC, useCallback, useState } from "react";
+import useLocalStorage from "../hooks/useLocalStorage";
+import themeSettings from "./setting";
+import SettingType, { SettingThemeLocalstorage, Skin } from "./setting-types";
 import ThemeActionType from "./themeAction";
 
 export const ThemeContext = createContext<{
   state: SettingType;
   dispatch?: ThemeActionType;
 }>({
-  state: settings,
+  state: themeSettings,
 });
 ThemeContext.displayName = "AppTheme";
 
 const Theme: FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [themeSetting, setThemeSetting] = useState<SettingType>(settings);
+  const [themeSetting, setThemeSetting] = useState<SettingType>(themeSettings);
+  const { storage, addLocalStorage } =
+    useLocalStorage<SettingThemeLocalstorage>("triolo-settings");
 
-  const changeTheme = () => {
+  const changeTheme = useCallback(() => {
     const currentTheme = themeSetting.mode.name;
     setThemeSetting((prevState) => ({
       ...prevState,
@@ -33,42 +36,56 @@ const Theme: FC<{ children: React.ReactNode }> = ({ children }) => {
               foreground: "#252d3a",
             },
     }));
-  };
+    addLocalStorage({
+      ...storage,
+      mode: currentTheme === "dark" ? "light" : "dark",
+    });
+  }, [storage]);
 
-  const changePrimaryColor = (
-    primaryColor: typeof themeSetting.primaryColor
-  ) => {
-    setThemeSetting((prevState) => ({ ...prevState, primaryColor }));
-  };
+  const changePrimaryColor = useCallback(
+    (primaryColor: typeof themeSetting.primaryColor) => {
+      setThemeSetting((prevState) => ({ ...prevState, primaryColor }));
+      addLocalStorage({ ...storage, primaryColor });
+    },
+    [storage]
+  );
 
-  const changeSkin = (skin: Skin) => {
-    setThemeSetting((prevState) => ({ ...prevState, skin }));
-  };
+  const changeSkin = useCallback(
+    (skin: Skin) => {
+      setThemeSetting((prevState) => ({ ...prevState, skin }));
+      addLocalStorage({ ...storage, skin });
+    },
+    [storage]
+  );
 
-  const handleAppBarPosition = (
-    position: typeof themeSetting.layout.appBarPosition
-  ) => {
-    setThemeSetting((prevState) => ({
-      ...prevState,
-      layout: {
-        ...prevState.layout,
-        appBarPosition: position,
-      },
-    }));
-  };
-  const handleAppFooterPosition = (
-    position: typeof themeSetting.layout.footerPositioin
-  ) => {
-    setThemeSetting((prevState) => ({
-      ...prevState,
-      layout: {
-        ...prevState.layout,
-        footerPositioin: position,
-      },
-    }));
-  };
+  const handleAppBarPosition = useCallback(
+    (position: typeof themeSetting.layout.appBarPosition) => {
+      setThemeSetting((prevState) => ({
+        ...prevState,
+        layout: {
+          ...prevState.layout,
+          appBarPosition: position,
+        },
+      }));
+      addLocalStorage({ ...storage, appBarPosition: position });
+    },
+    [storage]
+  );
+  const handleAppFooterPosition = useCallback(
+    (position: typeof themeSetting.layout.footerPosition) => {
+      setThemeSetting((prevState) => ({
+        ...prevState,
+        layout: {
+          ...prevState.layout,
+          footerPositoin: position,
+        },
+      }));
+      addLocalStorage({ ...storage, footerPosition: position });
+    },
+    [storage]
+  );
 
-  const handleChangeAppBarBlur = () => {
+  const handleChangeAppBarBlur = useCallback(() => {
     setThemeSetting((prevState) => ({
       ...prevState,
       layout: {
@@ -76,33 +93,41 @@ const Theme: FC<{ children: React.ReactNode }> = ({ children }) => {
         appBarBlur: !prevState.layout.appBarBlur,
       },
     }));
-  };
+    addLocalStorage({
+      ...storage,
+      appbarBlur: !themeSetting.layout.appBarBlur,
+    });
+  }, [storage]);
 
-  const handleChangeMenuLayout = (
-    layout: typeof themeSetting.menuStyle.layout
-  ) => {
-    setThemeSetting((prevState) => ({
-      ...prevState,
-      menuStyle: {
-        ...prevState.menuStyle,
-        layout,
-      },
-    }));
-  };
+  const handleChangeMenuLayout = useCallback(
+    (layout: typeof themeSetting.menuStyle.layout) => {
+      setThemeSetting((prevState) => ({
+        ...prevState,
+        menuStyle: {
+          ...prevState.menuStyle,
+          layout,
+        },
+      }));
+      addLocalStorage({ ...storage, menuLayout: layout });
+    },
+    [storage]
+  );
 
-  const handleChangeMenuOpenStyle = (
-    style: typeof themeSetting.menuStyle.openStyle
-  ) => {
-    setThemeSetting((prevState) => ({
-      ...prevState,
-      menuStyle: {
-        ...prevState.menuStyle,
-        openStyle: style,
-      },
-    }));
-  };
+  const handleChangeMenuOpenStyle = useCallback(
+    (style: typeof themeSetting.menuStyle.openStyle) => {
+      setThemeSetting((prevState) => ({
+        ...prevState,
+        menuStyle: {
+          ...prevState.menuStyle,
+          openStyle: style,
+        },
+      }));
+      addLocalStorage({ ...storage, menuOpenStyle: style });
+    },
+    [storage]
+  );
 
-  const handleChangeMenuCollapse = () =>
+  const handleChangeMenuCollapse = useCallback(() => {
     setThemeSetting((prevState) => ({
       ...prevState,
       menuStyle: {
@@ -110,7 +135,13 @@ const Theme: FC<{ children: React.ReactNode }> = ({ children }) => {
         collapse: !prevState.menuStyle.collapse,
       },
     }));
-  const handleChangeMenuHidden = () =>
+    addLocalStorage({
+      ...storage,
+      menuCollapse: !themeSetting.menuStyle.collapse,
+    });
+  }, [storage]);
+
+  const handleChangeMenuHidden = useCallback(() => {
     setThemeSetting((prevState) => ({
       ...prevState,
       menuStyle: {
@@ -118,6 +149,11 @@ const Theme: FC<{ children: React.ReactNode }> = ({ children }) => {
         visible: !prevState.menuStyle.visible,
       },
     }));
+    addLocalStorage({
+      ...storage,
+      menuVisible: !themeSetting.menuStyle.visible,
+    });
+  }, [storage]);
 
   const dispatch: ThemeActionType = {
     handleChangeTheme: changeTheme,

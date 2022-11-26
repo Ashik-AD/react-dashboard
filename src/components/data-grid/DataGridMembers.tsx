@@ -1,5 +1,4 @@
 import { ReactElement } from "react";
-import AppMember from "../../api/members.json";
 import { Chip, CustomAvatar } from "../../ui";
 import { AlertColorType } from "../../ui/color/alert";
 import Box from "../box/Box";
@@ -10,17 +9,17 @@ import { DataGridColoumn } from "../layout/data-grid/type";
 
 import { Edit, PersonOutlined, PieChart, Settings } from "@mui/icons-material";
 import formatDataGridColumn from "./formatDataGridColumn";
-import genRandomColor from "../../utils/genRandomColor";
 import DataGridUserDetail from "./DataGridUserDetail";
+import useFetch from "../../hooks/useFetch";
 
-interface Members {
+interface MembersAPI {
   id: string | number;
   userid: string;
   name: string;
   email: string;
   role: Roles;
   status: Status;
-  avatarsrc?: string;
+  avatar?: string;
   icon?: string;
 }
 
@@ -32,12 +31,13 @@ const columns: DataGridColoumn[] = [
 ];
 
 const DataGridMembers = () => {
-  const memberList: Members[] = AppMember;
+  const { data, loading } = useFetch<Array<MembersAPI>>("/api/members");
+  if (loading || !data) return <></>;
   return (
     <Card>
       <DataGrid
         columns={columns}
-        rows={memberList}
+        rows={data}
         gridDataKey={(item) => item.id.toString()}
         renderGridData={(item, column) => (
           <>
@@ -45,7 +45,7 @@ const DataGridMembers = () => {
               <DataGridUserDetail
                 userName={item.name}
                 userid={item.userid}
-                avatarsrc={item.avatarsrc}
+                avatarsrc={item.avatar}
                 icon={item.icon}
               />
             </DataGridCell>

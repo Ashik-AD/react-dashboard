@@ -1,0 +1,58 @@
+{
+    "salesByCountry": [
+        {
+            "countryName": "USA",
+            "sale": "$34k",
+            "grossSales": "432k",
+            "status": "inc",
+            "color": "success",
+            "growth": 25,
+            "icon": "US"
+        },
+        {
+            "countryName": "UK",
+            "sale": "$423k",
+            "grossSales": "932k",
+            "status": "inc",
+            "color": "info",
+            "growth": 32,
+            "icon": "UK"
+        },
+        {
+            "countryName": "Japan",
+            "sale": "$214k",
+            "grossSales": "756k",
+            "status": "dec",
+            "color": "warning",
+            "growth": -4,
+            "icon": "JP"
+        },
+        {
+            "countryName": "India",
+            "sale": "$56k",
+            "grossSales": "120k",
+            "status": "dec",
+            "color": "error",
+            "growth": -12,
+            "icon": "IN"
+        },
+        {
+            "countryName": "Korea",
+            "sale": "$124k",
+            "grossSales": "660k",
+            "status": "inc",
+            "color": "",
+            "growth": 3,
+            "icon": "KR"
+        },
+        {
+            "countryName": "China",
+            "sale": "$432",
+            "grossSales": "540k",
+            "status": "dec",
+            "color": "ligtgray",
+            "growth": 5,
+            "icon": "CH"
+        }
+    ]
+}

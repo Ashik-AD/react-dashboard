@@ -1,28 +1,31 @@
-import SettingType from './setting-types';
+import SettingType, { SettingThemeLocalstorage } from './setting-types';
 
-const settings: SettingType = {
+const setting = JSON.parse(localStorage.getItem("triolo-settings") as string) as SettingThemeLocalstorage;
+
+const mode = setting?.mode === "light" ? setting.mode : "dark";
+
+const themeSettings: SettingType = {
     mode: {
-        name: 'dark',
-        background: '#1B2430',
-        foreground: '#252d3a',
-        textColor: '#d3d3d3'
+        background: mode === "light" ? "#f8f5ff" : "#1B2430",
+        foreground: mode === "light" ? "#fffffd" : '#252d3a',
+        textColor: mode === "light" ? "#3a3541de" : '#d3d3d3'
     },
     layout: {
-        appBarBlur: true,
-        appBarPosition: 'fixed',
-        footerPositioin: 'static'
+        appBarBlur: setting?.hasOwnProperty('appbarBlur') ? setting.appbarBlur! : true,
+        appBarPosition: setting?.appBarPosition ? setting.appBarPosition : "static",
+        footerPosition: setting?.footerPosition ? setting.footerPosition : 'static'
     },
     primaryColor: {
-        name: 'purple',
-        color: 'rgba(166, 108, 255, 1)'
+        name: setting?.primaryColor?.name ? setting.primaryColor.name : 'purple',
+        color: setting?.primaryColor?.color ? setting?.primaryColor.color : "rgba(166, 108, 255, 1)"
     },
     menuStyle: {
-        collapse: false,
-        layout: 'y',
-        openStyle: 'accordion',
-        visible: false
+        collapse: setting?.menuCollapse ? setting.menuCollapse : false,
+        layout: setting?.menuLayout ? setting.menuLayout : "horizontal",
+        openStyle: setting?.menuOpenStyle ? setting.menuOpenStyle : 'accordion',
+        visible: setting?.menuVisible ? setting.menuVisible : false
     },
-    skin: 'default'
+    skin: setting?.skin ? setting.skin : "default"
 }
 
-export default settings;
+export default themeSettings;

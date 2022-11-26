@@ -3,12 +3,12 @@ import { PrimaryColor, ThemeMode } from "./colors";
 export type Skin = 'default' | 'bordered'
 
 export type LayoutStyle = "fixed" | "static" | "hidden";
-export type MenuLayout = 'x' | 'y';
+export type MenuLayout = 'vertical' | 'horizontal';
 export type MenuOpenStyle = "collapse" | "accordion";
 
 export interface Layout {
     appBarPosition: LayoutStyle;
-    footerPositioin: LayoutStyle;
+    footerPosition: LayoutStyle;
     appBarBlur: boolean;
 }
 
@@ -25,4 +25,17 @@ export default interface SettingType {
     skin: Skin;
     layout: Layout;
     menuStyle: MenuStyle;
+}
+
+export interface SettingThemeLocalstorage {
+    mode?: "dark" | "light";
+    skin?: Skin;
+    primaryColor?: PrimaryColor;
+    appBarPosition?: LayoutStyle;
+    footerPosition?: LayoutStyle;
+    appbarBlur?: boolean;
+    menuLayout?: MenuLayout;
+    menuOpenStyle?: MenuOpenStyle;
+    menuCollapse?: boolean;
+    menuVisible?: boolean;
 }

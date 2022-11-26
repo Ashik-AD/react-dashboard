@@ -12,6 +12,7 @@ const IconButton: FC<IconButtonProps> = (props) => {
       theme={{ mode, primaryColor }}
       style={{ ...props.styles }}
       onClick={props.onClick && props.onClick}
+      type="button"
     >
       <span className="icon-button-content" style={{ display: "flex" }}>
         {props.children}

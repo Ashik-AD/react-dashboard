@@ -32,7 +32,7 @@ interface Props {
   children: ReactNode;
   dataId: number | string;
   rowId: number | string;
-  selected: boolean;
+  selected?: boolean;
   onClick?: (
     event: MouseEvent<HTMLDivElement>,
     rowId?: string | number
@@ -40,9 +40,8 @@ interface Props {
 }
 
 const StyledRow = styled("div")`
-  position: relative;
-  width: 100%;
   display: flex;
+  position: relative;
   flex-wrap: nowrap;
   vertical-align: middle;
   max-height: 50px;

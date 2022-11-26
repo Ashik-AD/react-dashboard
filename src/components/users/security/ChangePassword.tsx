@@ -56,7 +56,9 @@ const ChangePassword = () => {
             onChange={handleToggleShowPwd}
             checked={showPassword}
           />
-          <Button styles={{ marginTop: 8 }}>Change password</Button>
+          <Button styles={{ marginTop: 8, display: "flex" }}>
+            Change password
+          </Button>
         </Box>
       </Box>
     </Card>

@@ -16,7 +16,7 @@ const TbsItem: FC<Props> = (props) => {
   } = props;
   const btnRef = createRef<HTMLButtonElement>();
   const handleClick = (eve: React.MouseEvent<HTMLButtonElement>) => {
-    changeTab && changeTab(eve, value);
+    changeTab && changeTab(value);
     onClick && onClick(value, eve);
   };
   useLayoutEffect(() => {

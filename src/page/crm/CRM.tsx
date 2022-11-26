@@ -32,18 +32,18 @@ const CRM = () => {
               status="inc"
               tag="Year of 2022"
               color="warning"
-              ranger="https://bit.ly/3esGX19"
+              ranger="/src/image/mina.png"
             />
           </GridItem>
           <GridItem xs={12} sm={6} md={3}>
             <CardRanger
-              title="Ratings"
-              total={13700}
-              growth={38}
-              status="inc"
+              title="Session"
+              total={23000}
+              growth={12}
+              status="desc"
               tag="Year of 2022"
               color="warning"
-              ranger="https://bit.ly/3L0nf9n"
+              ranger="/src/image/jin.png"
             />
           </GridItem>
           <GridItem xs={12} md={6}>

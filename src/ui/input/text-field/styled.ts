@@ -4,7 +4,7 @@ import { InputOptions } from '../type';
 
 type themeMode = 'dark' | 'light';
 const alertColors = (colorName: AlertColorType) => alertColor[colorName];
-const borderColor = (modeName: themeMode) => modeName === 'dark' ? '#878787d1' : "#8f8f8fc4";
+const borderColor = (modeName: themeMode) => modeName === 'dark' ? '#878787d1' : "#c9c9c9c4";
 const disableColor = (modeName: themeMode) => modeName === 'dark' ? "#7a7a7a" : "#b3b3b3";
 
 export const InputWrapper = styled("div") <InputOptions>`
@@ -18,9 +18,13 @@ export const InputWrapper = styled("div") <InputOptions>`
     & .input-label {
         position: absolute;
         background: ${({ theme, varient }) => varient === 'filled' ? 'transparent' : theme.mode.foreground};
-        ${({ disable, theme, error }) => (disable) && `color: ${error ? alertColors('error') : disableColor(theme.mode.name)};`}
+        ${({ disable, theme, error }) => (disable || error) && `color: ${error ? alertColors('error') : disableColor(theme.mode.name)};`}
+        color: ${({ theme }) => theme.mode.name === "dark" ? "#989898" : "#9e9e9e"};
+        font-weight: 500;
+        font-size: 1rem;
         left: ${({ varient }) => varient === 'standard' ? 0 : 0.6}rem;
-        top: ${({ sizes }) => sizes === 'small' ? 0.8 : 1.2}rem;
+        top: 50%;
+        transform: translateY(-50%);
         text-transform: capitalize;
         font-weight: 400;
         letter-spacing: 0.168px;
@@ -84,13 +88,14 @@ export const InputWrapper = styled("div") <InputOptions>`
         position: absolute;
         max-width: 30px;
         width: 30px;
-        top: ${({ varient }) => varient === "regular" ? 10 : 15}px;
+        top: 50%;
+        transform: translateY(-50%);
     }
     .start-adornment {
         left: 0;
     }
     .end-adornment {
-        right: 0;
+        right: 0px;
     }
     .adornment-left {
         padding-left: 32px;
@@ -104,6 +109,7 @@ export const InputWrapper = styled("div") <InputOptions>`
 export const Input = styled('input') <InputOptions>`
     min-width: 0px;
     width: 100%;
+    ${({ maxWidth }) => maxWidth && `max-width: ${maxWidth};`}
     background: ${({ theme, varient }) => varient === 'filled' ? theme.mode.name === 'dark' ? "#7070702e" : "#dbdbdb73" : 'transparent'};
     color: ${({ theme, disable }) => disable ? disableColor(theme.mode.name) : theme.mode.textColor};
     border: 1.5px solid ${({ theme, varient, error }) => (varient === 'filled' || varient === 'standard') ? 'transparent' : error ? alertColors('error') : borderColor(theme.mode.name)};

@@ -80,7 +80,7 @@ const CardTotalEarning = () => {
       <CardTitle title="Total earning" />
       <Box px={20} py={20}>
         <Box display="flex" align="center" space={0.1}>
-          <Text heading="h4" styles={{ fontWeight: 600 }}>
+          <Text heading="h4" weight="bold">
             ${formatNumber(43235)}
           </Text>
           <Text color="success" size={35}>
@@ -90,7 +90,7 @@ const CardTotalEarning = () => {
             10%
           </Text>
         </Box>
-        <Text varient="caption" weight="medium" secondary={true}>
+        <Text varient="caption" weight="medium" secondary>
           Compared to $84,325 last year
         </Text>
       </Box>

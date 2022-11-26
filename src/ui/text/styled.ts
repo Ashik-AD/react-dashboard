@@ -5,13 +5,11 @@ import { alertColor, Colors } from '../color/alert';
 export const StyledText = styled('span') <TextType>`
 text-align: ${({ align }) => align};
 
-color: ${({ color, theme }) => color ? alertColor.hasOwnProperty(color) ? alertColor[color as keyof Colors] : color : theme.mode.textColor};
+${({ color }) => color ? `color: ${alertColor.hasOwnProperty(color) ? alertColor[color as keyof Colors] : color};` : ""};
 
 ${({ secondary, theme, color }) => secondary ? `color: ${secondary && color ? color : (theme.mode.name === 'dark' ? 'rgba(211, 211, 211, 60%);' : 'rgba(25, 25, 25, 50%);')}` : ''}
 
 letter-spacing: 0.15px;
-
-${({ skinColor, theme }) => skinColor ? `color: ${theme.primaryColor.color};` : ''}
 
 font-weight: ${({ weight }) => weight && fontWeight[weight]};
 

@@ -17,7 +17,7 @@ const TimelineItemContent: FC<Props> = (props) => {
       flex="1 1 auto"
     >
       {banner && <Box display="flex">{banner}</Box>}
-      <Box display="flex" pt={6}>
+      <Box display="flex" pt={6} wrap="wrap" align="center">
         <Text
           weight="bold"
           varient="body2"

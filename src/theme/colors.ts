@@ -25,7 +25,6 @@ export type pinky = {
     name: 'pinky',
     color: 'rgba(249, 72, 146, 1)'
 }
-
 export interface Dark {
     name: 'dark';
     background: '#1B2430';

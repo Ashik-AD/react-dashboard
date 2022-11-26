@@ -9,13 +9,15 @@ export interface Childrens {
     label?: string;
     path?: string;
     icon?: ReactNode;
-    childrens?: Childrens[]
+    childrens?: Childrens[];
+    hideIcon?: boolean;
 }
 
 export interface NavItemType {
     label: string;
     path: string;
     icon?: ReactNode;
+    hideIcon?: boolean;
 }
 
 export default interface NavOptions {
@@ -23,5 +25,6 @@ export default interface NavOptions {
     label?: string;
     path?: string;
     parent?: Parent;
-    childrens?: Childrens[]
+    childrens?: Childrens[];
+    hideIcon?: boolean;
 }

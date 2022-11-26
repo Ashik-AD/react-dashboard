@@ -38,9 +38,9 @@ const PaymentCard: FC<PaymentCardProps> = (props) => {
     cardRef.current?.classList.toggle("flip__card");
   };
   useEffect(() => {
-    cardFrontRef.current?.addEventListener("dblclick", () => {
-      console.log("hhola");
+    cardFrontRef.current?.addEventListener("dblclick", (eve) => {
       toggleCardFlip();
+      eve.preventDefault();
     });
 
     cardBackRef.current?.addEventListener("dblclick", () => {

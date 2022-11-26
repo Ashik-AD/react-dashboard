@@ -7,20 +7,28 @@
         "status": "active",
         "address": {
             "country": "Nepal",
-            "location": "Damak"
+            "location": "Damak",
+            "zipcode": 83923,
+            "fullAddress": "231, XYZ street, Damak, Province 1, 413232, Nepal"
         },
         "language": "English",
         "contacts": {
             "phone": "+977-98-24965817",
             "email": "infoashikdhimal@gmail.com",
             "others": [
-                {"id": 1, "type": "Skype", "value": "Ashik.Dhimal"}
+                {
+                    "id": 1,
+                    "type": "Skype",
+                    "value": "Ashik.Dhimal"
+                }
             ]
         },
-        "joinAt": "February 13 2001"
+        "joinAt": "February 13 2001",
+        "currency": "NPR",
+        "organization": "Vortex"
     },
     "teams": [
-       {
+        {
             "id": 1,
             "title": "CSS Engineer",
             "totalMember": 132
@@ -37,9 +45,20 @@
         }
     ],
     "overview": [
-        {"id": 1, "title": "Task Compiled", "total": 34332},
-        {"id": 2, "title": "Connections", "total": 764},
-        {"id": 3, "title": "Project Compiled", "total": 123}
+        {
+            "id": 1,
+            "title": "Task Compiled",
+            "total": 34332
+        },
+        {
+            "id": 2,
+            "title": "Connections",
+            "total": 764
+        },
+        {
+            "id": 3,
+            "title": "Project Compiled",
+            "total": 123
+        }
     ]
 }
-

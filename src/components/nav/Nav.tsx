@@ -11,7 +11,7 @@ const Nav = () => {
     <NavContainer>
       <NavContent>
         <NavHeading />
-        <ScrollContainer maxHeight="calc(100% - 128px)">
+        <ScrollContainer maxHeight="calc(100vh - 4rem)">
           {navList.map((nav, index) => {
             if (nav.childrens) {
               return (

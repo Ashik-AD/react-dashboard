@@ -15,53 +15,54 @@ const CardPackagePlan = () => {
       <Box display="flex" flexDirection="column" px={20} space={0.8} pb={20}>
         <Text
           varient="caption"
-          paragraph={true}
-          secondary={true}
+          lineHeight="20px"
           weight="medium"
-          styles={{ lineHeight: "20px" }}
+          secondary
+          paragraph
         >
           Please make the payment to start enjoying all the features of our
           premium plan as soon as possible.
         </Text>
         <ColorBox
           padding={12}
-          transparency={2}
+          transparency={1}
           display="flex"
           align="center"
-          justify="space-between"
           space={0.6}
-          style={{ borderRadius: 6, overflow: "hidden" }}
+          className="overflow-hidden"
+          borderRadius="6px"
         >
-          <Box display="flex" align="center" space={0.5}>
-            <CustomAvatar
-              varient="rounded"
-              skin="light"
-              color="info"
-              size={40}
-              fontSize={25}
-            >
-              <BusinessCenter />
-            </CustomAvatar>
-            <span>
-              <Text
-                paragraph={true}
-                varient="body2"
-                weight="medium"
-                styles={{ lineHeight: "10px" }}
-              >
+          <CustomAvatar
+            varient="rounded"
+            skin="light"
+            color="info"
+            size={40}
+            fontSize={25}
+          >
+            <BusinessCenter />
+          </CustomAvatar>
+          <Box
+            display="flex"
+            align="center"
+            wrap="wrap"
+            justify="space-between"
+            space={0.5}
+          >
+            <Box>
+              <Text varient="body2" weight="medium" lineHeight="10px" paragraph>
                 Titanium
               </Text>
-              <Text varient="caption" skinColor={true} weight="medium">
+              <Text varient="caption" skinColor weight="medium">
                 Upgrade plan
               </Text>
-            </span>
-          </Box>
-          <Box>
-            <sup>$</sup>
-            <Text size={26} weight="bold">
-              3,000
-            </Text>
-            <sub>/year</sub>
+            </Box>
+            <Box>
+              <sup>$</sup>
+              <Text size={26} weight="bold">
+                3,000
+              </Text>
+              <sub>/year</sub>
+            </Box>
           </Box>
         </ColorBox>
         <Text varient="body2" weight="bold">
@@ -79,12 +80,7 @@ const CardPackagePlan = () => {
             cardpin={["8822", "6764"]}
           />
         </Box>
-        <Text
-          varient="caption"
-          weight="bold"
-          skinColor={true}
-          styles={{ lineHeight: "30px" }}
-        >
+        <Text varient="caption" weight="bold" lineHeight="30px" skinColor>
           Add Payment Method
         </Text>
         <TextField
@@ -104,35 +100,30 @@ const CreaditLists: FC<{
   logo: string;
   name: string;
 }> = ({ cardpin, logo, name }) => (
-  <Box display="flex" align="center" justify="space-between">
-    <Box display="flex" align="center" space={0.8}>
-      <img src={logo} alt="mastercard" width={35} height={32} />
+  <Box display="flex" align="center" space={0.8}>
+    <img src={logo} alt="mastercard" width={35} height={32} />
+    <Box
+      display="flex"
+      align="center"
+      wrap="wrap"
+      justify="space-between"
+      space={0.3}
+      flex={1}
+    >
       <Box>
-        <Text
-          varient="body2"
-          weight="medium"
-          paragraph={true}
-          styles={{ lineHeight: "15px" }}
-        >
+        <Text varient="body2" weight="medium" lineHeight="15px" paragraph>
           Credit card
         </Text>
-        <Text
-          varient="caption"
-          secondary={true}
-          weight="medium"
-          lineHeight="0px"
-        >
+        <Text varient="caption" weight="medium" lineHeight="0px" secondary>
           {cardpin[0]} xxxx xxxx {cardpin[1]}
         </Text>
       </Box>
-    </Box>
-    <Box display="flex">
       <TextField
         type="number"
         name={name}
         label="CVC"
         sizes="small"
-        style={{ width: "76px" }}
+        style={{ width: "76px", height: 40 }}
       />
     </Box>
   </Box>

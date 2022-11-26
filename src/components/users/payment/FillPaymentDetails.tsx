@@ -8,12 +8,14 @@ import React, {
 } from "react";
 import { Select, SelectItem, TextField, Toggle } from "../../../ui";
 import Box from "../../box/Box";
+import Form from "../../form/Form";
 import { GridInnerContainer, GridItem } from "../../layout";
 import PaymentCard, { PaymentCardProps } from "../../payment/PaymentCard";
 
 interface Props extends PaymentCardProps {
   onSubmit?: (event: React.SyntheticEvent) => void;
   children?: ReactNode;
+  cardPosition?: "flex-start" | "center" | "flex-end";
 }
 interface PaymentInputs extends PaymentCardProps {
   isSaved: boolean;
@@ -138,16 +140,23 @@ const FillPaymentDetails = forwardRef<FillPaymentDetail, Partial<Props>>(
         pt={20}
         space={1.6}
       >
-        <PaymentCard
-          cardName={props.cardName}
-          holderName={holderName}
-          expireDate={expiryDate}
-          pin={cardPin}
-          cvc={cvc}
-          flip={isCardFliped}
-          status={status}
-        />
-        <form autoComplete="OFF">
+        <Box
+          display="flex"
+          width="100%"
+          align="center"
+          justify={props.cardPosition ? props.cardPosition : "center"}
+        >
+          <PaymentCard
+            cardName={props.cardName}
+            holderName={holderName}
+            expireDate={expiryDate}
+            pin={cardPin}
+            cvc={cvc}
+            flip={isCardFliped}
+            status={status}
+          />
+        </Box>
+        <Form autcomplete="OFF" preventDefault>
           <GridInnerContainer spacing={1.5}>
             <GridItem xs={12}>
               <TextField
@@ -214,7 +223,7 @@ const FillPaymentDetails = forwardRef<FillPaymentDetail, Partial<Props>>(
             />
             {props.children}
           </Box>
-        </form>
+        </Form>
       </Box>
     );
   }

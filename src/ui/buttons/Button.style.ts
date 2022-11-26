@@ -10,9 +10,8 @@ const skinColor = (color: string) => alertColor.hasOwnProperty(color) ? alertCol
 //   return genColor?.toLocaleString();
 // }
 const normalButton = styled.button<ButtonType>`
-  //background color
-  display: flex;
-  flex: 0 0 auto;
+  display: inline-flex;
+  // flex: 0 0 auto;
   gap: 8px;
   align-items: center;
   ${({ width }) => width ? `min-width: ${width}; width: ${width};` : ''}
@@ -28,14 +27,13 @@ const normalButton = styled.button<ButtonType>`
   color: ${({ theme, color, varient }) => varient === 'outlined' || varient === 'text' ? color ? skinColor(color) : theme.primaryColor.color : "#fff"};
   font-size: 0.875rem;
   font-weight: 500;
-  white-space: nowrap;
   pointer-events: ${({ disabled }) => disabled ? 'none' : 'auto'};
   opacity: ${({ disabled }) => disabled ? 0.5 : 1};
   overflow: hidden;
   transition: 300ms background ease-out;
 
   &:hover {
-    background: ${({ theme, color, varient }) => varient === 'contained' ? genColorShades(color ? color : theme.primaryColor.color, { total: 1, intensity: 8 }).toString() : genColorShades(color ? color : theme.primaryColor.color, { total: 1, intensity: 3 }).toString()};
+    background: ${({ theme, color, varient }) => varient === 'contained' ? genColorShades(color ? color : theme.primaryColor.color, { total: 1, intensity: 9 }).toString() : genColorShades(color ? color : theme.primaryColor.color, { total: 1, intensity: 6 }).toString()};
     transition: 200ms ease;
   }
 `;
@@ -51,7 +49,7 @@ export const iconButton = styled(normalButton) <IconButtonProps>`
   height: ${({ size }) => size ? size : 32}px;
   min-width: ${({ size }) => size ? `${size}` : 32}px;
   width: ${({ size }) => size ? size : 32}px;
-  // color: ${({ varient, theme, color }) => color ? color : varient === "contained" ? "#fff" : theme.mode.textColor};
+  color: ${({ varient, color }) => color ? color : varient === "contained" ? "#fff" : 'inherit'};
   padding: 0px;
   // border: ${({ varient }) => varient === 'outlined' ? 1.8 : 0}px;
   user-select: none;

@@ -13,7 +13,7 @@ const Text: FC<TextType> = (props) => {
       as={paragraph ? "p" : heading ? heading : "span"}
       className={`${varient ? varient : "inherit"} ${classes ? classes : ""} ${
         heading ? heading : ""
-      }`}
+      } ${props.skinColor ? "text-primary" : ""}`}
       align={align ? align : "inherit"}
       theme={{ mode: theme.mode, primaryColor: theme.primaryColor }}
       style={{ ...styles }}

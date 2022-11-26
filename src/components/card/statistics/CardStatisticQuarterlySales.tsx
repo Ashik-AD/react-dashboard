@@ -59,11 +59,11 @@ const CardStatisticQuaterlySales = () => {
   };
   return (
     <Card>
-      <Box display="flex" justify="space-between">
-        <Box pb={16}>
+      <Box display="flex" align="center" justify="space-between">
+        <Box display="flex" flexDirection="column" flex={0} pb={16}>
           <CustomCardTitle title="total sales" showIcon={false} />
           <Box px={20} py={8}>
-            <Text varient="caption" secondary={true} paragraph={true}>
+            <Text varient="caption" secondary paragraph>
               Calculated in last 7 days
             </Text>
             <Box display="flex" space={0.1} pt={3} align="center">
@@ -77,11 +77,12 @@ const CardStatisticQuaterlySales = () => {
             </Box>
           </Box>
         </Box>
-        <Box pt={16}>
+        <Box pt={16} display="flex" justify="center" align="center" flex={1}>
           <StatisticPlainChart
             chartOption={chartOption}
             series={sales}
             height={125}
+            width={110}
           />
         </Box>
       </Box>

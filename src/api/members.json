@@ -1,4 +1,3 @@
-
 [
     {
         "id": 483,
@@ -7,7 +6,7 @@
         "email": "johndoe@npcr.com",
         "role": "Author",
         "status": "active",
-        "avatarsrc": "/src/image/humans/2.png"
+        "avatar": "/src/image/humans/2.png"
     },
     {
         "id": 488,
@@ -16,7 +15,7 @@
         "email": "janedeo@mic.com",
         "role": "Maintainer",
         "status": "pending",
-        "avatarsrc": "/src/image/humans/1.png"
+        "avatar": "/src/image/humans/1.png"
     },
     {
         "id": 323,
@@ -25,7 +24,7 @@
         "email": "cikadaat@oho.com",
         "role": "Subscriber",
         "status": "active",
-        "avatarsrc": "/src/image/humans/4.png"
+        "avatar": "/src/image/humans/4.png"
     },
     {
         "id": 534,
@@ -43,7 +42,7 @@
         "email": "belaisa@outlook.com",
         "role": "Author",
         "status": "active",
-        "avatarsrc": "/src/image/humans/5.png"
+        "avatar": "/src/image/humans/5.png"
     },
     {
         "id": 123,

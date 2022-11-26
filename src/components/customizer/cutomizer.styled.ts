@@ -6,10 +6,10 @@ const CustomizerBody = styled("div") <{ visible: boolean }>`
   background: ${({ theme }) => theme.foreground};
   max-height: 100%;
   min-height: 100%;
-  width: 30%;
+  width: 400px;
   position: fixed;
   top: 0;
-  right: ${({ visible }) => (visible ? 0 : "-30%")};
+  right: ${({ visible }) => (visible ? 0 : "-410px")};
   box-shadow: -6px 1px 9px 0px #0000001a;
   transition: right 0.2s ease-in;
   z-index: 2;

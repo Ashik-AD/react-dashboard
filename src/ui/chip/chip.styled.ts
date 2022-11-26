@@ -4,7 +4,7 @@ import { ChipProps } from './type'
 
 const ChipWrapper = styled("span") <ChipProps>`
     position: relative;
-    display: flex;
+    display: inline-flex;
     align-items: center;
     width: fit-content;
     background: ${({ theme, varient, color, skin }) => varient === 'outlined' || skin ? 'transparent' : varient === 'fill' && color ? alertColor.hasOwnProperty(color) ? alertColor[color as keyof Colors] : color : theme.color};

@@ -1,56 +1,30 @@
-import {} from "react";
-import { Routes, Route, Link } from "react-router-dom";
-import ThemeCustomizer from "./components/customizer/Customizer";
-import { Flex } from "./components/layout";
-import AppLayout from "./components/layout/AppLayout";
 import "./global.css";
 import "./styles/table/Table.css";
 import "./styles/modal/Modal.css";
-import CRM from "./page/crm/CRM";
-import TestComponents from "./TestComponents";
-import Analytics from "./page/analytics";
-import Ecommerce from "./page/ecommerce";
-import Duuu from "./page/Duuuu";
-import Nav from "./components/nav/Nav";
-import AppBar from "./components/appbar/AppBar";
-import Email from "./page/email";
-import Chat from "./page/chat";
-import Invoice from "./page/invoice";
-import Users from "./page/users";
-import Pages from "./page/pages/Pages";
+
+import useTheme from "./theme/useTheme";
+import GlobalStyle from "./global.styled";
+import AppRoutes from "./routes/AppRoutes";
 
 const App = () => {
+  const {
+    theme: {
+      mode,
+      primaryColor: { color },
+      skin,
+    },
+  } = useTheme();
   return (
-    <AppLayout>
-      <Nav />
-      <Flex direction="column" styles={{ minHeight: "100vh" }} gap="medium">
-        <AppBar />
-        <main
-          style={{
-            padding: `1.5rem`,
-            width: "100%",
-            flex: 1,
-            marginTop: "-20px",
-          }}
-        >
-          <Routes>
-            <Route index element={<CRM />} />
-            <Route path="/crm/" element={<CRM />} />
-            <Route path="/test" element={<TestComponents />} />
-            <Route path="/analytics/" element={<Analytics />} />
-            <Route path="/ecommerce/" element={<Ecommerce />} />
-            <Route path="/apps/email/*" element={<Email />} />
-            <Route path="/apps/chat/*" element={<Chat />} />
-            <Route path="/invoice/*" element={<Invoice />} />
-            <Route path="/user/*" element={<Users />} />
-            <Route path="/pages/*" element={<Pages />} />
-            <Route path="/duu/" element={<Duuu />} />
-            <Route path="/*" element={<h1>404 Not Found :(</h1>} />
-          </Routes>
-        </main>
-      </Flex>
-      <ThemeCustomizer />
-    </AppLayout>
+    <>
+      <GlobalStyle
+        textColor={mode.textColor}
+        backgroundColor={mode.background}
+        foregroundColor={mode.foreground}
+        skinColor={color}
+        skin={skin}
+      />
+      <AppRoutes />
+    </>
   );
 };
 export default App;

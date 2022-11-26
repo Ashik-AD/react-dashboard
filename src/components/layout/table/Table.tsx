@@ -20,7 +20,6 @@ const Table = <T extends unknown, R extends unknown>({
       {title && (
         <CustomCardTitle title={<Text>{title}</Text>} showIcon={false} />
       )}
-      {children && children}
       <div className="table-wrapper">
         <table className={`holy-table ${className ? className : ""}`}>
           {fields && renderField && (
@@ -36,6 +35,7 @@ const Table = <T extends unknown, R extends unknown>({
             {row.map((item) => (
               <>{renderRow(item)}</>
             ))}
+            {children}
           </TableBody>
         </table>
       </div>

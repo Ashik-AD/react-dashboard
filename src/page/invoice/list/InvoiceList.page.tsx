@@ -6,7 +6,6 @@ import InvoiceFilter from "../../../components/invoice/list/InvoiceFilter";
 import InvoiceTable from "../../../components/invoice/list/InvoiceTable";
 import { GridInnerContainer, GridItem } from "../../../components/layout";
 import { searchData } from "../../../features/invoices/creator";
-import { InvoiceStatus } from "../../../features/invoices/types/definition";
 import { useAppDispatch } from "../../../hooks";
 import { TextField } from "../../../ui";
 
@@ -14,12 +13,15 @@ const InvoiceList = () => {
   const dispatch = useAppDispatch();
   const [searchKey, setSearchKey] = useState("");
   const [filterKey, setFilterKey] = useState("");
-  const handleChangeSearch = (eve: React.ChangeEvent<HTMLInputElement>) => {
-    setTimeout(() => {
-      dispatch(searchData(eve.target.value));
-      setSearchKey(eve.target.value);
-    }, 500);
-  };
+  const handleChangeSearch = useCallback(
+    (eve: React.ChangeEvent<HTMLInputElement>) => {
+      setTimeout(() => {
+        dispatch(searchData(eve.target.value));
+        setSearchKey(eve.target.value);
+      }, 500);
+    },
+    []
+  );
   const handleChangeFilter = useCallback((invoiceStatus: string) => {
     dispatch(searchData(invoiceStatus));
     setFilterKey(filterKey);

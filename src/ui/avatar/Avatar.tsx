@@ -1,8 +1,8 @@
-import { FC } from "react";
+import { forwardRef } from "react";
 import { AvatarImage, AvtarWrapper } from "./avatar.styled";
 import { AvatarProps } from "./type";
 
-const Avatar: FC<AvatarProps> = (props) => {
+const Avatar = forwardRef<HTMLImageElement, AvatarProps>((props, ref) => {
   const { src, alt, size, styles, classes, varient, onClick, avatar, name } =
     props;
   return (
@@ -12,8 +12,13 @@ const Avatar: FC<AvatarProps> = (props) => {
       style={{ ...styles }}
       className={`avatar ${classes ? classes : {}}`}
     >
-      <AvatarImage src={src || avatar} alt={alt || name} onClick={onClick} />
+      <AvatarImage
+        src={src || avatar}
+        alt={alt || name}
+        ref={ref}
+        onClick={onClick}
+      />
     </AvtarWrapper>
   );
-};
+});
 export default Avatar;

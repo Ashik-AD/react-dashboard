@@ -13,7 +13,7 @@ export interface ButtonType {
   disabled?: boolean;
   width?: string;
   styles?: CSSProperties;
-  type?: "button" | "submit";
+  type?: "button" | "submit" | "reset";
 }
 
 export interface IconButtonProps extends ButtonType {

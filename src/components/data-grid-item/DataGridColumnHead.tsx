@@ -76,13 +76,13 @@ const SortIcon: FC<{ icon: ReactNode }> = ({ icon }) => (
 );
 
 interface StyleOption {
-  width: string;
+  width: string | number;
   sorted: boolean;
 }
 
 interface Props extends StyleOption {
   onSortField: (field: string, dir: "asc" | "desc" | null) => void;
-  label: string;
+  label: string | ReactNode;
   fieldId: string;
   sortDir: "asc" | "desc" | null;
   hidden: boolean;
@@ -102,6 +102,7 @@ const StyleDataGridHead = styled("div")<StyleOption>`
   min-height: 50px;
   max-height: 50px;
   cursor: pointer;
+  z-index: 900;
 
   .icon-wrapper,
   .head-more-option {

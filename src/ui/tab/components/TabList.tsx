@@ -4,6 +4,7 @@ import React, {
   createRef,
   FC,
   ReactNode,
+  useCallback,
   useContext,
   useEffect,
 } from "react";
@@ -22,10 +23,7 @@ interface ActiveTabOptions {
 
 export interface TabItemAdditional {
   selectedIndex?: number;
-  readonly changeTab?: (
-    eve: React.MouseEvent<HTMLButtonElement>,
-    tabIndex: number
-  ) => void;
+  readonly changeTab?: (tabIndex: number) => void;
   activeColor?: string;
   getWidth?: (value: number | string, options?: ActiveTabOptions) => void;
 }
@@ -57,18 +55,22 @@ const TbsLst: FC<Props> = ({ children, varient = "default" }) => {
         indicatorRef.current.style.left = `${el.offsetLeft}px`;
         return;
       }
-      indicatorRef.current.style.top = `${el.offsetTop}`;
+      indicatorRef.current.style.minHeight = `${el.clientHeight}px`;
+      indicatorRef.current.style.top = `${el.offsetTop}px`;
     }
   }, [tab?.value]);
 
-  const tabItemWidth = (val: string | number, opt: ActiveTabOptions) => {
-    if (indicatorRef.current) {
-      if (varient !== "vertical") {
-        indicatorRef.current.style.width = `${val}px`;
-        indicatorRef.current.style.left = `${opt.offsetLeft}px`;
+  const tabItemWidth = useCallback(
+    (val: string | number, opt: ActiveTabOptions) => {
+      if (indicatorRef.current) {
+        if (varient !== "vertical") {
+          indicatorRef.current.style.width = `${val}px`;
+          indicatorRef.current.style.left = `${opt.offsetLeft}px`;
+        }
       }
-    }
-  };
+    },
+    []
+  );
 
   const mapChildren = Children.map(children, (tabItem: any) =>
     cloneElement(tabItem, {

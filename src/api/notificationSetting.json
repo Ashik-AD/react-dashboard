@@ -1,0 +1,30 @@
+[
+    {
+        "id": 1,
+        "type": "New for you",
+        "email": true,
+        "browser": false,
+        "app": false
+    },
+    {
+        "id": 2,
+        "type": "Accoun Activity",
+        "email": false,
+        "browser": false,
+        "app": true
+    },
+    {
+        "id": 3,
+        "type": "A new browser used to singin",
+        "email": true,
+        "browser": true,
+        "app": true
+    },
+    {
+        "id": 4,
+        "type": "A new device linked",
+        "email": true,
+        "browser": false,
+        "app": true
+    }
+]

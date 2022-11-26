@@ -20,7 +20,6 @@ import DataGridOptions, {
   DataGridColoumn,
 } from "./type";
 import DataGridFooterContainer from "../../data-grid-item/DataGridFooterContainer";
-import ScrollContainer from "../../scroll-container/ScrollContainer";
 import { Text } from "../../../ui";
 
 export const DataGridOptionContext = createContext<DataOptionContext | null>(
@@ -30,16 +29,14 @@ export const DataGridOptionContext = createContext<DataOptionContext | null>(
 type SortableData = { [field: string]: any }[];
 
 const DataGrid = <T extends unknown>({
-  columns,
   rows,
-  height,
+  columns,
   width,
   pagination,
   rowPerPage,
   rowPerPageOption,
   renderGridData,
 }: DataGridOptions<T>) => {
-  const [selectedId, setSelectedId] = useState(-1);
   const [sortOption, setSortOption] = useState<SortOption>({
     fieldName: "",
     by: "",
@@ -47,7 +44,7 @@ const DataGrid = <T extends unknown>({
   const [hiddenColumns, setHiddenColumns] = useState(new Set());
   const [columnHiderOpen, setColumnHiderOpen] = useState(false);
   const [showFilter, setShowFilter] = useState(false);
-  const [dataList, setDataList] = useState(rows);
+  const [dataList, setDataList] = useState<T[]>(rows);
   const [footerOption, setFooterOption] = useState({
     next: rowPerPage!,
     passedRows: 1,
@@ -63,14 +60,9 @@ const DataGrid = <T extends unknown>({
 
   useEffect(() => {
     if (sortedList.length > 0) {
-      setDataList(sortedList);
+      setDataList(sortedList as T[]);
     }
   }, [sortedList]);
-
-  const handleSelectRow = (eve: MouseEvent<HTMLDivElement>) => {
-    const id = eve.currentTarget.dataset.id;
-    setSelectedId(Number(id));
-  };
 
   const handleSortBy = (
     sortOption: (state: SortOption) => void,
@@ -134,94 +126,98 @@ const DataGrid = <T extends unknown>({
   };
 
   return (
-    <StyledDataGrid className="data-grid" width={width}>
-      <DataGridOptionContext.Provider
-        value={{
-          sortByAsc: handleSortBy(setSortOption, "asc"),
-          sortByDesc: handleSortBy(setSortOption, "desc"),
-          hideColumn: handleHideColumn,
-          handleOpenColumnsCustomizer: handleShowColumnCustomizer,
-          handleShowFilter: handleShowFilter,
-        }}
-      >
-        {/* Render Data Grid Heading */}
-        <DataGridRow dataId={1} rowId={0} selected={false}>
-          {columns.map((item) => (
-            <DataGridColumnHead
-              key={item.fieldId}
-              fieldId={item.fieldId}
-              label={item.label}
-              width={item.width}
-              sorted={item.fieldId === sortOption.fieldName}
-              onSortField={(field, dir) =>
-                setSortOption({ fieldName: field, by: dir! })
-              }
-              sortDir={
-                item.fieldId === sortOption.fieldName
-                  ? (sortOption.by as any)
-                  : ""
-              }
-              hidden={hiddenColumns.has(item.fieldId)}
-            />
-          ))}
-          {/* Show/Hide filter and Hide column dropdown */}
-          <div ref={listActionRef} className="list-action-wrapper zIndex-1">
-            {columnHiderOpen && (
-              <ColumnsController
-                stateSetter={setHiddenColumns}
-                hiddenColumns={hiddenColumns as typeof hiddenColumns}
-                columnList={columns.map((column) => ({
-                  fieldId: column.fieldId,
-                  hidden: hiddenColumns.has(column.fieldId),
-                  label: column.label,
-                }))}
-              />
-            )}
-
-            {showFilter && (
-              <FilterController
-                fields={columns}
-                lists={rows}
-                onFilterLists={(filteredData) => setDataList(filteredData)}
-              />
-            )}
-          </div>
-        </DataGridRow>
-      </DataGridOptionContext.Provider>
-
-      {/*  Render data list */}
-      <Box className="data_grid_body">
-        {/* Loop through data list */}
-        {dataList.length > 0 ? (
-          dataList
-            .slice(footerOption.passedRows - 1, footerOption.next)
-            .map((item, index) => (
-              <DataGridRow
-                dataId={item[columns[0].fieldId] as string}
-                rowId={index}
-                selected={selectedId === item[columns[0].fieldId]}
-                key={index}
-                onClick={handleSelectRow}
-              >
-                {renderGridData(
-                  item,
-                  columns.reduce<Record<string, DataGridColoumn>>(
-                    (acc, cur) => {
-                      acc[cur.fieldId] = cur;
-                      return acc;
-                    },
-                    {}
-                  )
+    <StyledDataGrid className="data_grid_wrapper" width={width}>
+      <Box className="data_grid">
+        <Box className="data_grid_content">
+          <DataGridOptionContext.Provider
+            value={{
+              sortByAsc: handleSortBy(setSortOption, "asc"),
+              sortByDesc: handleSortBy(setSortOption, "desc"),
+              hideColumn: handleHideColumn,
+              handleOpenColumnsCustomizer: handleShowColumnCustomizer,
+              handleShowFilter: handleShowFilter,
+            }}
+          >
+            {/* Render Data Grid Heading */}
+            <DataGridRow dataId={1} rowId={0} selected={false}>
+              {columns.map((item) => (
+                <DataGridColumnHead
+                  key={item.fieldId}
+                  fieldId={item.fieldId}
+                  label={item.label}
+                  width={item.width}
+                  sorted={item.fieldId === sortOption.fieldName}
+                  onSortField={(field, dir) =>
+                    setSortOption({ fieldName: field, by: dir! })
+                  }
+                  sortDir={
+                    item.fieldId === sortOption.fieldName
+                      ? (sortOption.by as any)
+                      : ""
+                  }
+                  hidden={hiddenColumns.has(item.fieldId)}
+                />
+              ))}
+              {/* Show/Hide filter and Hide column dropdown */}
+              <Box ref={listActionRef} className="list-action-wrapper zIndex-2">
+                {columnHiderOpen && (
+                  <ColumnsController
+                    stateSetter={setHiddenColumns}
+                    hiddenColumns={hiddenColumns as typeof hiddenColumns}
+                    columnList={columns.map((column) => ({
+                      fieldId: column.fieldId,
+                      hidden: hiddenColumns.has(column.fieldId),
+                      label: column.label,
+                    }))}
+                  />
                 )}
-              </DataGridRow>
-            ))
-        ) : (
-          <Box padding={56}>
-            <Text align="center" paragraph>
-              No rows :(
-            </Text>
+
+                {showFilter && (
+                  <FilterController
+                    fields={columns}
+                    lists={rows}
+                    onFilterLists={(filteredData) =>
+                      setDataList(filteredData as T[])
+                    }
+                  />
+                )}
+              </Box>
+            </DataGridRow>
+          </DataGridOptionContext.Provider>
+
+          {/*  Render data list */}
+          <Box className="data_grid_body">
+            {/* Loop through data list */}
+            {dataList ? (
+              dataList
+                .slice(footerOption.passedRows - 1, footerOption.next)
+                .map((item, index) => (
+                  <DataGridRow
+                    dataId={item[columns[0]["fieldId"]] as string}
+                    rowId={index}
+                    key={index}
+                  >
+                    {renderGridData(
+                      item,
+                      columns.reduce<Record<string, DataGridColoumn>>(
+                        (acc, cur) => {
+                          acc[cur.fieldId] = cur;
+                          return acc;
+                        },
+                        {}
+                      )
+                    )}
+                  </DataGridRow>
+                ))
+            ) : (
+              <Box padding={56}>
+                <Text align="center" paragraph>
+                  No rows :(
+                </Text>
+              </Box>
+            )}
           </Box>
-        )}
+        </Box>
       </Box>
       {pagination && (
         <DataGridFooterContainer

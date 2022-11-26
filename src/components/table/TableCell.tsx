@@ -19,6 +19,7 @@ const TableCell: FC<PropsType> = (props) => {
       compact={compact}
       theme={{ mode }}
       style={style}
+      fontSize={fontSize}
     >
       {value}
     </Cell>
@@ -53,14 +54,14 @@ const Cell = styled("td")<StyledProps>`
           border.left ? `border-left: 1px solid ${color(theme.mode.name)};` : ""
         }
     `}
-  font-size: 0.875rem;
+  font-size: ${({ fontSize }) => (fontSize ? fontSize : "0.875rem")};
   font-weight: ${({ weight }) => (weight ? weight : 400)};
 `;
 
 interface StyledProps {
   align?: "center" | "left" | "right";
   weight?: number;
-  fontSize?: Varient;
+  fontSize?: string;
   border?: {
     show?: boolean;
     size?: string | number;

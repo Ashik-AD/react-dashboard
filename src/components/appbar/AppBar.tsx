@@ -1,4 +1,4 @@
-import React, { createRef, useEffect } from "react";
+import { createRef, useEffect } from "react";
 import styled from "styled-components";
 import useTheme from "../../theme/useTheme";
 import Box from "../box/Box";
@@ -7,7 +7,7 @@ import Notification from "../notification/Notification";
 import MenuSideNav from "./components/MenuSideNav";
 import ProfileDropdown from "./components/ProfileDropdown";
 import SearchIcon from "./components/SearchIcon";
-import genColorShades from "../../utils/genColorShades";
+
 const AppBar = () => {
   const {
     theme: {
@@ -17,20 +17,19 @@ const AppBar = () => {
   } = useTheme();
   const contentRef = createRef<HTMLHeadElement>();
 
-  const changeBarBg = (event: React.SyntheticEvent) => {
-    if (event.currentTarget?.scrollY > 10) {
+  const changeBarBg = (event: any) => {
+    if (event.currentTarget!.scrollY > 10) {
       contentRef.current?.classList.remove("appbar-content-hide");
     } else {
       contentRef.current?.classList.add("appbar-content-hide");
     }
   };
   useEffect(() => {
-    window.addEventListener("scroll", (event: React.SyntheticEvent) =>
-      changeBarBg(event)
-    );
-    window.removeEventListener("scroll", (event) => changeBarBg(event));
-    return () =>
-      void window.removeEventListener("scroll", (event) => changeBarBg(event));
+    window.addEventListener("scroll", (event: Event) => {
+      changeBarBg(event);
+    });
+    window.removeEventListener("scroll", changeBarBg);
+    return () => void window.removeEventListener("scroll", changeBarBg);
   }, [contentRef]);
   return (
     <StyledAppBar
@@ -43,7 +42,7 @@ const AppBar = () => {
           display="flex"
           justify="space-between"
           align="center"
-          style={{ height: "100%" }}
+          height="100%"
         >
           <Box display="flex">
             <MenuSideNav />
@@ -68,7 +67,7 @@ const StyledAppBar = styled("header")`
   top: 0px;
   left: auto;
   right: 0px;
-  padding: 0 1.6rem;
+  padding: 0 1.2rem;
   z-index: 900;
 
   & > .appbar-content {
@@ -84,8 +83,8 @@ const StyledAppBar = styled("header")`
     height: 100%;
     flex: 0 0 auto;
     padding: 0 1rem;
-    transition: 300ms;
-    backdrop-filter: blur(10px);
+    transition: padding 300ms;
+    ${({ theme }) => (theme.appBarBlur ? `backdrop-filter: blur(10px);` : "")}
     z-index: 900;
   }
 

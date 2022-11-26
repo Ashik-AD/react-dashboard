@@ -1,4 +1,5 @@
 import { FC, useEffect, useMemo, useState } from "react";
+import styled from "styled-components";
 import Select, { SelectItem } from "../../../ui/input/select/Select";
 import TextField from "../../../ui/input/text-field/TextField";
 import Card from "../../card/Card";
@@ -67,7 +68,7 @@ const FilterController: FC<Props> = (props) => {
   }, [selectedOperation]);
 
   return (
-    <Card
+    <StyledCard
       className="overflow-unset-important zIndex-2"
       pt="8px"
       position="absolute"
@@ -128,7 +129,7 @@ const FilterController: FC<Props> = (props) => {
           )}
         </GridItem>
       </GridInnerContainer>
-    </Card>
+    </StyledCard>
   );
 };
 
@@ -139,3 +140,7 @@ interface Props {
   lists: { [field: string]: any }[];
   onFilterLists: (lists: any) => void;
 }
+
+const StyledCard = styled(Card)`
+  z-index: 1100;
+`;

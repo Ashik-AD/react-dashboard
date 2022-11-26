@@ -79,7 +79,7 @@ const CardWidgetSalesOverview = () => {
             />
           </GridItem>
           <GridItem xs={12} sm={6}>
-            <Box display="flex" flexDirection="column" pr={20}>
+            <Box display="flex" flexDirection="column" px={20}>
               <Box display="flex" align="center" space={0.8}>
                 <CustomAvatar
                   varient="rounded"
@@ -96,7 +96,7 @@ const CardWidgetSalesOverview = () => {
                 </Box>
               </Box>
               <Divider styles={{ margin: "16px 0" }} />
-              <GridContainer rowSpacing={1}>
+              <GridInnerContainer rowSpacing={1}>
                 {data.map((total, index) => (
                   <SaleStats
                     key={index}
@@ -105,7 +105,7 @@ const CardWidgetSalesOverview = () => {
                     label={labels[index]}
                   />
                 ))}
-              </GridContainer>
+              </GridInnerContainer>
             </Box>
           </GridItem>
         </GridInnerContainer>

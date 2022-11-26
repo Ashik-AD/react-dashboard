@@ -37,9 +37,10 @@ const Analytics = () => {
                 actionHandler={<Button varient="contained">view sales</Button>}
                 bannerOption={{
                   height: "100px",
+                  width: "80PX",
                   position: "absolute",
-                  right: 20,
-                  top: 5,
+                  right: 0,
+                  top: 0,
                 }}
               />
             </GridItem>
@@ -55,7 +56,7 @@ const Analytics = () => {
           <CardTotalEarning />
         </GridItem>
         <GridItem xs={12} md={6} lg={4}>
-          <GridInnerContainer spacing={1.6} rowSpacing={1.6}>
+          <GridInnerContainer spacing={1.6}>
             <GridItem xs={12} md={6}>
               <CardStatisticRevenue />
             </GridItem>

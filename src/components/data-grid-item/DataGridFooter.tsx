@@ -2,6 +2,7 @@ import React, { FC } from "react";
 import { KeyboardArrowLeft, KeyboardArrowRight } from "@mui/icons-material";
 import { IconButton, Select, SelectItem, Text } from "../../ui";
 import Box from "../box/Box";
+import styled from "styled-components";
 
 const DataGridFooter: FC<Props> = (props) => {
   const {
@@ -15,10 +16,21 @@ const DataGridFooter: FC<Props> = (props) => {
     handlePagination,
   } = props;
   return (
-    <Box display="flex" align="center" justify="flex-end" px={20} space={2}>
+    <StyledDataGridFooterWrapper
+      display="flex"
+      align="center"
+      justify="flex-end"
+      px={20}
+      space={1}
+    >
       {rowPerPageOptions.length > 1 && (
         <Box display="flex" align="center" space={0.3} justify="space-evenly">
-          <Text varient="body2" textOverflow="ellipsis" secondary>
+          <Text
+            varient="body2"
+            textOverflow="ellipsis"
+            classes="text_row_count"
+            secondary
+          >
             Rows per page:
           </Text>
           <Select
@@ -27,6 +39,7 @@ const DataGridFooter: FC<Props> = (props) => {
             labelWidth="60px"
             containerWidth="60px"
             sizes="small"
+            classes="select_row_count"
             onChange={(value) => handleRowOptSelect(+value)}
           >
             {rowPerPageOptions.map((pg) => (
@@ -61,7 +74,7 @@ const DataGridFooter: FC<Props> = (props) => {
           </IconButton>
         </Box>
       </Box>
-    </Box>
+    </StyledDataGridFooterWrapper>
   );
 };
 
@@ -77,3 +90,16 @@ interface Props {
   handleRowOptSelect: (value: number) => void;
   handlePagination: (page: number) => void;
 }
+
+const StyledDataGridFooterWrapper = styled(Box)`
+  & .select_row_count {
+    * {
+      border-width: 0;
+    }
+  }
+  @media (max-width: 600px) {
+    & .text_row_count {
+      display: none;
+    }
+  }
+`;

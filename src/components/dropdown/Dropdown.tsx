@@ -19,7 +19,7 @@ const DropDown: FC<DropDownProps> = ({
   const {
     theme: { mode, skin },
   } = useTheme();
-  const showMenu = (eve: MouseEvent) => {
+  const showMenu = (eve: React.MouseEvent) => {
     eve.stopPropagation();
     setShow((prevState) => {
       document.addEventListener("click", handleCloseMenu);

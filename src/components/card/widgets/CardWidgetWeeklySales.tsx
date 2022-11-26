@@ -75,12 +75,24 @@ const CardWidgetWeeklySales = () => {
           series={chartOptions.series}
           type="bar"
         />
-        <Box display="flex" space={1} py={8}>
+        <Box
+          display="flex"
+          justify="space-around"
+          className="overflow-hidden"
+          width="100%"
+          space={1}
+          py={8}
+        >
           <CardItemAnalyticsWithIcon
             label="34.2k"
             tag="Sales"
             icon={
-              <CustomAvatar varient="rounded" color="warning" skin="light">
+              <CustomAvatar
+                varient="rounded"
+                size={40}
+                color="warning"
+                skin="light"
+              >
                 <TrendingUp />
               </CustomAvatar>
             }
@@ -89,7 +101,13 @@ const CardWidgetWeeklySales = () => {
             label="460k"
             tag="total profit"
             icon={
-              <CustomAvatar varient="rounded" color="success" skin="light">
+              <CustomAvatar
+                varient="rounded"
+                size={40}
+                fontSize={28}
+                color="success"
+                skin="light"
+              >
                 <AttachMoney />
               </CustomAvatar>
             }

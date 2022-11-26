@@ -16,23 +16,10 @@ import { Close, Settings } from "@mui/icons-material";
 import CustomizerBody, { CustomizerToggle } from "./cutomizer.styled";
 
 const ThemeCustomizer: FC = () => {
-  const {
-    theme,
-    dispatch: {
-      handleChangeSkin,
-      handleChangeTheme,
-      handleChangePrimaryColor,
-      handleAppBarPosition,
-      handleAppFooterPosition,
-      handleChangeAppBarBlur,
-      handleChangeMenuLayout,
-      handleChangeMenuOpenStyle,
-      handleChangeMenuCollapse,
-      handleChangeMenuHidden,
-    },
-  } = useTheme();
+  const { theme, dispatch } = useTheme();
   const [isVisible, setVisibility] = useState(false);
-  const changeSkin = (skin: string) => handleChangeSkin(skin as Skin);
+
+  const changeSkin = (skin: string) => dispatch?.handleChangeSkin(skin as Skin);
   return (
     <div className="theme-customizer" style={{ zIndex: 1500 }}>
       <CustomizerBody theme={theme.mode} visible={isVisible}>
@@ -67,10 +54,10 @@ const ThemeCustomizer: FC = () => {
               <ThemeSkin skin={theme.skin} handleChangeSkin={changeSkin} />
               <ThemeMode
                 themeName={theme.mode.name}
-                onChange={handleChangeTheme}
+                onChange={dispatch?.handleChangeTheme}
               />
               <ThemeSkinColor
-                onChange={handleChangePrimaryColor}
+                onChange={dispatch?.handleChangePrimaryColor}
                 currentColor={theme.primaryColor}
                 themeMode={theme.mode.name}
               />
@@ -83,20 +70,20 @@ const ThemeCustomizer: FC = () => {
               <CustomizerTitle title="layout" />
               <LayoutType
                 layoutPosition={theme.layout.appBarPosition}
-                onChange={handleAppBarPosition}
+                onChange={dispatch?.handleAppBarPosition}
                 title="AppBar Type"
                 name="appbar position"
               />
               <LayoutType
-                layoutPosition={theme.layout.footerPositioin}
-                onChange={handleAppFooterPosition}
+                layoutPosition={theme.layout.footerPosition}
+                onChange={dispatch?.handleAppFooterPosition}
                 title="AppFooter Type"
                 name="app footer position"
               />
               <CustomizerSwitch
                 title="AppBar Blur"
                 switched={theme.layout.appBarBlur}
-                onChange={handleChangeAppBarBlur}
+                onChange={dispatch?.handleChangeAppBarBlur}
               />
             </Flex>
           </SectionBox>
@@ -106,22 +93,22 @@ const ThemeCustomizer: FC = () => {
               <CustomizerTitle title="Menu" />
               <MenuLayout
                 layout={theme.menuStyle.layout}
-                onChange={handleChangeMenuLayout}
+                onChange={dispatch?.handleChangeMenuLayout}
               />
               <MenuToggle
                 toggle={theme.menuStyle.openStyle}
-                onChange={handleChangeMenuOpenStyle}
+                onChange={dispatch?.handleChangeMenuOpenStyle}
               />
 
               <CustomizerSwitch
                 title="Menu Collapsed"
                 switched={theme.menuStyle.collapse}
-                onChange={handleChangeMenuCollapse}
+                onChange={dispatch?.handleChangeMenuCollapse}
               />
               <CustomizerSwitch
                 title="Menu Hidden"
                 switched={theme.menuStyle.visible}
-                onChange={handleChangeMenuHidden}
+                onChange={dispatch?.handleChangeMenuHidden}
               />
             </Flex>
           </SectionBox>

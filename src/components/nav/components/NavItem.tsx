@@ -7,7 +7,7 @@ import { Text } from "../../../ui";
 import genColorShades from "../../../utils/genColorShades";
 
 const NavItem: FC<Props> = (props) => {
-  const { label, path, icon, varient, compact, onClick } = props;
+  const { label, path, icon, varient, compact, onClick, hideIcon } = props;
   const {
     theme: {
       mode,
@@ -33,7 +33,13 @@ const NavItem: FC<Props> = (props) => {
           isActive ? "nav-item-active nav-item" : "nav-item"
         }
       >
-        <Text size={icon ? 22 : 14} styles={{ display: "flex" }}>
+        <Text
+          size={icon ? 22 : 14}
+          styles={{
+            display: "flex",
+            visibility: hideIcon ? "hidden" : "initial",
+          }}
+        >
           {icon ? icon : <CircleOutlined />}
         </Text>
         <Text textTransform="capitalize" styles={{ display: "flex" }}>
@@ -61,6 +67,7 @@ const StyledNavItem = styled("li")<{
     align-items: center;
     gap: 12px;
     padding: ${({ compact }) => (compact ? "0.3rem" : "0.6rem")} 1.6rem;
+    color: inherit;
     border-top-right-radius: 1.4rem;
     border-bottom-right-radius: 1.4rem;
     margin-bottom: 6px;
@@ -113,6 +120,7 @@ interface Props {
   label: string;
   path: string;
   icon?: ReactNode;
+  hideIcon?: boolean;
   varient?: Varient;
   compact?: boolean;
   onClick?: () => void;

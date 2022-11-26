@@ -2,10 +2,10 @@ import { useEffect, useState } from "react"
 import { client } from "../api/client";
 
 const useFetch = <T extends unknown>(url: string) => {
+
     const [data, setData] = useState<T>();
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState();
-
     const fetch = async () => {
         const res = await client(url);
         return res;

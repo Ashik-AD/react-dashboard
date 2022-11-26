@@ -60,7 +60,7 @@ const Select: FC<SelectProp> = (props) => {
       Children.forEach(
         children as any,
         (ele: { props: { label: string; value: string } }) => {
-          if (ele.props.value === defaultValue) {
+          if (ele.props.value.toLowerCase() === defaultValue.toLowerCase()) {
             setSelectedItem({ label: ele.props.label, value: ele.props.value });
           }
         }

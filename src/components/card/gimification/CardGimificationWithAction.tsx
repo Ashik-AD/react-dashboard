@@ -1,10 +1,7 @@
 import { FC, ReactNode } from "react";
 import styled from "styled-components";
-import useTheme from "../../../theme/useTheme";
 import { Text } from "../../../ui";
 import Box from "../../box/Box";
-import { GridItem } from "../../layout";
-import GridInnerContainer from "../../layout/grid/GridInnerContainer";
 import Card from "../Card";
 
 const CardGimificationWithAction: FC<Props> = (props) => {
@@ -16,50 +13,30 @@ const CardGimificationWithAction: FC<Props> = (props) => {
     banner,
     bannerOption,
   } = props;
-  const { theme } = useTheme();
   return (
     <Card className="overflow-unset-important">
       <Box display="flex" flexDirection="column" padding={20}>
-        <Box>
-          <Text heading="h6" weight="medium">
-            {greet}
+        <Text heading="h6" weight="medium">
+          {greet}
+        </Text>
+        <Text varient="body2" secondary paragraph>
+          {message}
+        </Text>
+        <Box width="100%" position="relative">
+          <Text
+            heading="h5"
+            weight="medium"
+            styles={{ margin: `12px 0` }}
+            skinColor
+          >
+            {total}
           </Text>
-          <Text varient="body2" secondary={true}>
-            {message}
+          <Text varient="body2" secondary styles={{ marginBottom: 18 }}>
+            {description}
           </Text>
+          {actionHandler}
+          <Image src={banner} {...bannerOption} />
         </Box>
-        <GridInnerContainer>
-          <GridItem xs={6}>
-            <Box display="flex" flexDirection="column">
-              <Text
-                heading="h5"
-                color={theme.primaryColor.color}
-                weight="medium"
-                styles={{ marginTop: 12 }}
-              >
-                {total}
-              </Text>
-              <Text
-                varient="body2"
-                secondary={true}
-                styles={{ marginBottom: 18 }}
-              >
-                {description}
-              </Text>
-              {actionHandler}
-            </Box>
-          </GridItem>
-          <GridItem xs={6}>
-            <Box
-              position="relative"
-              display="flex"
-              align="center"
-              justify="center"
-            >
-              <Image src={banner} {...bannerOption} />
-            </Box>
-          </GridItem>
-        </GridInnerContainer>
       </Box>
     </Card>
   );

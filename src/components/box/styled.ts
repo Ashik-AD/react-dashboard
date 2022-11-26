@@ -6,14 +6,15 @@ import { BoxProps, ColorBoxProps } from "./type";
 const box = styled('div') <BoxProps>`
     ${({ position }) => position ? `position: ${position};` : ""}
     ${({ width }) => width ? `width: ${width};` : ""}
+    ${({ height }) => height ? `height: ${height};` : ""}
     display: ${({ display }) => display ? display : 'block'};
     ${({ display, align, justify, flexDirection, space, wrap, flex }) => display === 'flex' && `
-        align-items: ${align ? align : 'initial'}};
-        justify-content: ${justify ? justify : 'initial'}};
-        flex-direction: ${flexDirection ? flexDirection : 'row'};
-        flex-wrap: ${wrap || 'initial'};
-        gap: ${space}rem;
-        flex: ${flex || 'initial'};
+         ${align ? `align-items: ${align};` : ''}};
+        ${justify ? `justify-content: ${justify};` : ''}};
+        ${flexDirection ? `flex-direction: ${flexDirection};` : ""}
+        ${wrap ? `flex-wrap: ${wrap};` : ""}
+        ${space ? `gap: ${space}rem;` : ""}
+        ${flex ? `flex: ${flex};` : ""}
         `
     }
 

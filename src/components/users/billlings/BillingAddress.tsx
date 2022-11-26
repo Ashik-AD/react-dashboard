@@ -20,37 +20,41 @@ const BillingAddress: FC<Partial<UserList>> = (props) => {
         <Text heading="h6">Billing Address</Text>
         <Button onClick={toggleModal}>edit address</Button>
       </Box>
-      <StyledTable>
-        <tbody>
-          <GridInnerContainer spacing={1.6}>
-            <GridItem xs={12} md={6}>
-              <AddressItem title="Company Name" value={company} />
-              <AddressItem title="Billing Email" value={email} />
+      <GridInnerContainer spacing={1.6}>
+        <GridItem xs={12} md={6}>
+          <StyledTable>
+            <tbody>
+              <AddressItem title="Company Name" value={company!} />
+              <AddressItem title="Billing Email" value={email!} />
               <AddressItem title="Tax ID" value="TAX-38378" />
               <AddressItem title="VAT Number" value="KSD3K2K" />
               <AddressItem
                 title="Billing Address"
                 value="Damak-9, Jhapa, Mechi, Nepal"
               />
-            </GridItem>
-            <GridItem xs={12} md={6}>
-              <AddressItem title="Contact" value={contact} />
-              <AddressItem title="Country" value={country} />
+            </tbody>
+          </StyledTable>
+        </GridItem>
+        <GridItem xs={12} md={6}>
+          <StyledTable>
+            <tbody>
+              <AddressItem title="Contact" value={contact!} />
+              <AddressItem title="Country" value={country!} />
               <AddressItem title="State" value="Province 1" />
               <AddressItem title="Zipcode" value="5302" />
-            </GridItem>
-          </GridInnerContainer>
-        </tbody>
-      </StyledTable>
+            </tbody>
+          </StyledTable>
+        </GridItem>
+      </GridInnerContainer>
 
       {show ? (
         <Modal handleOutClick={toggleModal}>
           <EditBillingAddress
-            companyName={company}
-            contact={contact}
-            country={country}
+            companyName={company!}
+            contact={contact!}
+            country={country!}
             billingAddress="Damak 9, Jhaha, Nepal"
-            billingEmail={email}
+            billingEmail={email!}
             state="Zotopia"
             taxId="Tax-424343"
             vatNumber="KS425K32"

@@ -49,7 +49,8 @@ const StyledTabs = styled("div")<{ direction: "horizontal" | "vertical" }>`
     position: relative;
     display: flex;
     flex-wrap: nowrap;
-    flex-direction: ${({ direction }) => direction};
+
+    ${({ direction }) => direction === "vertical" && `flex-direction: column;`};
     min-width: 100%;
     width: 100%;
   }

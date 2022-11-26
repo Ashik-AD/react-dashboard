@@ -1,14 +1,14 @@
 import { ReactNode } from "react";
 export default interface DataGridOptions<T> {
     rows: T[];
-    renderGridData: (row: T, column: { [field: string]: DataGridColoumn }) => ReactNode;
-    gridDataKey: (item: T) => string | number;
     columns: DataGridColoumn[];
     rowPerPage?: number;
     rowPerPageOption?: number[];
     pagination?: boolean;
     height?: string;
     width?: string;
+    renderGridData: (row: T, column: { [field: string]: DataGridColoumn }) => ReactNode;
+    gridDataKey: (item: T) => string | number;
 }
 
 export interface DataGridColoumn {
@@ -30,4 +30,8 @@ export interface DataOptionContext {
     hideColumn: (fieldId: FieldName) => void;
     handleOpenColumnsCustomizer: () => void;
     handleShowFilter: () => void;
+}
+
+export interface StyledProps {
+    width: string;
 }

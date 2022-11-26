@@ -4,18 +4,22 @@ import NavOptions from "./type";
 
 import {
   AccountCircleOutlined,
-  CalendarTodayOutlined,
+  CampaignOutlined,
   ChatBubbleOutlineRounded,
-  CircleOutlined,
   ContactPageOutlined,
   DescriptionOutlined,
   EmailOutlined,
   Home,
+  ManageAccountsOutlined,
   PersonOutline,
+  SellOutlined,
 } from "@mui/icons-material";
 
 const format = (label: string, path: string, icon?: ReactNode): NavItemType => {
   return icon ? { label, path, icon } : { label, path };
+};
+const formatWithHidenIcon = (label: string, path: string): NavItemType => {
+  return { label, path, hideIcon: true };
 };
 const formatGroupButton = (title: string, icon: ReactNode) => ({ title, icon });
 
@@ -23,9 +27,9 @@ const navList: NavOptions[] = [
   {
     parent: formatGroupButton("Dashboards", <Home />),
     childrens: [
-      format("CRM", "/crm/"),
-      format("Analytics", "/analytics/"),
-      format("Ecommerce", "/ecommerce/"),
+      format("CRM", "/dashboards/crm/"),
+      format("Analytics", "/dashboards/analytics/"),
+      format("Ecommerce", "/dashboards/ecommerce/"),
     ],
   },
   {
@@ -57,12 +61,36 @@ const navList: NavOptions[] = [
       {
         parent: formatGroupButton("User Profile", <AccountCircleOutlined />),
         childrens: [
-          format("Profile", "/pages/user-profile/profile/"),
-          format("Teams", "/pages/user-profile/teams/"),
-          format("Projects", "/pages/user-profile/projects/"),
-          format("Connections", "/pages/user-profile/connections/"),
+          formatWithHidenIcon("Profile", "/pages/user-profile/profile/"),
+          formatWithHidenIcon("Teams", "/pages/user-profile/teams/"),
+          formatWithHidenIcon("Projects", "/pages/user-profile/projects/"),
+          formatWithHidenIcon(
+            "Connections",
+            "/pages/user-profile/connections/"
+          ),
         ],
       },
+      {
+        parent: formatGroupButton(
+          "Account Settings",
+          <ManageAccountsOutlined />
+        ),
+        childrens: [
+          formatWithHidenIcon("Account", "/pages/account-settings/account/"),
+          formatWithHidenIcon("Security", "/pages/account-settings/security/"),
+          formatWithHidenIcon("Billing", "/pages/account-settings/billing/"),
+          formatWithHidenIcon(
+            "Notifications",
+            "/pages/account-settings/notifications/"
+          ),
+          formatWithHidenIcon(
+            "Connections",
+            "/pages/account-settings/connections/"
+          ),
+        ],
+      },
+      format("Pricing", "/pages/pricing/", <SellOutlined />),
+      format("FAQ", "/pages/faq/", <CampaignOutlined />),
     ],
   },
 ];
