@@ -6,6 +6,7 @@ const mode = setting?.mode === "light" ? setting.mode : "dark";
 
 const themeSettings: SettingType = {
     mode: {
+        name: mode,
         background: mode === "light" ? "#f8f5ff" : "#1B2430",
         foreground: mode === "light" ? "#fffffd" : '#252d3a',
         textColor: mode === "light" ? "#3a3541de" : '#d3d3d3'

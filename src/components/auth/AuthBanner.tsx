@@ -28,6 +28,7 @@ const Banner = styled("div")<{ bannerUrl: string }>`
   background-image: url(${({ bannerUrl }) => bannerUrl});
   background-size: cover;
   background-position-y: 80px;
+  background-position-x: center;
   transition: background 300ms;
 
   & > img {

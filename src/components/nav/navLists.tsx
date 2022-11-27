@@ -21,11 +21,11 @@ const format = (label: string, path: string, icon?: ReactNode): NavItemType => {
 const formatWithHidenIcon = (label: string, path: string): NavItemType => {
   return { label, path, hideIcon: true };
 };
-const formatGroupButton = (title: string, icon: ReactNode) => ({ title, icon });
+const formatGroupButton = (title: string, icon: ReactNode, rootPath: string) => ({ title, icon, rootPath });
 
 const navList: NavOptions[] = [
   {
-    parent: formatGroupButton("Dashboards", <Home />),
+    parent: formatGroupButton("Dashboards", <Home />, "/dashboards/"),
     childrens: [
       format("CRM", "/dashboards/crm/"),
       format("Analytics", "/dashboards/analytics/"),
@@ -43,7 +43,7 @@ const navList: NavOptions[] = [
     icon: <ChatBubbleOutlineRounded />,
   },
   {
-    parent: formatGroupButton("Invoice", <DescriptionOutlined />),
+    parent: formatGroupButton("Invoice", <DescriptionOutlined />, "/invoice/"),
     childrens: [
       format("List", "/invoice/list/"),
       format("Preview", "/invoice/preview/"),
@@ -52,14 +52,14 @@ const navList: NavOptions[] = [
     ],
   },
   {
-    parent: formatGroupButton("User", <PersonOutline />),
+    parent: formatGroupButton("User", <PersonOutline />, "/user/"),
     childrens: [format("List", "/user/list/"), format("View", "/user/view/")],
   },
   {
-    parent: formatGroupButton("Pages", <ContactPageOutlined />),
+    parent: formatGroupButton("Pages", <ContactPageOutlined />, "/pages/"),
     childrens: [
       {
-        parent: formatGroupButton("User Profile", <AccountCircleOutlined />),
+        parent: formatGroupButton("User Profile", <AccountCircleOutlined />, "/pages/user-profile/"),
         childrens: [
           formatWithHidenIcon("Profile", "/pages/user-profile/profile/"),
           formatWithHidenIcon("Teams", "/pages/user-profile/teams/"),
@@ -73,7 +73,8 @@ const navList: NavOptions[] = [
       {
         parent: formatGroupButton(
           "Account Settings",
-          <ManageAccountsOutlined />
+          <ManageAccountsOutlined />,
+          "/pages/account-settings/"
         ),
         childrens: [
           formatWithHidenIcon("Account", "/pages/account-settings/account/"),

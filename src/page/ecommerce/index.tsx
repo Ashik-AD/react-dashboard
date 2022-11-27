@@ -8,7 +8,7 @@ import { CardWidgetProfit } from "../../components/card/widgets";
 import { GridContainer, GridItem } from "../../components/layout";
 import Flex from "../../components/layout/flex/Flex";
 import GridInnerContainer from "../../components/layout/grid/GridInnerContainer";
-import john from "../../image/john.png";
+import john from "../../image/john-pose-2.png";
 import MeetingDummy from "../../components/examples/MeetingDummy";
 import CardStatisticQuaterlySales from "../../components/card/statistics/CardStatisticQuarterlySales";
 import CardNewVisitors from "../../components/card/advance/CardNewVisitors";

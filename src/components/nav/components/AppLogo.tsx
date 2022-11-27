@@ -5,7 +5,7 @@ import { Text } from "../../../ui";
 import Logo from "../../../assets/logo-2.png";
 
 const AppLogo = () => (
-  <Link to="/">
+  <Link to="/dashboards/crm/">
     <Box display="flex" align="center" space={0.4}>
       <StyledLogo src={Logo} alt="app logo" />
       <Text heading="h6" styles={{ fontWeight: 600 }}>

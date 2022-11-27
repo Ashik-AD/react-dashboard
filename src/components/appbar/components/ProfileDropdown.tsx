@@ -41,7 +41,7 @@ const ProfileDropdown = () => {
     {
       icon: <PersonOutlineOutlined />,
       title: "Profile",
-      onClickHandle: () => pushRoutes("/user/john/"),
+      onClickHandle: () => pushRoutes("/pages/user-profile/profile/"),
     },
     {
       icon: <MailOutlineRounded />,
@@ -60,17 +60,17 @@ const ProfileDropdown = () => {
     {
       icon: <SettingsOutlined />,
       title: "Settings",
-      onClickHandle: () => pushRoutes("/user/settings/"),
+      onClickHandle: () => pushRoutes("/pages/account-settings/account/"),
     },
     {
       icon: <AttachMoney />,
       title: "Pricing",
-      onClickHandle: () => pushRoutes("/user/pricing/"),
+      onClickHandle: () => pushRoutes("/pages/pricing/"),
     },
     {
       icon: <HelpOutline />,
       title: "FAQ",
-      onClickHandle: () => pushRoutes("/help/faq/"),
+      onClickHandle: () => pushRoutes("/pages/faq/"),
     },
     {
       type: "component",

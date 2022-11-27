@@ -1,4 +1,4 @@
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import AuthBanner from "../../components/auth/AuthBanner";
 import Login, { LoginFormDate } from "../../components/auth/Login";
 import ColorBox from "../../components/box/ColorBox";
@@ -7,7 +7,7 @@ import useLocalStorage from "../../hooks/useLocalStorage";
 
 const Signin = () => {
   const { addLocalStorage } = useLocalStorage("userData");
-  const navigate = useNavigate();
+  const redirect = useNavigate()
   const handleSubmit = (inputs: LoginFormDate) => {
     addLocalStorage({
       fullname: "John Doe",
@@ -15,7 +15,7 @@ const Signin = () => {
       id: "2K3KJK23",
       email: "johndoe@email.com",
     });
-    return navigate("/dashboard/crm/", { replace: true });
+    return redirect("/dashboards/crm/");
   };
   return (
     <AuthLayout

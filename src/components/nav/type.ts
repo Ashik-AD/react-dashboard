@@ -2,7 +2,7 @@ import { ReactNode } from "react";
 export interface Parent {
     title: string;
     icon: ReactNode;
-
+    rootPath: string;
 }
 export interface Childrens {
     parent?: Parent;

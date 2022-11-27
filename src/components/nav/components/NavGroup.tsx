@@ -1,4 +1,5 @@
-import { createRef, FC, useCallback, useState } from "react";
+import { createRef, FC, useCallback, useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 import styled from "styled-components";
 import NavOptions from "../type";
 import NavGroupButton from "./NavGroupButton";
@@ -8,21 +9,39 @@ const NavGroup: FC<Props> = ({
   navData: { childrens, parent },
   onChildClick,
 }) => {
+  const {pathname} = useLocation()
   const [isActive, setIsActive] = useState(false);
   const navItemContainer = createRef<HTMLUListElement>();
-  useCallback(() => {
-    if (isActive) {
-      navItemContainer!.current!.style!.height = "100px";
-      setTimeout(() => {
-        navItemContainer!.current!.style.height = "auto";
-      }, 300);
-    } else {
-      navItemContainer!.current!.style.height = "144px";
-      setTimeout(() => {
-        navItemContainer!.current!.style.height = "0px";
-      }, 200);
+
+  useEffect(() => {
+    if(parent?.rootPath){
+      if(pathname.includes(parent?.rootPath?.toLowerCase())){
+        setIsActive(true)
+      }
+      else {
+        setIsActive(false)
+      }
+    }
+  }, [pathname]);
+
+  useEffect(() => {
+    let current = navItemContainer.current;
+    if(current){
+      current.style.transitionDuration = "300ms";
+      if (isActive) {
+        current.style.height = "100px";
+        setTimeout(() => {
+          current!.style.height = "auto";
+        }, 100);
+      } else {
+          current.style.height = "0px";
+      }
+    }
+    return () => {
+      current = null;
     }
   }, [isActive]);
+
   return (
     <StyledNavGroup>
       {parent && (
@@ -88,9 +107,8 @@ const StyledNavGroup = styled("ul")`
   }
 
   & > .show-nav-item {
-    height: auto;
     padding-bottom: 20px;
     opacity: 1;
-    transition: all 400ms;
+    transition: 300ms;
   }
 `;

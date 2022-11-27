@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState, useLayoutEffect } from "react"
 
 interface IAuth {
     fullname: string;
@@ -11,12 +11,26 @@ interface IAuth {
 
 const useAuth = () => {
     const [userData, setUserData] = useState<Partial<IAuth> | null>();
-    useEffect(() => {
-        (async () => {
-            const getUser = JSON.parse(localStorage.getItem('userData') as string) as IAuth;
-            setUserData(getUser)
-        })()
+    const [isAuthenticated, setIsAuthenticated] = useState<boolean | null>(null)
+    useLayoutEffect(() => {
+        let fetchUserData = null;
+        fetchUserData = async () => {
+            if(!userData){
+                const getUser = await JSON.parse(localStorage.getItem('userData') as string) as IAuth;
+                if(getUser){
+                    setUserData(getUser)
+                    setIsAuthenticated(true);
+                }
+                else {
+                    setIsAuthenticated(false)
+    
+                }
+            }
+
+        }
+        fetchUserData()
+        return () => { fetchUserData = null}
     }, [])
-    return { userData, isAuthorized: userData ? true : false } as const;
+    return { userData, isAuthenticated } as const;
 }
 export default useAuth;

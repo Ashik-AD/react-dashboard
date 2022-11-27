@@ -3,10 +3,13 @@ import styled from "styled-components";
 import useTheme from "../../theme/useTheme";
 const NavContainer: FC<{ children: ReactNode }> = ({ children }) => {
   const {
-    theme: { menuStyle },
+    theme: { menuStyle: {collapse, visible} },
   } = useTheme();
+  if(visible) {
+    return null;
+  }
   return (
-    <StyledNavContainer collapsed={menuStyle.collapse}>
+    <StyledNavContainer collapsed={collapse}>
       {children}
     </StyledNavContainer>
   );
