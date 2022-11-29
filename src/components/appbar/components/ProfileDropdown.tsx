@@ -12,11 +12,12 @@ import {
   SettingsOutlined,
 } from "@mui/icons-material";
 import DropdownV2, { DropdownV2Item } from "../../dropdown/DropdownV2";
+import useLogout from "../../../hooks/useLogout";
 
 const ProfileDropdown = () => {
   const route = useNavigate();
+  const logout = useLogout();
   const pushRoutes = (path: string) => route(path);
-
   const dropdownItems: DropdownV2Item[] = [
     {
       type: "component",
@@ -79,7 +80,7 @@ const ProfileDropdown = () => {
     {
       icon: <ExitToApp />,
       title: "Logout",
-      onClickHandle: () => pushRoutes("/u/"),
+      onClickHandle: logout,
     },
   ];
   return (

@@ -1,3 +1,1 @@
-export default interface ApexDataSeries {
-    data: ApexAxisChartSeries | ApexNonAxisChartSeries | unknown[]
-}
+export type ApexDataSeries = ApexAxisChartSeries | ApexNonAxisChartSeries | undefined

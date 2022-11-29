@@ -5,6 +5,7 @@ interface ThemeOptions {
     skinColor: string;
     skin: "bordered" | "default";
     foregroundColor: string;
+    mode: "dark" | "light"
 }
 const GlobalStyle = createGlobalStyle<ThemeOptions>`
     body {
@@ -42,6 +43,30 @@ const GlobalStyle = createGlobalStyle<ThemeOptions>`
         opacity: 0;
         z-index: 0;
         visibility: hidden;
+    }
+
+    .apexcharts-gridline {
+        stroke: ${({mode}) => mode === "dark" ? "#9b9b9b30" : "#b1b4c338"}!important;
+    }
+    .apexcharts-text > * {
+        color: ${({mode}) => mode === "dark" ? "#727272" : "#898989"};
+        fill: ${({mode}) => mode === "dark" ? "#727272" : "#898989"};
+        font-weight: 600;
+    }
+    .apexcharts-legend-text {
+        color: ${({mode}) => mode === "dark" ? "#a7a7a7" : "#898989"}!important;
+    }
+    .apexcharts-tooltip   { 
+        background-color: ${({foregroundColor}) => foregroundColor}!important;
+        & .apexcharts-tooltip-text {
+           color: ${({mode}) => mode === "dark" ? "#c1c1c1" : "#919191"}!important;       
+        } 
+
+        & > div {
+            background-color: ${({foregroundColor}) => foregroundColor}!important;
+            border-color: ${({mode}) => mode === "dark" ? "#5a5a5a" : "initial"};
+            box-shadow: unset;
+        }
     }
 `;
 

@@ -6,6 +6,7 @@ import AppLayout from "../components/layout/AppLayout";
 import Nav from "../components/nav/Nav";
 import PageNotFound from "./404/PageNotFound";
 import Analytics from "./analytics";
+import Charts from "./charts/Charts";
 import Chat from "./chat";
 import CRM from "./crm/CRM";
 import Ecommerce from "./ecommerce";
@@ -38,6 +39,7 @@ const Home = () => {
             <Route path="/invoice/*" element={<Invoice />} />
             <Route path="/user/*" element={<Users />} />
             <Route path="/pages/*" element={<Pages />} />
+            <Route path="/charts/*" element={<Charts />} />
             <Route path="/*" element={<PageNotFound />} />
           </Routes>
         </main>

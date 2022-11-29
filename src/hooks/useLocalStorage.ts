@@ -1,4 +1,4 @@
-import { useEffect, useLayoutEffect, useState } from "react"
+import { useState } from "react"
 
 const useLocalStorage = <T>(key: string) => {
     const getItem = JSON.parse(localStorage.getItem(key)!)
@@ -11,7 +11,12 @@ const useLocalStorage = <T>(key: string) => {
             setData(value)
         })()
     };
+    const removeLocalStorage = () : void => {
+        if(!key) throw Error("Key is missing :(");
+        localStorage.removeItem(key);
+        return;
+    }
 
-    return { storage: data, addLocalStorage } as const;
+    return { storage: data, addLocalStorage, removeLocalStorage } as const;
 }
 export default useLocalStorage;

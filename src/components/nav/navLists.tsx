@@ -14,6 +14,7 @@ import {
   PersonOutline,
   SellOutlined,
 } from "@mui/icons-material";
+import { Icon } from "@iconify/react";
 
 const format = (label: string, path: string, icon?: ReactNode): NavItemType => {
   return icon ? { label, path, icon } : { label, path };
@@ -94,5 +95,14 @@ const navList: NavOptions[] = [
       format("FAQ", "/pages/faq/", <CampaignOutlined />),
     ],
   },
+  {
+    parent: formatGroupButton("Charts", <Icon icon="mdi:chart-donut" />, "/charts/"),
+    childrens: [
+      formatWithHidenIcon("Apex", "/charts/apex-charts/"),
+      formatWithHidenIcon("Recharts", "/charts/recharts/"),
+      formatWithHidenIcon("ChartJs", "/charts/chartjs/"),
+
+    ]
+  }
 ];
 export default navList;

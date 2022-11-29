@@ -38,7 +38,7 @@ export const CardWrapper = styled('div') <CardProps>`
     border-radius: 6px;
 
     //shadow
-    box-shadow: ${({ theme }) => theme.skin === 'default' && '0px 2px 10px 0px'} ${({ theme }) => theme.skin === 'default' ? theme.mode.name === 'light' ? "#f1f1f1" : "#1b24303b" : "none"};
+    box-shadow: ${({ theme }) => theme.skin === 'default' && '0px 2px 10px 0px'} ${({ theme }) => theme.skin === 'default' ? theme.mode.name === 'light' ? "#d9d5d5" : "#1b24303b" : "none"};
 
     ${({ theme }) => theme.skin === "bordered" ? `box-shadow: none!important;` : ""}
 `;

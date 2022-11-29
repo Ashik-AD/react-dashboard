@@ -5,8 +5,6 @@ import "./styles/modal/Modal.css";
 import useTheme from "./theme/useTheme";
 import GlobalStyle from "./global.styled";
 import AppRoutes from "./routes/AppRoutes";
-import useAuth from "./hooks/useAuth";
-import useRedirect from "./hooks/useRedirect";
 
 const App = () => {
   const {
@@ -22,6 +20,7 @@ const App = () => {
         textColor={mode.textColor}
         backgroundColor={mode.background}
         foregroundColor={mode.foreground}
+        mode={mode.name}
         skinColor={color}
         skin={skin}
       />

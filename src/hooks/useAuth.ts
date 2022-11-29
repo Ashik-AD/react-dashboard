@@ -1,6 +1,6 @@
-import { useEffect, useState, useLayoutEffect } from "react"
+import {  useState, useLayoutEffect } from "react"
 
-interface IAuth {
+export interface IAuth {
     fullname: string;
     id: string;
     role: string;

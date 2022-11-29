@@ -1,4 +1,5 @@
 export type AlertColorType = 'success' | 'info' | 'warning' | 'error';
+export type AlertColor = string | Omit<string, AlertColorType>
 export interface Colors {
     success: string; info: string; warning: string; error: string
 }
