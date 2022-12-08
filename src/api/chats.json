@@ -1,12 +1,13 @@
-
 [
     {
-        "uid": 439492,
-        "user_name": "Francis Yokahama",
-        "avatar_src": "/src/image/humans/1.png",
-        "role": "Frontend Developer",
-        "status": "Offline",
-        "about": "🥰 When one door of happiness closes, another opens, but often we look so long at the closed door that we do not see the one which has been opened for us.",
+        "profile": {
+            "uid": 439492,
+            "user_name": "Francis Yokahama",
+            "avatar_src": "/src/image/humans/1.png",
+            "role": "Frontend Developer",
+            "status": "Offline",
+            "about": "🥰 When one door of happiness closes, another opens, but often we look so long at the closed door that we do not see the one which has been opened for us."
+        },
         "chats": {
             "lastMessage": {
                 "total": 1,
@@ -21,7 +22,7 @@
                     "isSent": true,
                     "isDelivered": true,
                     "isSeen": true,
-                    "time":"Oct 1 2022, 08:47 pm"
+                    "time": "Oct 1 2022, 08:47 pm"
                 },
                 {
                     "senderId": 728232,
@@ -29,7 +30,7 @@
                     "isSent": true,
                     "isDelivered": true,
                     "isSeen": true,
-                    "time":"Oct 1 2022, 08:48 pm"
+                    "time": "Oct 1 2022, 08:48 pm"
                 },
                 {
                     "senderId": 439492,
@@ -37,7 +38,7 @@
                     "isSent": true,
                     "isDelivered": true,
                     "isSeen": true,
-                    "time":"Oct 3 2022, 04:12 pm"
+                    "time": "Oct 3 2022, 04:12 pm"
                 },
                 {
                     "senderId": 439492,
@@ -45,7 +46,7 @@
                     "isSent": true,
                     "isDelivered": true,
                     "isSeen": true,
-                    "time":"Oct 3 2022, 04:13 pm"
+                    "time": "Oct 3 2022, 04:13 pm"
                 },
                 {
                     "senderId": 728232,
@@ -53,7 +54,7 @@
                     "isSent": true,
                     "isDelivered": true,
                     "isSeen": true,
-                    "time":"Oct 3 2022, 04:15 pm"
+                    "time": "Oct 3 2022, 04:15 pm"
                 },
                 {
                     "senderId": 728232,
@@ -61,7 +62,7 @@
                     "isSent": true,
                     "isDelivered": true,
                     "isSeen": true,
-                    "time":"Oct 3 2022, 04:16 pm"
+                    "time": "Oct 3 2022, 04:16 pm"
                 },
                 {
                     "senderId": 439492,
@@ -69,7 +70,7 @@
                     "isSent": true,
                     "isDelivered": true,
                     "isSeen": true,
-                    "time":"Oct 3 2022, 04:17 pm"
+                    "time": "Oct 3 2022, 04:17 pm"
                 },
                 {
                     "senderId": 439492,
@@ -77,20 +78,20 @@
                     "isSent": true,
                     "isDelivered": true,
                     "isSeen": true,
-                    "time":"Oct 3 2022, 04:18 pm"
+                    "time": "Oct 3 2022, 04:18 pm"
                 }
-
             ]
         }
-
     },
     {
-        "uid": 833443,
-        "user_name": "Erica Harbor",
-        "avatar_src": "/src/image/humans/5.png",
-        "role": "Product Manager",
-        "status": "Dnd",
-        "about": "I have always believed that each man makes his own happiness and is responsible for his own problems. It is a simple philosophy.",
+        "profile": {
+            "uid": 833443,
+            "user_name": "Erica Harbor",
+            "avatar_src": "/src/image/humans/5.png",
+            "role": "Product Manager",
+            "status": "Dnd",
+            "about": "I have always believed that each man makes his own happiness and is responsible for his own problems. It is a simple philosophy."
+        },
         "chats": {
             "lastMessage": {
                 "total": 3,
@@ -105,7 +106,7 @@
                     "isSent": true,
                     "isDelivered": true,
                     "isSeen": true,
-                    "time":"Oct 1 2022, 08:47 pm"
+                    "time": "Oct 1 2022, 08:47 pm"
                 },
                 {
                     "senderId": 833443,
@@ -113,11 +114,9 @@
                     "isSent": true,
                     "isDelivered": true,
                     "isSeen": true,
-                    "time":"Oct 1 2022, 08:48 pm"
+                    "time": "Oct 1 2022, 08:48 pm"
                 }
-
             ]
         }
-
     }
 ]

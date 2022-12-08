@@ -1,5 +1,7 @@
 import { createServer } from 'miragejs';
 import meeting from './meetingSchedule.json'
+import clientTransaction from './clientTransactions.json';
+import emails from './emails.json'
 import members from './members.json'
 import chats from '../api/chats.json'
 import chatContact from "./chatContact.json";
@@ -19,10 +21,13 @@ import connectedAccounts from './connectedAccounts.json'
 import pricing from './pricing.json'
 import faq from './faq.json'
 import sales from './sales.json'
+import chartData from './chartData.json'
+import rechartData from './rechartData.json'
 export default function () {
     return createServer({
         routes() {
             this.get('/api/meeting/list', () => meeting)
+            this.get('/api/client-transaction', () => clientTransaction)
             this.get('/api/sales/:category', (schema, req) => {
                 const category = req.params.category;
                 if (category === 'byCountry') {
@@ -41,6 +46,7 @@ export default function () {
                 }
             }))
             this.get('/api/members', () => members)
+            this.get('/api/email/emails', () => emails)
             this.get('/api/chat/chats', () => chats)
             this.get('/api/chat/contacts', () => chatContact)
             this.get('/api/invoices', () => invocices)
@@ -92,6 +98,37 @@ export default function () {
             this.get('/api/account-settings/connections', () => connectedAccounts)
             this.get("/api/pricing/table", () => pricing.pricingTable)
             this.get("/api/pages/faq", () => faq)
+
+            this.get('/api/chart-data/:type', (sch, req) => {
+                const nodeName = req.params.type;
+                // @ts-ignore
+                return chartData[nodeName]
+                // switch(nodeName){
+                //     case "balance": return chartData.balance;
+                //     case "websiteAnalytic": return chartData.websiteAnalytic;
+                //     case "brandTurnover": return chartData.brandTurnover;
+                //     case "mobileComparison": return chartData.mobileComparison;
+                //     case "frameworkUsage": return chartData.frameworkUsage;
+                //     case "sales": return chartData.sales;
+                //     default: return {}
+                // }
+            })
+
+            this.get('/api/chart-data/rechart/:type', (sch, req) => {
+                const nodeName = req.params.type;
+                //@ts-ignore
+                return rechartData[nodeName];
+                switch(nodeName){
+                    case "websiteAnalytic": return rechartData.websiteAnalytic;
+                    // case "websiteAnalytic": return chartData.websiteAnalytic;
+                    // case "brandTurnover": return chartData.brandTurnover;
+                    // case "mobileComparison": return chartData.mobileComparison;
+                    // case "frameworkUsage": return chartData.frameworkUsage;
+                    // case "sales": return chartData.sales;
+                    default: return {}
+                }
+
+            })
         }
     })
 }

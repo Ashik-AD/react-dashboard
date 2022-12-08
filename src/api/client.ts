@@ -1,4 +1,4 @@
-export async function client(endpoint: string, { body, ...customConfig } = {}) {
+export async function client(endpoint: string, { body, ...customConfig } :any = {}) {
     const headers = { 'Content-Type': 'application/json' }
     const config = {
         method: body ? "POST" : "GET",
@@ -22,7 +22,7 @@ export async function client(endpoint: string, { body, ...customConfig } = {}) {
         }
         throw new Error(response.statusText)
     }
-    catch (err: Error) {
+    catch (err: any) {
         return Promise.reject(err.message ? err.message : data);
     }
 }
@@ -30,6 +30,6 @@ export async function client(endpoint: string, { body, ...customConfig } = {}) {
 client.get = function (endpoint: string, customConfig = {}) {
     return client(endpoint, { ...customConfig, method: "GET" })
 }
-client.post = function (endpoint: string, body, customConfig = {}) {
+client.post = function (endpoint: string, body: any, customConfig = {}) {
     return client(endpoint, { ...customConfig, body })
 }
