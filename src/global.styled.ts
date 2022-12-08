@@ -20,6 +20,12 @@ const GlobalStyle = createGlobalStyle<ThemeOptions>`
     .bg-primary {
         background: ${({ skinColor }) => skinColor};
     }
+    .bg-theme {
+        background: ${({backgroundColor}) => backgroundColor};
+    }
+    .fg-theme {
+        background: ${({foregroundColor}) => foregroundColor};
+    }
     .text-primary {
         color: ${({ skinColor }) => skinColor};
     }
