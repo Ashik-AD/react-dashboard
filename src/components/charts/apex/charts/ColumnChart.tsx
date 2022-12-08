@@ -1,13 +1,17 @@
 import { ApexOptions } from "apexcharts"
+import useFetch from "../../../../hooks/useFetch"
 import Apex from "../Apex"
 
 const ColumnChart = () => {
+    const {data, loading} = useFetch<any[]>("/api/chart-data/brandTurnover")
+    console.log(data)
     const chartOptions: ApexOptions = 
     {
         chart: {
             type: "bar",
             stacked: true,
         },
+        colors: ["#9e82d5", "#a595f9", "#c6b8fa"],
         legend: {
             position:'top',
             horizontalAlign: "left"
@@ -36,21 +40,11 @@ const ColumnChart = () => {
        }
     }
     
-    const series = [{
-        name: "Apple",
-        data: [90, 120, 55, 100, 80, 125, 175, 70, 88],
-        color: "#9e82d5"
-    },
-    {
-        name: 'Samsung',
-        data: [85, 130, 76, 80, 105, 145, 157, 89, 90],
-        color: "#a595f9"
-    }
-]
+    if(!data || loading) return <></>
 
     return(
         <>
-        <Apex type="bar" height={400} width="100%" series={series} options={chartOptions}  />
+        <Apex type="bar" height={400} width="100%" series={data} options={chartOptions}  />
         </>
     )
 }

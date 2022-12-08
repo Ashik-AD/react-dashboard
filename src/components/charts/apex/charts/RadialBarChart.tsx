@@ -5,10 +5,6 @@ import Apex from "../Apex"
 const RadialBarChart = () => {
     const {theme: {mode:{textColor}}} = useTheme()
     const options: ApexOptions = {
-        chart: {
-            redrawOnParentResize: true,
-            parentHeightOffset: 0
-        },
         colors: ["#f5c542", "#f54281", "#ad42f5"],
         stroke: {
             lineCap: "round"

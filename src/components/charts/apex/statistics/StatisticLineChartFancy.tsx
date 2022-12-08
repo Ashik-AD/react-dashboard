@@ -2,9 +2,9 @@ import { ApexOptions } from "apexcharts";
 import { FC } from "react";
 import StatisticPlainChart from ".";
 import useTheme from "../../../../theme/useTheme";
-import ApexDataSeries from "../../type/ApexSeries";
+import { ApexDataSeries } from "../../type/ApexSeries";
 
-const StatisticLineChartFancy: FC<ApexDataSeries> = ({ data }) => {
+const StatisticLineChartFancy: FC<{ data: ApexDataSeries }> = ({ data }) => {
   const {
     theme: { primaryColor },
   } = useTheme();

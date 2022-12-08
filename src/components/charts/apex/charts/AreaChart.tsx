@@ -1,7 +1,9 @@
 import { ApexOptions } from "apexcharts"
+import useFetch from "../../../../hooks/useFetch"
 import Apex from "../Apex"
 
 const AreaChart = () => {
+    const {data, loading} = useFetch<any[]>("/api/chart-data/websiteAnalytic")
     const chartOptions: ApexOptions = 
     {
         chart: {
@@ -35,27 +37,10 @@ const AreaChart = () => {
         enabled: false
        },
     }
-    
-    const series = [{
-        name: "visits",
-        data: [100, 120, 90, 170, 130, 160, 140, 240, 220, 180, 270, 280, 375],
-        color: "#f0dcff"
-    },
-    {
-        name: 'Clicks',
-        data: [60, 80, 70, 110, 80, 100, 90, 180, 160, 140, 200, 220, 275],
-        color: "#c19edb"
-    },
-    {
-        name: 'Sales',
-        data: [20, 40, 30, 70, 40, 60, 50, 140, 120, 100, 140, 180, 220],
-        color: "#a76cd3"
-    },
-]
-
+    if(!data || loading) return <></>
     return(
         <>
-        <Apex type="area" height={400} width="100%" series={series} options={chartOptions}  />
+        <Apex type="area" height={400} width="100%" series={data} options={chartOptions}  />
         </>
     )
 }

@@ -3,7 +3,7 @@ import { FC } from "react";
 import StatisticPlainChart from ".";
 import useTheme from "../../../../theme/useTheme";
 import genColorShades from "../../../../utils/genColorShades";
-import ApexDataSeries from "../../type/ApexSeries";
+import { ApexDataSeries } from "../../type/ApexSeries";
 
 const StatisticAreaChart: FC<Props> = ({ data, height, width }) => {
   const {
@@ -37,9 +37,10 @@ const StatisticAreaChart: FC<Props> = ({ data, height, width }) => {
   );
 };
 
-interface Props extends ApexDataSeries {
+interface Props {
   height?: number | string;
   width?: number | string;
+  data: ApexDataSeries;
 }
 
 export default StatisticAreaChart;

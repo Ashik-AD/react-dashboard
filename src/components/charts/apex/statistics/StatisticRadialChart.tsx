@@ -2,9 +2,9 @@ import { ApexOptions } from "apexcharts";
 import { FC } from "react";
 import StatisticPlainChart from ".";
 import useTheme from "../../../../theme/useTheme";
-import ApexDataSeries from "../../type/ApexSeries";
+import { ApexDataSeries } from "../../type/ApexSeries";
 
-const StatisticRadialChart: FC<ApexDataSeries> = ({ data }) => {
+const StatisticRadialChart: FC<{ data: ApexDataSeries }> = ({ data }) => {
   const { theme } = useTheme();
   const option: ApexOptions = {
     chart: { type: "radialBar", sparkline: { enabled: true } },

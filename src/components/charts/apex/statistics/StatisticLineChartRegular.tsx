@@ -2,9 +2,9 @@ import { FC } from "react";
 import { ApexOptions } from "apexcharts";
 import useTheme from "../../../../theme/useTheme";
 import StatisticPlainChart from ".";
-import ApexDataSeries from "../../type/ApexSeries";
+import { ApexDataSeries } from "../../type/ApexSeries";
 
-const StatisticLineChartRegular: FC<ApexDataSeries> = ({ data }) => {
+const StatisticLineChartRegular: FC<{ data: ApexDataSeries }> = ({ data }) => {
   const {
     theme: { primaryColor },
   } = useTheme();
@@ -22,12 +22,6 @@ const StatisticLineChartRegular: FC<ApexDataSeries> = ({ data }) => {
       width: 3,
     },
   };
-  return (
-    <StatisticPlainChart
-      chartOption={options}
-      // series={[{ data: [32, 52, 34, 65, 78] }]}
-      series={data}
-    />
-  );
+  return <StatisticPlainChart chartOption={options} series={data} />;
 };
 export default StatisticLineChartRegular;

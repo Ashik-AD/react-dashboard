@@ -12,6 +12,8 @@ import HeatmapChart from "../../components/charts/apex/charts/HeatmapChart";
 import RadialBarChart from "../../components/charts/apex/charts/RadialBarChart";
 import RadarChart from "../../components/charts/apex/charts/RadarChart";
 import DonutChart from "../../components/charts/apex/charts/DonutChart";
+import LineAnArea from "../../components/charts/apex/charts/mixed/LineAnArea";
+import ChartTitle from "../../components/charts/components/ChartTitle";
 
 const ApexCharts = () => {
     return(
@@ -84,9 +86,15 @@ const ApexCharts = () => {
                 </Card>
             </GridItem>
             <GridItem xs={12} md={6}>
-                <Card px="1.2rem" pt="1.4rem" pb="2.6rem">
+                <Card px="1.2rem" pt="1.4rem" pb="2.6rem">  
                     <ChartTitle title="Expense Ratio" subtitle="Donut Chart" />
                     <DonutChart  />
+                </Card>
+            </GridItem>
+            <GridItem xs={12}>
+                <Card px="1.2rem" pt="1.4rem" pb="2.6rem">  
+                    <ChartTitle title="New Clients" subtitle="Mixed Chart" />
+                    <LineAnArea  />
                 </Card>
             </GridItem>
         </GridInnerContainer>
@@ -94,14 +102,3 @@ const ApexCharts = () => {
     )
 }
 export default ApexCharts;
-
-const ChartTitle = ({title, subtitle}:{title: string; subtitle?: string;}) => (
-    <Box display="flex" flexDirection="column" mb={1}>
-        <Text heading="h6">{title}</Text>
-        {
-            subtitle ? 
-            <Text varient="body2" secondary paragraph>{subtitle}</Text>
-            : ""
-        }
-    </Box>
-)

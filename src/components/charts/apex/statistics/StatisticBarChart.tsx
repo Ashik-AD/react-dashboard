@@ -2,9 +2,9 @@ import { ApexOptions } from "apexcharts";
 import { FC } from "react";
 import StatisticPlainChart from ".";
 import useTheme from "../../../../theme/useTheme";
-import ApexDataSeries from "../../type/ApexSeries";
+import { ApexDataSeries } from "../../type/ApexSeries";
 
-const StatisticBarChart: FC<ApexDataSeries> = ({ data }) => {
+const StatisticBarChart: FC<{ data: ApexDataSeries }> = ({ data }) => {
   const { theme } = useTheme();
   const option: ApexOptions = {
     chart: { type: "bar" },
@@ -32,13 +32,7 @@ const StatisticBarChart: FC<ApexDataSeries> = ({ data }) => {
       },
     },
   };
-  return (
-    <StatisticPlainChart
-      chartOption={option}
-      // series={[{ data: [12, 43, 54, 23, 44] }]}
-      series={data}
-    />
-  );
+  return <StatisticPlainChart chartOption={option} series={data} />;
 };
 
 export default StatisticBarChart;

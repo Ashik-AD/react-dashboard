@@ -1,8 +1,9 @@
 import { ApexOptions } from 'apexcharts'
-import React from 'react'
+import useFetch from '../../../../hooks/useFetch'
 import Apex from '../Apex'
 
 const RadarChart = () => {
+    const {data, loading} = useFetch<any[]>("/api/chart-data/mobileComparison")
     const options: ApexOptions ={
         chart: {
             parentHeightOffset: 0
@@ -25,18 +26,9 @@ const RadarChart = () => {
         markers: { width: 4, strokeWidth: 4, strokeOpacity: 0.5, strokeColors: "#f1a5ff"},
         yaxis: {show: false}
     }
-    const series = [
-        {
-            name: "Iphone 14",
-            data: [41, 64, 81, 60, 42, 42, 33, 23]
-        },
-        {
-            name: 'Samsung S22',
-            data: [65, 46, 42, 25, 58, 63, 76, 43]
-        }
-    ]
+    if(!data || loading) return <></>
   return (
-    <Apex type="radar" height={400} width="100%" series={series} options={options}  />
+    <Apex type="radar" height={400} width="100%" series={data} options={options}  />
 
   )
 }

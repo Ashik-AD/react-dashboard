@@ -1,7 +1,6 @@
 import { ApexOptions } from "apexcharts";
 import { FC, useState } from "react";
 import ReactApexChart from "react-apexcharts";
-import { ChartTypes } from "../type/ApexConfig";
 const ChartPlain: FC<PropsType> = (props) => {
   const [chartOptions, _] = useState<{
     option: ApexOptions;
@@ -46,14 +45,13 @@ const ChartPlain: FC<PropsType> = (props) => {
       height="100%"
       options={chartOptions.option}
       series={chartOptions.series}
-      type={props.type}
+      // type={props.type}
     />
   );
 };
 
 interface PropsType {
   series: { [key: string]: any; data: number[] }[];
-  type: ChartTypes;
   fill?: ApexFill;
   stroke?: ApexStroke;
 }

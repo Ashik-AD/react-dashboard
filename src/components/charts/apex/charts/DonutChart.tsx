@@ -26,7 +26,7 @@ const DonutChart = () => {
         },
         legend: {
             position: "bottom",
-        }
+        },
     }
     const series = [42, 7, 24, 24]
     return(

@@ -1,1 +1,2 @@
-export type ApexDataSeries = ApexAxisChartSeries | ApexNonAxisChartSeries | undefined
+
+export type ApexDataSeries = ApexAxisChartSeries | ApexNonAxisChartSeries | any[]
