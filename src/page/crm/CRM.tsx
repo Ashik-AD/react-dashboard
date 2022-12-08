@@ -18,6 +18,9 @@ import CardMeetup from "../../components/card/advance/CardMeetup";
 import CardPackagePlan from "../../components/card/advance/CardPackagePlan";
 import GridInnerContainer from "../../components/layout/grid/GridInnerContainer";
 import CardMint from "../../components/card/statistics/CardMint";
+import CardRangerSession from "../../components/cards-page/statistics/CardRangerSession";
+import CardRangerRating from "../../components/cards-page/statistics/CardRangerRating";
+import { Text } from "../../ui";
 
 const CRM = () => {
   return (
@@ -25,30 +28,19 @@ const CRM = () => {
       <GridContainer rowSpacing={1.5} columnSpacing={1.5} alignItems="stretch">
         <GridContainer spacing={1.5} alignItems="flex-end" noShifting={true}>
           <GridItem xs={12} sm={6} md={3}>
-            <CardRanger
-              title="Ratings"
-              total={13700}
-              growth={38}
-              status="inc"
-              tag="Year of 2022"
-              color="warning"
-              ranger="/src/image/mina.png"
-            />
+            <CardRangerRating />
           </GridItem>
           <GridItem xs={12} sm={6} md={3}>
-            <CardRanger
-              title="Session"
-              total={23000}
-              growth={12}
-              status="desc"
-              tag="Year of 2022"
-              color="warning"
-              ranger="/src/image/jin.png"
-            />
+            <CardRangerSession />
           </GridItem>
           <GridItem xs={12} md={6}>
             <CardTransaction
-              title="statistics card"
+              title="Transactions"
+              subtitle={
+                <Text varient="body2" secondary>
+                  <strong>Total 54.4% growth</strong> this month
+                </Text>
+              }
               items={[
                 {
                   icon: <TrendingUp />,
@@ -91,7 +83,7 @@ const CRM = () => {
           <CardWidgetWeeklySales />
         </GridItem>
         <GridItem xs={12} sm={4} md={2}>
-          <GridInnerContainer rowSpacing={1.5}>
+          <GridInnerContainer noShifting>
             <GridItem xs={12}>
               <CardStatisticGrowth />
             </GridItem>

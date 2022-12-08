@@ -1,4 +1,4 @@
-import type { InvoiceItem } from "../../../components/invoice/item/typet";
+import type { InvoiceItem } from "../../../components/invoice/item/type";
 export interface Invoice {
     invoiceNo: number;
     dateIssue: Date;

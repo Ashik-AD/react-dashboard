@@ -4,6 +4,7 @@ import PageNotFound from "../page/404/PageNotFound";
 import Signin from "../page/auth/Signin";
 import Signup from "../page/auth/Signup";
 import Dashboard from "../page/Home";
+import TestComponents from "../TestComponents";
 import ProtectedRoute from "./ProtectedRoute";
 
 const AppRoutes = () => {
@@ -11,11 +12,16 @@ const AppRoutes = () => {
     <Routes>
       <Route caseSensitive path="/auth/register/" element={<Signup />} />
       <Route caseSensitive path="/auth/login/" element={<Signin />} />
-      <Route caseSensitive path="/*" element={
-        <ProtectedRoute>
-          <Dashboard />
-        </ProtectedRoute>
-      } />
+      <Route caseSensitive path="/test/" element={<TestComponents />} />
+      <Route
+        caseSensitive
+        path="/*"
+        element={
+          <ProtectedRoute>
+            <Dashboard />
+          </ProtectedRoute>
+        }
+      />
     </Routes>
   );
 };

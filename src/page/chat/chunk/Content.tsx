@@ -20,7 +20,7 @@ export const chatModalCtx = createContext<Partial<ModalCtx>>({});
 const Content = () => {
   const [showModal, setShowModal] = useState(false);
   const isChatSelected = useAppSelector((state) =>
-    state.chat.selectedChat.uid ? true : false
+    state.chat.selectedChat?.profile.uid ? true : false
   );
   const toggleModal = () => void setShowModal((prevState) => !prevState);
   const closeModal = () => void setShowModal(false);

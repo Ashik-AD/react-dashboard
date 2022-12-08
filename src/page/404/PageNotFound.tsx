@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import Box from "../../components/box/Box";
 import useTheme from "../../theme/useTheme";
-import { Button, Text } from "../../ui";
+import { Text } from "../../ui";
 
 const PageNotFound = () => {
   const {

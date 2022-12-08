@@ -11,9 +11,9 @@ import {
 import GridInnerContainer from "../../components/layout/grid/GridInnerContainer";
 import { Flex, GridContainer, GridItem } from "../../components/layout";
 import trophy from "../../image/trophy.png";
-import { Button } from "../../ui";
+import { Button, Text } from "../../ui";
 import formatNumber from "../../utils/formatNumber";
-import OveralStatistic from "./components/OveralStatistic";
+import CardTransactions from "../../components/cards-page/statistics/CardTransactions";
 import Card from "../../components/card/Card";
 import CardDeposit from "../../components/card/advance/CardDeposit";
 import CardExpense from "../../components/card/advance/CardExpense";
@@ -45,7 +45,13 @@ const Analytics = () => {
               />
             </GridItem>
             <GridItem xs={12} md={8}>
-              <OveralStatistic />
+              <CardTransactions
+                slug={
+                  <Text>
+                    <strong>52.% growth</strong> this month
+                  </Text>
+                }
+              />
             </GridItem>
           </GridInnerContainer>
         </GridItem>

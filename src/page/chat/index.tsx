@@ -9,7 +9,6 @@ import {
   fetchUserProfile,
 } from "../../features/chats/chatSlice";
 import { useAppDispatch } from "../../hooks";
-import { Divider } from "../../ui";
 import Content from "./chunk/Content";
 
 export const StatusColor = {

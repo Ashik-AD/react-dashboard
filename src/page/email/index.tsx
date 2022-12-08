@@ -1,5 +1,5 @@
 import { Menu } from "@mui/icons-material";
-import React, { createRef, useEffect } from "react";
+import React, { createRef, useCallback, useEffect } from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
 import Box from "../../components/box/Box";
 import Card from "../../components/card/Card";
@@ -8,6 +8,7 @@ import EmailToolbar from "../../components/email/EmailToolbar";
 import SearchEmailList from "../../components/email/SearchEmailList";
 import { GridInnerContainer, GridItem } from "../../components/layout";
 import { filterChanged } from "../../features/emails/creator";
+import { fetchEmail } from "../../features/emails/emailsSlice";
 import { useAppDispatch } from "../../hooks";
 import { Divider, IconButton } from "../../ui";
 import EmailContent from "./chunk/EmailContent";
@@ -15,6 +16,11 @@ import ReadEmail from "./chunk/ReadEmail";
 const Email = () => {
   const dispatch = useAppDispatch();
   const location = useLocation();
+
+  useEffect(() => {
+    dispatch(fetchEmail);
+  }, []);
+
   useEffect(() => {
     const urlArr = location.pathname.split("/");
     let currentPathName = urlArr[urlArr.length - 2];
@@ -24,17 +30,24 @@ const Email = () => {
     dispatch(filterChanged(currentPathName));
   }, []);
 
-  const navRef = createRef<HTMLElement>();
+  const navRef = createRef<HTMLDivElement>();
 
   const handleNavIconClick = (eve: React.MouseEvent) => {
     eve.stopPropagation();
     navRef.current?.classList.add("active");
-    window.addEventListener("click", () => {
-      navRef.current?.classList.remove("active");
-    });
+    window.addEventListener("click", hideNav);
+  };
+
+  const hideNav = () => {
+    navRef.current?.classList.toggle("active");
+    window.removeEventListener("click", hideNav);
   };
   return (
-    <Card height="83vh" position="relative" className="overflow-hidden">
+    <Card
+      height="calc(100% - 1rem)"
+      position="relative"
+      className="overflow-hidden"
+    >
       <GridInnerContainer>
         <GridItem xs={5} md={3}>
           <EmailSideNav ref={navRef} />

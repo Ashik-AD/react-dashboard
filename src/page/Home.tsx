@@ -14,7 +14,7 @@ import Email from "./email";
 import Invoice from "./invoice";
 import Pages from "./pages/Pages";
 import Users from "./users";
-
+import CardPages from "./card-pages/index";
 const Home = () => {
   return (
     <AppLayout>
@@ -40,6 +40,7 @@ const Home = () => {
             <Route path="/user/*" element={<Users />} />
             <Route path="/pages/*" element={<Pages />} />
             <Route path="/charts/*" element={<Charts />} />
+            <Route path="/ui/cards/*" element={<CardPages />} />
             <Route path="/*" element={<PageNotFound />} />
           </Routes>
         </main>

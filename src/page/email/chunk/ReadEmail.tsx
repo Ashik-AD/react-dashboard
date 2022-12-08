@@ -60,13 +60,13 @@ const ReadEmail = () => {
           <ColorBox
             padding={20}
             transparency={4}
-            borderRadius={4}
+            borderRadius={"4px"}
             className="overflow-hidden"
           >
             <ColorBox
               backgroundTheme="foreground"
               padding={16}
-              borderRadius={6}
+              borderRadius={"6px"}
               className="overflow-hidden"
             >
               <Box

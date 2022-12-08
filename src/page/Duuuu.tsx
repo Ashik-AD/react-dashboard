@@ -85,7 +85,8 @@ const Duuu = () => {
   //   const initFilter = filterList(data, field);
   //   return initFilter(option as OperationList, filterKey);
   // }, [filterKey, filterInstant, field]);
-  const handleOnFilterList = (items) => {
+  // @ts-nocheck
+  const handleOnFilterList = (items: any) => {
     setFilterList(items);
   };
   const fileds = fields.map((field) => (
