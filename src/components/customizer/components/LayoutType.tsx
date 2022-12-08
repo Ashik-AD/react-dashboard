@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { Flex } from "../../layout";
 import { Text, Choice, ChoiceGroup } from "../../../ui";
-import { LayoutStyle } from "../../../theme/setting-types";
+import { LayoutStyle } from "../../../theme/type";
 
 const LayoutType: FC<PropsType> = ({
   layoutPosition,

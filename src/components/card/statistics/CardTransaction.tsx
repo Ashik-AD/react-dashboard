@@ -11,7 +11,7 @@ const CardTransaction: FC<PropsType> = (props) => {
   return (
     <Card>
       <CustomCardTitle title={title} subTitle={subtitle} />
-      <Box padding={20}>
+      <Box px={20} pb={16}>
         <GridContainer>
           {items.map((item) => (
             <GridItem
@@ -21,7 +21,7 @@ const CardTransaction: FC<PropsType> = (props) => {
               md={4}
               lg={(12 / items.length) as any}
             >
-              <Box display="flex" align="center" space={1} pt={5}>
+              <Box display="flex" align="center" space={1}>
                 <CustomAvatar
                   color={item.color}
                   varient="rounded"

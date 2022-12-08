@@ -1,16 +1,17 @@
-import SettingType, { SettingThemeLocalstorage } from './setting-types';
+import { ThemeModeName } from './type.d';
+import SettingType, { SettingThemeLocalstorage } from './type';
 
 const setting = JSON.parse(localStorage.getItem("triolo-settings") as string) as SettingThemeLocalstorage;
 
-const mode = setting?.mode === "light" ? setting.mode : "dark";
+const modeName: ThemeModeName = setting?.mode === "light" ? "light" : "dark";
 
 const themeSettings: SettingType = {
     mode: {
-        name: mode,
-        background: mode === "light" ? "#f8f5ff" : "#1B2430",
-        foreground: mode === "light" ? "#fffffd" : '#252d3a',
-        textColor: mode === "light" ? "#3a3541de" : '#d3d3d3'
-    },
+        name: modeName,
+        background: modeName === "light" ? "#f8f5ff" : "#1B2430",
+        foreground: modeName === "light" ? "#fffffd" : '#252d3a',
+        textColor: modeName === "light" ? "#3a3541de" : '#d3d3d3'
+    } as any,
     layout: {
         appBarBlur: setting?.hasOwnProperty('appbarBlur') ? setting.appbarBlur! : true,
         appBarPosition: setting?.appBarPosition ? setting.appBarPosition : "static",

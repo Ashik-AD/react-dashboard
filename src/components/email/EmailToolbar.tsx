@@ -23,11 +23,12 @@ import Box from "../box/Box";
 import { useAppSelector } from "../../hooks";
 import ToolbarButton from "./toolbars/ToolBarButton";
 import Folders from "./toolbars/Folders";
+import { RootState } from "../../store/store";
 
 const totalSelected = createSelector(
-  (state) => state.email,
+  (state: RootState) => state.email,
   (email) => ({
-    totalMail: email.mails.length,
+    totalMail: email.mails?.length,
     selected: email.selectedMails.length,
   })
 );

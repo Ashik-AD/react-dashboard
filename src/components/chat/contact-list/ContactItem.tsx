@@ -6,7 +6,7 @@ import UserAvatar from "../UserAvatar";
 import ChatItemWrapper from "../ChatItemWrapper";
 
 const selectContactById = (state: RootState, uid: string | number) =>
-  state.chat.contacts.find((contact) => contact.uid === uid);
+  state.chat.contacts.find((contact) => contact.profile.uid === uid);
 
 const ContactItem = ({ uid, onSelectChat }: Props) => {
   const cnt = useAppSelector((state) => selectContactById(state, uid));
@@ -17,10 +17,10 @@ const ContactItem = ({ uid, onSelectChat }: Props) => {
   return (
     <ChatItemWrapper uid={uid} onClick={handleClicks}>
       <UserAvatar
-        avatarSrc={cnt?.avatar_src}
-        alt={cnt?.user_name}
-        color={cnt?.color}
-        icon={cnt?.icon}
+        avatarSrc={cnt?.profile.avatar_src}
+        alt={cnt?.profile.user_name}
+        color={cnt?.profile.color}
+        icon={cnt?.profile.icon}
       />
       <Box
         display="flex"
@@ -31,10 +31,10 @@ const ContactItem = ({ uid, onSelectChat }: Props) => {
         mr={12}
       >
         <Text varient="body2" weight="bold">
-          {cnt?.user_name}
+          {cnt?.profile.user_name}
         </Text>
         <Text varient="body2" weight="medium" textOverflow="ellipsis" secondary>
-          {cnt?.about}
+          {cnt?.profile.about}
         </Text>
       </Box>
     </ChatItemWrapper>

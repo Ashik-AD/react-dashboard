@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import React, { ReactNode } from "react";
 import { AlertColorType } from "../color/alert";
 
 interface BaseProps {
@@ -12,7 +12,7 @@ interface BaseProps {
 export default interface CheckboxPropsType extends BaseProps {
     icon?: ReactNode;
     checkedIcon?: ReactNode;
-    onChange?: () => void;
+    onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
     checkedLabelColor?: AlertColorType | string;
     labelColor?: AlertColorType | string;
     label?: string;

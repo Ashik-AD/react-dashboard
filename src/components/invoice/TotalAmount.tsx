@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { Divider, Text } from "../../ui";
 import Box from "../box/Box";
-import type { Item } from "./item/typet";
+import type { NewItemHandle } from "./item/type";
 
 const taxPercent = 15;
 const applyTax = (amt: number, percent: number) => amt - (amt * percent) / 100;
@@ -10,7 +10,7 @@ const applyDiscount = (
   discount: { total: number; percent?: boolean }
 ) => (discount.percent ? (amt * discount.total) / 100 : amt - discount.total);
 
-const TotalAmount: FC<{ items: Array<Item> }> = ({ items }) => {
+const TotalAmount: FC<NewItemHandle> = ({ items }) => {
   const subTotal = items.reduce((acc, cur) => cur.cost * cur.hours + acc, 0);
   const totalDiscount = items.reduce((acc, cur) => cur.discount + acc, 0);
   const totalAmt = applyTax(

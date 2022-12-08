@@ -1,16 +1,6 @@
 
 export type MailId = number | string;
 
-export interface EmailOption {
-    mails: Mail[],
-    filter: {
-        text: string;
-        label: string;
-    },
-    selectedMails: Array<MailId>,
-    currentOpenMail: Mail | null
-}
-
 export type MailLabel = "personal" | "private" | "company" | "important"
 
 export interface Mail {
@@ -36,3 +26,13 @@ export interface Mail {
     hasPreviousMail?: boolean;
     hasNextMail?: boolean;
 } 
+
+export interface EmailOption {
+    mails: Mail[] | null,
+    filter: {
+        text: string;
+        label: string;
+    },
+    selectedMails: Array<MailId>,
+    currentOpenMail: Mail | null
+}

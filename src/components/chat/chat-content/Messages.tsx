@@ -6,8 +6,8 @@ import { RootState } from "../../../store/store";
 import ScrollContainer from "../../scroll-container/ScrollContainer";
 import MessageRow from "./MessageRow";
 const selectChatsAndId = (state: RootState) => ({
-  chats: state.chat.selectedChat.chats?.chat,
-  uid: state.chat.selectedChat.uid,
+  chats: state.chat.selectedChat?.chats?.chat,
+  uid: state.chat.selectedChat?.profile.uid,
 });
 
 const returnRequired = (obj: UserProfile) => ({
@@ -19,7 +19,7 @@ const returnRequired = (obj: UserProfile) => ({
 
 const selectUsersAvatar = (state: RootState) => ({
   currentUser: returnRequired(state.chat.currentUser),
-  selectedUser: returnRequired(state.chat.selectedChat),
+  selectedUser: returnRequired(state.chat.selectedChat?.profile!),
 });
 const Messages = () => {
   const { chats, uid } = useAppSelector(selectChatsAndId, shallowEqual);

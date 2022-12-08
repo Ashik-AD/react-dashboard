@@ -8,13 +8,14 @@ import NewItem from "./NewItem";
 import SalesPerson from "../SalesPerson";
 import TotalAmount from "../TotalAmount";
 
-import type { InvoiceItem, NewItemHandle } from "./typet";
+import type { InvoiceItem, NewItemHandle } from "./type";
 
 const itemId = (item: Array<InvoiceItem>) => {
-  const id = item.reduce((acc, cur) => {
+  const id = item.reduce((acc, cur): number => {
     if (cur.id > acc) {
       return cur.id;
     }
+    return 0;
   }, 0);
   return id + 1;
 };

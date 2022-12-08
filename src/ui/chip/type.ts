@@ -10,4 +10,5 @@ export interface ChipProps {
     icon?: ReactNode;
     styles?: CSSProperties;
     avatar?: ReactNode;
+    labelWeight?: number;
 }

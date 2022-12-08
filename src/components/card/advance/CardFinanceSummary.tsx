@@ -27,7 +27,7 @@ const CardFinanceSummary = () => {
           </CustomAvatar>
         }
       />
-      <Box padding={16}>
+      <Box px={16}>
         <GridContainer rowSpacing={1.6}>
           <GridItem xs={12} md={6}>
             <Text varient="body2" secondary={true}>
@@ -62,23 +62,23 @@ const CardFinanceSummary = () => {
             <AvatarGroup
               avatars={[
                 {
-                  src: "http://localhost:5173/src/image/humans/3.png",
-                  alt: "Ashik",
+                  avatar: "/src/image/humans/3.png",
+                  name: "Ashik",
                 },
                 {
-                  src: "http://localhost:5173/src/image/humans/1.png",
-                  alt: "Jane",
+                  avatar: "/src/image/humans/1.png",
+                  name: "Jane",
                 },
                 {
-                  src: "http://localhost:5173/src/image/humans/5.png",
-                  alt: "John",
+                  avatar: "/src/image/humans/5.png",
+                  name: "John",
                 },
                 {
-                  src: "http://localhost:5173/src/image/humans/2.png",
-                  alt: "Mitchel",
+                  avatar: "/src/image/humans/2.png",
+                  name: "Mitchel",
                 },
               ]}
-              max={3}
+              extraAvtar={3}
             />
           </GridItem>
           <GridItem xs={3} md={6}>

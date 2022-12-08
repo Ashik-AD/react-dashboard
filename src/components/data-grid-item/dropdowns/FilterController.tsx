@@ -5,6 +5,7 @@ import TextField from "../../../ui/input/text-field/TextField";
 import Card from "../../card/Card";
 import { GridInnerContainer, GridItem } from "../../layout";
 import filterList, { OperationList } from "../../layout/data-grid/filter";
+import { DataGridColoumn } from "../../layout/data-grid/type";
 const operators = [
   {
     operatorId: OperationList.CONTAINS,
@@ -78,7 +79,7 @@ const FilterController: FC<Props> = (props) => {
         <GridItem xs={4}>
           <Select
             label="Columns"
-            defaultValue={selectedField.label}
+            defaultValue={selectedField.label as string}
             varient="standard"
             onChange={(fieldId, label) =>
               setSelectedField({ fieldId, label: label ? label : "" })
@@ -87,7 +88,7 @@ const FilterController: FC<Props> = (props) => {
             {fields.map((field) => (
               <SelectItem
                 key={field.fieldId}
-                label={field.label}
+                label={field.label as string}
                 value={field.fieldId}
               />
             ))}
@@ -136,7 +137,7 @@ const FilterController: FC<Props> = (props) => {
 export default FilterController;
 
 interface Props {
-  fields: { fieldId: string; label: string }[];
+  fields: Pick<DataGridColoumn, "fieldId" | "label">[];
   lists: { [field: string]: any }[];
   onFilterLists: (lists: any) => void;
 }

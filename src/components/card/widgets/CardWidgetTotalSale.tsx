@@ -67,7 +67,7 @@ const CardWidgetTotalSale = () => {
           type="line"
           options={chartOption}
           series={series}
-          height={255}
+          height={250}
         />
       </Box>
     </Card>

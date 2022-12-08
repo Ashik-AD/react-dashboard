@@ -15,8 +15,7 @@ const selectUser = (state: RootState) => state.chat.currentUser;
 
 const CurrentUserProfile: FC<Props> = ({ handleCloseModal, show }) => {
   const dispatch = useAppDispatch();
-  const { role, user_name, status, avatar_src, color, icon, about, uid } =
-    useAppSelector(selectUser);
+  const data = useAppSelector(selectUser);
   const onChangeUserStatus = (status: string) => {
     dispatch(changeUserStatus(status as Status));
   };
@@ -27,17 +26,13 @@ const CurrentUserProfile: FC<Props> = ({ handleCloseModal, show }) => {
         shouldShow={show}
         handleCloseModal={handleCloseModal}
       >
-        <ProfileAvatar
-          userName={user_name}
-          role={role}
-          status={status}
-          avatarSrc={avatar_src}
-          icon={icon}
-          color={color}
-        />
+        <ProfileAvatar {...data} />
         <ScrollContainer maxHeight="56vh" px={20} py={20}>
-          <ProfileAbout about={about} />
-          <ChangeStatus status={status} onChangeStatus={onChangeUserStatus} />
+          <ProfileAbout about={data.about} />
+          <ChangeStatus
+            status={data.status}
+            onChangeStatus={onChangeUserStatus}
+          />
           <UserOptions />
           <Button styles={{ marginTop: 18 }}>logout</Button>
         </ScrollContainer>

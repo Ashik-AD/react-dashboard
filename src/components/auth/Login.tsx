@@ -30,7 +30,7 @@ const Login = ({ onSubmit }: { onSubmit: (inputs: LoginFormDate) => void }) => {
   const emailRef = createRef<HTMLInputElement>();
   const passwordRef = createRef<HTMLInputElement>();
 
-  const handleSubmit = useCallback(() => {
+  const handleSubmit = () => {
     if (!emailRef.current?.value || !passwordRef.current?.value) {
       setError("Invalid email/password. Please enter valid email & password");
       return;
@@ -41,7 +41,7 @@ const Login = ({ onSubmit }: { onSubmit: (inputs: LoginFormDate) => void }) => {
       remember: isRemember,
     });
     setError("");
-  }, []);
+  };
 
   return (
     <AuthFormContainer>

@@ -76,6 +76,7 @@ const UserInvoiceList = () => {
       <DataGrid
         rows={invoiceList}
         columns={dataGridField}
+        gridDataKey={(item) => item.id}
         renderGridData={(item, column) => (
           <>
             <DataGridCell width={column["id"].width}>

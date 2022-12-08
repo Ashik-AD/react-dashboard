@@ -1,5 +1,5 @@
 import { FC, useState } from "react";
-import { Skin } from "../../theme/setting-types";
+import { Skin } from "../../theme/type";
 import useTheme from "../../theme/useTheme";
 import { Divider, IconButton, Text } from "../../ui";
 import { Flex } from "../layout";

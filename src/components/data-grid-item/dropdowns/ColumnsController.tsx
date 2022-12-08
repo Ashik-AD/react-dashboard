@@ -24,7 +24,6 @@ const ColumnsController = <T extends unknown>({
       } else {
         updatedColumns.add(column);
       }
-      console.log(updatedColumns);
       stateSetter(() => updatedColumns as any);
     },
     [columnList]
@@ -72,6 +71,7 @@ const FilterColumns = ({
     if (searchText === "") {
       return columnLists;
     }
+
     const filtered = columnLists.filter((column) =>
       column.label.toLowerCase().includes(searchText.toLowerCase())
     );

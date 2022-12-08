@@ -3,6 +3,7 @@ import Box from "../../box/Box";
 import Card from "../Card";
 import { Chip, Text } from "../../../ui";
 import formatNumber from "../../../utils/formatNumber";
+import { AlertColor } from "../../../ui/color/alert";
 
 const CardRanger: FC<PropsType> = (props) => {
   const { title, tag, total, growth, status, ranger, color } = props;
@@ -19,7 +20,9 @@ const CardRanger: FC<PropsType> = (props) => {
           </Text>
           <Box display="flex" mb={10} align="flex-start" space={0.4} mt={25}>
             <Text heading="h5" styles={{ fontWeight: 500 }}>
-              {formatNumber(total, 1000, { toFixed: 1 })}
+              {typeof total === "number"
+                ? formatNumber(total, 1000, { toFixed: 1 })
+                : total}
             </Text>
             <sup
               className={`${
@@ -32,7 +35,13 @@ const CardRanger: FC<PropsType> = (props) => {
             </sup>
           </Box>
 
-          <Chip label={tag} size="small" color={color} skin="light" />
+          <Chip
+            label={tag}
+            size="small"
+            color={color as string}
+            skin="light"
+            labelWeight={500}
+          />
         </Box>
         <img
           src={ranger}
@@ -51,12 +60,12 @@ const CardRanger: FC<PropsType> = (props) => {
 
 interface PropsType {
   title: string;
-  total: number;
+  total: number | string;
   growth: number;
   status: "inc" | "desc";
   tag: string;
   ranger: string;
-  color?: string;
+  color?: AlertColor;
 }
 
 export default CardRanger;

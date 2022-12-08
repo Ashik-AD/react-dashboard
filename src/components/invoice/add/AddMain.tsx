@@ -38,7 +38,7 @@ const AddMain: FC<Partial<Invoice>> = (props) => {
       {/* Invoice to */}
       <GridInnerContainer>
         <GridItem xs={12} md={7}>
-          <InvoiceTo id={invoiceTo} />
+          <InvoiceTo id={invoiceTo!} />
         </GridItem>
         <GridItem xs={12} md={5}>
           <BillingDetail />

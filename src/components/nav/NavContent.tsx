@@ -29,6 +29,8 @@ const StyledNavContent = styled(Card)<{ isCollapsed: boolean }>`
   padding-right: 20px;
   border-radius: 0;
   overflow: hidden;
+  box-shadow: unset;
+  background: transparent !important;
 
   & .nav-label {
     ${({ isCollapsed }) =>

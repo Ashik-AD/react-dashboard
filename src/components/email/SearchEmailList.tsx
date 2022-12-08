@@ -4,12 +4,13 @@ import { createSelector } from "reselect";
 import styled from "styled-components";
 import { Mail } from "../../features/emails/types/type";
 import { useAppSelector } from "../../hooks";
+import { RootState } from "../../store/store";
 import { Text } from "../../ui";
 import Box from "../box/Box";
 import SearchMail from "./search-mail/SearchMail";
 const mailSelector = createSelector(
-  (state) => state.email,
-  (email): Mail[] => email.mails
+  (state: RootState) => state.email,
+  (email): Mail[] => email.mails!
 );
 const SearchEmailList = () => {
   const mailList = useAppSelector(mailSelector);

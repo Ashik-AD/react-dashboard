@@ -12,7 +12,7 @@ const ContactList: FC<Props> = ({ searchKey, chatContact }) => {
   const filterChatId = useMemo(() => {
     if (!searchKey) return chatContact;
     return chatContact.filter((chat) =>
-      chat.user_name.toLowerCase().includes(searchKey.toLowerCase())
+      chat.profile.user_name.toLowerCase().includes(searchKey.toLowerCase())
     );
   }, [searchKey, chatContact]);
   const handleSelectChat = (chatId: string | number) => {
@@ -24,8 +24,8 @@ const ContactList: FC<Props> = ({ searchKey, chatContact }) => {
 
   const renderChastList = filterChatId.map((chat) => (
     <ContactItem
-      key={chat.uid}
-      uid={chat.uid}
+      key={chat.profile.uid}
+      uid={chat.profile.uid}
       onSelectChat={handleSelectChat}
     />
   ));

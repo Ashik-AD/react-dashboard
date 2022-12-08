@@ -1,6 +1,8 @@
+import { Icon } from "@iconify/react";
 import { createRef, useEffect } from "react";
 import styled from "styled-components";
 import useTheme from "../../theme/useTheme";
+import { IconButton } from "../../ui";
 import Box from "../box/Box";
 import Card from "../card/Card";
 import Notification from "../notification/Notification";
@@ -14,6 +16,7 @@ const AppBar = () => {
       mode,
       layout: { appBarBlur },
     },
+    dispatch,
   } = useTheme();
   const contentRef = createRef<HTMLHeadElement>();
 
@@ -49,6 +52,18 @@ const AppBar = () => {
             <SearchIcon />
           </Box>
           <Box display="flex" align="center" space={0.6}>
+            <IconButton
+              varient="text"
+              size={36}
+              fontSize={26}
+              onClick={dispatch?.handleChangeTheme}
+            >
+              {mode.name === "dark" ? (
+                <Icon icon="mdi:weather-night" />
+              ) : (
+                <Icon icon="mdi:weather-sunny" />
+              )}
+            </IconButton>
             <Notification />
             <ProfileDropdown />
           </Box>

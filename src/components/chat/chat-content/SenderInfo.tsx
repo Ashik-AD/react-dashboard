@@ -10,7 +10,7 @@ import { Menu } from "@mui/icons-material";
 import { chatModalCtx } from "../../../page/chat/chunk/Content";
 const selectRequireOnly = (state: RootState) => {
   const { role, user_name, avatar_src, icon, color, uid, status } =
-    state.chat.selectedChat;
+    state.chat.selectedChat?.profile!;
   return {
     uid,
     userName: user_name,

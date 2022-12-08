@@ -74,7 +74,7 @@ const CardWidgetWeeklyOverview = () => {
           type="bar"
           options={chartOptions.option}
           series={chartOptions.series}
-          height={230}
+          height={200}
         />
       </Box>
       <Box display="flex" flexDirection="column" px={20} pb={16} space={1}>

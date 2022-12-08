@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { Flex } from "../../layout";
 import { Text, Choice, ChoiceGroup } from "../../../ui";
-import { MenuOpenStyle } from "../../../theme/setting-types";
+import { MenuOpenStyle } from "../../../theme/type";
 const MenuToggle: FC<PropsType> = ({ toggle, onChange }) => {
   return (
     <Flex direction="column" gap="sm">

@@ -22,9 +22,9 @@ const invoiceTo = {
     mail: "kiasa@email.com",
   },
 };
-
-const InvoiceTo = ({ id }: { id?: number }) => {
-  const [invoice, setInvoice] = useState<number | null>(id!);
+type InvoiceKey = typeof invoiceTo;
+const InvoiceTo = ({ id }: { id: number }) => {
+  const [invoice, setInvoice] = useState<any>(id);
   const handleSelectInvoice = (val: string) => {
     setInvoice(+val);
   };
@@ -47,10 +47,18 @@ const InvoiceTo = ({ id }: { id?: number }) => {
       </Select>
       {invoice && (
         <Box my={12} display="flex" flexDirection="column" space={0.2}>
-          <Text varient="body2">{invoiceTo[invoice].name}</Text>
-          <Text varient="body2">{invoiceTo[invoice].address}</Text>
-          <Text varient="body2">{invoiceTo[invoice].phone}</Text>
-          <Text varient="body2">{invoiceTo[invoice].mail}</Text>
+          <Text varient="body2">
+            {invoiceTo[invoice as keyof InvoiceKey].name}
+          </Text>
+          <Text varient="body2">
+            {invoiceTo[invoice as keyof InvoiceKey].address}
+          </Text>
+          <Text varient="body2">
+            {invoiceTo[invoice as keyof InvoiceKey].phone}
+          </Text>
+          <Text varient="body2">
+            {invoiceTo[invoice as keyof InvoiceKey].mail}
+          </Text>
         </Box>
       )}
     </Box>

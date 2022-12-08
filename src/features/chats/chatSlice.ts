@@ -1,5 +1,5 @@
 import { AnyAction } from 'redux';
-import { AppDispatch, RootState } from '../../store/store';
+import { AppDispatch, AppThunk, RootState } from '../../store/store';
 import { client } from '../../api/client';
 import ChatActions from './Actions';
 import { fetchChatContacts, fetchChats, fetchChatUserProfile } from './creator';
@@ -8,7 +8,7 @@ const INITIAL_STATE: ChatState = {
     currentUser: {} as any,
     chats: [],
     contacts: [],
-    selectedChat: {}
+    selectedChat: null
 }
 
 export default function chatReducer(state = INITIAL_STATE, action: AnyAction): ChatState {
@@ -32,10 +32,11 @@ export default function chatReducer(state = INITIAL_STATE, action: AnyAction): C
             }
 
         case ChatActions.selectCurrentChat:
+
             return {
                 ...state,
                 chats: state.chats.map(chat => {
-                    if (chat.uid === action.payload.uid) {
+                    if (chat.profile.uid === action.payload.uid) {
                         return {
                             ...chat,
                             chats: {
@@ -50,16 +51,16 @@ export default function chatReducer(state = INITIAL_STATE, action: AnyAction): C
                     }
                     return { ...chat }
                 }),
-                selectedChat: action.payload.lookup === "chat" ? state.chats.find(chat => chat.uid === action.payload.uid) as Chats : state.contacts.find(cnt => cnt.uid === action.payload.uid) as Contacts
+                selectedChat: action.payload.lookup === "chat" ? state.chats.find(chat => chat.profile.uid === action.payload.uid) as Chats : state.contacts.find(cnt => cnt.profile.uid === action.payload.uid) as Contacts
             }
 
         case ChatActions.sendMessage: {
-            const id = state.selectedChat.uid;
+            const id = state.selectedChat?.profile.uid;
             const chats = [...state.chats];
-            const chatIndex = chats.findIndex(chat => chat.uid === id);
+            const chatIndex = chats.findIndex(chat => chat.profile.uid === id);
             // check selected chat is available or not in chat list
             // if not then, add to the chat 
-            const selectedChat = { ...state.selectedChat };
+            const selectedChat = { ...state.selectedChat! };
             const { message, time } = action.payload;
 
             if (chatIndex === -1) {
@@ -74,7 +75,7 @@ export default function chatReducer(state = INITIAL_STATE, action: AnyAction): C
                     chat: [action.payload]
                 }
                 chats.unshift(selectedChat as Chats); // Make newly sended message contact at the first position in the chats group
-                const removeFromContact = state.contacts.filter(cnt => cnt.uid !== id);
+                const removeFromContact = state.contacts.filter(cnt => cnt.profile.uid !== id);
                 return {
                     ...state,
                     selectedChat,
@@ -120,15 +121,16 @@ export default function chatReducer(state = INITIAL_STATE, action: AnyAction): C
     }
 }
 
-export const fetchUserProfile = async (dispatch: AppDispatch, getState: RootState) => {
-    const { user_profile } = await client.get("/api/chat/userprofile");
-    dispatch(fetchChatUserProfile(user_profile));
+export const fetchUserProfile = async (dispatch: AppThunk) => {
+        const { user_profile } = await client.get("/api/chat/userprofile");
+        dispatch(fetchChatUserProfile(user_profile));
+    
 }
-export const fetchChat = async (dispatch: AppDispatch, getState: RootState) => {
+export const fetchChat = async (dispatch: AppThunk) => {
     const res = await client.get('/api/chat/chats');
     dispatch(fetchChats(res))
 }
-export const fetchChatContact = async (dispatch: AppDispatch, getState: RootState) => {
+export const fetchChatContact = async (dispatch: AppThunk) => {
     const res = await client.get("/api/chat/contacts");
     dispatch(fetchChatContacts(res));
 }

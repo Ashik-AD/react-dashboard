@@ -12,7 +12,7 @@ const ChatList: FC<Props> = ({ searchKey, chatList }) => {
   const filterChatId = useMemo(() => {
     if (!searchKey) return chatList;
     return chatList.filter((chat) =>
-      chat.user_name.toLowerCase().includes(searchKey.toLowerCase())
+      chat.profile.user_name.toLowerCase().includes(searchKey.toLowerCase())
     );
   }, [searchKey, chatList]);
 
@@ -24,7 +24,11 @@ const ChatList: FC<Props> = ({ searchKey, chatList }) => {
     return <NotFound msg="no chats found" />;
 
   const renderChastList = filterChatId.map((chat) => (
-    <ChatItem key={chat.uid} uid={chat.uid} onSelectChat={handleSelectChat} />
+    <ChatItem
+      key={chat.profile.uid}
+      uid={chat.profile.uid}
+      onSelectChat={handleSelectChat}
+    />
   ));
   return <Box>{renderChastList}</Box>;
 };

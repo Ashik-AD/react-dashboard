@@ -24,7 +24,7 @@ const GetStarted: FC<Props> = ({ handleOpenModal }) => {
         px={16}
         py={6}
         className="overflow-hidden cursor-pointer md-hidden"
-        borderRadius={20}
+        borderRadius={"20px"}
         transparency={5}
         color="info"
         onClick={handleOpenModal}

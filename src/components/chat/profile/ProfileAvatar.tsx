@@ -1,11 +1,12 @@
 import { FC } from "react";
-import { Status } from "../../../features/chats/definition";
+import { UserProfile } from "../../../features/chats/definition";
 import { Text } from "../../../ui";
 import Box from "../../box/Box";
 import UserAvatar from "../UserAvatar";
 
+type Props = UserProfile & { onClick?: () => void };
 const ProfileAvatar: FC<Props> = (props) => {
-  const { userName, role, status, avatarSrc, icon, color, onClick } = props;
+  const { user_name, role, status, avatar_src, icon, color, onClick } = props;
   return (
     <Box
       display="flex"
@@ -16,8 +17,8 @@ const ProfileAvatar: FC<Props> = (props) => {
       onClick={onClick}
     >
       <UserAvatar
-        alt={userName}
-        avatarSrc={avatarSrc}
+        alt={user_name}
+        avatarSrc={avatar_src}
         status={status}
         icon={icon}
         color={color}
@@ -31,7 +32,7 @@ const ProfileAvatar: FC<Props> = (props) => {
         mt={24}
       >
         <Text varient="body1" weight="medium">
-          {userName}
+          {user_name}
         </Text>
         <Text
           varient="body2"
@@ -46,13 +47,3 @@ const ProfileAvatar: FC<Props> = (props) => {
   );
 };
 export default ProfileAvatar;
-
-interface Props {
-  userName: string;
-  role: string;
-  status: Status;
-  avatarSrc?: string;
-  icon?: string;
-  color?: string;
-  onClick?: () => void;
-}

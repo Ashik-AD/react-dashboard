@@ -11,6 +11,7 @@ const ChipWrapper = styled("span") <ChipProps>`
     color: ${({ color, varient, theme, skin }) => varient === 'outlined' || skin === 'light' ? color ? alertColor.hasOwnProperty(color) ? alertColor[color as keyof Colors] : color : theme.color : "#fff"};
     padding: ${({ size }) => size === "small" ? "0.5px 10px" : "3px 12px"};
     font-size: ${({ size }) => size === 'small' ? '12px' : '15px'};
+    ${({labelWeight}) => labelWeight && `font-weight: ${labelWeight};`}
     border-radius: 20px;
     max-height: 40px;
     border:2px solid ${({ varient, theme }) => varient === 'outlined' ? theme.color : 'transparent'};

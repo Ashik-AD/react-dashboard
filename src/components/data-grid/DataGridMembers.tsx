@@ -32,7 +32,7 @@ const columns: DataGridColoumn[] = [
 
 const DataGridMembers = () => {
   const { data, loading } = useFetch<Array<MembersAPI>>("/api/members");
-  if (loading || !data) return <></>;
+  if (loading || !data) return <Card height="400px"></Card>;
   return (
     <Card>
       <DataGrid
@@ -46,7 +46,6 @@ const DataGridMembers = () => {
                 userName={item.name}
                 userid={item.userid}
                 avatarsrc={item.avatar}
-                icon={item.icon}
               />
             </DataGridCell>
             <DataGridCell value={item.email} width={column["email"].width} />

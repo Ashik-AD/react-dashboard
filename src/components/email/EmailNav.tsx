@@ -82,7 +82,11 @@ export const labelColors = {
   important: "error",
   private: "warning",
 };
-const EmailSideNav = forwardRef((props, ref) => {
+export type MailLabelColor = typeof labelColors;
+
+type NavRef = HTMLDivElement;
+
+const EmailSideNav = forwardRef<NavRef, any>((props, ref) => {
   const dispatch = useDispatch();
   const onFilterClick = (filterKey: string) => {
     dispatch(filterChanged(filterKey));
@@ -145,7 +149,7 @@ const EmailSideNav = forwardRef((props, ref) => {
 });
 export default EmailSideNav;
 
-const StyledEmailNavWrapper = styled("aside")`
+const StyledEmailNavWrapper = styled("div")`
   & .nav-content {
     height: 100%;
     width: 100%;

@@ -1,5 +1,5 @@
 import { PrimaryColor } from "./colors";
-import { LayoutStyle, MenuLayout, MenuOpenStyle, Skin } from "./setting-types";
+import { LayoutStyle, MenuLayout, MenuOpenStyle, Skin } from "./type";
 
 export default interface ThemeActionType {
   handleChangeTheme: () => void;

@@ -19,9 +19,10 @@ const CardSalesByCountry = () => {
           status={item.status}
           total={item.grossSales}
           tag={item.countryName}
+          category="sales"
           icon={
             <CustomAvatar
-              size={36}
+              size={42}
               fontSize={16}
               skin="light"
               color={item.color}

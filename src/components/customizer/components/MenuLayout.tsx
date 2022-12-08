@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { Flex } from "../../layout";
 import { Text, Choice, ChoiceGroup } from "../../../ui";
-import { MenuLayout as Layout } from "../../../theme/setting-types";
+import { MenuLayout as Layout } from "../../../theme/type";
 const MenuLayout: FC<PropsType> = ({ layout, onChange }) => {
   return (
     <Flex direction="column" gap="sm">
@@ -12,14 +12,14 @@ const MenuLayout: FC<PropsType> = ({ layout, onChange }) => {
           value={"y"}
           name="menu-layout"
           selected={layout}
-          onChange={() => onChange("y")}
+          onChange={() => onChange("vertical")}
         />
         <Choice
           label="Horizontal"
           value={"x"}
           name="menu-layout"
           selected={layout}
-          onChange={() => onChange("x")}
+          onChange={() => onChange("horizontal")}
         />
       </ChoiceGroup>
     </Flex>

@@ -4,12 +4,13 @@ import Box from "../box/Box";
 import { BoxProps } from "../box/type";
 
 const ScrollContainer = forwardRef<HTMLDivElement, Props>((props, ref) => {
-  const { maxHeight, children, classes, onClick } = props;
+  const { maxHeight, children, classes, onClick, scrollBarSize } = props;
   return (
     <StyledScrollContainer
       className={classes ? classes : ""}
       maxHeight={maxHeight}
       onClick={onClick}
+      scrollBarSize={scrollBarSize}
       ref={ref}
     >
       <Box {...props} className="scroll-content">
@@ -25,9 +26,13 @@ interface Props extends BoxProps {
   children: ReactNode;
   classes?: string;
   onClick?: () => void;
+  scrollBarSize?: string;
 }
 
-const StyledScrollContainer = styled("div")<{ maxHeight: string }>`
+const StyledScrollContainer = styled("div")<{
+  maxHeight: string;
+  scrollBarSize?: string;
+}>`
   width: 100%;
   min-width: 0px;
   display: contents;
@@ -40,7 +45,7 @@ const StyledScrollContainer = styled("div")<{ maxHeight: string }>`
   }
 
   & ::-webkit-scrollbar {
-    width: 8px;
+    width: ${({ scrollBarSize }) => scrollBarSize || `8px`};
   }
   & ::-webkit-scrollbar-thumb {
     background: transparent;

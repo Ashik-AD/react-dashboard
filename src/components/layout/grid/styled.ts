@@ -78,8 +78,8 @@ const GridLayout = styled('div') <GridLayoutProps>`
 `;
 export const StyledGridInner = styled(GridLayout) <GridLayoutProps>`
     width: ${({ spacing, columnSpacing }) => (spacing || columnSpacing) ? `calc(100% + ${spacing || columnSpacing}rem)` : `100%`};
-    margin-left: ${({ spacing, columnSpacing }) => (spacing || columnSpacing) ? -(spacing || columnSpacing) : 0}rem;
-    margin-bottom: ${({ spacing, rowSpacing }) => (spacing || rowSpacing) ? -(spacing || rowSpacing) : 0}rem;
+    margin-left: ${({ spacing, columnSpacing }) => (spacing || columnSpacing) ? -(spacing! || columnSpacing!) : 0}rem;
+    margin-bottom: ${({ spacing, rowSpacing }) => (spacing || rowSpacing) ? -(spacing! || rowSpacing!) : 0}rem;
     .grid-item {
         ${({ columnSpacing, spacing }) => !(columnSpacing || spacing) && "padding-left: 0;"}
     }

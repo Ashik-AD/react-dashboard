@@ -1,6 +1,6 @@
-import { FC, memo } from "react";
+import React, { FC, memo } from "react";
 import styled from "styled-components";
-import { Checkbox, Text } from "../../ui";
+import { Checkbox } from "../../ui";
 import Box from "../box/Box";
 import useTheme from "../../theme/useTheme";
 import { Star, StarOutline } from "@mui/icons-material";
@@ -16,34 +16,43 @@ import Sender from "./email-item/Sender";
 import ItemActions from "./email-item/ItemActions";
 import ItemLabels from "./email-item/ItemLabels";
 
-const mailItem = (mails: Mail[], mailId: MailId): Mail =>
-  mails.find((mail: Mail) => mail.id === mailId);
+const selectMailItem = (mails: Mail[], mailId: MailId) =>
+  mails.find((mail) => mail?.id === mailId);
 
 const EmailListItem: FC<{ mailId: MailId }> = ({ mailId }) => {
   const {
     theme: { mode, primaryColor },
   } = useTheme();
   const dispatch = useAppDispatch();
-  const emailItem = useAppSelector((state) =>
-    mailItem(state.email.mails, mailId)
+  const mailItem = useAppSelector((state) =>
+    selectMailItem(state.email.mails!, mailId)
   );
-  const { id, labels, isRead, from, isStarred, subject, timestamp } = emailItem;
-  const selectedMail = useAppSelector((state) =>
-    state.email.selectedMails.includes(id)
-  );
+  const selectedMail = useAppSelector((state) => {
+    if (mailItem) {
+      return state.email.selectedMails.includes(mailItem.id);
+    }
+  });
 
-  const onSelect = (eve) => {
+  const onSelect = (eve: React.ChangeEvent<HTMLInputElement>) => {
     eve.stopPropagation();
-    dispatch(selectEmail(id));
+    if (mailItem) {
+      dispatch(selectEmail(mailItem?.id));
+    }
   };
 
-  const onStarred = (eve) => {
+  const onStarred = (eve: React.ChangeEvent<HTMLInputElement>) => {
     eve.stopPropagation();
-    dispatch(starredEmail(id));
+    if (mailItem) {
+      dispatch(starredEmail(mailItem?.id));
+    }
   };
   const selectCurrentMail = () => {
-    dispatch(setCurrentOpenMail(emailItem));
+    if (mailItem) {
+      dispatch(setCurrentOpenMail(mailItem));
+    }
   };
+
+  if (!mailItem) return <></>;
   return (
     <StyledEmailListItem
       display="flex"
@@ -51,9 +60,9 @@ const EmailListItem: FC<{ mailId: MailId }> = ({ mailId }) => {
       pl={20}
       pr={12}
       py={14}
-      className={`${!isRead ? "unreaded-email" : ""}`}
+      className={`${!mailItem?.isRead ? "unreaded-email" : ""}`}
       theme={{ mode, primaryColor }}
-      key={id}
+      key={mailItem?.id}
       onClick={selectCurrentMail}
     >
       <Box display="flex" align="center" flex={1} space={0.6}>
@@ -63,15 +72,15 @@ const EmailListItem: FC<{ mailId: MailId }> = ({ mailId }) => {
             <Checkbox
               icon={<StarOutline />}
               checkedIcon={<Star />}
-              checked={isStarred}
+              checked={mailItem.isStarred}
               onChange={onStarred}
             />
           </span>
         </Box>
         <Sender
-          avatar_src={from.avatar_src!}
-          full_name={from.full_name}
-          subject={subject}
+          avatar_src={mailItem.from.avatar_src!}
+          full_name={mailItem.from.full_name}
+          subject={mailItem.subject}
         />
       </Box>
       <Box display="flex" align="center">
@@ -82,11 +91,11 @@ const EmailListItem: FC<{ mailId: MailId }> = ({ mailId }) => {
           space={0.6}
         >
           <article className="xs-hidden sm-visible">
-            <ItemLabels labels={labels} />
+            <ItemLabels labels={mailItem.labels} />
           </article>
-          <TimeStamp time={timestamp} />
+          <TimeStamp time={mailItem.timestamp} />
         </Box>
-        <ItemActions isRead={isRead} id={id} />
+        <ItemActions isRead={mailItem.isRead} id={mailItem.id} />
       </Box>
     </StyledEmailListItem>
   );

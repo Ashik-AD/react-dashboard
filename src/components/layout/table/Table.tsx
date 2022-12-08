@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 import { Text } from "../../../ui";
-import Card from "../../card/Card";
+import Box from "../../box/Box";
 import CustomCardTitle from "../../card/titles/CustomCardTitle";
 import TableBody from "../../table/TableBody";
 import TableHead from "../../table/TableHead";
@@ -16,7 +16,7 @@ const Table = <T extends unknown, R extends unknown>({
   children,
 }: TableProps<T, R>) => {
   return (
-    <Card className="table-container">
+    <Box className="table-container">
       {title && (
         <CustomCardTitle title={<Text>{title}</Text>} showIcon={false} />
       )}
@@ -39,7 +39,7 @@ const Table = <T extends unknown, R extends unknown>({
           </TableBody>
         </table>
       </div>
-    </Card>
+    </Box>
   );
 };
 

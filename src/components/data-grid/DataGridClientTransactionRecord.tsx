@@ -1,5 +1,4 @@
 import Card from "../card/Card";
-import transactions from "../../api/clientTransactions.json";
 import formatDataGridColumn from "./formatDataGridColumn";
 import DataGrid from "../layout/data-grid/DataGrid";
 import DataGridCell from "../data-grid-item/DataGridCell";
@@ -13,6 +12,7 @@ import {
 } from "@mui/icons-material";
 import DataGridUserDetail from "./DataGridUserDetail";
 import formatNumber from "../../utils/formatNumber";
+import useFetch from "../../hooks/useFetch";
 const gridColumns = [
   formatDataGridColumn("id", "ID", "100px"),
   formatDataGridColumn("actionLabel", "ID", "80px"),
@@ -21,12 +21,13 @@ const gridColumns = [
   formatDataGridColumn("balance", "Balance", "150px"),
 ];
 const DataGridClientTransactionRecord = () => {
-  const clientTransactions: Transactions[] = transactions;
+  const { data, loading } = useFetch<Transactions[]>("/api/client-transaction");
+  if (!data || loading) return <Card height="400px"></Card>;
   return (
     <Card className="overflow-hidden">
       <DataGrid
         columns={gridColumns}
-        rows={clientTransactions}
+        rows={data}
         gridDataKey={(item) => item.id.toString()}
         renderGridData={(item, column) => (
           <>
@@ -39,7 +40,6 @@ const DataGridClientTransactionRecord = () => {
                 userName={item.client}
                 userid={item.userid}
                 avatarsrc={item.avatarsrc}
-                icon={item.icon}
               />
             </DataGridCell>
             <DataGridCell

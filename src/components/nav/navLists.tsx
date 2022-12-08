@@ -22,7 +22,11 @@ const format = (label: string, path: string, icon?: ReactNode): NavItemType => {
 const formatWithHidenIcon = (label: string, path: string): NavItemType => {
   return { label, path, hideIcon: true };
 };
-const formatGroupButton = (title: string, icon: ReactNode, rootPath: string) => ({ title, icon, rootPath });
+const formatGroupButton = (
+  title: string,
+  icon: ReactNode,
+  rootPath: string
+) => ({ title, icon, rootPath });
 
 const navList: NavOptions[] = [
   {
@@ -60,7 +64,11 @@ const navList: NavOptions[] = [
     parent: formatGroupButton("Pages", <ContactPageOutlined />, "/pages/"),
     childrens: [
       {
-        parent: formatGroupButton("User Profile", <AccountCircleOutlined />, "/pages/user-profile/"),
+        parent: formatGroupButton(
+          "User Profile",
+          <AccountCircleOutlined />,
+          "/pages/user-profile/"
+        ),
         childrens: [
           formatWithHidenIcon("Profile", "/pages/user-profile/profile/"),
           formatWithHidenIcon("Teams", "/pages/user-profile/teams/"),
@@ -96,13 +104,28 @@ const navList: NavOptions[] = [
     ],
   },
   {
-    parent: formatGroupButton("Charts", <Icon icon="mdi:chart-donut" />, "/charts/"),
+    parent: formatGroupButton(
+      "Charts",
+      <Icon icon="mdi:chart-donut" />,
+      "/charts/"
+    ),
     childrens: [
-      formatWithHidenIcon("Apex", "/charts/apex-charts/"),
-      formatWithHidenIcon("Recharts", "/charts/recharts/"),
-      formatWithHidenIcon("ChartJs", "/charts/chartjs/"),
-
-    ]
-  }
+      format("Apex", "/charts/apex-charts/"),
+      format("Recharts", "/charts/recharts/"),
+      format("ChartJs", "/charts/chartjs/"),
+    ],
+  },
+  {
+    parent: formatGroupButton(
+      "Cards",
+      <Icon icon="system-uicons:cube" />,
+      "/ui/cards/"
+    ),
+    childrens: [
+      format("Advanced", "/ui/cards/advanced/"),
+      format("Statistics", "/ui/cards/statistics/"),
+      format("Widgets", "/ui/cards/widgets/"),
+    ],
+  },
 ];
 export default navList;

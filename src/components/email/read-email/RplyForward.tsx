@@ -5,7 +5,7 @@ const ReplyForward = () => (
   <ColorBox
     backgroundTheme="foreground"
     mt={18}
-    borderRadius={6}
+    borderRadius={"6px"}
     className="overflow-hidden"
     padding={20}
   >

@@ -5,7 +5,7 @@ const rootModal = document.getElementById("root-modal") as HTMLDivElement;
 
 interface Props {
   children: ReactNode;
-  handleOutClick?: (event: React.MouseEvent<HTMLDivElement>) => void;
+  handleOutClick?: (event?: React.MouseEvent<HTMLDivElement>) => void;
 }
 
 const Modal = ({ children, handleOutClick }: Props) => {
@@ -17,7 +17,7 @@ const Modal = ({ children, handleOutClick }: Props) => {
     modalOverlay.current.classList.add("modal-overlay");
 
     if (handleOutClick) {
-      modalOverlay.current.addEventListener("click", handleOutClick);
+      modalOverlay.current.addEventListener("click", handleOutClick as any);
     }
     current.appendChild(modalOverlay.current);
     rootModal.append(current);

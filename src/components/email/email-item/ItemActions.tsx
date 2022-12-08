@@ -34,7 +34,7 @@ const ItemActions: FC<Props> = ({ id, isRead }) => {
   const handleMoveToSpam = () => {
     dispatch(moveToSpam(id));
   };
-  const handlePropagation = (eve) => {
+  const handlePropagation = (eve: React.MouseEvent<HTMLDivElement>) => {
     eve.stopPropagation();
   };
   return (

@@ -18,9 +18,6 @@ const CardWidgetSaleState = () => {
         }
       />
       <Box>
-        <Text varient="caption"> </Text>
-      </Box>
-      <Box>
         <StatisticAreaChart data={series} height={315} />
       </Box>
     </Card>

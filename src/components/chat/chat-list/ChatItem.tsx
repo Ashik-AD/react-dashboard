@@ -7,7 +7,7 @@ import ChatItemWrapper from "../ChatItemWrapper";
 import TimeStamp from "../TimeStamp";
 
 const selectChatById = (state: RootState, uid: string | number) =>
-  state.chat.chats.find((chat) => chat.uid === uid);
+  state.chat.chats.find((chat) => chat.profile.uid === uid);
 
 const ChatItem = ({ uid, onSelectChat }: Props) => {
   const chat = useAppSelector((state) => selectChatById(state, uid));
@@ -17,11 +17,11 @@ const ChatItem = ({ uid, onSelectChat }: Props) => {
   return (
     <ChatItemWrapper uid={uid} onClick={handleClicks}>
       <UserAvatar
-        avatarSrc={chat?.avatar_src}
-        alt={chat?.user_name}
-        color={chat?.color}
-        icon={chat?.icon}
-        status={chat?.status}
+        avatarSrc={chat?.profile.avatar_src}
+        alt={chat?.profile.user_name}
+        color={chat?.profile.color}
+        icon={chat?.profile.icon}
+        status={chat?.profile.status}
       />
       <Box
         display="flex"
@@ -32,7 +32,7 @@ const ChatItem = ({ uid, onSelectChat }: Props) => {
         mr={12}
       >
         <Text varient="body2" weight="bold">
-          {chat?.user_name}
+          {chat?.profile.user_name}
         </Text>
         <Text varient="body2" textOverflow="ellipsis" secondary>
           {chat?.chats.lastMessage.message}

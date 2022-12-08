@@ -2,6 +2,10 @@
 import { ACTIONS } from '../types/action'
 import { Mail, MailId } from '../types/type';
 
+export const fetchEmails = (emails: any) => ({
+    type: ACTIONS.fetchEmail,
+    payload: emails
+})
 
 export const selectEmail = (mailId: MailId) => {
     return {

@@ -25,6 +25,18 @@ const CardWidgetProfit = () => {
         zoom: { enabled: false },
         toolbar: { show: false },
       },
+      responsive: [
+        {
+          breakpoint: 600,
+          options: {
+            plotOptions: {
+              bar: {
+                columnWidth: "50%",
+              },
+            },
+          },
+        },
+      ],
       stroke: {
         width: 6,
         colors: [theme.mode.foreground],
@@ -128,7 +140,7 @@ const CardWidgetProfit = () => {
       <GridInnerContainer
         noShifting={true}
         columnSpacing={0}
-        rowSpacing={{ lg: 1.6 }}
+        rowSpacing={{ xs: 1.6, lg: 0 }}
       >
         <GridItem xs={12} sm={7}>
           <Box display="flex" flexDirection="column">

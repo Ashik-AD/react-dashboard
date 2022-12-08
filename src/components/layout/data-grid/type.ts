@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 export default interface DataGridOptions<T> {
-    rows: T[];
+    rows: Array<T>;
     columns: DataGridColoumn[];
     rowPerPage?: number;
     rowPerPageOption?: number[];
@@ -33,5 +33,5 @@ export interface DataOptionContext {
 }
 
 export interface StyledProps {
-    width: string;
+    width?: string;
 }

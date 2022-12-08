@@ -1,7 +1,7 @@
-import React, { createContext, FC, useCallback, useState } from "react";
+import React, { createContext, FC, useState } from "react";
 import useLocalStorage from "../hooks/useLocalStorage";
 import themeSettings from "./setting";
-import SettingType, { SettingThemeLocalstorage, Skin } from "./setting-types";
+import SettingType, { SettingThemeLocalstorage, Skin } from "./type";
 import ThemeActionType from "./themeAction";
 
 export const ThemeContext = createContext<{
@@ -17,7 +17,7 @@ const Theme: FC<{ children: React.ReactNode }> = ({ children }) => {
   const { storage, addLocalStorage } =
     useLocalStorage<SettingThemeLocalstorage>("triolo-settings");
 
-  const changeTheme = useCallback(() => {
+  const changeTheme = () => {
     const currentTheme = themeSetting.mode.name;
     setThemeSetting((prevState) => ({
       ...prevState,
@@ -40,52 +40,47 @@ const Theme: FC<{ children: React.ReactNode }> = ({ children }) => {
       ...storage,
       mode: currentTheme === "dark" ? "light" : "dark",
     });
-  }, [storage]);
+  };
 
-  const changePrimaryColor = useCallback(
-    (primaryColor: typeof themeSetting.primaryColor) => {
-      setThemeSetting((prevState) => ({ ...prevState, primaryColor }));
-      addLocalStorage({ ...storage, primaryColor });
-    },
-    [storage]
-  );
+  const changePrimaryColor = (
+    primaryColor: typeof themeSetting.primaryColor
+  ) => {
+    setThemeSetting((prevState) => ({ ...prevState, primaryColor }));
+    addLocalStorage({ ...storage, primaryColor });
+  };
 
-  const changeSkin = useCallback(
-    (skin: Skin) => {
-      setThemeSetting((prevState) => ({ ...prevState, skin }));
-      addLocalStorage({ ...storage, skin });
-    },
-    [storage]
-  );
+  const changeSkin = (skin: Skin) => {
+    setThemeSetting((prevState) => ({ ...prevState, skin }));
+    addLocalStorage({ ...storage, skin });
+  };
 
-  const handleAppBarPosition = useCallback(
-    (position: typeof themeSetting.layout.appBarPosition) => {
-      setThemeSetting((prevState) => ({
-        ...prevState,
-        layout: {
-          ...prevState.layout,
-          appBarPosition: position,
-        },
-      }));
-      addLocalStorage({ ...storage, appBarPosition: position });
-    },
-    [storage]
-  );
-  const handleAppFooterPosition = useCallback(
-    (position: typeof themeSetting.layout.footerPosition) => {
-      setThemeSetting((prevState) => ({
-        ...prevState,
-        layout: {
-          ...prevState.layout,
-          footerPositoin: position,
-        },
-      }));
-      addLocalStorage({ ...storage, footerPosition: position });
-    },
-    [storage]
-  );
+  const handleAppBarPosition = (
+    position: typeof themeSetting.layout.appBarPosition
+  ) => {
+    setThemeSetting((prevState) => ({
+      ...prevState,
+      layout: {
+        ...prevState.layout,
+        appBarPosition: position,
+      },
+    }));
+    addLocalStorage({ ...storage, appBarPosition: position });
+  };
 
-  const handleChangeAppBarBlur = useCallback(() => {
+  const handleAppFooterPosition = (
+    position: typeof themeSetting.layout.footerPosition
+  ) => {
+    setThemeSetting((prevState) => ({
+      ...prevState,
+      layout: {
+        ...prevState.layout,
+        footerPositoin: position,
+      },
+    }));
+    addLocalStorage({ ...storage, footerPosition: position });
+  };
+
+  const handleChangeAppBarBlur = () => {
     setThemeSetting((prevState) => ({
       ...prevState,
       layout: {
@@ -97,37 +92,34 @@ const Theme: FC<{ children: React.ReactNode }> = ({ children }) => {
       ...storage,
       appbarBlur: !themeSetting.layout.appBarBlur,
     });
-  }, [storage]);
+  };
+  const handleChangeMenuLayout = (
+    layout: typeof themeSetting.menuStyle.layout
+  ) => {
+    setThemeSetting((prevState) => ({
+      ...prevState,
+      menuStyle: {
+        ...prevState.menuStyle,
+        layout,
+      },
+    }));
+    addLocalStorage({ ...storage, menuLayout: layout });
+  };
 
-  const handleChangeMenuLayout = useCallback(
-    (layout: typeof themeSetting.menuStyle.layout) => {
-      setThemeSetting((prevState) => ({
-        ...prevState,
-        menuStyle: {
-          ...prevState.menuStyle,
-          layout,
-        },
-      }));
-      addLocalStorage({ ...storage, menuLayout: layout });
-    },
-    [storage]
-  );
+  const handleChangeMenuOpenStyle = (
+    style: typeof themeSetting.menuStyle.openStyle
+  ) => {
+    setThemeSetting((prevState) => ({
+      ...prevState,
+      menuStyle: {
+        ...prevState.menuStyle,
+        openStyle: style,
+      },
+    }));
+    addLocalStorage({ ...storage, menuOpenStyle: style });
+  };
 
-  const handleChangeMenuOpenStyle = useCallback(
-    (style: typeof themeSetting.menuStyle.openStyle) => {
-      setThemeSetting((prevState) => ({
-        ...prevState,
-        menuStyle: {
-          ...prevState.menuStyle,
-          openStyle: style,
-        },
-      }));
-      addLocalStorage({ ...storage, menuOpenStyle: style });
-    },
-    [storage]
-  );
-
-  const handleChangeMenuCollapse = useCallback(() => {
+  const handleChangeMenuCollapse = () => {
     setThemeSetting((prevState) => ({
       ...prevState,
       menuStyle: {
@@ -139,9 +131,8 @@ const Theme: FC<{ children: React.ReactNode }> = ({ children }) => {
       ...storage,
       menuCollapse: !themeSetting.menuStyle.collapse,
     });
-  }, [storage]);
-
-  const handleChangeMenuHidden = useCallback(() => {
+  };
+  const handleChangeMenuHidden = () => {
     setThemeSetting((prevState) => ({
       ...prevState,
       menuStyle: {
@@ -153,8 +144,7 @@ const Theme: FC<{ children: React.ReactNode }> = ({ children }) => {
       ...storage,
       menuVisible: !themeSetting.menuStyle.visible,
     });
-  }, [storage]);
-
+  };
   const dispatch: ThemeActionType = {
     handleChangeTheme: changeTheme,
     handleChangePrimaryColor: changePrimaryColor,

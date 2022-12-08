@@ -50,7 +50,7 @@ const CardDeposit = () => {
       total={formatNumber(item.total)}
       color="success"
       currency={true}
-      status={"increase"}
+      status={"inc"}
       trending={{ show: true }}
       titleStyle={{ fontSize: 14 }}
     />

@@ -25,7 +25,7 @@ const Checkbox: FC<CheckboxPropsType> = ({
       aria-label="acknowledgement"
       hasLabel={label ? true : false}
       disabled={disabled}
-      onClick={onChange}
+      onClick={onChange as any}
     >
       <CheckPlaceholder
         theme={{ mode, primaryColor }}

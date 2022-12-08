@@ -1,11 +1,12 @@
+import { fetchEmails } from './creator/index';
 import { AnyAction } from 'redux'
+import { client } from '../../api/client';
+import { AppThunk } from '../../store/store';
 import { ACTIONS } from './types/action';
-
-import mails from '../../api/emails.json'
-import { EmailOption, Mail, MailId } from './types/type';
+import { EmailOption, Mail, MailId, MailLabel } from './types/type';
 
 const INITIAL_STATE: EmailOption = {
-    mails,
+    mails: null,
     filter: {
         text: "",
         label: ""
@@ -16,6 +17,9 @@ const INITIAL_STATE: EmailOption = {
 
 const emailReducer = (state = INITIAL_STATE, action: AnyAction): EmailOption => {
     switch (action.type) {
+        case ACTIONS.fetchEmail: {
+            return {...state, mails: action.payload}
+        }
         case ACTIONS.SelectEmail: {
             const { payload } = action;
             const isSelected = hasOne(state.selectedMails, payload);
@@ -34,7 +38,7 @@ const emailReducer = (state = INITIAL_STATE, action: AnyAction): EmailOption => 
 
         case ACTIONS.SelectAll: {
             const { selectedMails, mails } = state;
-            if (selectedMails.length === mails.length) {
+            if (selectedMails.length === mails?.length) {
                 return {
                     ...state,
                     selectedMails: []
@@ -42,7 +46,7 @@ const emailReducer = (state = INITIAL_STATE, action: AnyAction): EmailOption => 
             }
             return {
                 ...state,
-                selectedMails: state.mails.map(mail => mail.id)
+                selectedMails: state.mails?.map(mail => mail.id) || []
             }
         }
 
@@ -72,7 +76,7 @@ const emailReducer = (state = INITIAL_STATE, action: AnyAction): EmailOption => 
         case ACTIONS.handleStarred:
             return {
                 ...state,
-                mails: state.mails.map((mail) => {
+                mails: state.mails?.map((mail) => {
                     if (mail.id !== action.payload) {
                         return mail;
                     }
@@ -80,13 +84,13 @@ const emailReducer = (state = INITIAL_STATE, action: AnyAction): EmailOption => 
                         ...mail,
                         isStarred: !mail.isStarred,
                     }
-                })
+                }) || null
             }
 
         case ACTIONS.removeMail:
             return {
                 ...state,
-                mails: state.mails.map((mail) => {
+                mails: state.mails?.map((mail) => {
                     if (mail.id !== action.payload) {
                         return mail;
                     }
@@ -94,14 +98,14 @@ const emailReducer = (state = INITIAL_STATE, action: AnyAction): EmailOption => 
                         ...mail,
                         folder: "trash"
                     }
-                }),
+                }) || null,
                 currentOpenMail: null,
             }
 
         case ACTIONS.removeMailMultiple:
             return {
                 ...state,
-                mails: state.mails.map(mail => {
+                mails: state.mails?.map(mail => {
                     const matched = hasOne(state.selectedMails, mail.id);
                     if (!matched) {
                         return mail;
@@ -112,7 +116,7 @@ const emailReducer = (state = INITIAL_STATE, action: AnyAction): EmailOption => 
                             folder: "trash"
                         }
                     }
-                }),
+                }) || null,
                 currentOpenMail: null,
                 selectedMails: [],
             }
@@ -120,7 +124,7 @@ const emailReducer = (state = INITIAL_STATE, action: AnyAction): EmailOption => 
         case ACTIONS.readMail:
             return {
                 ...state,
-                mails: state.mails.map(mail => {
+                mails: state.mails?.map(mail => {
                     if (mail.id !== action.payload) {
                         return mail;
                     }
@@ -128,14 +132,14 @@ const emailReducer = (state = INITIAL_STATE, action: AnyAction): EmailOption => 
                         ...mail,
                         isRead: !mail.isRead
                     }
-                }),
+                }) || null,
                 currentOpenMail: null,
             }
 
         case ACTIONS.readMultipleMail:
             return {
                 ...state,
-                mails: state.mails.map(mail => {
+                mails: state.mails?.map(mail => {
                     const matchedMail = hasOne(state.selectedMails, mail.id);
                     if (!matchedMail) {
                         return mail;
@@ -144,13 +148,13 @@ const emailReducer = (state = INITIAL_STATE, action: AnyAction): EmailOption => 
                         ...mail,
                         markedRead: true
                     }
-                })
+                }) || null
             }
 
         case ACTIONS.moveToSpam:
             return {
                 ...state,
-                mails: state.mails.map(mail => {
+                mails: state.mails?.map(mail => {
                     if (mail.id !== action.payload) {
                         return mail;
                     }
@@ -158,14 +162,14 @@ const emailReducer = (state = INITIAL_STATE, action: AnyAction): EmailOption => 
                         ...mail,
                         folder: "spam"
                     }
-                }),
+                }) || null,
                 currentOpenMail: null,
             }
 
         case ACTIONS.moveToSpamMultiple:
             return {
                 ...state,
-                mails: state.mails.map(mail => {
+                mails: state.mails?.map(mail => {
                     const matchedId = hasOne(state.selectedMails, mail.id);
                     if (!matchedId) {
                         return mail;
@@ -174,7 +178,7 @@ const emailReducer = (state = INITIAL_STATE, action: AnyAction): EmailOption => 
                         ...mail,
                         folder: "spam"
                     }
-                }),
+                }) || null,
                 selectedMails: [],
                 currentOpenMail: null,
             }
@@ -182,7 +186,7 @@ const emailReducer = (state = INITIAL_STATE, action: AnyAction): EmailOption => 
         case ACTIONS.addLabel:
             return {
                 ...state,
-                mails: state.mails.map(mail => {
+                mails: state.mails?.map(mail => {
                     const matchedLabel = hasOne(mail.labels, action.payload);
                     if (matchedLabel) {
                         return mail;
@@ -191,16 +195,16 @@ const emailReducer = (state = INITIAL_STATE, action: AnyAction): EmailOption => 
                         ...mail,
                         labels: mail.labels.concat(action.payload)
                     }
-                }),
+                }) || null,
 
             }
 
         case ACTIONS.addLabelSingle: {
-            const { id, label }: { id: MailId, label: string } = action.payload;
+            const { id, label }: { id: MailId, label: MailLabel } = action.payload;
             let updatedOpenedMail = { ...state.currentOpenMail };
             if (updatedOpenedMail) {
                 if (updatedOpenedMail.id === id) {
-                    if (!hasOne(updatedOpenedMail?.labels, label)) {
+                    if (!hasOne(updatedOpenedMail.labels!, label)) {
                         updatedOpenedMail.labels = updatedOpenedMail.labels?.concat(label)
                     }
 
@@ -208,7 +212,7 @@ const emailReducer = (state = INITIAL_STATE, action: AnyAction): EmailOption => 
             }
             return {
                 ...state,
-                mails: state.mails.map(mail => {
+                mails: state.mails?.map(mail => {
                     const matchedId = mail.id === id;
                     if (matchedId) {
                         if (hasOne(mail.labels, label)) {
@@ -222,8 +226,8 @@ const emailReducer = (state = INITIAL_STATE, action: AnyAction): EmailOption => 
                     return {
                         ...mail
                     }
-                }),
-                currentOpenMail: updatedOpenedMail
+                }) || null,
+                currentOpenMail: updatedOpenedMail as Mail
             }
         }
 
@@ -247,4 +251,9 @@ export default emailReducer
 
 function hasOne(arrItems: any[], key: any) {
     return arrItems.includes(key);
+}
+
+export const fetchEmail = async (dispatch: AppThunk) => {
+    const reqeust = await client.get("/api/email/emails");
+    dispatch(fetchEmails(reqeust))
 }

@@ -6,7 +6,8 @@ import { useAppSelector } from "../../hooks";
 import useTheme from "../../theme/useTheme";
 import genColorShades from "../../utils/genColorShades";
 import { chatModalCtx } from "../../page/chat/chunk/Content";
-const selectSelectedChatId = (state: RootState) => state.chat.selectedChat?.uid;
+const selectSelectedChatId = (state: RootState) =>
+  state.chat.selectedChat?.profile.uid;
 
 const ChatItemWrapper: FC<Props> = ({ children, uid, onClick }) => {
   const isActiveMatch = useAppSelector(selectSelectedChatId) === uid;

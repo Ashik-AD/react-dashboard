@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import { FC } from "react";
 import { KeyboardArrowLeft, KeyboardArrowRight } from "@mui/icons-material";
 import { IconButton } from "../../../ui";
 import Box from "../../box/Box";
@@ -9,12 +9,14 @@ import { setCurrentOpenMail } from "../../../features/emails/creator";
 const PrevNext: FC<Props> = ({ id }) => {
   const dispatch = useAppDispatch();
   const mails = useAppSelector((state) => state.email.mails);
-  const currentIndex = useAppSelector((state) =>
-    state.email.mails.findIndex((mail) => mail.id === id)
+  const currentIndex = useAppSelector(
+    (state) => state.email.mails?.findIndex((mail) => mail.id === id) || -1
   );
   const handleLoadMail = (k: "next" | "prev") => {
     const index = k === "next" ? currentIndex + 1 : currentIndex - 1;
-    dispatch(setCurrentOpenMail(mails[index]));
+    if (mails) {
+      dispatch(setCurrentOpenMail(mails[index]));
+    }
   };
 
   return (
@@ -28,7 +30,7 @@ const PrevNext: FC<Props> = ({ id }) => {
       </IconButton>
       <IconButton
         varient="text"
-        disabled={currentIndex >= mails.length - 1}
+        disabled={currentIndex === mails!.length - 1}
         onClick={() => handleLoadMail("next")}
       >
         <KeyboardArrowRight />

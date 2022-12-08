@@ -59,6 +59,7 @@ const TimelineDummy = () => {
         <TimelineSeparator color="warning" />
         <TimelineItemContent
           subject="Hola, Amigo 👒"
+          description="Need to learn some spanish! Amigo"
           timestamp="February, 14"
         ></TimelineItemContent>
       </TimelineItem>

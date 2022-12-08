@@ -21,7 +21,8 @@ export interface Message {
     isSeen: boolean;
 }
 
-export interface Chats extends UserProfile {
+export interface Chats {
+    profile: UserProfile;
     chats: {
         lastMessage: {
             total: number;
@@ -39,6 +40,6 @@ export interface ChatState {
     currentUser: UserProfile;
     chats: Array<Chats> | [];
     contacts: Contacts[] | [];
-    selectedChat: Partial<Chats>;
+    selectedChat: Chats | null;
 }
 

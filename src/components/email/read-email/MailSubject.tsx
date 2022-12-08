@@ -2,7 +2,7 @@ import React, { FC } from "react";
 import styled from "styled-components";
 import { Chip, Text } from "../../../ui";
 import Box from "../../box/Box";
-import { labelColors } from "../EmailNav";
+import { labelColors, MailLabelColor } from "../EmailNav";
 const MailSubject: FC<Props> = ({ subject, labels }) => {
   const renderLabelList = labels.map((label) => (
     <Chip
@@ -10,7 +10,7 @@ const MailSubject: FC<Props> = ({ subject, labels }) => {
       size="small"
       skin="light"
       styles={{ textTransform: "capitalize", fontWeight: 500 }}
-      color={labelColors[label]}
+      color={labelColors[label as keyof MailLabelColor]}
       key={label}
     />
   ));

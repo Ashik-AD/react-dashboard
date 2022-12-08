@@ -1,6 +1,7 @@
 import { MailId } from "./type";
 
 export const ACTIONS = {
+    fetchEmail: concatString("fetchEmail"),
     SelectEmail: concatString("selectEmail"),
     SelectAll: concatString("selectAllEmail"),
     filterChange: concatString("filterChange"),

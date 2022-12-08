@@ -43,7 +43,7 @@ const NavGroup: FC<Props> = ({
   }, [isActive]);
 
   return (
-    <StyledNavGroup>
+    <StyledNavGroup key={parent?.title}>
       {parent && (
         <NavGroupButton
           isActive={isActive}
@@ -78,7 +78,7 @@ const NavGroup: FC<Props> = ({
                 label={item.label!}
                 path={item.path!}
                 icon={item?.icon}
-                key={i}
+                key={`${item?.label}-${i}`}
                 onClick={onChildClick}
               />
             );

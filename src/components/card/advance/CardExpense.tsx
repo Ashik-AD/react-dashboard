@@ -49,7 +49,7 @@ const items = desposits.map((item) => (
     total={formatNumber(item.total)}
     color="error"
     currency={true}
-    status={"decrease"}
+    status={"dec"}
     trending={{ show: true }}
     titleStyle={{ fontSize: 14 }}
   />

@@ -3,6 +3,8 @@ import { Inputs } from "../type";
 import { Input, InputWrapper, StyledTextarea } from "./styled";
 import useTheme from "../../../theme/useTheme";
 type InputRef = HTMLInputElement;
+import InputLabel from "../components/InputLabel";
+import InputLabelBorder from "../components/InputLabelBorder";
 
 const TextField = forwardRef<InputRef, Inputs>((props, ref) => {
   const {
@@ -93,18 +95,13 @@ const TextField = forwardRef<InputRef, Inputs>((props, ref) => {
           onKeyDown={onKeyDown}
         />
       )}
-      <span
-        className={`input-label floating-label body2 ${
-          varient === "filled" ? "label-unfill" : ""
-        }${
-          defaultValue || value || startAdornment ? " floating-label-top" : " "
-        }`}
-      >
-        {label}
-      </span>
-      {(varient === "filled" || varient === "standard") && (
-        <span className="input-border"></span>
+      {label && (
+        <InputLabel
+          label={label}
+          isFloating={value || defaultValue ? true : false}
+        />
       )}
+      <InputLabelBorder varient={varient || "regular"} />
       {hypertext && <span className="field-describe caption">{hypertext}</span>}
       {startAdornment && (
         <span className="input-adornment start-adornment">

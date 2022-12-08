@@ -12,7 +12,7 @@ const CardTransparent: FC<PropsType> = (props) => {
   const { theme } = useTheme();
   return (
     <Div theme={theme.mode}>
-      <Box display="flex" align="center" space={0.9}>
+      <Box display="flex" align="center" space={0.6}>
         <CustomAvatar
           varient="rounded"
           color={theme.mode.foreground}
@@ -23,14 +23,15 @@ const CardTransparent: FC<PropsType> = (props) => {
         <Box display="flex" flexDirection="column">
           <Text
             varient="caption"
-            secondary={true}
-            styles={{ textTransform: "capitalize" }}
+            textTransform="capitalize"
+            weight="medium"
+            secondary
           >
             {title}
           </Text>
           <Box display="flex" align="center" space={0.5}>
-            <Text heading="h6" styles={{ fontWeight: 600 }}>
-              {formatNumber(total, 1000)}
+            <Text heading="h6" weight="bold" size={20}>
+              {typeof total === "number" ? formatNumber(total, 1000) : total}
             </Text>
             <Box
               display="flex"
@@ -67,7 +68,7 @@ const Div = styled("div")`
 
 interface PropsType {
   title: string;
-  total: number;
+  total: number | string;
   growth: number;
   icon: ReactNode;
   status: "inc" | "desc";

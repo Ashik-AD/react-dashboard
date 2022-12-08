@@ -34,7 +34,7 @@ const DataGridUserDetail: FC<Props> = (props) => {
 interface Props {
   userName: string;
   userid: string | number;
-  avatarsrc?: string;
+  avatarsrc?: string | null;
   avatarColor?: string;
 }
 

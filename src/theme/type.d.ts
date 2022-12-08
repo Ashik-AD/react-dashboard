@@ -1,10 +1,14 @@
-import { PrimaryColor, ThemeMode } from "./colors";
+import { Dark, Light, PrimaryColor } from "./colors";
 
 export type Skin = 'default' | 'bordered'
 
 export type LayoutStyle = "fixed" | "static" | "hidden";
 export type MenuLayout = 'vertical' | 'horizontal';
 export type MenuOpenStyle = "collapse" | "accordion";
+
+export type ThemeModeName = "dark" | "light"
+
+type ThemeMode = ({name: "dark"} & Dark) | ({name: "light"} &  Light);
 
 export interface Layout {
     appBarPosition: LayoutStyle;
@@ -28,7 +32,7 @@ export default interface SettingType {
 }
 
 export interface SettingThemeLocalstorage {
-    mode?: "dark" | "light";
+    mode?: ThemeModeName;
     skin?: Skin;
     primaryColor?: PrimaryColor;
     appBarPosition?: LayoutStyle;

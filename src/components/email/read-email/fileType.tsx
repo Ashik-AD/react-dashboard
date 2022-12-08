@@ -24,6 +24,12 @@ const fileType = {
   mp4: <FcClapperboard />,
 };
 
+type FileType = typeof fileType;
+
 const getFileIcon = (ext: string) =>
-  fileType[ext.toLowerCase()] ? fileType[ext.toLowerCase()] : <IoLogoAppleAr />;
+  fileType[ext.toLowerCase() as keyof FileType] ? (
+    fileType[ext.toLowerCase() as keyof FileType]
+  ) : (
+    <IoLogoAppleAr />
+  );
 export default getFileIcon;

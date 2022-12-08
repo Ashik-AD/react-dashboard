@@ -13,7 +13,7 @@ const SearchMail: FC<Props> = ({ searchResult, isShow }) => {
     <StyledSearchWrapper>
       <ColorBox
         backgroundTheme="background"
-        borderRadius={8}
+        borderRadius={"8px"}
         className="overflow-hidden"
         display="flex"
         flexDirection="column"

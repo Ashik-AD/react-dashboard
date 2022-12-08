@@ -1,7 +1,6 @@
 import {
   createContext,
   memo,
-  MouseEvent,
   useEffect,
   useMemo,
   useRef,
@@ -37,6 +36,7 @@ const DataGrid = <T extends unknown>({
   rowPerPageOption,
   renderGridData,
 }: DataGridOptions<T>) => {
+  const [dataList, setDataList] = useState<T[]>(rows);
   const [sortOption, setSortOption] = useState<SortOption>({
     fieldName: "",
     by: "",
@@ -44,7 +44,6 @@ const DataGrid = <T extends unknown>({
   const [hiddenColumns, setHiddenColumns] = useState(new Set());
   const [columnHiderOpen, setColumnHiderOpen] = useState(false);
   const [showFilter, setShowFilter] = useState(false);
-  const [dataList, setDataList] = useState<T[]>(rows);
   const [footerOption, setFooterOption] = useState({
     next: rowPerPage!,
     passedRows: 1,
@@ -167,7 +166,7 @@ const DataGrid = <T extends unknown>({
                     columnList={columns.map((column) => ({
                       fieldId: column.fieldId,
                       hidden: hiddenColumns.has(column.fieldId),
-                      label: column.label,
+                      label: column.label as string,
                     }))}
                   />
                 )}
@@ -175,7 +174,7 @@ const DataGrid = <T extends unknown>({
                 {showFilter && (
                   <FilterController
                     fields={columns}
-                    lists={rows}
+                    lists={rows as any}
                     onFilterLists={(filteredData) =>
                       setDataList(filteredData as T[])
                     }
@@ -193,12 +192,14 @@ const DataGrid = <T extends unknown>({
                 .slice(footerOption.passedRows - 1, footerOption.next)
                 .map((item, index) => (
                   <DataGridRow
-                    dataId={item[columns[0]["fieldId"]] as string}
+                    dataId={`data-item-${
+                      item[columns[0]["fieldId"] as keyof T]
+                    }`}
                     rowId={index}
                     key={index}
                   >
                     {renderGridData(
-                      item,
+                      item as T,
                       columns.reduce<Record<string, DataGridColoumn>>(
                         (acc, cur) => {
                           acc[cur.fieldId] = cur;
@@ -230,4 +231,4 @@ const DataGrid = <T extends unknown>({
     </StyledDataGrid>
   );
 };
-export default memo(DataGrid);
+export default memo(DataGrid) as typeof DataGrid;
