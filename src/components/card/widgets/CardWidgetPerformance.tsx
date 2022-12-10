@@ -7,7 +7,6 @@ import Card from "../Card";
 import CardTitle from "../titles/CardTitle";
 
 const CardWidgetPerformance = () => {
-  console.log("re-rendering");
   const { theme } = useTheme();
   const chartOption: ApexOptions = {
     chart: {

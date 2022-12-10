@@ -7,7 +7,7 @@ const CardRangerRating = () => {
       growth={38}
       status="inc"
       tag="Year of 2022"
-      ranger="/src/image/mina.png"
+      ranger="https://i.ibb.co/Rj6r7st/mina.png"
     />
   );
 };

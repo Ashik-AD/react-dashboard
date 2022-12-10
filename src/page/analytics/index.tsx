@@ -10,7 +10,6 @@ import {
 } from "../../components/card/widgets";
 import GridInnerContainer from "../../components/layout/grid/GridInnerContainer";
 import { Flex, GridContainer, GridItem } from "../../components/layout";
-import trophy from "../../image/trophy.png";
 import { Button, Text } from "../../ui";
 import formatNumber from "../../utils/formatNumber";
 import CardTransactions from "../../components/cards-page/statistics/CardTransactions";
@@ -30,7 +29,7 @@ const Analytics = () => {
               <CardGimificationWithAction
                 greet="Congratulation John!🥳"
                 message="Best seller of the month"
-                banner={trophy}
+                banner={"https://i.ibb.co/DQBd92c/trophy.png"}
                 stat={{
                   total: formatNumber(23232, 1000, { currancy: true }),
                 }}

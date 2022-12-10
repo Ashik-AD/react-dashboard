@@ -40,7 +40,7 @@ const Question: FC<QuestionProp> = ({ questions }) => {
           <GridItem xs={12} md={3}>
             <TabList varient="vertical">{renderTabItem}</TabList>
             <img
-              src="/src/image/help-desk.png"
+              src="https://i.ibb.co/fNfp9vW/help-desk.png"
               alt="john is helping"
               width={"100%"}
             />

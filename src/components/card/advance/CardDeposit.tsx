@@ -2,11 +2,6 @@ import { Text } from "../../../ui";
 import Box from "../../box/Box";
 import CustomCardTitle from "../titles/CustomCardTitle";
 
-import gumroad from "../../../image/logo/gumroad.png";
-import mastercard from "../../../image/logo/mastercard-label.png";
-import stripe from "../../../image/logo/stripe.png";
-import americano from "../../../image/logo/american-bank.png";
-import citibank from "../../../image/logo/citi-bank.png";
 import AdvCardItemTransaction from "../../card-items/AdvCardItemTransaction";
 import formatNumber from "../../../utils/formatNumber";
 
@@ -23,11 +18,36 @@ const formatData = (
 });
 
 const desposits = [
-  formatData(gumroad, "Gumroad Account", "Sell UI Kit", 43453),
-  formatData(mastercard, "Mastercard", "Wallet Deposit", 240023),
-  formatData(stripe, "Stripe", "Android Application", 1299),
-  formatData(americano, "American Bank", "Bank Transfer", 12000),
-  formatData(citibank, "Bank Account", "Wallet desosit", 4453),
+  formatData(
+    "https://i.ibb.co/nbr4npc/gumroad.png",
+    "Gumroad Account",
+    "Sell UI Kit",
+    43453
+  ),
+  formatData(
+    "https://i.ibb.co/VVkhLjH/mastercard-label.png",
+    "Mastercard",
+    "Wallet Deposit",
+    240023
+  ),
+  formatData(
+    "https://i.ibb.co/hFTkBsc/stripe.png",
+    "Stripe",
+    "Android Application",
+    1299
+  ),
+  formatData(
+    "https://i.ibb.co/n1XxBRm/american-bank.png",
+    "American Bank",
+    "Bank Transfer",
+    12000
+  ),
+  formatData(
+    "https://i.ibb.co/kBJSqG4/citi-bank.png",
+    "Bank Account",
+    "Wallet desosit",
+    4453
+  ),
 ];
 
 const CardDeposit = () => {

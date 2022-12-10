@@ -36,7 +36,7 @@ const CardSiteStatistic = () => {
         </Box>
         <Table
           row={data}
-          itemKey={(item) => item.total}
+          itemKey={(item) => item.label}
           renderRow={(item) => (
             <TableRow>
               <TableCell

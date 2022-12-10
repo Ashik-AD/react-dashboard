@@ -6,7 +6,7 @@
         "email": "johndoe@npcr.com",
         "role": "Author",
         "status": "active",
-        "avatar": "/src/image/humans/2.png"
+        "avatar": "https://i.ibb.co/DVxRbB7/2.png"
     },
     {
         "id": 488,
@@ -15,7 +15,7 @@
         "email": "janedeo@mic.com",
         "role": "Maintainer",
         "status": "pending",
-        "avatar": "/src/image/humans/1.png"
+        "avatar": "https://i.ibb.co/pR2DQtZ/1.png"
     },
     {
         "id": 323,
@@ -24,7 +24,7 @@
         "email": "cikadaat@oho.com",
         "role": "Subscriber",
         "status": "active",
-        "avatar": "/src/image/humans/4.png"
+        "avatar": "https://i.ibb.co/7bt98f4/4.png"
     },
     {
         "id": 534,
@@ -42,7 +42,7 @@
         "email": "belaisa@outlook.com",
         "role": "Author",
         "status": "active",
-        "avatar": "/src/image/humans/5.png"
+        "avatar": "https://i.ibb.co/YT68xSC/5.png"
     },
     {
         "id": 123,

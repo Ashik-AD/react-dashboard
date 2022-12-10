@@ -5,8 +5,6 @@ import Box from "../../box/Box";
 import ColorBox from "../../box/ColorBox";
 import Card from "../Card";
 import CardTitle from "../titles/CardTitle";
-import mastercard from "../../../image/logo/mastercard-label.png";
-import amerikano from "../../../image/logo/american-bank.png";
 import TextField from "../../../ui/input/text-field/TextField";
 const CardPackagePlan = () => {
   return (
@@ -70,12 +68,12 @@ const CardPackagePlan = () => {
         </Text>
         <Box display="flex" flexDirection="column" space={0.6}>
           <CreaditLists
-            logo={mastercard}
+            logo={"https://i.ibb.co/VVkhLjH/mastercard-label.png"}
             name="mastercard-cvc"
             cardpin={["4232", "0890"]}
           />
           <CreaditLists
-            logo={amerikano}
+            logo={"https://i.ibb.co/n1XxBRm/american-bank.png"}
             name="american-cvc"
             cardpin={["8822", "6764"]}
           />

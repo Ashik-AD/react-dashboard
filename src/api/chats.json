@@ -3,7 +3,7 @@
         "profile": {
             "uid": 439492,
             "user_name": "Francis Yokahama",
-            "avatar_src": "/src/image/humans/1.png",
+            "avatar_src": "https://i.ibb.co/pR2DQtZ/1.png",
             "role": "Frontend Developer",
             "status": "Offline",
             "about": "🥰 When one door of happiness closes, another opens, but often we look so long at the closed door that we do not see the one which has been opened for us."
@@ -87,7 +87,7 @@
         "profile": {
             "uid": 833443,
             "user_name": "Erica Harbor",
-            "avatar_src": "/src/image/humans/5.png",
+            "avatar_src": "https://i.ibb.co/YT68xSC/5.png",
             "role": "Product Manager",
             "status": "Dnd",
             "about": "I have always believed that each man makes his own happiness and is responsible for his own problems. It is a simple philosophy."

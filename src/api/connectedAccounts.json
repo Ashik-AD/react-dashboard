@@ -4,42 +4,42 @@
             "id": 1,
             "name": "Facebook",
             "connected": false,
-            "avatar": "/src/image/logo/facebook.png",
+            "avatar": "https://i.ibb.co/hm10K47/facebook.png",
             "uid": ""
         },
         {
             "id": 2,
             "name": "Twitter",
             "connected": true,
-            "avatar": "/src/image/logo/twitter.png",
+            "avatar": "https://i.ibb.co/bzcvq3T/twitter.png",
             "uid": "@corde"
         },
         {
             "id": 3,
             "name": "LinkedIn",
             "connected": true,
-            "avatar": "/src/image/logo/linkedin.png",
+            "avatar": "https://i.ibb.co/B35tPMm/linkedin.png",
             "uid": "ashikdhimal"
         },
         {
             "id": 4,
             "name": "Instagram",
             "connected": false,
-            "avatar": "/src/image/logo/instagram.png",
+            "avatar": "https://i.ibb.co/qC7F2T6/instagram.png",
             "uid": ""
         },
         {
             "id": 5,
             "name": "Behance",
             "connected": false,
-            "avatar": "/src/image/logo/behance.png",
+            "avatar": "https://i.ibb.co/QmhGccH/behance.png",
             "uid": ""
         },
         {
             "id": 6,
             "name": "Dribble",
             "connected": false,
-            "avatar": "/src/image/logo/dribble.png",
+            "avatar": "https://i.ibb.co/s36H4gs/dribble.png",
             "uid": ""
         }
     ],
@@ -48,28 +48,28 @@
             "id": 1,
             "name": "Google",
             "title": "Calendar & Contacts",
-            "avatar": "/src/image/logo/google.png",
+            "avatar": "https://i.ibb.co/qkxNynH/google.png",
             "connected": true
         },
         {
             "id": 2,
             "name": "Github",
             "title": "Manage your Git respositories",
-            "avatar": "/src/image/logo/github.png",
+            "avatar": "https://i.ibb.co/nspVWrb/github.png",
             "connected": true
         },
         {
             "id": 3,
             "name": "Slack",
             "title": "Communication",
-            "avatar": "/src/image/logo/slack.png",
+            "avatar": "https://i.ibb.co/D1BVm8t/slack.png",
             "connected": false
         },
         {
             "id": 4,
             "name": "Figma",
             "title": "Design & Prototype",
-            "avatar": "/src/image/logo/figma-main.png",
+            "avatar": "https://i.ibb.co/qdn68L7/figma-main.png",
             "connected": true
         }
     ]

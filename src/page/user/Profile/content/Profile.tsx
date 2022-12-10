@@ -1,4 +1,3 @@
-import Card from "../../../../components/card/Card";
 import { GridInnerContainer, GridItem } from "../../../../components/layout";
 import ConnectionList from "../../../../components/user-profile/ConnectionList";
 import ProfileUserDetails from "../../../../components/user-profile/ProfileUserDetails";

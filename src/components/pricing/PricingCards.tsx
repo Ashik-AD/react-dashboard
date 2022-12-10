@@ -38,7 +38,7 @@ const PricingCards = () => {
             }
           >
             <PriceCardHeader
-              icon="/src/image/basic.png"
+              icon="https://i.ibb.co/9v7HYVL/basic.png"
               cardTitle="Basic"
               cardSlug="A simple start for everyone"
             />
@@ -70,7 +70,7 @@ const PricingCards = () => {
               />
             </PriceCardTags>
             <PriceCardHeader
-              icon="/src/image/standard.png"
+              icon="https://i.ibb.co/vmgPKTG/standard.png"
               cardTitle="Standard"
               cardSlug="For small to medium businesses"
             />
@@ -101,7 +101,7 @@ const PricingCards = () => {
             }
           >
             <PriceCardHeader
-              icon="/src/image/enterprise.png"
+              icon="https://i.ibb.co/JR4gf9W/enterprise.png"
               cardTitle="Enterprise"
               cardSlug="Solution for big organizations"
             />

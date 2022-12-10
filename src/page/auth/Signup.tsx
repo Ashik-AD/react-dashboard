@@ -8,19 +8,26 @@ import useLocalStorage from "../../hooks/useLocalStorage";
 import useNavigation from "../../hooks/useNavigation";
 
 const Signup = () => {
-  const {isAuthenticated} = useAuth();
-  const {addLocalStorage} = useLocalStorage<IAuth>("userData")
-  const {navigate} = useNavigation();
+  const { isAuthenticated } = useAuth();
+  const { addLocalStorage } = useLocalStorage<IAuth>("userData");
+  const { navigate } = useNavigation();
 
   useEffect(() => {
-    if(isAuthenticated){
-      navigate("/dashboards/crm/")
+    if (isAuthenticated) {
+      navigate("/dashboards/crm/");
     }
-  }, [isAuthenticated])
+  }, [isAuthenticated]);
   const handleSubmit = ({ username, email, password }: FormData) => {
-    if(username && email && password){
-      addLocalStorage({fullname: 'John Doe', email: 'johndoe@email.com', id: '42k2', role: 'Admin', username: "johnny", accessToken: 'this is token'});
-      navigate("/dashboards/crm/")
+    if (username && email && password) {
+      addLocalStorage({
+        fullname: "John Doe",
+        email: "johndoe@email.com",
+        id: "42k2",
+        role: "Admin",
+        username: "johnny",
+        accessToken: "this is token",
+      });
+      navigate("/dashboards/crm/");
     }
   };
 
@@ -28,8 +35,8 @@ const Signup = () => {
     <AuthLayout
       LeftContent={
         <AuthBanner
-          bgDark="/src/image/auth/signup-dark.png"
-          bgLight="/src/image/auth/signup-light.png"
+          bgDark="https://i.ibb.co/kqMh25P/signup-dark.png"
+          bgLight="https://i.ibb.co/cT8K3th/signup-light.png"
         />
       }
       RightContent={

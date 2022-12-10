@@ -62,19 +62,19 @@ const CardFinanceSummary = () => {
             <AvatarGroup
               avatars={[
                 {
-                  avatar: "/src/image/humans/3.png",
+                  avatar: "https://i.ibb.co/41vBfv2/3.png",
                   name: "Ashik",
                 },
                 {
-                  avatar: "/src/image/humans/1.png",
+                  avatar: "https://i.ibb.co/pR2DQtZ/1.png",
                   name: "Jane",
                 },
                 {
-                  avatar: "/src/image/humans/5.png",
+                  avatar: "https://i.ibb.co/YT68xSC/5.png",
                   name: "John",
                 },
                 {
-                  avatar: "/src/image/humans/2.png",
+                  avatar: "https://i.ibb.co/DVxRbB7/2.png",
                   name: "Mitchel",
                 },
               ]}

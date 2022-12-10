@@ -2,11 +2,11 @@ import Box from "../../box/Box";
 import CustomCardTitle from "../titles/CustomCardTitle";
 import { Text } from "../../../ui";
 
-import google from "../../../image/logo/google.png";
-import github from "../../../image/logo/github.png";
-import slack from "../../../image/logo/slack.png";
-import digitalOcen from "../../../image/logo/digital-ocean.png";
-import amazon from "../../../image/logo/aws.png";
+// import google from "../../../image/logo/google.png";
+// import github from "../../../image/logo/github.png";
+// import slack from "../../../image/logo/slack.png";
+// import digitalOcen from "../../../image/logo/digital-ocean.png";
+// import amazon from "../../../image/logo/aws.png";
 import AdvCardItemTransaction from "../../card-items/AdvCardItemTransaction";
 import formatNumber from "../../../utils/formatNumber";
 
@@ -23,11 +23,36 @@ const formatData = (
 });
 
 const desposits = [
-  formatData(google, "Google Adsense", "Paypal deposit", 453),
-  formatData(github, "Github Enterprise", "Security & complaince", 1212),
-  formatData(slack, "Upgrade slack plan", "Debit card despoit", 300),
-  formatData(digitalOcen, "Digital Ocean", "Cloud Hosting", 234),
-  formatData(amazon, "AWS account", "Choosing a Cloud Platform", 4453),
+  formatData(
+    "https://i.ibb.co/qkxNynH/google.png",
+    "Google Adsense",
+    "Paypal deposit",
+    453
+  ),
+  formatData(
+    "https://i.ibb.co/nspVWrb/github.png",
+    "Github Enterprise",
+    "Security & complaince",
+    1212
+  ),
+  formatData(
+    "https://i.ibb.co/D1BVm8t/slack.png",
+    "Upgrade slack plan",
+    "Debit card despoit",
+    300
+  ),
+  formatData(
+    "https://i.ibb.co/6bjxdZp/digital-ocean.png",
+    "Digital Ocean",
+    "Cloud Hosting",
+    234
+  ),
+  formatData(
+    "https://i.ibb.co/drvxnms/aws.png",
+    "AWS account",
+    "Choosing a Cloud Platform",
+    4453
+  ),
 ];
 
 const items = desposits.map((item) => (

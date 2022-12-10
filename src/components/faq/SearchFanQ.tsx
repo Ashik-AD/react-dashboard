@@ -26,7 +26,7 @@ const SearchFanQ = ({
       px={20}
       borderRadius={"6px"}
       style={{
-        backgroundImage: `url(/src/image/faq.png)`,
+        backgroundImage: `url(https://i.ibb.co/25h3jb7/faq.png)`,
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}

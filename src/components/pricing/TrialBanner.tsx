@@ -39,7 +39,7 @@ const TrialBanner = () => {
         </GridItem>
         <GridItem xs={12} md={4}>
           <img
-            src="/src/image/saly.png"
+            src="https://i.ibb.co/7NwgRc8/saly.png"
             alt="saly"
             className="trial__banner_img"
           />

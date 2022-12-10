@@ -8,7 +8,7 @@ const CardRangerSession = () => {
       status="desc"
       tag="Last Week"
       color="warning"
-      ranger="/src/image/john-pose-1.png"
+      ranger="https://i.ibb.co/wBrQkrz/john-pose-1.png"
     />
   );
 };

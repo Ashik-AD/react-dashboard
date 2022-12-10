@@ -3,7 +3,7 @@
         "profile": {
             "uid": 739232,
             "user_name": "Jinx McMarc",
-            "avatar_src": "/src/image/humans/2.png",
+            "avatar_src": "https://i.ibb.co/DVxRbB7/2.png",
             "role": "Backend Developer",
             "status": "Offline",
             "about": "People have so manipulated the concept of freedom that it finally boils down to the right of the stronger and richer to take from the weaker and poorer whatever they still have."
@@ -17,7 +17,7 @@
         "profile": {
             "uid": 235343,
             "user_name": "Violet Hikina",
-            "avatar_src": "/src/image/humans/7.png",
+            "avatar_src": "https://i.ibb.co/J5k44gj/7.png",
             "role": "SEO Specialist",
             "status": "Online",
             "about": "I am a marvelous housekeeper. Every time I leave a man I keep his house."
@@ -31,7 +31,7 @@
         "profile": {
             "uid": 935656,
             "user_name": "Itsuka Kielly",
-            "avatar_src": "/src/image/humans/6.png",
+            "avatar_src": "https://i.ibb.co/FzZ5TMb/6.png",
             "role": "HOD",
             "status": "Online",
             "about": "Whatever is done well enough is done quickly enough."
@@ -45,7 +45,7 @@
         "profile": {
             "uid": 734464,
             "user_name": "Mike Tyson",
-            "avatar_src": "/src/image/humans/8.png",
+            "avatar_src": "https://i.ibb.co/cv0f9Jw/8.png",
             "role": "Manager",
             "status": "Dnd",
             "about": "Music is the only religion that delivers the goods"
@@ -59,7 +59,7 @@
         "profile": {
             "uid": 425324,
             "user_name": "Julia Child",
-            "avatar_src": "/src/image/humans/1.png",
+            "avatar_src": "https://i.ibb.co/pR2DQtZ/1.png",
             "role": "Fullstack Developer",
             "status": "Away",
             "about": "People who love to eat are always the best people."
@@ -73,7 +73,7 @@
         "profile": {
             "uid": 315345,
             "user_name": "Indiana Joans",
-            "avatar_src": "/src/image/humans/9.png",
+            "avatar_src": "https://i.ibb.co/fnDdLt9/9.png",
             "role": "Sr. Architect",
             "status": "Online",
             "about": "Of all your troubles, great and small, the greatest are the ones that don't happen at all.        "
@@ -87,7 +87,7 @@
         "profile": {
             "uid": 76320,
             "user_name": "Ana Thux",
-            "avatar_src": "/src/image/humans/5.png",
+            "avatar_src": "https://i.ibb.co/YT68xSC/5.png",
             "role": "Backend Developer",
             "status": "Offline",
             "about": ""

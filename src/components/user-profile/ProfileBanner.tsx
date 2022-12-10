@@ -1,6 +1,4 @@
 import styled from "styled-components";
-import grass from "../../image/grass.jpg";
-import shape from "../../image/shape.jpg";
 import useTheme from "../../theme/useTheme";
 const ProfileBanner = () => {
   const {
@@ -18,7 +16,9 @@ const StyledBannerWrapper = styled("div")`
   background-repeat: no-repeat;
   background: linear-gradient(45deg, #9795ef, #f9c5d1);
   background-image: url(${({ theme }) =>
-    theme.mode === "dark" ? grass : shape});
+    theme.mode === "dark"
+      ? "https://i.ibb.co/qdYPB6Z/grass.jpg"
+      : "https://i.ibb.co/yFZ2KV4/shape.jpg"});
   background-size: cover;
   background-position: center;
   transition: background 200ms ease-in;

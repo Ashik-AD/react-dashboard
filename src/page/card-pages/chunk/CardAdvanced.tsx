@@ -12,6 +12,7 @@ import Card from "../../../components/card/Card";
 import MeetingDummy from "../../../components/examples/MeetingDummy";
 import TimelineDummy from "../../../components/examples/TimelineDummy";
 import { GridInnerContainer, GridItem } from "../../../components/layout";
+import { Text } from "../../../ui";
 const CardAdvanced = () => {
   return (
     <GridInnerContainer spacing={1.6}>
@@ -46,13 +47,20 @@ const CardAdvanced = () => {
         <CardSocialAnalytic />
       </GridItem>
       <GridItem xs={12} md={4}>
+        <Card padding="1rem" height="100%">
+          <Text heading="h6" align="center" secondary>
+            Placeholder card
+          </Text>
+        </Card>
+      </GridItem>
+      <GridItem xs={12} md={4}>
         <CardSiteStatistic />
       </GridItem>
       <GridItem xs={12} md={4}>
-        <CardMeetup />
+        <CardSalesByCountry />
       </GridItem>
       <GridItem xs={12} md={4}>
-        <CardSalesByCountry />
+        <CardMeetup />
       </GridItem>
       <GridItem xs={12} md={8}>
         <TimelineDummy />

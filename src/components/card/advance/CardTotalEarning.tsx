@@ -54,8 +54,9 @@ const sources = [
   ),
 ];
 const CardTotalEarning = () => {
-  const items = sources.map((item) => (
+  const items = sources.map((item, index) => (
     <CardItemWithIconProgress
+      key={`item-${index}`}
       label={item.title}
       tag={item.tag}
       total={`$${formatNumber(item.count)}`}

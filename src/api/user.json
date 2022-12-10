@@ -1,7 +1,7 @@
 {
     "about": {
         "fullName": "John Doe",
-        "profileAvatar": "/src/image/humans/3.png",
+        "profileAvatar": "https://i.ibb.co/41vBfv2/3.png",
         "role": "Developer",
         "job": "Frontend Developer",
         "status": "active",

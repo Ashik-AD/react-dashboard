@@ -15,19 +15,19 @@
         "members": "280 members",
         "title": "Social Banners",
         "client": "Luna Roach",
-        "avatar": "/src/image/social-media.png",
+        "avatar": "https://i.ibb.co/GMqztCH/social-media.png",
         "description": "We are Consulting, Software Development and Web Development Services.",
         "avatarGroup": [
             {
-                "avatar": "/src/image/humans/1.png",
+                "avatar": "https://i.ibb.co/pR2DQtZ/1.png",
                 "name": "Davon Cline"
             },
             {
-                "avatar": "/src/image/humans/2.png",
+                "avatar": "https://i.ibb.co/DVxRbB7/2.png",
                 "name": "Johnny Bridges"
             },
             {
-                "avatar": "/src/image/humans/3.png",
+                "avatar": "https://i.ibb.co/41vBfv2/3.png",
                 "name": "Zara Murray"
             }
         ]
@@ -48,18 +48,18 @@
         "members": "1.1k members",
         "title": "Admin Template",
         "client": "Rex Buchanan",
-        "avatar": "/src/image/logo/react.png",
+        "avatar": "https://i.ibb.co/DQDnGzw/react.png",
         "avatarGroup": [
             {
-                "avatar": "/src/image/humans/4.png",
+                "avatar": "https://i.ibb.co/7bt98f4/4.png",
                 "name": "Diamond Baxter"
             },
             {
-                "avatar": "/src/image/humans/5.png",
+                "avatar": "https://i.ibb.co/YT68xSC/5.png",
                 "name": "Marianna Shelton"
             },
             {
-                "avatar": "/src/image/humans/6.png",
+                "avatar": "https://i.ibb.co/FzZ5TMb/6.png",
                 "name": "Rachel West"
             }
         ],
@@ -81,19 +81,19 @@
         "startDate": "24/7/23",
         "members": "458 members",
         "client": "Jorden Wilkinson",
-        "avatar": "/src/image/logo/sketch.png",
+        "avatar": "https://i.ibb.co/kMnx2yZ/sketch.png",
         "description": "App design combines the user interface (UI) and user experience (UX).",
         "avatarGroup": [
             {
-                "avatar": "/src/image/humans/7.png",
+                "avatar": "https://i.ibb.co/J5k44gj/7.png",
                 "name": "Mercedes Browning"
             },
             {
-                "avatar": "/src/image/humans/8.png",
+                "avatar": "https://i.ibb.co/cv0f9Jw/8.png",
                 "name": "Hallie Farrell"
             },
             {
-                "avatar": "/src/image/humans/1.png",
+                "avatar": "https://i.ibb.co/pR2DQtZ/1.png",
                 "name": "Leila Garner"
             }
         ]
@@ -114,19 +114,19 @@
         "members": "137 members",
         "client": "Ashton Odom",
         "title": "Create Website",
-        "avatar": "/src/image/logo/html.png",
+        "avatar": "https://i.ibb.co/VNGPym8/html.png",
         "description": "Your domain name should reflect your products or services so that your...",
         "avatarGroup": [
             {
-                "avatar": "/src/image/humans/2.png",
+                "avatar": "https://i.ibb.co/DVxRbB7/2.png",
                 "name": "Addison Arias"
             },
             {
-                "avatar": "/src/image/humans/3.png",
+                "avatar": "https://i.ibb.co/41vBfv2/3.png",
                 "name": "Douglas Alvarado"
             },
             {
-                "avatar": "/src/image/humans/4.png",
+                "avatar": "https://i.ibb.co/7bt98f4/4.png",
                 "name": "Marisol Horne"
             }
         ]
@@ -147,19 +147,19 @@
         "budgetSpent": "$52.7k",
         "client": "Lauryn Rivera",
         "title": "Figma Dashboard",
-        "avatar": "/src/image/logo/figma.png",
+        "avatar": "https://i.ibb.co/9TNGKxv/figma.png",
         "description": "Use this template to organize your design project. Some of the key features are…",
         "avatarGroup": [
             {
-                "avatar": "/src/image/humans/5.png",
+                "avatar": "https://i.ibb.co/YT68xSC/5.png",
                 "name": "Fabian Flynn"
             },
             {
-                "avatar": "/src/image/humans/6.png",
+                "avatar": "https://i.ibb.co/FzZ5TMb/6.png",
                 "name": "Yair Berry"
             },
             {
-                "avatar": "/src/image/humans/7.png",
+                "avatar": "https://i.ibb.co/J5k44gj/7.png",
                 "name": "Trinity Kelly"
             }
         ]
@@ -180,19 +180,19 @@
         "title": "Logo Design",
         "members": "16 members",
         "client": "Olive Strickland",
-        "avatar": "/src/image/logo/illustrator.png",
+        "avatar": "https://i.ibb.co/Tv8ZBFx/illustrator.png",
         "description": "Premium logo designs created by top logo designers. Create the branding of business.",
         "avatarGroup": [
             {
-                "avatar": "/src/image/humans/8.png",
+                "avatar": "https://i.ibb.co/cv0f9Jw/8.png",
                 "name": "Elisa Eaton"
             },
             {
-                "avatar": "/src/image/humans/1.png",
+                "avatar": "https://i.ibb.co/pR2DQtZ/1.png",
                 "name": "Alyssa Petty"
             },
             {
-                "avatar": "/src/image/humans/2.png",
+                "avatar": "https://i.ibb.co/DVxRbB7/2.png",
                 "name": "Emiliano Blevins"
             }
         ]

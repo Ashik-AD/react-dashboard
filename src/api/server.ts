@@ -39,7 +39,7 @@ export default function () {
                 user_profile: {
                     uid: 728232,
                     user_name: "John Doe",
-                    avatar_src: "/src/image/humans/3.png",
+                    avatar_src: "https://i.ibb.co/41vBfv2/3.png",
                     role: "admin",
                     status: "Online",
                     about: "🥰 I have always thought the actions of men the best interpreters of their thought.✌️"

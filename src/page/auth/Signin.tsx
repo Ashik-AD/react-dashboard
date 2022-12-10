@@ -9,14 +9,14 @@ import useLocalStorage from "../../hooks/useLocalStorage";
 import useNavigation from "../../hooks/useNavigation";
 
 const Signin = () => {
-  const {isAuthenticated} = useAuth();
+  const { isAuthenticated } = useAuth();
   const { addLocalStorage } = useLocalStorage("userData");
-  const {navigate} = useNavigation();
+  const { navigate } = useNavigation();
   useEffect(() => {
-    if(isAuthenticated){
-      navigate("/dashboards/crm/")
+    if (isAuthenticated) {
+      navigate("/dashboards/crm/");
     }
-  }, [isAuthenticated])
+  }, [isAuthenticated]);
   const handleSubmit = (inputs: LoginFormDate) => {
     addLocalStorage({
       fullname: "John Doe",
@@ -35,8 +35,8 @@ const Signin = () => {
       }
       LeftContent={
         <AuthBanner
-          bgDark="/src/image/auth/login-dark.png"
-          bgLight="/src/image/auth/login-light.png"
+          bgDark="https://i.ibb.co/n8YcMNb/login-dark.png"
+          bgLight="https://i.ibb.co/n8YcMNb/login-light.png"
         />
       }
     />

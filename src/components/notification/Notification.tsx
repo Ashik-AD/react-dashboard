@@ -14,7 +14,7 @@ const notifications: NotificationItemProps[] = [
     subject: "Congratulation John 🥳",
     body: "Won my heart 💙",
     timeStamp: "Today",
-    avatarsrc: "/src/image/humans/2.png",
+    avatarsrc: "https://i.ibb.co/DVxRbB7/2.png",
     alt: "john doe",
   },
   {

@@ -29,7 +29,11 @@ const PageNotFound = () => {
       </Box>
       <Box display="flex" align="center" justify="center">
         <img
-          src={`/src/image/404-${name === "dark" ? "dark" : "light"}.png`}
+          src={
+            name === "dark"
+              ? "https://i.ibb.co/z8Mx2v6/404-dark.png"
+              : "https://i.ibb.co/wdsQ8YY/404-light.png"
+          }
           alt="not found"
           className="banner"
         />

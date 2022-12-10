@@ -8,7 +8,6 @@ import { CardWidgetProfit } from "../../components/card/widgets";
 import { GridContainer, GridItem } from "../../components/layout";
 import Flex from "../../components/layout/flex/Flex";
 import GridInnerContainer from "../../components/layout/grid/GridInnerContainer";
-import john from "../../image/john-pose-2.png";
 import MeetingDummy from "../../components/examples/MeetingDummy";
 import CardStatisticQuaterlySales from "../../components/card/statistics/CardStatisticQuarterlySales";
 import CardNewVisitors from "../../components/card/advance/CardNewVisitors";
@@ -29,7 +28,7 @@ const Ecommerce = () => {
           <CardGimificationLarge
             greet="Congratulation John 🎊"
             message="You have done 72% 🤩 more sales today. Check your new raising badge in your profile."
-            banner={john}
+            banner={"https://i.ibb.co/Dp9VB5g/john-pose-2.png"}
           />
         </GridItem>
         <GridItem xs={12} sm={6} md={2}>

@@ -8,7 +8,7 @@ const CardRangerCustomer = () => {
       status="inc"
       tag="last quater"
       color={"info"}
-      ranger="/src/image/mike.png"
+      ranger="https://i.ibb.co/KGPV91p/mike.png"
     />
   );
 };

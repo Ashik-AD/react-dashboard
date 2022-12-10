@@ -8,7 +8,7 @@ const CardRangerTotalOrder = () => {
       status="inc"
       tag="Last Month"
       color={"error"}
-      ranger="/src/image/jack.png"
+      ranger="https://i.ibb.co/D9Z4Dfq/jack.png.png"
     />
   );
 };

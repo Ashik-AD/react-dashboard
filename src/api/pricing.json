@@ -6,7 +6,7 @@
             "currentPlan": true,
             "popularPlan": false,
             "subtitle": "A simple start for everyone",
-            "imgSrc": "/src/image/basic.png",
+            "imgSrc": "https://i.ibb.co/9v7HYVL/basic.png",
             "yearlyPlan": {
                 "perMonth": 0,
                 "totalAnnual": 0
@@ -25,7 +25,7 @@
             "popularPlan": true,
             "currentPlan": false,
             "subtitle": "For small to medium businesses",
-            "imgSrc": "/src/image/standard.png",
+            "imgSrc": "https://i.ibb.co/vmgPKTG/standard.png",
             "yearlyPlan": {
                 "perMonth": 40,
                 "totalAnnual": 480
@@ -44,7 +44,7 @@
             "currentPlan": false,
             "title": "Enterprise",
             "subtitle": "Solution for big organizations",
-            "imgSrc": "/src/image/enterprise.png",
+            "imgSrc": "https://i.ibb.co/JR4gf9W/enterprise.png",
             "yearlyPlan": {
                 "perMonth": 80,
                 "totalAnnual": 960

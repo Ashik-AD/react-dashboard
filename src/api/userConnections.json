@@ -7,7 +7,7 @@
         "connections": "129",
         "name": "Kenny Wood",
         "designation": "UI Designer",
-        "avatar": "/src/image/humans/1.png",
+        "avatar": "https://i.ibb.co/pR2DQtZ/1.png",
         "chips": [
             {
                 "title": "Figma",
@@ -27,7 +27,7 @@
         "connections": "1.28k",
         "name": "Austin Murray",
         "designation": "Developer",
-        "avatar": "/src/image/humans/2.png",
+        "avatar": "https://i.ibb.co/DVxRbB7/2.png",
         "chips": [
             {
                 "color": "error",
@@ -47,7 +47,7 @@
         "connections": "890",
         "name": "Ezekiel Moon",
         "designation": "Developer",
-        "avatar": "/src/image/humans/3.png",
+        "avatar": "https://i.ibb.co/41vBfv2/3.png",
         "chips": [
             {
                 "title": "HTML",
@@ -67,7 +67,7 @@
         "connections": "890",
         "name": "Cameron Avery",
         "designation": "UI/UX Designer",
-        "avatar": "/src/image/humans/4.png",
+        "avatar": "https://i.ibb.co/7bt98f4/4.png",
         "chips": [
             {
                 "title": "Figma",
@@ -91,7 +91,7 @@
         "connections": "2.14k",
         "name": "Halle Price",
         "designation": "Full Stack Developer",
-        "avatar": "/src/image/humans/5.png",
+        "avatar": "https://i.ibb.co/YT68xSC/5.png",
         "chips": [
             {
                 "color": "info",
@@ -115,7 +115,7 @@
         "designation": "SEO",
         "connections": "1.27k",
         "name": "Cyrus Duran",
-        "avatar": "/src/image/humans/6.png",
+        "avatar": "https://i.ibb.co/FzZ5TMb/6.png",
         "chips": [
             {
                 "title": "Analysis",
