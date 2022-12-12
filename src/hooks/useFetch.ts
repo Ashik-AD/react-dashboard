@@ -10,7 +10,7 @@ const useFetch = <T extends unknown>(url: string) => {
         const res = await client(url);
         return res;
     }
-
+    
     useEffect(() => {
         setLoading(true);
         (async () => {

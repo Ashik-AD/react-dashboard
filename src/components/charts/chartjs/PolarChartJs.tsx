@@ -61,7 +61,7 @@ const PolarChartJs = () => {
     },
   };
   const { data, loading } = useFetch<ChartData<"polarArea">>(
-    "/api/chart-data/averageSkills"
+    "/6395f24bc5b3a64f1bc908f4/averageSkills"
   );
   if (!data || loading) return <Box height="400px">{""}</Box>;
   return (

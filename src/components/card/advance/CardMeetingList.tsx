@@ -40,8 +40,8 @@ const CardMeetingList: FC<Props> = (props) => {
                     fontSize="inherit"
                     style={{ marginRight: 5 }}
                   />
-                  {item.date.day} {item.date.month} | {item.date.from} -{" "}
-                  {item.date.to}
+                  {item.date?.day} {item.date?.month} | {item.date?.from} -{" "}
+                  {item.date?.to}
                 </Text>
               </Box>
               <Chip

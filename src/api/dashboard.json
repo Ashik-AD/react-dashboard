@@ -1,0 +1,286 @@
+{
+    "meetingSchedule": [
+        {
+            "profile": "https://i.ibb.co/7bt98f4/4.png",
+            "tag": "Business",
+            "date": {
+                "month": "Sep",
+                "day": 5,
+                "from": "09:00",
+                "to": "10:30"
+            },
+            "title": "Call with Deamon",
+            "color": "error"
+        },
+        {
+            "profile": "https://i.ibb.co/YT68xSC/5.png",
+            "tag": "tech",
+            "date": {
+                "month": "Sep",
+                "day": 6,
+                "from": "12:00",
+                "to": "15:30"
+            },
+            "title": "Nextjs Conf"
+        },
+        {
+            "profile": "https://i.ibb.co/pR2DQtZ/1.png",
+            "tag": "sport",
+            "date": {
+                "month": "Sep",
+                "day": 21,
+                "from": "1:00",
+                "to": "15:30"
+            },
+            "title": "Launch with Executive",
+            "color": "info"
+        },
+        {
+            "profile": "https://i.ibb.co/fnDdLt9/9.png",
+            "tag": "travel",
+            "date": {
+                "month": "Sep",
+                "day": 6,
+                "from": "2:50",
+                "to": "15:30"
+            },
+            "title": "Marketing meet",
+            "color": "warning"
+        },
+        {
+            "profile": "https://i.ibb.co/FzZ5TMb/6.png",
+            "tag": "friend",
+            "date": {
+                "month": "Sep",
+                "day": 6,
+                "from": "5:00",
+                "to": "60:30"
+            },
+            "title": "Climate change",
+            "color": "success"
+        },
+        {
+            "profile": "https://i.ibb.co/cv0f9Jw/8.png",
+            "tag": "Business",
+            "date": {
+                "month": "Sep",
+                "day": 6,
+                "from": "12:00",
+                "to": "15:30"
+            },
+            "title": "Listening old songs",
+            "color": "info"
+        }
+    ],
+    "clientTransaction": [
+        {
+            "id": 48323,
+            "client": "John Doe",
+            "userid": "@johndi",
+            "email": "johndoe@npcr.com",
+            "total": 323.50,
+            "balance": "unpaid",
+            "actionLabel": "Downloaded",
+            "actionType": "download",
+            "avatarsrc": "https://i.ibb.co/DVxRbB7/2.png"
+        },
+        {
+            "id": 48853,
+            "client": "Jane Doe",
+            "userid": "@janiee",
+            "email": "janedeo@mic.com",
+            "total": 123.8,
+            "balance": "paid",
+            "actionLabel": "Draft",
+            "actionType": "draft",
+            "avatarsrc": "https://i.ibb.co/pR2DQtZ/1.png"
+        },
+        {
+            "id": 83882,
+            "client": "William Mckinney",
+            "userid": "@micley32",
+            "email": "cikadaat@oho.com",
+            "total": 592,
+            "balance": 432,
+            "actionLabel": "Partial Payment",
+            "actionType": "partialPayment",
+            "avatarsrc": "https://i.ibb.co/7bt98f4/4.png"
+        },
+        {
+            "id": 87322,
+            "client": "Asly Cole",
+            "userid": "@asmors3",
+            "email": "ashlycolide@yama.com",
+            "total": 583.93,
+            "balance": "paid",
+            "actionLabel": "Past Due",
+            "actionType": "pastDue",
+            "icon": "AC"
+        },
+        {
+            "id": 43922,
+            "client": "Isabela Corner",
+            "userid": "@belaco",
+            "email": "belaisa@outlook.com",
+            "total": 3323,
+            "balance": 983,
+            "actionLabel": "Downloaded",
+            "actionType": "download",
+            "avatarsrc": "https://i.ibb.co/YT68xSC/5.png"
+        },
+        {
+            "id": 34324,
+            "client": "Powder Jinx",
+            "userid": "@jinxspo",
+            "email": "powderjnx@outlook.com",
+            "total": 1439.50,
+            "balance": "paid",
+            "actionLabel": "Past Due",
+            "actionType": "pastDue",
+            "icon": "Pd"
+        },
+        {
+            "id": 78343,
+            "client": "Paimon Sense",
+            "userid": "@piamon",
+            "email": "sensepaimon@gmail.com",
+            "total": 159.99,
+            "balance": 432,
+            "actionLabel": "Partial Payment",
+            "actionType": "partialPayment",
+            "icon": "PS"
+        },
+        {
+            "id": 3432,
+            "client": "Linol Messi",
+            "userid": "@messi",
+            "email": "lionelgoat@messi.com",
+            "total": 4434.99,
+            "balance": 4344,
+            "actionLabel": "Downloaded",
+            "actionType": "download",
+            "avatarsrc": "https://i.ibb.co/41vBfv2/3.png"
+        }
+    ],
+    "salesByCountry": [
+        {
+            "countryName": "USA",
+            "sale": "$34k",
+            "grossSales": "432k",
+            "status": "inc",
+            "color": "success",
+            "growth": 25,
+            "icon": "US"
+        },
+        {
+            "countryName": "UK",
+            "sale": "$423k",
+            "grossSales": "932k",
+            "status": "inc",
+            "color": "info",
+            "growth": 32,
+            "icon": "UK"
+        },
+        {
+            "countryName": "Japan",
+            "sale": "$214k",
+            "grossSales": "756k",
+            "status": "dec",
+            "color": "warning",
+            "growth": -4,
+            "icon": "JP"
+        },
+        {
+            "countryName": "India",
+            "sale": "$56k",
+            "grossSales": "120k",
+            "status": "dec",
+            "color": "error",
+            "growth": -12,
+            "icon": "IN"
+        },
+        {
+            "countryName": "Korea",
+            "sale": "$124k",
+            "grossSales": "660k",
+            "status": "inc",
+            "color": "",
+            "growth": 3,
+            "icon": "KR"
+        },
+        {
+            "countryName": "China",
+            "sale": "$432",
+            "grossSales": "540k",
+            "status": "dec",
+            "color": "ligtgray",
+            "growth": 5,
+            "icon": "CH"
+        }
+    ],
+    "members": [
+        {
+            "id": 483,
+            "name": "John Doe",
+            "userid": "@johndi",
+            "email": "johndoe@npcr.com",
+            "role": "Author",
+            "status": "active",
+            "avatar": "https://i.ibb.co/DVxRbB7/2.png"
+        },
+        {
+            "id": 488,
+            "name": "Jane Doe",
+            "userid": "@janiee",
+            "email": "janedeo@mic.com",
+            "role": "Maintainer",
+            "status": "pending",
+            "avatar": "https://i.ibb.co/pR2DQtZ/1.png"
+        },
+        {
+            "id": 323,
+            "name": "William Mckinney",
+            "userid": "@micley32",
+            "email": "cikadaat@oho.com",
+            "role": "Subscriber",
+            "status": "active",
+            "avatar": "https://i.ibb.co/7bt98f4/4.png"
+        },
+        {
+            "id": 534,
+            "name": "Asly Cole",
+            "userid": "@asmors3",
+            "email": "ashlycolide@yama.com",
+            "role": "Editor",
+            "status": "inactive",
+            "icon": "AC"
+        },
+        {
+            "id": 543,
+            "name": "Isabela Corner",
+            "userid": "@belaco",
+            "email": "belaisa@outlook.com",
+            "role": "Author",
+            "status": "active",
+            "avatar": "https://i.ibb.co/YT68xSC/5.png"
+        },
+        {
+            "id": 123,
+            "name": "Powder Jinx",
+            "userid": "@jinxspo",
+            "email": "powderjnx@outlook.com",
+            "role": "Subscriber",
+            "status": "inactive",
+            "icon": "Pd"
+        },
+        {
+            "id": 342,
+            "name": "Paimon Sense",
+            "userid": "@piamon",
+            "email": "sensepaimon@gmail.com",
+            "role": "Author",
+            "status": "active",
+            "icon": "PS"
+        }
+    ]
+}

@@ -1,4 +1,4 @@
-import { createRef, FC, useCallback, useEffect, useState } from "react";
+import { createRef, FC, useEffect, useId, useState } from "react";
 import { useLocation } from "react-router-dom";
 import styled from "styled-components";
 import NavOptions from "../type";
@@ -9,24 +9,23 @@ const NavGroup: FC<Props> = ({
   navData: { childrens, parent },
   onChildClick,
 }) => {
-  const {pathname} = useLocation()
+  const { pathname } = useLocation();
   const [isActive, setIsActive] = useState(false);
   const navItemContainer = createRef<HTMLUListElement>();
 
   useEffect(() => {
-    if(parent?.rootPath){
-      if(pathname.includes(parent?.rootPath?.toLowerCase())){
-        setIsActive(true)
-      }
-      else {
-        setIsActive(false)
+    if (parent?.rootPath) {
+      if (pathname.includes(parent?.rootPath?.toLowerCase())) {
+        setIsActive(true);
+      } else {
+        setIsActive(false);
       }
     }
   }, [pathname]);
 
   useEffect(() => {
     let current = navItemContainer.current;
-    if(current){
+    if (current) {
       current.style.transitionDuration = "300ms";
       if (isActive) {
         current.style.height = "100px";
@@ -34,16 +33,16 @@ const NavGroup: FC<Props> = ({
           current!.style.height = "auto";
         }, 100);
       } else {
-          current.style.height = "0px";
+        current.style.height = "0px";
       }
     }
     return () => {
       current = null;
-    }
+    };
   }, [isActive]);
 
   return (
-    <StyledNavGroup key={parent?.title}>
+    <StyledNavGroup>
       {parent && (
         <NavGroupButton
           isActive={isActive}
@@ -58,8 +57,7 @@ const NavGroup: FC<Props> = ({
       >
         {childrens &&
           childrens.map((item, i) => {
-            const key = `${item?.label}-${i}`;
-
+            const key = useId();
             if (item.childrens) {
               return (
                 <>
@@ -78,7 +76,7 @@ const NavGroup: FC<Props> = ({
                 label={item.label!}
                 path={item.path!}
                 icon={item?.icon}
-                key={`${item?.label}-${i}`}
+                key={key}
                 onClick={onChildClick}
               />
             );

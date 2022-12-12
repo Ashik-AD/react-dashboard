@@ -10,7 +10,7 @@ import PaymentMethods from "../../payment/PaymentMethods";
 
 const UserPaymentMethods = () => {
   const { data, loading } = useFetch<Array<PaymentMethodOption>>(
-    "/api/payment/methods"
+    "/6395f1d06a51bc4f704ce24a/paymentMethods"
   );
   if (loading) return <Loading />;
   return (

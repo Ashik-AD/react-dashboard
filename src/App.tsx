@@ -5,6 +5,7 @@ import "./styles/modal/Modal.css";
 import useTheme from "./theme/useTheme";
 import GlobalStyle from "./global.styled";
 import AppRoutes from "./routes/AppRoutes";
+import useFetch from "./hooks/useFetch";
 
 const App = () => {
   const {
@@ -14,6 +15,7 @@ const App = () => {
       skin,
     },
   } = useTheme();
+
   return (
     <>
       <GlobalStyle

@@ -29,7 +29,7 @@ const BubbleChartJs = () => {
     },
   };
   const { data, loading } = useFetch<ChartData<"bubble">>(
-    "/api/chart-data/programmingLanguage"
+    "/6395f24bc5b3a64f1bc908f4/programmingLanguage"
   );
   if (!data || loading) return <Box height="400px">{""}</Box>;
   return <Bubble width={"100%"} height={40} options={options} data={data} />;

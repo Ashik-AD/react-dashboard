@@ -22,7 +22,7 @@ const Security = () => {
           <TwoStepAuth isEnabled={true} value={"+977-9824965817"} />
         </GridItem>
         <GridItem xs={12}>
-          <RecentLoggedDevices />
+          <RecentLoggedDevices url="/6395f1d06a51bc4f704ce24a/loginHistory" />
         </GridItem>
       </Suspense>
     </GridInnerContainer>

@@ -17,7 +17,7 @@ interface ProfileEssentialAPI {
 
 const ProfileHeading = () => {
   const { data, loading, error } = useFetch<ProfileEssentialAPI>(
-    "/api/user-profile/essential"
+    "/6395f1e7c5b3a64f1bc908ba/profileEssential"
   );
   return (
     <Card className="overflow-hidden" pb="1rem">

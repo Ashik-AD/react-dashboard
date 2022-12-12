@@ -1,133 +1,57 @@
-import { createServer } from 'miragejs';
-import meeting from './meetingSchedule.json'
-import clientTransaction from './clientTransactions.json';
-import emails from './emails.json'
-import members from './members.json'
+//@ts-nocheck
+import { createServer, Request } from 'miragejs';
+import email from './emails.json'
 import chats from '../api/chats.json'
-import chatContact from "./chatContact.json";
 import invocices from './invoice.json';
 import users from './users.json'
-import userProject from './projects.json';
-import loggedDevice from './loginHistory.json';
 import userProfile from './user.json';
-import teams from './teams.json'
-import userProjects from './userProjects.json'
-import userConnections from './userConnections.json'
-import userTeams from './userTeams.json';
-import userAPIkeys from './apilist.json';
-import paymentMethods from './paymentMethod.json'
-import notificationSettings from './notificationSetting.json'
-import connectedAccounts from './connectedAccounts.json'
 import pricing from './pricing.json'
 import faq from './faq.json'
-import sales from './sales.json'
 import chartData from './chartData.json'
 import rechartData from './rechartData.json'
+import dashboard from './dashboard.json'
+
+type Request<T> = {
+    params: Record<string, keyof T>
+}
 export default function () {
     return createServer({
         routes() {
-            this.get('/api/meeting/list', () => meeting)
-            this.get('/api/client-transaction', () => clientTransaction)
-            this.get('/api/sales/:category', (schema, req) => {
-                const category = req.params.category;
-                if (category === 'byCountry') {
-                    return sales.salesByCountry;
-                }
-                return "oops";
+            this.get('/api/6395f168c5b3a64f1bc90862/:collectionName', (_, req: Request<typeof dashboard>) => {
+                const {collectionName} = req.params;
+                return dashboard[collectionName];
             })
-            this.get('api/chat/userprofile', () => ({
-                user_profile: {
-                    uid: 728232,
-                    user_name: "John Doe",
-                    avatar_src: "https://i.ibb.co/41vBfv2/3.png",
-                    role: "admin",
-                    status: "Online",
-                    about: "🥰 I have always thought the actions of men the best interpreters of their thought.✌️"
-                }
-            }))
-            this.get('/api/members', () => members)
-            this.get('/api/email/emails', () => emails)
-            this.get('/api/chat/chats', () => chats)
-            this.get('/api/chat/contacts', () => chatContact)
-            this.get('/api/invoices', () => invocices)
-            this.get('/api/users/list', () => users)
-            this.get('/api/users/projects', () => userProject)
-            this.get('/api/users/logged-recent', () => loggedDevice)
-            this.get('/api/users/notification/setting', () => notificationSettings)
-            this.get('/api/users/connections', () => connectedAccounts)
-            this.get('/api/user-profile', () => userProfile)
-            this.get('/api/payment/methods', () => paymentMethods)
-            this.get('/api/user-profile/profile/connections', () => {
-                const filterData = userConnections.slice(0, 5).map((item) => ({
-                    id: item.id,
-                    avatar: item.avatar,
-                    fullName: item.name,
-                    totalConnection: item.connections,
-                    isFriend: item.isConnected
-                }))
-                return filterData;
+            this.get('/api/6395f17e6a51bc4f704ce219', () => email)
+            this.get('/api/6395f1a8c5b3a64f1bc9088e/:collectionName', (sch, req) => {
+                const {collectionName} = req.params;
+                return chats[collectionName]
             })
-            this.get('/api/user-profile/profile/teams', () => teams)
-            this.get('/api/user-profile/projects', () => userProjects)
-            this.get('/api/user-profile/connections', () => userConnections)
-            this.get('/api/user-profile/teams', () => userTeams)
-            this.get('/api/user-profile/essential', () => ({
-                avatar: userProfile.about.profileAvatar,
-                fullName: userProfile.about.fullName,
-                designation: userProfile.about.job,
-                location: userProfile.about.address.location,
-                joinedDate: userProfile.about.joinAt
-            }))
-            this.get('/api/account-settings/personal-form', () => ({
-                avatar: userProfile.about.profileAvatar,
-                firstName: userProfile.about.fullName.split(" ")[0],
-                lastName: userProfile.about.fullName.split(" ")[1],
-                address: userProfile.about.address.fullAddress,
-                email: userProfile.about.contacts.email,
-                phoneNumber: userProfile.about.contacts.phone,
-                state: userProfile.about.address.location,
-                zipcode: userProfile.about.address.zipcode,
-                organization: userProfile.about.organization,
-                country: userProfile.about.address.country,
-                language: userProfile.about.language,
-                currency: userProfile.about.currency,
-            }))
-            this.get('/api/account-settings/apikey', () => userAPIkeys)
-            this.get('/api/account-settings/payment/methods', () => paymentMethods)
-            this.get('/api/account-settings/notification/setting', () => notificationSettings)
-            this.get('/api/account-settings/connections', () => connectedAccounts)
-            this.get("/api/pricing/table", () => pricing.pricingTable)
-            this.get("/api/pages/faq", () => faq)
+            this.get('/api/6395f1bbc5b3a64f1bc9089c', () => invocices)
 
-            this.get('/api/chart-data/:type', (sch, req) => {
+            // users api endpoint
+            this.get('/api/6395f1d06a51bc4f704ce24a/:collectionName', (sch, req: Request<typeof users>) => {
+                const {collectionName} = req.params;
+                return users[collectionName];
+            })
+            this.get('/api/6395f1e7c5b3a64f1bc908ba/:collectionName', (sc, req: Request<typeof userProfile>) => {
+                const {collectionName} = req.params;
+                return userProfile[collectionName];
+            })
+
+            this.get("/api/6395f1ff6a51bc4f704ce267/:collectionName", (_, req: Request<typeof pricing>) => {
+                const {collectionName} = req.params
+                return pricing[collectionName]
+            })
+            this.get("/api/6395f222c5b3a64f1bc908db/", () => faq)
+
+            this.get('/api/6395f24bc5b3a64f1bc908f4/:type', (sch, req) => {
                 const nodeName = req.params.type;
-                // @ts-ignore
                 return chartData[nodeName]
-                // switch(nodeName){
-                //     case "balance": return chartData.balance;
-                //     case "websiteAnalytic": return chartData.websiteAnalytic;
-                //     case "brandTurnover": return chartData.brandTurnover;
-                //     case "mobileComparison": return chartData.mobileComparison;
-                //     case "frameworkUsage": return chartData.frameworkUsage;
-                //     case "sales": return chartData.sales;
-                //     default: return {}
-                // }
             })
 
-            this.get('/api/chart-data/rechart/:type', (sch, req) => {
+            this.get('/api/6395f2606a51bc4f704ce29c/:type', (sch, req) => {
                 const nodeName = req.params.type;
-                //@ts-ignore
                 return rechartData[nodeName];
-                switch(nodeName){
-                    case "websiteAnalytic": return rechartData.websiteAnalytic;
-                    // case "websiteAnalytic": return chartData.websiteAnalytic;
-                    // case "brandTurnover": return chartData.brandTurnover;
-                    // case "mobileComparison": return chartData.mobileComparison;
-                    // case "frameworkUsage": return chartData.frameworkUsage;
-                    // case "sales": return chartData.sales;
-                    default: return {}
-                }
-
             })
         }
     })

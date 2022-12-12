@@ -1,64 +1,922 @@
 {
-    "about": {
-        "fullName": "John Doe",
-        "profileAvatar": "https://i.ibb.co/41vBfv2/3.png",
-        "role": "Developer",
-        "job": "Frontend Developer",
-        "status": "active",
-        "address": {
-            "country": "Nepal",
-            "location": "Damak",
-            "zipcode": 83923,
-            "fullAddress": "231, XYZ street, Damak, Province 1, 413232, Nepal"
+    "profile": {
+        "about": {
+            "fullName": "John Doe",
+            "profileAvatar": "https://i.ibb.co/41vBfv2/3.png",
+            "role": "Developer",
+            "job": "Frontend Developer",
+            "status": "active",
+            "address": {
+                "country": "Nepal",
+                "location": "Damak",
+                "zipcode": 83923,
+                "fullAddress": "231, XYZ street, Damak, Province 1, 413232, Nepal"
+            },
+            "language": "English",
+            "contacts": {
+                "phone": "+977-98-24965817",
+                "email": "infoashikdhimal@gmail.com",
+                "others": [
+                    {
+                        "id": 1,
+                        "type": "Skype",
+                        "value": "Ashik.Dhimal"
+                    }
+                ]
+            },
+            "joinAt": "February 13 2001",
+            "currency": "NPR",
+            "organization": "Vortex"
         },
+        "teams": [
+            {
+                "id": 1,
+                "title": "CSS Engineer",
+                "totalMember": 132
+            },
+            {
+                "id": 2,
+                "title": "React Developer",
+                "totalMember": 432
+            },
+            {
+                "id": 3,
+                "title": "Backend Developer",
+                "totalMember": 123
+            }
+        ],
+        "overview": [
+            {
+                "id": 1,
+                "title": "Task Compiled",
+                "total": 34332
+            },
+            {
+                "id": 2,
+                "title": "Connections",
+                "total": 764
+            },
+            {
+                "id": 3,
+                "title": "Project Compiled",
+                "total": 123
+            }
+        ]
+    },
+    "profileEssential": {
+        "fullName": "John Doe",
+        "avatar": "https://i.ibb.co/41vBfv2/3.png",
+        "designation": "Frontend Developer",
+        "location": "Damak",
+        "joinedDate": "Feb 13, 2001"
+    },
+    "profileFormSetting": {
+        "firstName": "John",
+        "lastName": "Doe",
+        "avatar": "https://i.ibb.co/41vBfv2/3.png",
+        "address": "231, XYZ street, Damak, Province 1, 413232, Nepal",
+        "email": "infoashikdhimal@gmail.com",
+        "phoneNumber": "+977-98-24965817",
+        "state": "Damak",
+        "zipcode": 83923,
+        "organization": "Vortex",
+        "country": "Nepal",
         "language": "English",
-        "contacts": {
-            "phone": "+977-98-24965817",
-            "email": "infoashikdhimal@gmail.com",
-            "others": [
+        "currency": "NPR"
+    },
+    "connections": [
+        {
+            "id": 1,
+            "tasks": "834",
+            "projects": "18",
+            "isFriend": true,
+            "totalConnection": "129",
+            "name": "Kenny Wood",
+            "designation": "UI Designer",
+            "avatar": "https://i.ibb.co/pR2DQtZ/1.png",
+            "chips": [
                 {
-                    "id": 1,
-                    "type": "Skype",
-                    "value": "Ashik.Dhimal"
+                    "title": "Figma",
+                    "color": "lightgray"
+                },
+                {
+                    "title": "Sketch",
+                    "color": "warning"
                 }
             ]
         },
-        "joinAt": "February 13 2001",
-        "currency": "NPR",
-        "organization": "Vortex"
-    },
-    "teams": [
-        {
-            "id": 1,
-            "title": "CSS Engineer",
-            "totalMember": 132
-        },
         {
             "id": 2,
-            "title": "React Developer",
-            "totalMember": 432
+            "tasks": "2.31k",
+            "projects": "112",
+            "isFriend": false,
+            "totalConnection": "1.28k",
+            "name": "Austin Murray",
+            "designation": "Developer",
+            "avatar": "https://i.ibb.co/DVxRbB7/2.png",
+            "chips": [
+                {
+                    "color": "error",
+                    "title": "Angular"
+                },
+                {
+                    "color": "info",
+                    "title": "React"
+                }
+            ]
         },
         {
             "id": 3,
-            "title": "Backend Developer",
-            "totalMember": 123
+            "tasks": "1.25k",
+            "projects": "32",
+            "isFriend": false,
+            "totalConnection": "890",
+            "name": "Ezekiel Moon",
+            "designation": "Developer",
+            "avatar": "https://i.ibb.co/41vBfv2/3.png",
+            "chips": [
+                {
+                    "title": "HTML",
+                    "color": ""
+                },
+                {
+                    "color": "info",
+                    "title": "React"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "tasks": "12.4k",
+            "projects": "86",
+            "isFriend": false,
+            "totalConnection": "890",
+            "name": "Cameron Avery",
+            "designation": "UI/UX Designer",
+            "avatar": "https://i.ibb.co/7bt98f4/4.png",
+            "chips": [
+                {
+                    "title": "Figma",
+                    "color": "lightgray"
+                },
+                {
+                    "title": "Sketch",
+                    "color": "warning"
+                },
+                {
+                    "color": "",
+                    "title": "Photoshop"
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "tasks": "23.8k",
+            "projects": "244",
+            "isFriend": true,
+            "totalConnection": "2.14k",
+            "name": "Halle Price",
+            "designation": "Full Stack Developer",
+            "avatar": "https://i.ibb.co/YT68xSC/5.png",
+            "chips": [
+                {
+                    "color": "info",
+                    "title": "React"
+                },
+                {
+                    "title": "HTML",
+                    "color": "warning"
+                },
+                {
+                    "color": "success",
+                    "title": "Node.js"
+                }
+            ]
+        },
+        {
+            "id": 6,
+            "tasks": "1.28k",
+            "projects": "32",
+            "isFriend": false,
+            "designation": "SEO",
+            "totalConnection": "1.27k",
+            "name": "Cyrus Duran",
+            "avatar": "https://i.ibb.co/FzZ5TMb/6.png",
+            "chips": [
+                {
+                    "title": "Analysis",
+                    "color": "lightgray"
+                },
+                {
+                    "color": "success",
+                    "title": "Writing"
+                }
+            ]
         }
     ],
-    "overview": [
+    "teamList": [
         {
             "id": 1,
-            "title": "Task Compiled",
-            "total": 34332
+            "teamName": "React Developers",
+            "totalMember": 324,
+            "avatar": "https://i.ibb.co/DQDnGzw/react.png",
+            "role": "Developer",
+            "roleColor": "error"
         },
         {
             "id": 2,
-            "title": "Connections",
-            "total": 764
+            "teamName": "Support Team",
+            "totalMember": 176,
+            "avatar": "https://i.ibb.co/pnG4zWf/support-team.png",
+            "role": "Support",
+            "roleColor": "success"
         },
         {
             "id": 3,
-            "title": "Project Compiled",
-            "total": 123
+            "teamName": "UI Designer",
+            "totalMember": 21,
+            "avatar": "https://i.ibb.co/9TNGKxv/figma.png",
+            "role": "Designer",
+            "roleColor": "info"
+        },
+        {
+            "id": 4,
+            "teamName": "Vue Developer",
+            "totalMember": 342,
+            "avatar": "https://i.ibb.co/jDWjD7T/vue.png",
+            "role": "Developer",
+            "roleColor": "error"
+        },
+        {
+            "id": 5,
+            "teamName": "Digital Marketing",
+            "totalMember": 23,
+            "avatar": "https://i.ibb.co/bzcvq3T/twitter.png",
+            "role": "Marketing",
+            "roleColor": "lightgray"
+        }
+    ],
+    "teams": [
+        {
+            "extraMembers": 25,
+            "title": "React Developers",
+            "avatar": "https://i.ibb.co/DQDnGzw/react.png",
+            "avatarGroup": [
+                {
+                    "avatar": "https://i.ibb.co/pR2DQtZ/1.png",
+                    "name": "Vinnie Mostowy"
+                },
+                {
+                    "avatar": "https://i.ibb.co/DVxRbB7/2.png",
+                    "name": "Allen Rieske"
+                },
+                {
+                    "avatar": "https://i.ibb.co/41vBfv2/3.png",
+                    "name": "Julee Rossignol"
+                },
+                {
+                    "avatar": "https://i.ibb.co/7bt98f4/4.png",
+                    "name": "George Burrill"
+                }
+            ],
+            "description": "We don’t make assumptions about the rest of your technology stack, so you can develop new features in React.",
+            "chips": [
+                {
+                    "title": "React",
+                    "color": ""
+                },
+                {
+                    "title": "MUI",
+                    "color": "info"
+                }
+            ]
+        },
+        {
+            "extraMembers": 15,
+            "title": "Vue.js Dev Team",
+            "avatar": "https://i.ibb.co/jDWjD7T/vue.png",
+            "avatarGroup": [
+                {
+                    "avatar": "https://i.ibb.co/YT68xSC/5.png",
+                    "name": "Kaith D'souza"
+                },
+                {
+                    "avatar": "https://i.ibb.co/FzZ5TMb/6.png",
+                    "name": "John Doe"
+                },
+                {
+                    "avatar": "https://i.ibb.co/J5k44gj/7.png",
+                    "name": "Alan Walker"
+                },
+                {
+                    "avatar": "https://i.ibb.co/cv0f9Jw/8.png",
+                    "name": "Calvin Middleton"
+                }
+            ],
+            "description": "The development of Vue and its ecosystem is guided by an international team, some of whom have chosen to be featured below.",
+            "chips": [
+                {
+                    "title": "Vuejs",
+                    "color": "success"
+                },
+                {
+                    "color": "error",
+                    "title": "Developer"
+                }
+            ]
+        },
+        {
+            "extraMembers": 55,
+            "title": "Creative Designers",
+            "avatar": "https://i.ibb.co/Tv8ZBFx/illustrator.png",
+            "avatarGroup": [
+                {
+                    "avatar": "https://i.ibb.co/pR2DQtZ/1.png",
+                    "name": "Jimmy Ressula"
+                },
+                {
+                    "avatar": "https://i.ibb.co/DVxRbB7/2.png",
+                    "name": "Kristi Lawker"
+                },
+                {
+                    "avatar": "https://i.ibb.co/41vBfv2/3.png",
+                    "name": "Danny Paul"
+                },
+                {
+                    "avatar": "https://i.ibb.co/7bt98f4/4.png",
+                    "name": "Alicia Littleton"
+                }
+            ],
+            "description": "A design or product team is more than just the people on it. A team includes the people, the roles they play.",
+            "chips": [
+                {
+                    "title": "Sketch",
+                    "color": "warning"
+                },
+                {
+                    "title": "XD",
+                    "color": "error"
+                }
+            ]
+        },
+        {
+            "extraMembers": 35,
+            "title": "Support Team",
+            "avatar": "https://i.ibb.co/pnG4zWf/support-team.png",
+            "avatarGroup": [
+                {
+                    "avatar": "https://i.ibb.co/YT68xSC/5.png",
+                    "name": "Andrew Tye"
+                },
+                {
+                    "avatar": "https://i.ibb.co/FzZ5TMb/6.png",
+                    "name": "Rishi Swaat"
+                },
+                {
+                    "avatar": "https://i.ibb.co/J5k44gj/7.png",
+                    "name": "Rossie Kim"
+                },
+                {
+                    "avatar": "https://i.ibb.co/cv0f9Jw/8.png",
+                    "name": "Mary Hunter"
+                }
+            ],
+            "description": "Support your team. Your customer support team is fielding the good, the bad, and the ugly day in and day out.",
+            "chips": [
+                {
+                    "color": "info",
+                    "title": "Zendesk"
+                }
+            ]
+        },
+        {
+            "extraMembers": 19,
+            "title": "Digital Marketing",
+            "avatar": "https://i.ibb.co/bzcvq3T/twitter.png",
+            "avatarGroup": [
+                {
+                    "avatar": "https://i.ibb.co/pR2DQtZ/1.png",
+                    "name": "Kim Merchent"
+                },
+                {
+                    "avatar": "https://i.ibb.co/DVxRbB7/2.png",
+                    "name": "Sam D'souza"
+                },
+                {
+                    "avatar": "https://i.ibb.co/41vBfv2/3.png",
+                    "name": "Nurvi Karlos"
+                },
+                {
+                    "avatar": "https://i.ibb.co/7bt98f4/4.png",
+                    "name": "Margorie Whitmire"
+                }
+            ],
+            "description": "Digital marketing refers to advertising delivered through digital channels such as search engines, websites…",
+            "chips": [
+                {
+                    "color": "",
+                    "title": "Twitter"
+                },
+                {
+                    "title": "Email",
+                    "color": "success"
+                }
+            ]
+        },
+        {
+            "title": "Event",
+            "extraMembers": 55,
+            "avatar": "https://i.ibb.co/VgNQrkd/calendar.png",
+            "avatarGroup": [
+                {
+                    "avatar": "https://i.ibb.co/YT68xSC/5.png",
+                    "name": "Vinnie Mostowy"
+                },
+                {
+                    "avatar": "https://i.ibb.co/FzZ5TMb/6.png",
+                    "name": "Allen Rieske"
+                },
+                {
+                    "avatar": "https://i.ibb.co/J5k44gj/7.png",
+                    "name": "Julee Rossignol"
+                },
+                {
+                    "avatar": "https://i.ibb.co/cv0f9Jw/8.png",
+                    "name": "Daniel Long"
+                }
+            ],
+            "description": "Event is defined as a particular contest which is part of a program of contests. An example of an event is the long…",
+            "chips": [
+                {
+                    "title": "Hubilo",
+                    "color": "success"
+                }
+            ]
+        },
+        {
+            "extraMembers": 45,
+            "title": "Figma Resources",
+            "avatar": "https://i.ibb.co/qdn68L7/figma-main.png",
+            "avatarGroup": [
+                {
+                    "avatar": "https://i.ibb.co/pR2DQtZ/1.png",
+                    "name": "Andrew Mostowy"
+                },
+                {
+                    "avatar": "https://i.ibb.co/DVxRbB7/2.png",
+                    "name": "Micky Ressula"
+                },
+                {
+                    "avatar": "https://i.ibb.co/41vBfv2/3.png",
+                    "name": "Michel Pal"
+                },
+                {
+                    "avatar": "https://i.ibb.co/7bt98f4/4.png",
+                    "name": "Herman Lockard"
+                }
+            ],
+            "description": "Explore, install, use, and remix thousands of plugins and files published to the Figma Community by designers and developers.",
+            "chips": [
+                {
+                    "title": "UI/UX",
+                    "color": "success"
+                },
+                {
+                    "title": "Figma",
+                    "color": "secondary"
+                }
+            ]
+        },
+        {
+            "extraMembers": 50,
+            "title": "Only Beginners",
+            "avatar": "https://i.ibb.co/VNGPym8/html.png",
+            "avatarGroup": [
+                {
+                    "avatar": "https://i.ibb.co/YT68xSC/5.png",
+                    "name": "Kim Karlos"
+                },
+                {
+                    "avatar": "https://i.ibb.co/FzZ5TMb/6.png",
+                    "name": "Katy Turner"
+                },
+                {
+                    "avatar": "https://i.ibb.co/J5k44gj/7.png",
+                    "name": "Peter Adward"
+                },
+                {
+                    "avatar": "https://i.ibb.co/cv0f9Jw/8.png",
+                    "name": "Leona Miller"
+                }
+            ],
+            "description": "Learn the basics of how websites work, front-end vs back-end, and using a code editor. Learn basic HTML, CSS, and…",
+            "chips": [
+                {
+                    "title": "CSS",
+                    "color": "info"
+                },
+                {
+                    "title": "HTML",
+                    "color": "warning"
+                }
+            ]
+        }
+    ],
+    "loginHistory": [
+        {
+            "id": 1,
+            "browser": "Chrome",
+            "avatar": "https://i.ibb.co/37y2G8h/chrome.png",
+            "os": "Windows",
+            "device": "Dell XPs 15",
+            "location": "Damak, Nepal",
+            "timestamp": "3, Nov 2022 9:38"
+        },
+        {
+            "id": 4,
+            "browser": "Firefox",
+            "avatar": "https://i.ibb.co/KWv6ZN7/firefox.png",
+            "os": "Android",
+            "device": "Samsung Galaxy S22",
+            "location": "Damak, Nepal",
+            "timestamp": "21, May 2022 2:43"
+        },
+        {
+            "id": 2,
+            "browser": "Chrome",
+            "avatar": "https://i.ibb.co/37y2G8h/chrome.png",
+            "os": "Linux",
+            "device": "Lenvo Xcarbon",
+            "location": "KTM, Nepal",
+            "timestamp": "1, Nov 2022 10:21"
+        },
+        {
+            "id": 3,
+            "browser": "Firefox",
+            "avatar": "https://i.ibb.co/KWv6ZN7/firefox.png",
+            "os": "Linux",
+            "device": "Asus ZenBook 15",
+            "location": "Damak, Nepal",
+            "timestamp": "12, Sep 2022 3:32"
+        }
+    ],
+    "paymentMethods": [
+        {
+            "id": 1,
+            "cardName": "Mastercard",
+            "holderName": "John Doe",
+            "expireDate": "12/24",
+            "pin": "3232545476563343",
+            "cvc": 423,
+            "status": "primary"
+        },
+        {
+            "id": 2,
+            "cardName": "Visa",
+            "holderName": "Erica Mc.Man",
+            "primary": false,
+            "expireDate": "9/22",
+            "pin": "6343787533452565",
+            "cvc": 235,
+            "status": "expired"
+        },
+        {
+            "id": 4,
+            "cardName": "Mastercard",
+            "holderName": "Ashik Dhimal",
+            "expireDate": "01/24",
+            "pin": "124536835753265",
+            "cvc": 235,
+            "status": "secondary"
+        }
+    ],
+    "apiKey": [
+        {
+            "id": 1,
+            "apiName": "Cat & Lofi",
+            "assignedkey": "4krk234k-34k34-43kada-334dsgkSDF2dk43",
+            "permission": "Full ACCESS",
+            "createdDate": "12 Nov 2022, 18:20 GTM+5:45"
+        },
+        {
+            "id": 2,
+            "apiName": "Ghibli & Nature sound",
+            "assignedkey": "085346csd-KDSDGM7-43kada-agt3hsdhgARE",
+            "permission": "Full ACCESS",
+            "createdDate": "16 Nov 2022, 9:05 GTM10:45"
+        },
+        {
+            "id": 3,
+            "apiName": "Walk Alone",
+            "assignedkey": "fh34thfga-34k43434-23rgfgd-fy2q454434",
+            "permission": "Read Write",
+            "createdDate": "12 Nov 2022, 12:53 GTM11:45"
+        }
+    ],
+    "notificationSetting": [
+        {
+            "id": 1,
+            "type": "New for you",
+            "email": true,
+            "browser": false,
+            "app": false
+        },
+        {
+            "id": 2,
+            "type": "Accoun Activity",
+            "email": false,
+            "browser": false,
+            "app": true
+        },
+        {
+            "id": 3,
+            "type": "A new browser used to singin",
+            "email": true,
+            "browser": true,
+            "app": true
+        },
+        {
+            "id": 4,
+            "type": "A new device linked",
+            "email": true,
+            "browser": false,
+            "app": true
+        }
+    ],
+    "connectedAccounts": {
+        "social": [
+            {
+                "id": 1,
+                "name": "Facebook",
+                "connected": false,
+                "avatar": "https://i.ibb.co/hm10K47/facebook.png",
+                "uid": ""
+            },
+            {
+                "id": 2,
+                "name": "Twitter",
+                "connected": true,
+                "avatar": "https://i.ibb.co/bzcvq3T/twitter.png",
+                "uid": "@corde"
+            },
+            {
+                "id": 3,
+                "name": "LinkedIn",
+                "connected": true,
+                "avatar": "https://i.ibb.co/B35tPMm/linkedin.png",
+                "uid": "ashikdhimal"
+            },
+            {
+                "id": 4,
+                "name": "Instagram",
+                "connected": false,
+                "avatar": "https://i.ibb.co/qC7F2T6/instagram.png",
+                "uid": ""
+            },
+            {
+                "id": 5,
+                "name": "Behance",
+                "connected": false,
+                "avatar": "https://i.ibb.co/QmhGccH/behance.png",
+                "uid": ""
+            },
+            {
+                "id": 6,
+                "name": "Dribble",
+                "connected": false,
+                "avatar": "https://i.ibb.co/s36H4gs/dribble.png",
+                "uid": ""
+            }
+        ],
+        "main": [
+            {
+                "id": 1,
+                "name": "Google",
+                "title": "Calendar & Contacts",
+                "avatar": "https://i.ibb.co/qkxNynH/google.png",
+                "connected": true
+            },
+            {
+                "id": 2,
+                "name": "Github",
+                "title": "Manage your Git respositories",
+                "avatar": "https://i.ibb.co/nspVWrb/github.png",
+                "connected": true
+            },
+            {
+                "id": 3,
+                "name": "Slack",
+                "title": "Communication",
+                "avatar": "https://i.ibb.co/D1BVm8t/slack.png",
+                "connected": false
+            },
+            {
+                "id": 4,
+                "name": "Figma",
+                "title": "Design & Prototype",
+                "avatar": "https://i.ibb.co/qdn68L7/figma-main.png",
+                "connected": true
+            }
+        ]
+    },
+    "projects": [
+        {
+            "id": 1,
+            "daysLeft": 28,
+            "comments": 15,
+            "totalTask": 344,
+            "hours": "380/244",
+            "tasks": "290/344",
+            "budget": "$18.2k",
+            "completedTask": 328,
+            "deadline": "28/2/24",
+            "chipColor": "success",
+            "startDate": "14/2/23",
+            "budgetSpent": "$24.8k",
+            "members": "280 members",
+            "title": "Social Banners",
+            "client": "Luna Roach",
+            "avatar": "https://i.ibb.co/GMqztCH/social-media.png",
+            "description": "We are Consulting, Software Development and Web Development Services.",
+            "avatarGroup": [
+                {
+                    "avatar": "https://i.ibb.co/pR2DQtZ/1.png",
+                    "name": "Davon Cline"
+                },
+                {
+                    "avatar": "https://i.ibb.co/DVxRbB7/2.png",
+                    "name": "Johnny Bridges"
+                },
+                {
+                    "avatar": "https://i.ibb.co/41vBfv2/3.png",
+                    "name": "Zara Murray"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "daysLeft": 15,
+            "comments": 236,
+            "totalTask": 90,
+            "tasks": "12/90",
+            "hours": "98/135",
+            "budget": "$1.8k",
+            "completedTask": 38,
+            "deadline": "23/6/24",
+            "budgetSpent": "$2.4k",
+            "chipColor": "warning",
+            "startDate": "18/8/23",
+            "members": "1.1k members",
+            "title": "Admin Template",
+            "client": "Rex Buchanan",
+            "avatar": "https://i.ibb.co/DQDnGzw/react.png",
+            "avatarGroup": [
+                {
+                    "avatar": "https://i.ibb.co/7bt98f4/4.png",
+                    "name": "Diamond Baxter"
+                },
+                {
+                    "avatar": "https://i.ibb.co/YT68xSC/5.png",
+                    "name": "Marianna Shelton"
+                },
+                {
+                    "avatar": "https://i.ibb.co/FzZ5TMb/6.png",
+                    "name": "Rachel West"
+                }
+            ],
+            "description": "Time is our most valuable asset, that's why we want to help you save it by creating…"
+        },
+        {
+            "id": 3,
+            "daysLeft": 45,
+            "comments": 98,
+            "budget": "$420",
+            "totalTask": 140,
+            "tasks": "24/140",
+            "hours": "880/423",
+            "completedTask": 95,
+            "chipColor": "error",
+            "budgetSpent": "$980",
+            "deadline": "8/10/23",
+            "title": "App Design",
+            "startDate": "24/7/23",
+            "members": "458 members",
+            "client": "Jorden Wilkinson",
+            "avatar": "https://i.ibb.co/kMnx2yZ/sketch.png",
+            "description": "App design combines the user interface (UI) and user experience (UX).",
+            "avatarGroup": [
+                {
+                    "avatar": "https://i.ibb.co/J5k44gj/7.png",
+                    "name": "Mercedes Browning"
+                },
+                {
+                    "avatar": "https://i.ibb.co/cv0f9Jw/8.png",
+                    "name": "Hallie Farrell"
+                },
+                {
+                    "avatar": "https://i.ibb.co/pR2DQtZ/1.png",
+                    "name": "Leila Garner"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "comments": 120,
+            "daysLeft": 126,
+            "totalTask": 420,
+            "budget": "2.43k",
+            "tasks": "237/420",
+            "hours": "1.2k/820",
+            "completedTask": 302,
+            "deadline": "12/9/24",
+            "budgetSpent": "$8.5k",
+            "chipColor": "warning",
+            "startDate": "10/2/19",
+            "members": "137 members",
+            "client": "Ashton Odom",
+            "title": "Create Website",
+            "avatar": "https://i.ibb.co/VNGPym8/html.png",
+            "description": "Your domain name should reflect your products or services so that your...",
+            "avatarGroup": [
+                {
+                    "avatar": "https://i.ibb.co/DVxRbB7/2.png",
+                    "name": "Addison Arias"
+                },
+                {
+                    "avatar": "https://i.ibb.co/41vBfv2/3.png",
+                    "name": "Douglas Alvarado"
+                },
+                {
+                    "avatar": "https://i.ibb.co/7bt98f4/4.png",
+                    "name": "Marisol Horne"
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "daysLeft": 5,
+            "comments": 20,
+            "totalTask": 285,
+            "tasks": "29/285",
+            "budget": "28.4k",
+            "hours": "142/420",
+            "chipColor": "error",
+            "completedTask": 100,
+            "deadline": "25/12/23",
+            "startDate": "12/12/20",
+            "members": "82 members",
+            "budgetSpent": "$52.7k",
+            "client": "Lauryn Rivera",
+            "title": "Figma Dashboard",
+            "avatar": "https://i.ibb.co/9TNGKxv/figma.png",
+            "description": "Use this template to organize your design project. Some of the key features are…",
+            "avatarGroup": [
+                {
+                    "avatar": "https://i.ibb.co/YT68xSC/5.png",
+                    "name": "Fabian Flynn"
+                },
+                {
+                    "avatar": "https://i.ibb.co/FzZ5TMb/6.png",
+                    "name": "Yair Berry"
+                },
+                {
+                    "avatar": "https://i.ibb.co/J5k44gj/7.png",
+                    "name": "Trinity Kelly"
+                }
+            ]
+        },
+        {
+            "id": 6,
+            "daysLeft": 4,
+            "comments": 16,
+            "budget": "$655",
+            "totalTask": 290,
+            "tasks": "29/290",
+            "hours": "580/445",
+            "completedTask": 290,
+            "budgetSpent": "$1.3k",
+            "chipColor": "success",
+            "deadline": "02/11/23",
+            "startDate": "17/8/23",
+            "title": "Logo Design",
+            "members": "16 members",
+            "client": "Olive Strickland",
+            "avatar": "https://i.ibb.co/Tv8ZBFx/illustrator.png",
+            "description": "Premium logo designs created by top logo designers. Create the branding of business.",
+            "avatarGroup": [
+                {
+                    "avatar": "https://i.ibb.co/cv0f9Jw/8.png",
+                    "name": "Elisa Eaton"
+                },
+                {
+                    "avatar": "https://i.ibb.co/pR2DQtZ/1.png",
+                    "name": "Alyssa Petty"
+                },
+                {
+                    "avatar": "https://i.ibb.co/DVxRbB7/2.png",
+                    "name": "Emiliano Blevins"
+                }
+            ]
         }
     ]
 }

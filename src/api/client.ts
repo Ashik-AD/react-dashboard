@@ -1,11 +1,21 @@
+
+const mode = import.meta.env.DEV ? "dev" : "prod";
 export async function client(endpoint: string, { body, ...customConfig } :any = {}) {
     const headers = { 'Content-Type': 'application/json' }
+    const paths = endpoint.replaceAll("/", " ").trim().split(" ");
+    // const modeProdJsonPath = paths.length >= 2 ? paths[paths.length - 1]: ""
+    const modeProdJsonPath = mode === "prod" && paths.length >= 2 ? paths[paths.length - 1]: ""
     const config = {
         method: body ? "POST" : "GET",
         ...customConfig,
         headers: {
             ...headers,
             ...customConfig.headers,
+            "access-control-allow-origin": "*",
+            // "X-MASTER-KEY": `$2b$10$${import.meta.env.VITE_API_KEY}`,
+            // "X-JSON-path": modeProdJsonPath ? `$.${modeProdJsonPath}` : "" 
+            "X-MASTER-KEY": mode === "prod" ? `$2b$10$${import.meta.env.VITE_API_KEY}` : "",
+            "X-JSON-path": mode === "prod" ? `$.${modeProdJsonPath}` : ""
         }
     }
 
@@ -14,11 +24,13 @@ export async function client(endpoint: string, { body, ...customConfig } :any = 
     }
 
     let data;
+    const rootPath = mode === "dev" ? import.meta.env.VITE_DEV_API_ENDPOINT : import.meta.env.VITE_PROD_API_ENDPOINT;
     try {
-        const response = await window.fetch(endpoint, config);
-        const data = await response.json();
+        const response = await window.fetch(`${rootPath}${mode === "dev" ? endpoint : `/${paths[0]}/`}`, config);
+        // const response = await window.fetch(`${import.meta.env.VITE_PROD_API_ENDPOINT}${`/${paths[0]}/`}`, config);
+        const data = await response.json()
         if (response.ok) {
-            return data;
+             return mode === "dev"  ? data : Array.isArray(data.record) ?  data.record?.length > 1 ? data.record : data.record[0] : data.record;
         }
         throw new Error(response.statusText)
     }
@@ -33,3 +45,5 @@ client.get = function (endpoint: string, customConfig = {}) {
 client.post = function (endpoint: string, body: any, customConfig = {}) {
     return client(endpoint, { ...customConfig, body })
 }
+
+//[{}], [[]], [{}, {}]

@@ -1,5 +1,5 @@
 import { AnyAction } from 'redux';
-import { AppDispatch, AppThunk, RootState } from '../../store/store';
+import { AppThunk } from '../../store/store';
 import { client } from '../../api/client';
 import ChatActions from './Actions';
 import { fetchChatContacts, fetchChats, fetchChatUserProfile } from './creator';
@@ -122,15 +122,15 @@ export default function chatReducer(state = INITIAL_STATE, action: AnyAction): C
 }
 
 export const fetchUserProfile = async (dispatch: AppThunk) => {
-        const { user_profile } = await client.get("/api/chat/userprofile");
-        dispatch(fetchChatUserProfile(user_profile));
+        const res = await client.get("/6395f1a8c5b3a64f1bc9088e/userProfile");
+        dispatch(fetchChatUserProfile(res));
     
 }
 export const fetchChat = async (dispatch: AppThunk) => {
-    const res = await client.get('/api/chat/chats');
+    const res = await client.get('/6395f1a8c5b3a64f1bc9088e/chats');
     dispatch(fetchChats(res))
 }
 export const fetchChatContact = async (dispatch: AppThunk) => {
-    const res = await client.get("/api/chat/contacts");
+    const res = await client.get("/6395f1a8c5b3a64f1bc9088e/chatContacts");
     dispatch(fetchChatContacts(res));
 }

@@ -90,7 +90,7 @@ const userReducer = (state = INITIAL_STATE, action: AnyAction): UserListState =>
 export default userReducer;
 
 export async function fetchUserList(dispatch: AppDispatch) {
-    const response = await client.get("/api/users/list");
+    const response = await client.get("/6395f1d06a51bc4f704ce24a/users");
     dispatch(fetchUserListAction(response))
 }
 

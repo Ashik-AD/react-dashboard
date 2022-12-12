@@ -10,7 +10,9 @@ import TableCell from "../table/TableCell";
 import TableRow from "../table/TableRow";
 
 const PricingTable = () => {
-  const { data, loading } = useFetch<PricingTableAPI>("/api/pricing/table");
+  const { data, loading } = useFetch<PricingTableAPI>(
+    "/6395f1ff6a51bc4f704ce267/pricingTable"
+  );
   if (loading) return <Loading />;
   if (!data) return <></>;
 

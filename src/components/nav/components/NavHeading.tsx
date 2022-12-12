@@ -10,9 +10,22 @@ function NavHeading() {
     dispatch,
   } = useTheme();
   return (
-    <Box display="flex" justify="space-between" px={20} mt={8} py={16}>
+    <Box
+      display="flex"
+      align="center"
+      justify="space-between"
+      px={20}
+      mt={8}
+      py={16}
+    >
       <AppLogo />
-      <Choice name="menu-collaps" onChange={dispatch?.handleChangeMenuCollapse} selected={collapse ? "" : "collapsed"} value="collapsed" label="" />
+      <Choice
+        name="menu-collaps"
+        onChange={dispatch?.handleChangeMenuCollapse}
+        selected={collapse ? "" : "collapsed"}
+        value="collapsed"
+        label=""
+      />
     </Box>
   );
 }

@@ -1,5 +1,5 @@
 import { Menu } from "@mui/icons-material";
-import React, { createRef, useCallback, useEffect } from "react";
+import React, { createRef, useEffect } from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
 import Box from "../../components/box/Box";
 import Card from "../../components/card/Card";

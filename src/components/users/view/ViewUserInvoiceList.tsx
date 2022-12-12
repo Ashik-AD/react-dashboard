@@ -53,7 +53,7 @@ const UserInvoiceList = () => {
     if (invoiceList.length <= 0) {
       setLoading(true);
       fetchinvoiceList = async () => {
-        const res = await client.get("/api/invoices");
+        const res = await client.get("/6395f1bbc5b3a64f1bc9089c/");
         setInvoiceList(res);
         setLoading(false);
       };

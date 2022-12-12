@@ -1,3 +1,4 @@
+import { useId } from "react";
 import ScrollContainer from "../scroll-container/ScrollContainer";
 import NavGroup from "./components/NavGroup";
 import NavHeading from "./components/NavHeading";
@@ -13,11 +14,12 @@ const Nav = () => {
         <NavHeading />
         <ScrollContainer maxHeight="calc(100vh - 4rem)" scrollBarSize="4px">
           {navList.map((nav, index) => {
+            const key = useId();
             if (nav.childrens) {
               return (
                 <NavGroup
                   navData={{ parent: nav.parent!, childrens: nav.childrens }}
-                  key={index}
+                  key={key}
                 />
               );
             } else {
@@ -26,7 +28,7 @@ const Nav = () => {
                   label={nav.label!}
                   path={nav.path!}
                   icon={nav.icon}
-                  key={index}
+                  key={key}
                 />
               );
             }

@@ -12,7 +12,7 @@ const Security = () => {
       <TwoStepAuth isEnabled={false} />
       <CreateAPIkey />
       <APIkeyList />
-      <RecentLoggedDevices />
+      <RecentLoggedDevices url="/6395f1e7c5b3a64f1bc908ba/loginHistory" />
     </Box>
   );
 };

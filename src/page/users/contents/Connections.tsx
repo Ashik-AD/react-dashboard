@@ -12,7 +12,9 @@ const ConnectedAccounts = lazy(
 );
 
 const Connections = () => {
-  const { data } = useFetch<AccountConnectionAPI>("/api/users/connections");
+  const { data } = useFetch<AccountConnectionAPI>(
+    "/6395f1d06a51bc4f704ce24a/connectedAccounts"
+  );
   return (
     <Suspense fallback={<Loading />}>
       <GridInnerContainer spacing={1.6}>

@@ -1,11 +1,12 @@
 import AdvanceCard from "./CardAdvance";
 import CardItemSalesWithIcon from "../../card-items/CardItemSalesWithIcon";
-import formatNumber from "../../../utils/formatNumber";
 import { CustomAvatar } from "../../../ui";
 import useFetch from "../../../hooks/useFetch";
 
 const CardSalesByCountry = () => {
-  const { data, loading } = useFetch<SalesByCountryAPI>("/api/sales/byCountry");
+  const { data, loading } = useFetch<SalesByCountryAPI>(
+    "/6395f168c5b3a64f1bc90862/salesByCountry"
+  );
   if (loading || !data) return <></>;
   return (
     <AdvanceCard

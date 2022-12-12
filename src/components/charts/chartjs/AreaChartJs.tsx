@@ -50,7 +50,7 @@ const AreaChartJs = () => {
   ChartConfig(ChartJs);
 
   const { data, loading } = useFetch<{ datasets: ChartDataset<"line">[] }>(
-    "/api/chart-data/dataScience"
+    "/6395f24bc5b3a64f1bc908f4/dataScience"
   );
   if (!data || loading) return <Box height="400px">{""}</Box>;
   return <Line options={options} data={{ datasets: data.datasets, labels }} />;

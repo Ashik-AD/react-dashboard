@@ -31,7 +31,7 @@ const fieldsName = [
 ];
 const ProjectList = () => {
   const { data, loading } = useFetch<Array<ProjectListAPI>>(
-    "/api/users/projects"
+    "/6395f1d06a51bc4f704ce24a/projectList"
   );
   return (
     <Card>

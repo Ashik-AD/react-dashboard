@@ -7,7 +7,7 @@ import useFetch from "../../../../hooks/useFetch";
 
 const Connections = () => {
   const { data, loading } = useFetch<AccountConnectionAPI>(
-    "/api/account-settings/connections"
+    "/6395f1e7c5b3a64f1bc908ba/connectedAccounts"
   );
 
   if (loading) return <Loading />;

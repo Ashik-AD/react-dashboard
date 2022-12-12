@@ -8,7 +8,7 @@ import NotificationSettings, {
 
 const NotificationSetting = () => {
   const { data, loading } = useFetch<Array<NotificationsList>>(
-    "/api/users/notification/setting"
+    "/6395f1d06a51bc4f704ce24a/notificationSettings"
   );
   if (loading || !data) return <></>;
   return (

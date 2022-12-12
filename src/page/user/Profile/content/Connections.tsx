@@ -20,7 +20,7 @@ import {
 
 const Connections = () => {
   const { data, loading, error } = useFetch<ConnectionAPI[]>(
-    "/api/user-profile/connections"
+    "/6395f1e7c5b3a64f1bc908ba/connections"
   );
 
   if (loading) return <Loading />;

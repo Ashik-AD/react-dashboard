@@ -1,122 +1,232 @@
-[
-    {
-        "profile": {
-            "uid": 439492,
-            "user_name": "Francis Yokahama",
-            "avatar_src": "https://i.ibb.co/pR2DQtZ/1.png",
-            "role": "Frontend Developer",
-            "status": "Offline",
-            "about": "🥰 When one door of happiness closes, another opens, but often we look so long at the closed door that we do not see the one which has been opened for us."
-        },
-        "chats": {
-            "lastMessage": {
-                "total": 1,
-                "message": "New react dashboard mockup is finished?",
-                "isSeen": false,
-                "time": "Oct 2 2022, 10:52 am"
-            },
-            "chat": [
-                {
-                    "senderId": 439492,
-                    "message": "Hey Jhon!",
-                    "isSent": true,
-                    "isDelivered": true,
-                    "isSeen": true,
-                    "time": "Oct 1 2022, 08:47 pm"
-                },
-                {
-                    "senderId": 728232,
-                    "message": "Hi, how can i help  you?",
-                    "isSent": true,
-                    "isDelivered": true,
-                    "isSeen": true,
-                    "time": "Oct 1 2022, 08:48 pm"
-                },
-                {
-                    "senderId": 439492,
-                    "message": "Hey John, I am looking for the best admin template. Could you please help me to find it out?",
-                    "isSent": true,
-                    "isDelivered": true,
-                    "isSeen": true,
-                    "time": "Oct 3 2022, 04:12 pm"
-                },
-                {
-                    "senderId": 439492,
-                    "message": "It should be MUI v5 compatible.",
-                    "isSent": true,
-                    "isDelivered": true,
-                    "isSeen": true,
-                    "time": "Oct 3 2022, 04:13 pm"
-                },
-                {
-                    "senderId": 728232,
-                    "message": "Absolutely",
-                    "isSent": true,
-                    "isDelivered": true,
-                    "isSeen": true,
-                    "time": "Oct 3 2022, 04:15 pm"
-                },
-                {
-                    "senderId": 728232,
-                    "message": "This admin template is built with MUI",
-                    "isSent": true,
-                    "isDelivered": true,
-                    "isSeen": true,
-                    "time": "Oct 3 2022, 04:16 pm"
-                },
-                {
-                    "senderId": 439492,
-                    "message": "Cool! 😎",
-                    "isSent": true,
-                    "isDelivered": true,
-                    "isSeen": true,
-                    "time": "Oct 3 2022, 04:17 pm"
-                },
-                {
-                    "senderId": 439492,
-                    "message": "It looks so clean and fresh UI 🥰😍",
-                    "isSent": true,
-                    "isDelivered": true,
-                    "isSeen": true,
-                    "time": "Oct 3 2022, 04:18 pm"
-                }
-            ]
-        }
+{
+    "userProfile": {
+        "uid": 728232,
+        "user_name": "John Doe",
+        "avatar_src": "https://i.ibb.co/41vBfv2/3.png",
+        "role": "admin",
+        "status": "Online",
+        "about": "🥰 I have always thought the actions of men the best interpreters of their thought.✌️"
     },
-    {
-        "profile": {
-            "uid": 833443,
-            "user_name": "Erica Harbor",
-            "avatar_src": "https://i.ibb.co/YT68xSC/5.png",
-            "role": "Product Manager",
-            "status": "Dnd",
-            "about": "I have always believed that each man makes his own happiness and is responsible for his own problems. It is a simple philosophy."
-        },
-        "chats": {
-            "lastMessage": {
-                "total": 3,
-                "message": "We're looking for mockup design for our new Sass.",
-                "isSeen": false,
-                "time": "Oct 14 2022, 2:05 am"
+    "chats": [
+        {
+            "profile": {
+                "uid": 439492,
+                "user_name": "Francis Yokahama",
+                "avatar_src": "https://i.ibb.co/pR2DQtZ/1.png",
+                "role": "Frontend Developer",
+                "status": "Offline",
+                "about": "🥰 When one door of happiness closes, another opens, but often we look so long at the closed door that we do not see the one which has been opened for us."
             },
-            "chat": [
-                {
-                    "senderId": 439492,
-                    "message": "Hey Jhon!",
-                    "isSent": true,
-                    "isDelivered": true,
-                    "isSeen": true,
-                    "time": "Oct 1 2022, 08:47 pm"
+            "chats": {
+                "lastMessage": {
+                    "total": 1,
+                    "message": "New react dashboard mockup is finished?",
+                    "isSeen": false,
+                    "time": "Oct 2 2022, 10:52 am"
                 },
-                {
-                    "senderId": 833443,
-                    "message": "Hi, how can i help  you?",
-                    "isSent": true,
-                    "isDelivered": true,
-                    "isSeen": true,
-                    "time": "Oct 1 2022, 08:48 pm"
-                }
-            ]
+                "chat": [
+                    {
+                        "senderId": 439492,
+                        "message": "Hey Jhon!",
+                        "isSent": true,
+                        "isDelivered": true,
+                        "isSeen": true,
+                        "time": "Oct 1 2022, 08:47 pm"
+                    },
+                    {
+                        "senderId": 728232,
+                        "message": "Hi, how can i help  you?",
+                        "isSent": true,
+                        "isDelivered": true,
+                        "isSeen": true,
+                        "time": "Oct 1 2022, 08:48 pm"
+                    },
+                    {
+                        "senderId": 439492,
+                        "message": "Hey John, I am looking for the best admin template. Could you please help me to find it out?",
+                        "isSent": true,
+                        "isDelivered": true,
+                        "isSeen": true,
+                        "time": "Oct 3 2022, 04:12 pm"
+                    },
+                    {
+                        "senderId": 439492,
+                        "message": "It should be MUI v5 compatible.",
+                        "isSent": true,
+                        "isDelivered": true,
+                        "isSeen": true,
+                        "time": "Oct 3 2022, 04:13 pm"
+                    },
+                    {
+                        "senderId": 728232,
+                        "message": "Absolutely",
+                        "isSent": true,
+                        "isDelivered": true,
+                        "isSeen": true,
+                        "time": "Oct 3 2022, 04:15 pm"
+                    },
+                    {
+                        "senderId": 728232,
+                        "message": "This admin template is built with MUI",
+                        "isSent": true,
+                        "isDelivered": true,
+                        "isSeen": true,
+                        "time": "Oct 3 2022, 04:16 pm"
+                    },
+                    {
+                        "senderId": 439492,
+                        "message": "Cool! 😎",
+                        "isSent": true,
+                        "isDelivered": true,
+                        "isSeen": true,
+                        "time": "Oct 3 2022, 04:17 pm"
+                    },
+                    {
+                        "senderId": 439492,
+                        "message": "It looks so clean and fresh UI 🥰😍",
+                        "isSent": true,
+                        "isDelivered": true,
+                        "isSeen": true,
+                        "time": "Oct 3 2022, 04:18 pm"
+                    }
+                ]
+            }
+        },
+        {
+            "profile": {
+                "uid": 833443,
+                "user_name": "Erica Harbor",
+                "avatar_src": "https://i.ibb.co/YT68xSC/5.png",
+                "role": "Product Manager",
+                "status": "Dnd",
+                "about": "I have always believed that each man makes his own happiness and is responsible for his own problems. It is a simple philosophy."
+            },
+            "chats": {
+                "lastMessage": {
+                    "total": 3,
+                    "message": "We're looking for mockup design for our new Sass.",
+                    "isSeen": false,
+                    "time": "Oct 14 2022, 2:05 am"
+                },
+                "chat": [
+                    {
+                        "senderId": 439492,
+                        "message": "Hey Jhon!",
+                        "isSent": true,
+                        "isDelivered": true,
+                        "isSeen": true,
+                        "time": "Oct 1 2022, 08:47 pm"
+                    },
+                    {
+                        "senderId": 833443,
+                        "message": "Hi, how can i help  you?",
+                        "isSent": true,
+                        "isDelivered": true,
+                        "isSeen": true,
+                        "time": "Oct 1 2022, 08:48 pm"
+                    }
+                ]
+            }
         }
-    }
-]
+    ],
+    "chatContacts": [
+        {
+            "profile": {
+                "uid": 739232,
+                "user_name": "Jinx McMarc",
+                "avatar_src": "https://i.ibb.co/DVxRbB7/2.png",
+                "role": "Backend Developer",
+                "status": "Offline",
+                "about": "People have so manipulated the concept of freedom that it finally boils down to the right of the stronger and richer to take from the weaker and poorer whatever they still have."
+            },
+            "chats": {
+                "lastMessage": {},
+                "chat": []
+            }
+        },
+        {
+            "profile": {
+                "uid": 235343,
+                "user_name": "Violet Hikina",
+                "avatar_src": "https://i.ibb.co/J5k44gj/7.png",
+                "role": "SEO Specialist",
+                "status": "Online",
+                "about": "I am a marvelous housekeeper. Every time I leave a man I keep his house."
+            },
+            "chats": {
+                "lastMessage": {},
+                "chat": []
+            }
+        },
+        {
+            "profile": {
+                "uid": 935656,
+                "user_name": "Itsuka Kielly",
+                "avatar_src": "https://i.ibb.co/FzZ5TMb/6.png",
+                "role": "HOD",
+                "status": "Online",
+                "about": "Whatever is done well enough is done quickly enough."
+            },
+            "chats": {
+                "lastMessage": {},
+                "chat": []
+            }
+        },
+        {
+            "profile": {
+                "uid": 734464,
+                "user_name": "Mike Tyson",
+                "avatar_src": "https://i.ibb.co/cv0f9Jw/8.png",
+                "role": "Manager",
+                "status": "Dnd",
+                "about": "Music is the only religion that delivers the goods"
+            },
+            "chats": {
+                "lastMessage": {},
+                "chat": []
+            }
+        },
+        {
+            "profile": {
+                "uid": 425324,
+                "user_name": "Julia Child",
+                "avatar_src": "https://i.ibb.co/pR2DQtZ/1.png",
+                "role": "Fullstack Developer",
+                "status": "Away",
+                "about": "People who love to eat are always the best people."
+            },
+            "chats": {
+                "lastMessage": {},
+                "chat": []
+            }
+        },
+        {
+            "profile": {
+                "uid": 315345,
+                "user_name": "Indiana Joans",
+                "avatar_src": "https://i.ibb.co/fnDdLt9/9.png",
+                "role": "Sr. Architect",
+                "status": "Online",
+                "about": "Of all your troubles, great and small, the greatest are the ones that don't happen at all.        "
+            },
+            "chats": {
+                "lastMessage": {},
+                "chat": []
+            }
+        },
+        {
+            "profile": {
+                "uid": 76320,
+                "user_name": "Ana Thux",
+                "avatar_src": "https://i.ibb.co/YT68xSC/5.png",
+                "role": "Backend Developer",
+                "status": "Offline",
+                "about": ""
+            },
+            "chats": {
+                "lastMessage": {},
+                "chat": []
+            }
+        }
+    ]
+}

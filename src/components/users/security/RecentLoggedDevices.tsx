@@ -5,16 +5,12 @@ import Table from "../../layout/table/Table";
 import TableCell from "../../table/TableCell";
 import TableRow from "../../table/TableRow";
 
-import ImgChrome from "../../../image/logo/chrome.png";
-import ImgFirefox from "../../../image/logo/firefox.png";
 import useFetch from "../../../hooks/useFetch";
 import Loading from "../../loading/Loading";
 const fields = ["Browser", "Device", "Location", "Recent Activity"];
 
-const RecentLoggedDevices = () => {
-  const { data, loading } = useFetch<Array<LoggedListAPI>>(
-    "/api/users/logged-recent"
-  );
+const RecentLoggedDevices = ({ url }: { url: string }) => {
+  const { data, loading } = useFetch<Array<LoggedListAPI>>(url);
 
   return (
     <Card>
@@ -42,15 +38,7 @@ const RecentLoggedDevices = () => {
               <TableCell
                 value={
                   <Box display="flex" align="center" space={0.6}>
-                    <Avatar
-                      src={
-                        item.browser === ("Chrome" || "chrome")
-                          ? ImgChrome
-                          : ImgFirefox
-                      }
-                      alt="browser-logo"
-                      size={28}
-                    />
+                    <Avatar src={item.avatar} alt="browser-logo" size={28} />
                     <Text varient="body2" weight="medium">
                       {item.browser} on {item.os}
                     </Text>
@@ -74,6 +62,7 @@ export default RecentLoggedDevices;
 interface LoggedListAPI {
   id: number;
   os: string;
+  avatar: string;
   browser: string;
   device: string;
   location: string;

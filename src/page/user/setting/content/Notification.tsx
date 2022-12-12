@@ -9,7 +9,7 @@ import { Button, Select, SelectItem, Text } from "../../../../ui";
 
 const Notification = () => {
   const { data, loading } = useFetch<Array<NotificationsList>>(
-    "/api/account-settings/notification/setting"
+    "/6395f1e7c5b3a64f1bc908ba/notificationSetting"
   );
   if (loading) return <Loading />;
   if (!data) return <></>;

@@ -254,6 +254,6 @@ function hasOne(arrItems: any[], key: any) {
 }
 
 export const fetchEmail = async (dispatch: AppThunk) => {
-    const reqeust = await client.get("/api/email/emails");
+    const reqeust = await client.get("/6395f17e6a51bc4f704ce219");
     dispatch(fetchEmails(reqeust))
 }

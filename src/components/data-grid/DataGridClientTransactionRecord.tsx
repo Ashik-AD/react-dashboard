@@ -21,7 +21,9 @@ const gridColumns = [
   formatDataGridColumn("balance", "Balance", "150px"),
 ];
 const DataGridClientTransactionRecord = () => {
-  const { data, loading } = useFetch<Transactions[]>("/api/client-transaction");
+  const { data, loading } = useFetch<Transactions[]>(
+    "/6395f168c5b3a64f1bc90862/clientTransaction"
+  );
   if (!data || loading) return <Card height="400px"></Card>;
   return (
     <Card className="overflow-hidden">

@@ -49,7 +49,7 @@ const LineChartJs = () => {
 
   const { data, loading } = useFetch<
     { label: string; color: string; data: Array<Number> }[]
-  >("/api/chart-data/techData");
+  >("/6395f24bc5b3a64f1bc908f4/techData");
 
   if (!data || loading) return <Box height="400px">{""}</Box>;
   return (

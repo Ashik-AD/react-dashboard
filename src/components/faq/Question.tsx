@@ -47,7 +47,7 @@ const Question: FC<QuestionProp> = ({ questions }) => {
           </GridItem>
           <GridItem xs={12} md={9}>
             {questions.map((qn, index) => (
-              <TabContent tabIndex={index}>
+              <TabContent tabIndex={index} key={qn.id}>
                 {/* Queston title and subtitle */}
                 {qn.id === currentQnA.id && (
                   <Box display="flex" space={1} align="center" mb={16}>

@@ -39,7 +39,7 @@ const invoiceReducer = (state = INITIAL_STATE, action: AnyAction): InvoiceState 
 export default invoiceReducer;
 
 export const fetchInvoiceData = async (dispatch: AppDispatch, getState: RootState) => {
-    const response = await client.get('/api/invoices');
+    const response = await client.get('/6395f1bbc5b3a64f1bc9089c');
     dispatch(fetchInvoice(response))
 }
 

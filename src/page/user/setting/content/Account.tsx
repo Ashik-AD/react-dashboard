@@ -7,7 +7,7 @@ import useFetch from "../../../../hooks/useFetch";
 
 const Account = () => {
   const { data, loading } = useFetch<ProfileSettings>(
-    "/api/account-settings/personal-form"
+    "/6395f1e7c5b3a64f1bc908ba/profileFormSetting"
   );
   if (loading) return <Loading />;
   return (

@@ -8,7 +8,10 @@ import Theme from "./theme/Theme";
 import { BrowserRouter as Router } from "react-router-dom";
 
 import server from "./api/server";
-server();
+const isDevMode = import.meta.env.DEV;
+// if (isDevMode) {
+//   server();
+// }
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>

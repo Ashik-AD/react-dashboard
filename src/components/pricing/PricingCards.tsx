@@ -1,4 +1,5 @@
 import { useState } from "react";
+import useFetch from "../../hooks/useFetch";
 import { Button, Chip, Toggle } from "../../ui";
 import Box from "../box/Box";
 import { GridInnerContainer, GridItem } from "../layout";
@@ -10,7 +11,45 @@ import PricingCard from "./PricingCard";
 
 const PricingCards = () => {
   const [showAnnually, setShowAnnually] = useState<boolean>(true);
+  const { data } = useFetch<Array<PricingPlanAPI>>(
+    "/6395f1ff6a51bc4f704ce267/pricingPlans"
+  );
 
+  if (!data) return <></>;
+
+  const renderPlanCards = data.map((plan) => (
+    <GridItem xs={12} md={4} key={plan.title}>
+      <PricingCard
+        borderColor={plan.popularPlan ? "skin" : ""}
+        action={
+          <Button varient="outlined" width="100%">
+            {plan.currentPlan ? "your current plan" : "upgrade"}
+          </Button>
+        }
+      >
+        {plan.popularPlan && (
+          <PriceCardTags>
+            <Chip label="Popular" skin="light" size="small" labelWeight={600} />
+          </PriceCardTags>
+        )}
+        <PriceCardHeader
+          icon={plan.imgSrc}
+          cardTitle={plan.title}
+          cardSlug={plan.subtitle}
+        />
+        <PriceTag
+          price={plan.monthlyPrice}
+          slug={
+            plan.yearlyPlan.totalAnnual > 0 && showAnnually
+              ? `USD ${plan.yearlyPlan.totalAnnual}/year`
+              : ""
+          }
+          type="month"
+        />
+        <PriceCardFeatures list={plan.planBenefits} />
+      </PricingCard>
+    </GridItem>
+  ));
   return (
     <Box width="100%" display="flex" flexDirection="column">
       <Box
@@ -27,103 +66,21 @@ const PricingCards = () => {
           label="Annually"
         />
       </Box>
-      <GridInnerContainer spacing={1.6}>
-        <GridItem xs={12} md={4}>
-          {/* Basic Plan */}
-          <PricingCard
-            action={
-              <Button varient="outlined" width="100%">
-                your current plan
-              </Button>
-            }
-          >
-            <PriceCardHeader
-              icon="https://i.ibb.co/9v7HYVL/basic.png"
-              cardTitle="Basic"
-              cardSlug="A simple start for everyone"
-            />
-            <PriceTag price={0} type="month" />
-            <PriceCardFeatures
-              list={[
-                "1000 response a month",
-                "Unlimited forms and surveyes",
-                "Unlimited fields",
-                "Basic form creation tools",
-                "Up to 2 subdomains",
-              ]}
-            />
-          </PricingCard>
-        </GridItem>
-
-        <GridItem xs={12} md={4}>
-          {/* Standard Plan */}
-          <PricingCard
-            borderColor="skin"
-            action={<Button width="100%">Upgrade</Button>}
-          >
-            <PriceCardTags>
-              <Chip
-                label="Popular"
-                skin="light"
-                size="small"
-                styles={{ fontWeight: 600 }}
-              />
-            </PriceCardTags>
-            <PriceCardHeader
-              icon="https://i.ibb.co/vmgPKTG/standard.png"
-              cardTitle="Standard"
-              cardSlug="For small to medium businesses"
-            />
-            <PriceTag
-              price={showAnnually ? 40 : 49}
-              type="month"
-              slug={showAnnually ? "USD 480/year" : ""}
-            />
-            <PriceCardFeatures
-              list={[
-                "1000 response a month",
-                "Unlimited forms and surveyes",
-                "UInstagram profile page",
-                "Google Docs integration",
-                "Custom “Thank you” page",
-              ]}
-            />
-          </PricingCard>
-        </GridItem>
-
-        <GridItem xs={12} md={4}>
-          {/* Enterprise Plan */}
-          <PricingCard
-            action={
-              <Button varient="outlined" width="100%">
-                Upgrade
-              </Button>
-            }
-          >
-            <PriceCardHeader
-              icon="https://i.ibb.co/JR4gf9W/enterprise.png"
-              cardTitle="Enterprise"
-              cardSlug="Solution for big organizations"
-            />
-            <PriceTag
-              price={showAnnually ? 80 : 99}
-              type="month"
-              slug={showAnnually ? "USD 960/year" : ""}
-            />
-
-            <PriceCardFeatures
-              list={[
-                "PayPal payments",
-                "PayPal payments",
-                "File upload with 5GB storage",
-                "Custom domain support",
-                "Stripe integration",
-              ]}
-            />
-          </PricingCard>
-        </GridItem>
-      </GridInnerContainer>
+      <GridInnerContainer spacing={1.6}>{renderPlanCards}</GridInnerContainer>
     </Box>
   );
 };
 export default PricingCards;
+interface PricingPlanAPI {
+  title: string;
+  monthlyPrice: number;
+  currentPlan: boolean;
+  popularPlan: boolean;
+  subtitle: string;
+  imgSrc: string;
+  yearlyPlan: {
+    perMonth: number;
+    totalAnnual: number;
+  };
+  planBenefits: Array<string>;
+}

@@ -1,4 +1,3 @@
-import { useId } from "react";
 import Box from "../../../../components/box/Box";
 import Card from "../../../../components/card/Card";
 import { GridInnerContainer, GridItem } from "../../../../components/layout";
@@ -11,7 +10,7 @@ import AvatarGroup from "../../../../ui/avatar/AvatarGroup";
 
 const Team = () => {
   const { data, loading, error } = useFetch<Array<TeamAPI>>(
-    "/api/user-profile/teams"
+    "/6395f1e7c5b3a64f1bc908ba/teams/"
   );
   if (loading) return <Loading />;
   if (!data || error) return <></>;

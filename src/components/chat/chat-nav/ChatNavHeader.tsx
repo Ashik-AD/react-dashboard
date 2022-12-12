@@ -19,6 +19,7 @@ const ChatNavHeader: FC<Props> = ({ handleOnInputChange }) => {
   const currentUser = useAppSelector(selectUserProfile, shallowEqual);
   const { user_name, avatar_src, icon, color, status } = currentUser;
   const { handleModal } = useContext(chatModalCtx);
+
   const handleTooggleModal = () => {
     setShowUserProfileModal((prevState) => !prevState);
     closeMobileChatNav && closeMobileChatNav();

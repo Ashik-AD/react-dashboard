@@ -13,7 +13,7 @@ import ViewAllText from "./components/ViewAllText";
 
 interface ConnectionsAPI {
   id: number;
-  fullName: string;
+  name: string;
   isFriend: boolean;
   totalConnection: number;
   avatar: string;
@@ -22,16 +22,16 @@ interface ConnectionsAPI {
 
 const ConnectionList = () => {
   const { data, loading } = useFetch<Array<ConnectionsAPI>>(
-    "/api/user-profile/profile/connections"
+    "/6395f1e7c5b3a64f1bc908ba/connections"
   );
   if (loading || !data) return <></>;
 
-  const renderConnections = data.map((cn) => {
+  const renderConnections = data.slice(0, 5).map((cn) => {
     const connections = formatNumber(cn.totalConnection, 1000);
     return (
       <Box key={cn.id} display="flex" align="center" justify="space-between">
         <AvatarWithTitle
-          title={cn.fullName}
+          title={cn.name}
           subtitle={`${connections} Connections`}
           avatarsrc={cn.avatar}
           avatarColor={cn.avatarColor}
