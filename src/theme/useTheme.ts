@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 import SettingType from './type';
 import { ThemeContext } from './Theme';
 import ThemeActionType from './themeAction';

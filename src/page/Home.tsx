@@ -6,6 +6,7 @@ const ThemeCustomizer = lazy(
 );
 import { Flex } from "../components/layout";
 import AppLayout from "../components/layout/AppLayout";
+import PageLoading from "../components/loading/PageLoading";
 import Nav from "../components/nav/Nav";
 const PageNotFound = lazy(() => import("./404/PageNotFound"));
 const Analytics = lazy(() => import("./analytics"));
@@ -32,7 +33,7 @@ const Home = () => {
             marginTop: "-20px",
           }}
         >
-          <Suspense fallback={<h1>loading..</h1>}>
+          <Suspense fallback={<PageLoading />}>
             <Routes>
               <Route index element={<CRM />} />
               <Route path="/dashboards/crm/" element={<CRM />} />

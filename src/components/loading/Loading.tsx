@@ -11,19 +11,19 @@ const Loading = () => (
     py={36}
     className="loading__container"
   >
-    <StyledLoader className="loading-content">
+    <StyledLoading className="loading-content">
       <Text size={32} align="center" lineHeight="48px" skinColor paragraph>
         <AiOutlineLoading className="spin" />
       </Text>
       <Text varient="body2" weight="medium" align="center" paragraph>
         Loading...
       </Text>
-    </StyledLoader>
+    </StyledLoading>
   </Box>
 );
 export default Loading;
 
-const StyledLoader = styled(Box)`
+export const StyledLoading = styled(Box)`
   & svg {
     animation: spin 1000ms infinite;
   }

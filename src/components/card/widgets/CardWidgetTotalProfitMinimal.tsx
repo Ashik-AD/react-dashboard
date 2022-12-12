@@ -1,4 +1,4 @@
-import { ApexOptions } from "apexcharts";
+import type { ApexOptions } from "apexcharts";
 import ReactApexChart from "react-apexcharts";
 import useTheme from "../../../theme/useTheme";
 import { Chip, Text } from "../../../ui";

@@ -1,4 +1,4 @@
-import { TooltipProps } from "recharts";
+import type { TooltipProps } from "recharts";
 import {
   NameType,
   ValueType,

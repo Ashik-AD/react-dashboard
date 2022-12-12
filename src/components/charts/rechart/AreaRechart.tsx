@@ -6,7 +6,6 @@ import { ResponsiveContainer } from "recharts";
 import { YAxis } from "recharts";
 import { AreaChart } from "recharts";
 import useFetch from "../../../hooks/useFetch";
-import useTheme from "../../../theme/useTheme";
 import Box from "../../box/Box";
 import CustomLegend from "./component/CustomLegend";
 import CustomTooltip from "./component/CustomTooltip";

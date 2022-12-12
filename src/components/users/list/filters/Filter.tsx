@@ -1,4 +1,4 @@
-import { FC, useId } from "react";
+import { FC } from "react";
 import { Select, SelectItem } from "../../../../ui";
 
 const UserListFilter: FC<Props> = (props) => {

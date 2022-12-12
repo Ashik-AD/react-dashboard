@@ -41,7 +41,6 @@ const leftScrollItem = (
   let x = null;
   for (let i = 0; i < nodes.length; i++) {
     const { left } = nodes[i]?.getBoundingClientRect();
-    console.log(x, xWidth);
     if (left >= xWidth) {
       break;
     }

@@ -13,7 +13,6 @@ import {
   Avatar,
   Button,
   Chip,
-  Divider,
   IconButton,
   Text,
 } from "../../../../ui";

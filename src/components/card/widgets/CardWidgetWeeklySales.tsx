@@ -3,11 +3,10 @@ import useTheme from "../../../theme/useTheme";
 import { CustomAvatar, Text } from "../../../ui";
 import Card from "../Card";
 import CustomCardTitle from "../titles/CustomCardTitle";
-import { ApexOptions } from "apexcharts";
+import type { ApexOptions } from "apexcharts";
 import Box from "../../box/Box";
 import CardItemAnalyticsWithIcon from "../../card-items/CardItemAnalyticsWithIcon";
 import { AttachMoney, TrendingUp } from "@mui/icons-material";
-import { GridInnerContainer } from "../../layout";
 const CardWidgetWeeklySales = () => {
   const { theme } = useTheme();
   const chartOptions: { series: any; option: ApexOptions } = {

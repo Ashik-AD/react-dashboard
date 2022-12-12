@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { alertColor, AlertColorType, Colors } from '../color/alert';
+import { alertColor, Colors } from '../color/alert';
 import DotProps from './type';
 const UiDot = styled("div") <DotProps>`
   position: relative;

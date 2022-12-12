@@ -1,4 +1,3 @@
-import React from "react";
 import { BarChart, CartesianGrid, Tooltip, YAxis } from "recharts";
 import { XAxis } from "recharts";
 import { Legend } from "recharts";

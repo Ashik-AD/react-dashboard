@@ -8,6 +8,7 @@ import Box from "../../box/Box";
 import { GridContainer, GridItem } from "../../layout";
 import Card from "../Card";
 import CustomCardTitle from "../titles/CustomCardTitle";
+
 const CardFinanceSummary = () => {
   const {
     theme: { primaryColor },

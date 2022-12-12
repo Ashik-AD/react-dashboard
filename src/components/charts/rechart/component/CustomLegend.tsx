@@ -1,4 +1,4 @@
-import { Props } from "recharts/types/component/DefaultLegendContent";
+import type { Props } from "recharts/types/component/DefaultLegendContent";
 import styled, { CSSProperties } from "styled-components";
 import { Text } from "../../../../ui";
 import Box from "../../../box/Box";

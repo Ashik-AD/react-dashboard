@@ -2,7 +2,6 @@ import { forwardRef, ReactNode, useImperativeHandle, useState } from "react";
 import { Link } from "react-router-dom";
 import { Checkbox, Divider, Text } from "../../ui";
 import Box from "../box/Box";
-import Card from "../card/Card";
 import Table from "../layout/table/Table";
 import TableCell from "../table/TableCell";
 import TableRow from "../table/TableRow";

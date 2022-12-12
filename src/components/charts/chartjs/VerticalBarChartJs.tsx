@@ -2,13 +2,12 @@ import {
   Chart as ChartJs,
   Tooltip,
   LinearScale,
-  Legend,
   PointElement,
-  ChartOptions,
-  ChartDataset,
   CategoryScale,
   BarElement,
 } from "chart.js";
+import type { ChartOptions } from "chart.js";
+
 import { Bar } from "react-chartjs-2";
 import ChartConfig from "./chartjs.config";
 

@@ -52,6 +52,7 @@ const InvoiceList = () => {
           </GridItem>
         </GridInnerContainer>
       </Box>
+
       <InvoiceTable />
     </Card>
   );

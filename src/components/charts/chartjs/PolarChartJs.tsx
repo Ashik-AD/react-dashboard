@@ -2,8 +2,6 @@ import { PolarArea } from "react-chartjs-2";
 import {
   ArcElement,
   Chart as ChartJs,
-  ChartData,
-  ChartOptions,
   Filler,
   Legend,
   LineElement,
@@ -11,9 +9,11 @@ import {
   RadialLinearScale,
   Tooltip,
 } from "chart.js";
+import type {ChartOptions, ChartData} from 'chart.js'
+
 import useFetch from "../../../hooks/useFetch";
-import Box from "../../box/Box";
 import ChartConfig from "./chartjs.config";
+import ChartPlaceholder from "../components/ChartPlaceholder";
 ChartJs.register(
   RadialLinearScale,
   LineElement,
@@ -63,7 +63,7 @@ const PolarChartJs = () => {
   const { data, loading } = useFetch<ChartData<"polarArea">>(
     "/6395f24bc5b3a64f1bc908f4/averageSkills"
   );
-  if (!data || loading) return <Box height="400px">{""}</Box>;
+  if (!data || loading) return <ChartPlaceholder />;
   return (
     <PolarArea width={"100%"} height={400} options={options} data={data} />
   );

@@ -1,5 +1,6 @@
-import { ApexOptions } from "apexcharts";
+import type { ApexOptions } from "apexcharts";
 import useFetch from "../../../../hooks/useFetch";
+import ChartPlaceholder from "../../components/ChartPlaceholder";
 import Apex from "../Apex";
 
 const ScatterChart = () => {
@@ -42,7 +43,7 @@ const ScatterChart = () => {
     },
   };
 
-  if (!data || loading) return <></>;
+  if (!data || loading) return <ChartPlaceholder />;
   return (
     <>
       <Apex

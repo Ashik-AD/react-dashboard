@@ -1,14 +1,10 @@
 import styled from "styled-components";
 import { ButtonType, IconButtonProps } from ".";
-import genColorShades, { addOpacityInHex } from "../../utils/genColorShades";
+import genColorShades from "../../utils/genColorShades";
 import { alertColor, Colors } from "../color/alert";
 
 const skinColor = (color: string) => alertColor.hasOwnProperty(color) ? alertColor[color as keyof Colors] : color
-// const hoverColor = (color: string, varient: any) => {
-//   let genColor = alertColor.hasOwnProperty(color) ? varient === 'contained' ? genColorShades(color, { total: 1, intensity: 8 }) : genColorShades(color, { total: 1, intensity: 3 }) : varient === 'contained' ? addOpacityInHex(color, { initiator: 'e', follower: 'd' }) : addOpacityInHex(color, { initiator: 2 });
-//   console.log(genColor)
-//   return genColor?.toLocaleString();
-// }
+
 const normalButton = styled.button<ButtonType>`
   display: inline-flex;
   // flex: 0 0 auto;
@@ -33,7 +29,7 @@ const normalButton = styled.button<ButtonType>`
   transition: 300ms background ease-out;
 
   &:hover {
-    background: ${({ theme, color, varient }) => varient === 'contained' ? genColorShades(color ? color : theme.primaryColor.color, { total: 1, intensity: 9 }).toString() : genColorShades(color ? color : theme.primaryColor.color, { total: 1, intensity: 6 }).toString()};
+    background: ${({ theme, color, varient }) => varient === 'contained' ? genColorShades(color ? color : theme.primaryColor.color, { total: 1, intensity: 9 }).toString() : genColorShades(color ? color : theme.primaryColor.color, { total: 1, intensity: 2 }).toString()};
     transition: 200ms ease;
   }
 `;

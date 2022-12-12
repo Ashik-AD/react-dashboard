@@ -5,9 +5,7 @@ import {
   PhotoOutlined,
   StarBorderOutlined,
 } from "@mui/icons-material";
-import Box from "../../../box/Box";
 import ProfileOptions from "../Options";
-import SectionTitle from "../SectionTitle";
 
 const ContactOptions = () => {
   const cntOptions = [

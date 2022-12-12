@@ -8,7 +8,7 @@ import Loading from "../loading/Loading";
 import ProfileAPI from "./type/profile";
 
 const ProfileUserDetails = () => {
-  const { data, loading, error } = useFetch<ProfileAPI>(
+  const { data, loading } = useFetch<ProfileAPI>(
     "/6395f1e7c5b3a64f1bc908ba/profile/"
   );
   if (loading) return <Loading />;

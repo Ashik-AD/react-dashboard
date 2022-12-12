@@ -48,8 +48,8 @@ const StyledNavContent = styled(Card)<{ isCollapsed: boolean }>`
       isCollapsed &&
       `
       margin-top: 30px;
-      position: absolute;
       transition: 200ms;
+      position: absolute;
       visibility: hidden;
       z-index: -1;
       opacity: 0;
@@ -62,10 +62,10 @@ const StyledNavContent = styled(Card)<{ isCollapsed: boolean }>`
       `
       margin-top: 0;
       z-index: 1;
-      opacity: 1;
-      position: relative;
       visibility: visible;
       transition: 300ms;
+      opacity: 1;
+      position: relative;
     `}
   }
 

@@ -1,4 +1,4 @@
-import { FC, memo, useEffect, useState } from "react";
+import { FC, memo, useState } from "react";
 import useTheme from "../../theme/useTheme";
 import Card from "../card/Card";
 

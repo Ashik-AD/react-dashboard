@@ -30,7 +30,7 @@ const fieldsName = [
   },
 ];
 const ProjectList = () => {
-  const { data, loading } = useFetch<Array<ProjectListAPI>>(
+  const { data } = useFetch<Array<ProjectListAPI>>(
     "/6395f1d06a51bc4f704ce24a/projectList"
   );
   return (

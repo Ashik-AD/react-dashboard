@@ -1,5 +1,5 @@
 import { AttachMoney } from "@mui/icons-material";
-import { ApexOptions } from "apexcharts";
+import type { ApexOptions } from "apexcharts";
 import { FC } from "react";
 import ReactApexChart from "react-apexcharts";
 import useTheme from "../../../theme/useTheme";
@@ -7,7 +7,7 @@ import { CustomAvatar, Divider, Dot, Text } from "../../../ui";
 import formatNumber from "../../../utils/formatNumber";
 import genColorShades from "../../../utils/genColorShades";
 import Box from "../../box/Box";
-import { GridContainer, GridItem } from "../../layout";
+import { GridItem } from "../../layout";
 import GridInnerContainer from "../../layout/grid/GridInnerContainer";
 import Card from "../Card";
 import CardTitle from "../titles/CardTitle";

@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import { FC } from "react";
 import Box from "../../box/Box";
 import ColorBox from "../../box/ColorBox";
 import ToolbarButton from "../toolbars/ToolBarButton";

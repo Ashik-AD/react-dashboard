@@ -1,15 +1,11 @@
 import Table from "../../layout/table/Table";
-import t1 from "../../../image/humans/1.png";
-import t2 from "../../../image/humans/2.png";
-import t3 from "../../../image/humans/3.png";
-import t4 from "../../../image/humans/4.png";
-import t5 from "../../../image/humans/5.png";
 import TableRow from "../../table/TableRow";
 import TableCell from "../../table/TableCell";
 import Box from "../../box/Box";
 import { Avatar, Chip, Text } from "../../../ui";
 import ProgressLinear from "../../../ui/progress/Progress";
 import CardTitle from "../titles/CardTitle";
+
 const formatData = (
   username: string,
   profile: string,
@@ -29,7 +25,7 @@ const fields = ["Name", "Project", "Tasks", "Progress"];
 const teamMember = [
   formatData(
     "Jane Doe",
-    t1,
+    "https://i.ibb.co/pR2DQtZ/1.png",
     "ISO Developer",
     { total: 232, completed: 150 },
     "Hayaku",
@@ -37,7 +33,7 @@ const teamMember = [
   ),
   formatData(
     "John Doe",
-    t3,
+    "https://i.ibb.co/41vBfv2/3.png",
     "Android Developer",
     { total: 100, completed: 23 },
     "Brixit",
@@ -45,7 +41,7 @@ const teamMember = [
   ),
   formatData(
     "Merry Jane",
-    t2,
+    "https://i.ibb.co/DVxRbB7/2.png",
     "Digital Marketing",
     { total: 454, completed: 754 },
     "Puiw",
@@ -53,7 +49,7 @@ const teamMember = [
   ),
   formatData(
     "Ashik Dhimal",
-    t4,
+    "https://i.ibb.co/7bt98f4/4.png",
     "Dumb Dude",
     { total: 0, completed: 0 },
     "Wate",
@@ -61,7 +57,7 @@ const teamMember = [
   ),
   formatData(
     "Grifin Hector",
-    t5,
+    "https://i.ibb.co/YT68xSC/5.png",
     "Sr. Engineer",
     { total: 1000, completed: 1100 },
     "Hayaku",

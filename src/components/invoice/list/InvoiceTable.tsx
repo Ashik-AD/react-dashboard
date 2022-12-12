@@ -54,6 +54,7 @@ const columns: DataGridColoumn[] = [
 const selectInvoice = (state: RootState) => state.invoice.data;
 const InvoiceTable = () => {
   const invoiceList: InvoiceList[] = useAppSelector(selectInvoice);
+  if (!invoiceList) return <></>;
   return (
     <DataGrid
       rows={invoiceList}

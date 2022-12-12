@@ -1,7 +1,7 @@
 import { Done, DoneAll } from "@mui/icons-material";
 import { FC } from "react";
 import { Message } from "../../../features/chats/definition";
-import { Avatar, Text } from "../../../ui";
+import { Text } from "../../../ui";
 import Box from "../../box/Box";
 import TimeStamp from "../TimeStamp";
 import UserAvatar from "../UserAvatar";

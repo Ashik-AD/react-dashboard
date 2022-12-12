@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import { FC } from "react";
 import { KeyboardArrowLeft, KeyboardArrowRight } from "@mui/icons-material";
 import { IconButton, Select, SelectItem, Text } from "../../ui";
 import Box from "../box/Box";

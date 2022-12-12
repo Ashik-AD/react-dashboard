@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import { FC } from "react";
 import { TbDotsVertical } from "react-icons/tb";
 import { IconButton } from "../../../ui";
 import Box from "../../box/Box";

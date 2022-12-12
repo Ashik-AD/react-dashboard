@@ -8,17 +8,13 @@ const AppLogo = () => (
   <Link to="/dashboards/crm/">
     <Box display="flex" align="center" space={0.4}>
       <StyledLogo src={Logo} alt="app logo" />
-      <Text heading="h6" weight="bold">
+      <Text heading="h6" weight="bold" classes="app-text-logo">
         TRIOLO
       </Text>
     </Box>
   </Link>
 );
 export default AppLogo;
-
-interface Props {
-  
-}
 
 const StyledLogo = styled("img")`
   height: 30px;

@@ -10,7 +10,6 @@ const NavGroupButton: FC<Props> = (props) => {
   const {
     theme: {
       mode,
-      menuStyle: { collapse },
     },
   } = useTheme();
   return (

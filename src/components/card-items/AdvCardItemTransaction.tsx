@@ -1,6 +1,6 @@
 import { FC, ReactNode } from "react";
 import Box from "../box/Box";
-import { CustomAvatar, Avatar, Text } from "../../ui";
+import { CustomAvatar, Text } from "../../ui";
 import { ExpandLess, ExpandMore } from "@mui/icons-material";
 
 const AdvCardItemTransaction: FC<CardItemTransactionProps> = (props) => {

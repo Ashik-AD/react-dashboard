@@ -14,7 +14,7 @@ const ProgressCircle: FC<IProps> = (props) => {
       primaryColor: { color },
     },
   } = useTheme();
-  const { color: bgColor, label, size, varient, strokeWidth, start } = props;
+  const {  size, varient, strokeWidth, start } = props;
   const finalSize = (size || 200) / 2;
   const radius = finalSize - 10;
   const stroke = strokeWidth || Math.ceil((finalSize * 20) / 100);

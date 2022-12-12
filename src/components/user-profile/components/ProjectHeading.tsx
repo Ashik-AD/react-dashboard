@@ -4,7 +4,7 @@ import Box from "../../box/Box";
 import ProjectDropdown from "./ProjectDropdown";
 
 const ProjectHeading: FC<Props> = (props) => {
-  const { title, client, id, avatar } = props;
+  const { title, client,  avatar } = props;
   return (
     <Box display="flex" justify="space-between">
       <Box display="flex" space={0.6}>

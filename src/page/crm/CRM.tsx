@@ -4,7 +4,6 @@ import {
   PersonOutline,
   TrendingUp,
 } from "@mui/icons-material";
-import CardRanger from "../../components/card/statistics/CardRanger";
 import CardTransaction from "../../components/card/statistics/CardTransaction";
 import { Flex, GridContainer, GridItem } from "../../components/layout";
 import { CardWidgetWeeklySales } from "../../components/card/widgets";

@@ -1,5 +1,5 @@
 import ReactApexChart from "react-apexcharts";
-import { ApexOptions } from "apexcharts";
+import type { ApexOptions } from "apexcharts";
 import Box from "../../box/Box";
 import Card from "../Card";
 import CardTitle from "../titles/CardTitle";
@@ -41,7 +41,6 @@ const CardWidgetAnalytics = () => {
       bar: {
         columnWidth: "45%",
         borderRadius: [8],
-        // distributed: true,
       },
     },
     states: {

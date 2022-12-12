@@ -4,7 +4,7 @@ import Card from "../Card";
 import CardTitle from "../titles/CardTitle";
 
 import ReactApexChart from "react-apexcharts";
-import { ApexOptions } from "apexcharts";
+import type { ApexOptions } from "apexcharts";
 import useTheme from "../../../theme/useTheme";
 import genColorShades from "../../../utils/genColorShades";
 

@@ -2,7 +2,6 @@ import React, { CSSProperties, ReactNode } from "react";
 
 type Varient = 'text' | 'contained' | 'outlined';
 type Color = 'success' | 'info' | 'warning' | 'error';
-type Size = 'small' | 'medium' | 'large';
 
 export interface ButtonType {
   varient?: Varient;

@@ -1,4 +1,3 @@
-import React from "react";
 import { Text } from "../../../ui";
 
 const TimeStamp = ({ timestamp }: { timestamp: string }) => {

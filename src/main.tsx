@@ -9,9 +9,9 @@ import { BrowserRouter as Router } from "react-router-dom";
 
 import server from "./api/server";
 const isDevMode = import.meta.env.DEV;
-// if (isDevMode) {
-//   server();
-// }
+if (isDevMode) {
+  server();
+}
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>

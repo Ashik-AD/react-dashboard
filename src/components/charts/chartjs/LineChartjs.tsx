@@ -1,5 +1,4 @@
 import {
-  ChartOptions,
   Chart as ChartJs,
   CategoryScale,
   Legend,
@@ -7,10 +6,12 @@ import {
   LineElement,
   PointElement,
 } from "chart.js";
+import type { ChartOptions } from "chart.js";
+
 import { Line } from "react-chartjs-2";
 import useFetch from "../../../hooks/useFetch";
-import Box from "../../box/Box";
 import ChartConfig from "./chartjs.config";
+import ChartPlaceholder from "../components/ChartPlaceholder";
 
 ChartJs.register(CategoryScale, LinearScale, PointElement, LineElement, Legend);
 
@@ -51,7 +52,7 @@ const LineChartJs = () => {
     { label: string; color: string; data: Array<Number> }[]
   >("/6395f24bc5b3a64f1bc908f4/techData");
 
-  if (!data || loading) return <Box height="400px">{""}</Box>;
+  if (!data || loading) return <ChartPlaceholder />;
   return (
     <Line
       height={50}

@@ -2,7 +2,6 @@ import { TrendingUp } from "@mui/icons-material";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { client } from "../../../api/client";
-import { InvoiceList } from "../../../features/invoices/types/definition";
 import { useAppSelector } from "../../../hooks";
 import { RootState } from "../../../store/store";
 import { Button, Text } from "../../../ui";

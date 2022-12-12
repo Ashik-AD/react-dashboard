@@ -1,5 +1,4 @@
 import { TrendingUp } from "@mui/icons-material";
-import React from "react";
 import CardMint from "../../card/statistics/CardMint";
 
 const CardDailyTransaction = () => {

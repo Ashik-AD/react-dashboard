@@ -1,7 +1,6 @@
 import { FC, ReactNode, CSSProperties } from "react";
 import styled from "styled-components";
 import useTheme from "../../theme/useTheme";
-import { Varient } from "../../ui/text/type";
 const TableCell: FC<PropsType> = (props) => {
   const {
     theme: { mode },

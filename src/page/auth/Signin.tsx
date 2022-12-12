@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
 import AuthBanner from "../../components/auth/AuthBanner";
 import Login, { LoginFormDate } from "../../components/auth/Login";
 import ColorBox from "../../components/box/ColorBox";

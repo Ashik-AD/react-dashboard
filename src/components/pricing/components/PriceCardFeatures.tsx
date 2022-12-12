@@ -1,5 +1,5 @@
+import { ReactNode } from "react";
 import { CircleOutlined } from "@mui/icons-material";
-import { Children, ReactNode } from "react";
 import styled from "styled-components";
 import { Text } from "../../../ui";
 

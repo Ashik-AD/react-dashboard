@@ -1,4 +1,4 @@
-import { FC, useState } from "react";
+import { FC } from "react";
 
 import { Divider } from "../../../ui";
 import Box from "../../box/Box";
@@ -14,7 +14,6 @@ import OragnizationDetail from "../OrganizationDetails";
 import type { Invoice } from "../../../page/invoice/add/type";
 
 const AddMain: FC<Partial<Invoice>> = (props) => {
-  const [invoice, setInvoice] = useState(props);
   const {
     invoiceNo,
     invoiceTo,
@@ -24,7 +23,7 @@ const AddMain: FC<Partial<Invoice>> = (props) => {
     items,
     msgLeave,
     note,
-  } = invoice;
+  } = props;
   return (
     <Card py="1rem">
       <OragnizationDetail />

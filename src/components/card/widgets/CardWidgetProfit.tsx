@@ -1,6 +1,5 @@
 import { AttachMoney, Leaderboard, TrendingUp } from "@mui/icons-material";
-import { ApexOptions } from "apexcharts";
-import React from "react";
+import type { ApexOptions } from "apexcharts";
 import ReactApexChart from "react-apexcharts";
 import useTheme from "../../../theme/useTheme";
 import { Button, CustomAvatar, Text } from "../../../ui";
@@ -45,7 +44,6 @@ const CardWidgetProfit = () => {
         bar: {
           columnWidth: "40%",
           borderRadius: [8],
-          // distributed: true,
         },
       },
       states: {

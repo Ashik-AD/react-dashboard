@@ -1,4 +1,3 @@
-import React from "react";
 import CardDailyTransaction from "../../../components/cards-page/statistics/CardDailyTransaction";
 import CardMintRevenue from "../../../components/cards-page/statistics/CardMintRevenue";
 import CardMintLogistic from "../../../components/cards-page/statistics/CardMintLogistic";

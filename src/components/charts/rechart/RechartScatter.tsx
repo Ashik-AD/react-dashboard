@@ -1,17 +1,16 @@
-import React from "react";
 import { ScatterChart, ZAxis } from "recharts";
 import { Scatter } from "recharts";
 import { Legend } from "recharts";
 import { ResponsiveContainer, XAxis, YAxis } from "recharts";
 import useFetch from "../../../hooks/useFetch";
-import Box from "../../box/Box";
+import ChartPlaceholder from "../components/ChartPlaceholder";
 import CustomLegend from "./component/CustomLegend";
 
 const RechartScatter = () => {
   const { data, loading } = useFetch<any[]>(
     "/6395f2606a51bc4f704ce29c/frameworkUsage"
   );
-  if (!data || loading) return <Box height="400px">{""}</Box>;
+  if (!data || loading) return <ChartPlaceholder />;
   return (
     <ResponsiveContainer width="100%" height={400}>
       <ScatterChart data={data} margin={{ left: -20 }}>

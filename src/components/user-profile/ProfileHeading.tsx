@@ -16,7 +16,7 @@ interface ProfileEssentialAPI {
 }
 
 const ProfileHeading = () => {
-  const { data, loading, error } = useFetch<ProfileEssentialAPI>(
+  const { data } = useFetch<ProfileEssentialAPI>(
     "/6395f1e7c5b3a64f1bc908ba/profileEssential"
   );
   return (

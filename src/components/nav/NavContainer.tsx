@@ -26,5 +26,12 @@ const StyledNavContainer = styled("div")<{ collapsed: boolean }>`
     transform: translateX(-260px);
     display: none;
   }
+
+  & .app-text-logo {
+    visibility: ${({collapsed}) => collapsed ? "hidden" : "initial"};
+  }
+  &:hover .app-text-logo {
+    visibility: ${({collapsed}) => collapsed ?  "visible" : "inherit"};
+  }
 `;
 export default NavContainer;

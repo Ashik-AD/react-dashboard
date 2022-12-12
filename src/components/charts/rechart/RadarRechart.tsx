@@ -9,7 +9,7 @@ import {
   Tooltip,
 } from "recharts";
 import useFetch from "../../../hooks/useFetch";
-import Box from "../../box/Box";
+import ChartPlaceholder from "../components/ChartPlaceholder";
 import CustomLegend from "./component/CustomLegend";
 import CustomTooltip from "./component/CustomTooltip";
 
@@ -17,7 +17,7 @@ const RadarRechart = () => {
   const { data, loading } = useFetch<any[]>(
     "/6395f2606a51bc4f704ce29c/mobileComparison"
   );
-  if (!data || loading) return <Box height="400px">{""}</Box>;
+  if (!data || loading) return <ChartPlaceholder />;
   return (
     <ResponsiveContainer width={"100%"} height={400}>
       <RadarChart data={data}>

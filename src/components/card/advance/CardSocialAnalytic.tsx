@@ -1,5 +1,4 @@
 import { Icon } from "@iconify/react";
-import React from "react";
 import { CustomAvatar } from "../../../ui";
 import genRandomColor from "../../../utils/genRandomColor";
 import Box from "../../box/Box";

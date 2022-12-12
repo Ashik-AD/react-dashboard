@@ -1,10 +1,9 @@
-import { ApexOptions } from "apexcharts";
+import type { ApexOptions } from "apexcharts";
 import ReactApexChart from "react-apexcharts";
 import useTheme from "../../../theme/useTheme";
 import { Text } from "../../../ui";
 import Box from "../../box/Box";
 import Card from "../Card";
-import CardTitle from "../titles/CardTitle";
 import CustomCardTitle from "../titles/CustomCardTitle";
 
 const CardWidgetTotalSale = () => {

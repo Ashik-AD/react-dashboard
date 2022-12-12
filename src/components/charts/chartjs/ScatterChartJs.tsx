@@ -5,13 +5,13 @@ import {
   Legend,
   PointElement,
   LineElement,
-  ChartOptions,
-  ChartData,
 } from "chart.js";
+import type { ChartOptions, ChartData } from "chart.js";
+
 import { Scatter } from "react-chartjs-2";
 import useFetch from "../../../hooks/useFetch";
-import Box from "../../box/Box";
 import ChartConfig from "./chartjs.config";
+import ChartPlaceholder from "../components/ChartPlaceholder";
 
 ChartJs.register(LinearScale, PointElement, LineElement, Tooltip, Legend);
 
@@ -47,7 +47,7 @@ const ScatterChartJs = () => {
   const { data, loading } = useFetch<ChartData<"scatter">>(
     "/6395f24bc5b3a64f1bc908f4/streamingPlatform"
   );
-  if (!data || loading) return <Box height="400px">{""}</Box>;
+  if (!data || loading) return <ChartPlaceholder />;
   return <Scatter height={40} width="100%" options={options} data={data} />;
 };
 export default ScatterChartJs;

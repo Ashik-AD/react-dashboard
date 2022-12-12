@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import { FC } from "react";
 import { Avatar, CustomAvatar, Text } from "../../../ui";
 import Box from "../../box/Box";
 

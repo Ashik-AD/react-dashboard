@@ -3,10 +3,10 @@ import { PieChart } from "recharts";
 import { Tooltip } from "recharts";
 import { Cell } from "recharts";
 import { ResponsiveContainer } from "recharts";
-import useFetch from "../../../../hooks/useFetch";
-import Box from "../../../box/Box";
-import CustomLegend from "./CustomLegend";
-import CustomTooltip from "./CustomTooltip";
+import useFetch from "../../../hooks/useFetch";
+import CustomLegend from "./component/CustomLegend";
+import CustomTooltip from "./component/CustomTooltip";
+import ChartPlaceholder from "../components/ChartPlaceholder";
 
 const colors = ["#ec86d4", "#36baaa", "#ebbb24", "#f58c42"];
 
@@ -17,7 +17,6 @@ const renderCustomizedLabel = ({
   midAngle,
   innerRadius,
   outerRadius,
-  percent,
   value,
 }: any) => {
   const radius = innerRadius + (outerRadius - innerRadius) * 0.3;
@@ -41,7 +40,7 @@ const PieRechart = () => {
   const { data, loading } = useFetch<any[]>(
     "/6395f2606a51bc4f704ce29c/expense"
   );
-  if (!data || loading) return <Box height="400px">{""}</Box>;
+  if (!data || loading) return <ChartPlaceholder />;
   return (
     <ResponsiveContainer width={"100%"} height={400}>
       <PieChart>

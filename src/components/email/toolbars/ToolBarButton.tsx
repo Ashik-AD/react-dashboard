@@ -1,4 +1,4 @@
-import React, { FC, ReactNode } from "react";
+import { FC, ReactNode } from "react";
 import { IconButton } from "../../../ui";
 
 const ToolbarButton: FC<{ icon: ReactNode; handleClick?: () => void }> = ({

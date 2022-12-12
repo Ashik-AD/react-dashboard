@@ -2,11 +2,6 @@ import Box from "../../box/Box";
 import CustomCardTitle from "../titles/CustomCardTitle";
 import { Text } from "../../../ui";
 
-// import google from "../../../image/logo/google.png";
-// import github from "../../../image/logo/github.png";
-// import slack from "../../../image/logo/slack.png";
-// import digitalOcen from "../../../image/logo/digital-ocean.png";
-// import amazon from "../../../image/logo/aws.png";
 import AdvCardItemTransaction from "../../card-items/AdvCardItemTransaction";
 import formatNumber from "../../../utils/formatNumber";
 

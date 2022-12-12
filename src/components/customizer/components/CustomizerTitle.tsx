@@ -18,4 +18,3 @@ const CustomizerTitle: FC<{ title: string }> = ({ title }) => {
   );
 };
 export default CustomizerTitle;
-import SectionBox from "./SectionBox";

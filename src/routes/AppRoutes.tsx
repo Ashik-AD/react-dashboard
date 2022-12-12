@@ -3,9 +3,8 @@ import { Routes, Route } from "react-router-dom";
 const Signin = lazy(() => import("../page/auth/Signin"));
 const Signup = lazy(() => import("../page/auth/Signup"));
 import Dashboard from "../page/Home";
-const TestComponents = lazy(() => import("../TestComponents"));
 import ProtectedRoute from "./ProtectedRoute";
-
+import PageLoading from "../components/loading/PageLoading";
 const AppRoutes = () => {
   return (
     <Routes>
@@ -13,7 +12,7 @@ const AppRoutes = () => {
         caseSensitive
         path="/auth/register/"
         element={
-          <Suspense>
+          <Suspense fallback={<PageLoading />}>
             <Signup />
           </Suspense>
         }
@@ -22,17 +21,8 @@ const AppRoutes = () => {
         caseSensitive
         path="/auth/login/"
         element={
-          <Suspense>
+          <Suspense fallback={<PageLoading />}>
             <Signin />
-          </Suspense>
-        }
-      />
-      <Route
-        caseSensitive
-        path="/test/"
-        element={
-          <Suspense>
-            <TestComponents />
           </Suspense>
         }
       />

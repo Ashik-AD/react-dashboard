@@ -1,4 +1,3 @@
-import { LiveHelpOutlined, ContactSupportOutlined } from "@mui/icons-material";
 import { Icon } from "@iconify/react";
 import { FC, useMemo, useState } from "react";
 import styled from "styled-components";

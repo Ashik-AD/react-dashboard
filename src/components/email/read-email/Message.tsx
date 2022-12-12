@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import { FC } from "react";
 import { Divider } from "../../../ui";
 import Box from "../../box/Box";
 import parseHTMLStringToComponent from "html-react-parser";

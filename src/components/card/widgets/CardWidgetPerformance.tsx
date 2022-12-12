@@ -1,4 +1,4 @@
-import { ApexOptions } from "apexcharts";
+import type { ApexOptions } from "apexcharts";
 import ReactApexChart from "react-apexcharts";
 import { colorPallets } from "../../../theme/colors";
 import useTheme from "../../../theme/useTheme";

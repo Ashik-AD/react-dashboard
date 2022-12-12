@@ -1,7 +1,8 @@
-import { ApexOptions } from "apexcharts";
+import type { ApexOptions } from "apexcharts";
 import useFetch from "../../../../hooks/useFetch";
 import useTheme from "../../../../theme/useTheme";
 import Apex from "../Apex";
+import ChartPlaceholder from "../../components/ChartPlaceholder";
 
 const HeatmapChart = () => {
   const {
@@ -57,7 +58,7 @@ const HeatmapChart = () => {
     },
   };
 
-  if (!data || loading) return <></>;
+  if (!data || loading) return <ChartPlaceholder />;
 
   return (
     <Apex

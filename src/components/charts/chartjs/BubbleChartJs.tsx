@@ -4,13 +4,13 @@ import {
   LinearScale,
   PointElement,
   Tooltip,
-  ChartOptions,
-  ChartData,
   Legend,
 } from "chart.js";
+import type { ChartOptions, ChartData } from "chart.js";
+
 import useFetch from "../../../hooks/useFetch";
-import Box from "../../box/Box";
 import ChartConfig from "./chartjs.config";
+import ChartPlaceholder from "../components/ChartPlaceholder";
 ChartJs.register(PointElement, Tooltip, LinearScale, Legend);
 
 const BubbleChartJs = () => {
@@ -31,7 +31,7 @@ const BubbleChartJs = () => {
   const { data, loading } = useFetch<ChartData<"bubble">>(
     "/6395f24bc5b3a64f1bc908f4/programmingLanguage"
   );
-  if (!data || loading) return <Box height="400px">{""}</Box>;
+  if (!data || loading) return <ChartPlaceholder />;
   return <Bubble width={"100%"} height={40} options={options} data={data} />;
 };
 export default BubbleChartJs;

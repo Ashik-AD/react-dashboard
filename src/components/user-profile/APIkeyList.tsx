@@ -8,7 +8,7 @@ import Card from "../card/Card";
 import Loading from "../loading/Loading";
 
 const APIkeyList = () => {
-  const { data, loading, error } = useFetch<Array<APIkeyListAPI>>(
+  const { data, loading } = useFetch<Array<APIkeyListAPI>>(
     "/6395f1e7c5b3a64f1bc908ba/apiKey"
   );
   return (

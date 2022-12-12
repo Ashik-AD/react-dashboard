@@ -1,4 +1,4 @@
-import { FC, forwardRef, memo } from "react";
+import {  forwardRef, memo } from "react";
 import { Inputs } from "../type";
 import { Input, InputWrapper, StyledTextarea } from "./styled";
 import useTheme from "../../../theme/useTheme";
@@ -33,7 +33,6 @@ const TextField = forwardRef<InputRef, Inputs>((props, ref) => {
     maxWidth,
     multiRow,
     value,
-    classes,
     maxLength,
     maxValue,
     minValue,

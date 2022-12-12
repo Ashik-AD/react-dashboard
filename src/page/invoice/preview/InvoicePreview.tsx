@@ -16,13 +16,13 @@ const InvoicePreview = () => {
   const { pathname } = useLocation();
   const pathChunk = pathname.match(/\w+/g);
   if (pathChunk!.length > 3) {
-    return <h1>Not found</h1>;
+    return <></>;
   }
   const currentInvoiceItem = useAppSelector((state) =>
     selectInvoiceItem(state, +pathChunk?.pop()!)
   );
   if (!currentInvoiceItem) {
-    return <h1>Not Found</h1>;
+    return <></>;
   }
   return (
     <InvoiceLayout>
