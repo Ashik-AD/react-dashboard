@@ -13,9 +13,9 @@ export async function client(endpoint: string, { body, ...customConfig } :any = 
         headers: {
             ...headers,
             ...customConfig.headers,
-
             "X-MASTER-KEY": mode === "prod" ? `$2b$10$${import.meta.env.VITE_API_KEY}` : "",
-            "X-JSON-path": mode === "prod" ? `$.${modeProdJsonPath}` : ""
+            "X-JSON-path": mode === "prod" ? `$.${modeProdJsonPath}` : "",
+            "Access-Control-Allow-Origin": "*"
         }
     }
 
