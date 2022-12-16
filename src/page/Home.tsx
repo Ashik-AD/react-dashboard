@@ -1,6 +1,7 @@
 import { lazy, Suspense } from "react";
 import { Routes, Route } from "react-router-dom";
 import AppBar from "../components/appbar/AppBar";
+import Footer from "../components/footer/Footer";
 const ThemeCustomizer = lazy(
   () => import("../components/customizer/Customizer")
 );
@@ -23,14 +24,14 @@ const Home = () => {
   return (
     <AppLayout>
       <Nav />
-      <Flex direction="column" styles={{ minHeight: "100vh" }} gap="medium">
+      <Flex direction="column" styles={{ minHeight: "100vh" }}>
         <AppBar />
         <main
           style={{
             padding: `1.2rem`,
             width: "100%",
             flex: 1,
-            marginTop: "-20px",
+            marginTop: "1rem",
           }}
         >
           <Suspense fallback={<PageLoading />}>
@@ -50,6 +51,7 @@ const Home = () => {
             </Routes>
           </Suspense>
         </main>
+        <Footer />
       </Flex>
       <ThemeCustomizer />
     </AppLayout>

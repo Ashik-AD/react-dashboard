@@ -14,7 +14,7 @@ const themeSettings: SettingType = {
     } as any,
     layout: {
         appBarBlur: setting?.hasOwnProperty('appbarBlur') ? setting.appbarBlur! : true,
-        appBarPosition: setting?.appBarPosition ? setting.appBarPosition : "static",
+        appBarPosition: setting?.appBarPosition ? setting.appBarPosition : "fixed",
         footerPosition: setting?.footerPosition ? setting.footerPosition : 'static'
     },
     primaryColor: {

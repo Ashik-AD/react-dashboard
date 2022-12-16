@@ -26,7 +26,7 @@ const box = styled('div') <BoxProps>`
     ${({ mb }) => mb && `margin-bottom: ${mb}px;`}
     ${({ ml }) => ml && `margin-left: ${ml}px;`}
 
-    ${({ padding }) => padding && `padding: ${padding}px;`}
+    ${({ padding }) => padding && `padding: ${padding}${typeof padding === "number" ? "px" : "" };`}
     ${({ px }) => px && `padding-left: ${px}px; padding-right: ${px}px;`}
     ${({ py }) => py && `padding-top: ${py}px; padding-bottom: ${py}px;`}
     ${({ pt }) => pt && `padding-top: ${pt}px;`}

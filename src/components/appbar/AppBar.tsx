@@ -14,7 +14,7 @@ const AppBar = () => {
   const {
     theme: {
       mode,
-      layout: { appBarBlur },
+      layout: { appBarBlur, appBarPosition },
     },
     dispatch,
   } = useTheme();
@@ -37,7 +37,13 @@ const AppBar = () => {
   return (
     <StyledAppBar
       ref={contentRef}
-      className={`appbar-content-hide`}
+      className={`appbar-content-hide ${
+        appBarPosition === "hidden"
+          ? "appbar-hidden"
+          : appBarPosition === "static"
+          ? "appbar-static"
+          : "appbar-fixed"
+      }`}
       theme={{ mode, appBarBlur }}
     >
       <Card className="appbar-content">
@@ -76,7 +82,6 @@ const AppBar = () => {
 export default AppBar;
 
 const StyledAppBar = styled("header")`
-  position: sticky;
   min-height: 64px;
   width: 100%;
   top: 0px;
@@ -85,6 +90,15 @@ const StyledAppBar = styled("header")`
   padding: 0 1.2rem;
   z-index: 900;
 
+  &.appbar-fixed {
+    position: sticky;
+  }
+  &.appbar-static {
+    position: relative;
+  }
+  &.appbar-hidden {
+    display: none;
+  }
   & > .appbar-content {
     ${({ theme }) =>
       theme.appBarBlur

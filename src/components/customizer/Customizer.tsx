@@ -34,7 +34,6 @@ const ThemeCustomizer: FC = () => {
               weight="bold"
               textTransform="uppercase"
               styles={{
-                textTransform: "uppercase",
                 letterSpacing: 0.15,
               }}
             >

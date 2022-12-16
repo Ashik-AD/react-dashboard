@@ -20,7 +20,7 @@ export interface BoxProps {
     mr?: number;
     mb?: number;
     ml?: number;
-    padding?: number;
+    padding?: number | string;
     py?: number;
     px?: number;
     pt?: number;
