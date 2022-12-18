@@ -7,7 +7,8 @@ import { Text } from "../../../ui";
 import genColorShades from "../../../utils/genColorShades";
 
 const NavItem: FC<Props> = (props) => {
-  const { label, path, icon, varient, compact, onClick, hideIcon } = props;
+  const { label, path, icon, varient, compact, onClick, hideIcon, onHover } =
+    props;
   const {
     theme: {
       mode,
@@ -15,9 +16,7 @@ const NavItem: FC<Props> = (props) => {
       menuStyle: { collapse },
     },
   } = useTheme();
-  const handleNavItemClick = () => {
-    onClick && onClick();
-  };
+
   return (
     <StyledNavItem
       skinColor={primaryColor.color}
@@ -25,7 +24,8 @@ const NavItem: FC<Props> = (props) => {
       mode={mode.name}
       varient={varient || "filled"}
       compact={compact}
-      onClick={handleNavItemClick}
+      onClick={onClick}
+      onMouseOver={onHover}
     >
       <NavLink
         to={path}
@@ -49,6 +49,21 @@ const NavItem: FC<Props> = (props) => {
     </StyledNavItem>
   );
 };
+
+type Varient = "filled" | "bordered";
+
+interface Props {
+  label: string;
+  path: string;
+  icon?: ReactNode;
+  hideIcon?: boolean;
+  varient?: Varient;
+  compact?: boolean;
+  onClick?: () => void;
+  onHover?: () => void;
+}
+
+export default NavItem;
 
 const StyledNavItem = styled("li")<{
   skinColor: string;
@@ -113,17 +128,3 @@ const StyledNavItem = styled("li")<{
       varient === "bordered" ? `color: ${skinColor}!important;` : ""}
   }
 `;
-
-type Varient = "filled" | "bordered";
-
-interface Props {
-  label: string;
-  path: string;
-  icon?: ReactNode;
-  hideIcon?: boolean;
-  varient?: Varient;
-  compact?: boolean;
-  onClick?: () => void;
-}
-
-export default NavItem;

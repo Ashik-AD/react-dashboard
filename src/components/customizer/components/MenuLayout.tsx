@@ -9,14 +9,14 @@ const MenuLayout: FC<PropsType> = ({ layout, onChange }) => {
       <ChoiceGroup gap="medium">
         <Choice
           label="Vertical"
-          value={"y"}
+          value={"vertical"}
           name="menu-layout"
           selected={layout}
           onChange={() => onChange("vertical")}
         />
         <Choice
           label="Horizontal"
-          value={"x"}
+          value={"horizontal"}
           name="menu-layout"
           selected={layout}
           onChange={() => onChange("horizontal")}

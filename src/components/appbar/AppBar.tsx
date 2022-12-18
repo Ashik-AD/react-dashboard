@@ -2,9 +2,10 @@ import { Icon } from "@iconify/react";
 import { createRef, useEffect } from "react";
 import styled from "styled-components";
 import useTheme from "../../theme/useTheme";
-import { IconButton } from "../../ui";
+import { Divider, IconButton } from "../../ui";
 import Box from "../box/Box";
 import Card from "../card/Card";
+import HorizontalNav from "../nav/horizontal/HorizontalNav";
 import Notification from "../notification/Notification";
 import MenuSideNav from "./components/MenuSideNav";
 import ProfileDropdown from "./components/ProfileDropdown";
@@ -15,6 +16,7 @@ const AppBar = () => {
     theme: {
       mode,
       layout: { appBarBlur, appBarPosition },
+      menuStyle: { layout },
     },
     dispatch,
   } = useTheme();
@@ -28,22 +30,25 @@ const AppBar = () => {
     }
   };
   useEffect(() => {
-    window.addEventListener("scroll", (event: Event) => {
-      changeBarBg(event);
-    });
+    if (layout === "vertical") {
+      window.addEventListener("scroll", (event: Event) => {
+        changeBarBg(event);
+      });
+    }
     window.removeEventListener("scroll", changeBarBg);
     return () => void window.removeEventListener("scroll", changeBarBg);
-  }, [contentRef]);
+  }, [contentRef, layout]);
+
   return (
     <StyledAppBar
       ref={contentRef}
-      className={`appbar-content-hide ${
+      className={`${
         appBarPosition === "hidden"
           ? "appbar-hidden"
           : appBarPosition === "static"
           ? "appbar-static"
           : "appbar-fixed"
-      }`}
+      } ${layout === "horizontal" ? "no_padding" : ""}`}
       theme={{ mode, appBarBlur }}
     >
       <Card className="appbar-content">
@@ -52,6 +57,8 @@ const AppBar = () => {
           justify="space-between"
           align="center"
           height="100%"
+          py={12}
+          px={layout === "horizontal" ? 20 : 0}
         >
           <Box display="flex">
             <MenuSideNav />
@@ -74,6 +81,14 @@ const AppBar = () => {
             <ProfileDropdown />
           </Box>
         </Box>
+        {layout === "horizontal" && (
+          <Box className="horizontal_nav_bar">
+            <Divider />
+            <Box px={layout === "horizontal" ? 20 : 0}>
+              <HorizontalNav />
+            </Box>
+          </Box>
+        )}
       </Card>
     </StyledAppBar>
   );
@@ -89,6 +104,9 @@ const StyledAppBar = styled("header")`
   right: 0px;
   padding: 0 1.2rem;
   z-index: 900;
+  &.no_padding {
+    padding: 0;
+  }
 
   &.appbar-fixed {
     position: sticky;
@@ -99,7 +117,12 @@ const StyledAppBar = styled("header")`
   &.appbar-hidden {
     display: none;
   }
+  &.no_padding > .appbar-content {
+    padding: 0;
+  }
   & > .appbar-content {
+    display: flex;
+    flex-direction: column;
     ${({ theme }) =>
       theme.appBarBlur
         ? `background: ${
@@ -121,6 +144,14 @@ const StyledAppBar = styled("header")`
     background: none;
     border-width: 0;
     padding: 0 !important;
-    box-shadow: none;
+    box-shadow: unset;
+  }
+
+  .horizontal_nav_bar {
+    display: none;
+
+    @media (min-width: 1200px) {
+      display: block;
+    }
   }
 `;

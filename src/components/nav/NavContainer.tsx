@@ -3,15 +3,15 @@ import styled from "styled-components";
 import useTheme from "../../theme/useTheme";
 const NavContainer: FC<{ children: ReactNode }> = ({ children }) => {
   const {
-    theme: { menuStyle: {collapse, visible} },
+    theme: {
+      menuStyle: { collapse, visible, layout },
+    },
   } = useTheme();
-  if(visible) {
+  if (visible || layout === "horizontal") {
     return null;
   }
   return (
-    <StyledNavContainer collapsed={collapse}>
-      {children}
-    </StyledNavContainer>
+    <StyledNavContainer collapsed={collapse}>{children}</StyledNavContainer>
   );
 };
 
@@ -28,10 +28,10 @@ const StyledNavContainer = styled("div")<{ collapsed: boolean }>`
   }
 
   & .app-text-logo {
-    visibility: ${({collapsed}) => collapsed ? "hidden" : "initial"};
+    visibility: ${({ collapsed }) => (collapsed ? "hidden" : "initial")};
   }
   &:hover .app-text-logo {
-    visibility: ${({collapsed}) => collapsed ?  "visible" : "inherit"};
+    visibility: ${({ collapsed }) => (collapsed ? "visible" : "inherit")};
   }
 `;
 export default NavContainer;

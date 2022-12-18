@@ -23,7 +23,7 @@ const themeSettings: SettingType = {
     },
     menuStyle: {
         collapse: setting?.menuCollapse ? setting.menuCollapse : false,
-        layout: setting?.menuLayout ? setting.menuLayout : "horizontal",
+        layout: setting?.menuLayout ? setting.menuLayout : "vertical",
         openStyle: setting?.menuOpenStyle ? setting.menuOpenStyle : 'accordion',
         visible: setting?.menuVisible ? setting.menuVisible : false
     },

@@ -13,7 +13,7 @@ const GlobalStyle = createGlobalStyle<ThemeOptions>`
         background: ${({ backgroundColor, skin, foregroundColor }) => skin === "bordered" ? foregroundColor : backgroundColor};
     }
     a {
-        color: ${({ skinColor }) => skinColor};
+        color: inherit;
         text-decoration: none;
         font-size: inherit;
     }
@@ -28,6 +28,13 @@ const GlobalStyle = createGlobalStyle<ThemeOptions>`
     }
     .text-primary {
         color: ${({ skinColor }) => skinColor};
+    }
+    .text-light {
+        color: #fafafa;
+    }
+    .bg_secondary--hover:hover,
+    .bg_secondary--fade {
+        background: ${({mode}) => mode === "dark" ? "#bdbdbd0f" : "#0a0a0a0f"};
     }
 
     button {
