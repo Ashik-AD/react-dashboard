@@ -30,7 +30,7 @@ const AppBar = () => {
     }
   };
   useEffect(() => {
-    if (layout === "vertical") {
+    if (appBarPosition === "fixed") {
       window.addEventListener("scroll", (event: Event) => {
         changeBarBg(event);
       });
