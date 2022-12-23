@@ -12,6 +12,28 @@ const ColumnChart = () => {
       type: "bar",
       stacked: true,
     },
+    responsive: [
+      {
+        breakpoint: 600,
+        options: {
+          plotOptions: {
+            bar: {
+              borderRadius: 6,
+            },
+          },
+        },
+      },
+      {
+        breakpoint: 900,
+        options: {
+          plotOptions: {
+            bar: {
+              borderRadius: 12,
+            },
+          },
+        },
+      },
+    ],
     colors: ["#9e82d5", "#a595f9", "#c6b8fa"],
     legend: {
       position: "top",
