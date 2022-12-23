@@ -7,6 +7,7 @@ import useFetch from "../../../hooks/useFetch";
 import CustomLegend from "./component/CustomLegend";
 import CustomTooltip from "./component/CustomTooltip";
 import ChartPlaceholder from "../components/ChartPlaceholder";
+import useWindowResize from "../../../hooks/useWindowResize";
 
 const colors = ["#ec86d4", "#36baaa", "#ebbb24", "#f58c42"];
 
@@ -40,6 +41,8 @@ const PieRechart = () => {
   const { data, loading } = useFetch<any[]>(
     "/6395f2606a51bc4f704ce29c/expense"
   );
+  const windowWidth = useWindowResize();
+  const innerRadius = windowWidth < 600 ? 70 : 90;
   if (!data || loading) return <ChartPlaceholder />;
   return (
     <ResponsiveContainer width={"100%"} height={400}>
@@ -49,11 +52,11 @@ const PieRechart = () => {
         <Pie
           dataKey={"value"}
           data={data}
-          innerRadius={90}
+          innerRadius={innerRadius}
           label={renderCustomizedLabel}
           labelLine={false}
         >
-          {data.map((ex, index) => (
+          {data.map((_, index) => (
             <Cell key={`expense-${index}`} fill={colors[index]} />
           ))}
         </Pie>
