@@ -19,7 +19,7 @@ const ScatterChartJs = () => {
   ChartConfig(ChartJs);
   const options: ChartOptions<"scatter"> = {
     responsive: true,
-    maintainAspectRatio: true,
+    maintainAspectRatio: false,
     datasets: {
       scatter: {
         borderColor: "transparent",
@@ -48,6 +48,6 @@ const ScatterChartJs = () => {
     "/6395f24bc5b3a64f1bc908f4/streamingPlatform"
   );
   if (!data || loading) return <ChartPlaceholder />;
-  return <Scatter height={40} width="100%" options={options} data={data} />;
+  return <Scatter width="100%" options={options} data={data} />;
 };
 export default ScatterChartJs;

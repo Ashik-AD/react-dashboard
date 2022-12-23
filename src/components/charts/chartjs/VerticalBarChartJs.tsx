@@ -31,7 +31,7 @@ const VerticalBarChartJs = () => {
   ChartConfig(ChartJs);
   const options: ChartOptions<"bar"> = {
     responsive: true,
-    maintainAspectRatio: true,
+    maintainAspectRatio: false,
     bar: {
       datasets: {
         pointStyle: "circle",
@@ -49,6 +49,6 @@ const VerticalBarChartJs = () => {
       },
     },
   };
-  return <Bar width={100} height={80} options={options} data={data} />;
+  return <Bar width={"100%"} options={options} data={data} />;
 };
 export default VerticalBarChartJs;

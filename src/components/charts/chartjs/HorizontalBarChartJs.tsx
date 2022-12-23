@@ -43,7 +43,7 @@ const HorizontalBarChartJs = () => {
   ChartConfig(ChartJs);
   const options: ChartOptions<"bar"> = {
     responsive: true,
-    maintainAspectRatio: true,
+    maintainAspectRatio: false,
     indexAxis: "y",
     bar: {
       datasets: {
@@ -70,6 +70,6 @@ const HorizontalBarChartJs = () => {
       legend: {},
     },
   };
-  return <Bar width={100} height={80} options={options} data={data} />;
+  return <Bar width={"100%"} options={options} data={data} />;
 };
 export default HorizontalBarChartJs;

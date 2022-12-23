@@ -17,6 +17,7 @@ const BubbleChartJs = () => {
   ChartConfig(ChartJs);
   const options: ChartOptions<"bubble"> = {
     responsive: true,
+    maintainAspectRatio: false,
     scales: {
       y: {
         suggestedMax: 400,
@@ -32,6 +33,6 @@ const BubbleChartJs = () => {
     "/6395f24bc5b3a64f1bc908f4/programmingLanguage"
   );
   if (!data || loading) return <ChartPlaceholder />;
-  return <Bubble width={"100%"} height={40} options={options} data={data} />;
+  return <Bubble width={"100%"} options={options} data={data} />;
 };
 export default BubbleChartJs;

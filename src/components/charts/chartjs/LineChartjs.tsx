@@ -17,8 +17,10 @@ ChartJs.register(CategoryScale, LinearScale, PointElement, LineElement, Legend);
 
 const LineChartJs = () => {
   ChartConfig(ChartJs);
+
   const options: ChartOptions<"line"> = {
     responsive: true,
+    maintainAspectRatio: false,
     line: {
       datasets: {
         borderCapStyle: "round",
@@ -51,11 +53,9 @@ const LineChartJs = () => {
   const { data, loading } = useFetch<
     { label: string; color: string; data: Array<Number> }[]
   >("/6395f24bc5b3a64f1bc908f4/techData");
-
   if (!data || loading) return <ChartPlaceholder />;
   return (
     <Line
-      height={50}
       width="100%"
       options={options}
       data={{

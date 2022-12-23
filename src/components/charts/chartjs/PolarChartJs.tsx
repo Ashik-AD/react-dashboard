@@ -9,7 +9,7 @@ import {
   RadialLinearScale,
   Tooltip,
 } from "chart.js";
-import type {ChartOptions, ChartData} from 'chart.js'
+import type { ChartOptions, ChartData } from "chart.js";
 
 import useFetch from "../../../hooks/useFetch";
 import ChartConfig from "./chartjs.config";
@@ -28,7 +28,7 @@ const PolarChartJs = () => {
   ChartConfig(ChartJs);
   const options: ChartOptions<"polarArea"> = {
     responsive: true,
-    maintainAspectRatio: true,
+    maintainAspectRatio: false,
     datasets: {
       polarArea: {
         borderWidth: 0,
@@ -64,8 +64,6 @@ const PolarChartJs = () => {
     "/6395f24bc5b3a64f1bc908f4/averageSkills"
   );
   if (!data || loading) return <ChartPlaceholder />;
-  return (
-    <PolarArea width={"100%"} height={400} options={options} data={data} />
-  );
+  return <PolarArea width={"100%"} options={options} data={data} />;
 };
 export default PolarChartJs;

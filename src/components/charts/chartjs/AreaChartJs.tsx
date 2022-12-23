@@ -17,7 +17,7 @@ ChartJs.register(LinearScale, PointElement, LineElement, Tooltip, Legend);
 const labels = Array.from({ length: 13 }).map((_, index) => `${index + 7}/12`);
 const options: ChartOptions<"line"> = {
   responsive: true,
-  maintainAspectRatio: true,
+  maintainAspectRatio: false,
   line: {
     datasets: {
       borderWidth: 0,
@@ -53,6 +53,12 @@ const AreaChartJs = () => {
     "/6395f24bc5b3a64f1bc908f4/dataScience"
   );
   if (!data || loading) return <ChartPlaceholder />;
-  return <Line options={options} data={{ datasets: data.datasets, labels }} />;
+  return (
+    <Line
+      width={"100%"}
+      options={options}
+      data={{ datasets: data.datasets, labels }}
+    />
+  );
 };
 export default AreaChartJs;

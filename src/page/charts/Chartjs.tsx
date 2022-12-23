@@ -31,19 +31,25 @@ const ChartJs = () => {
         <GridItem xs={12}>
           <Card padding="1.4rem 1.2rem">
             <ChartTitle title="New technologie data" subtitle="Line Chart" />
-            <LineChartJs />
+            <Box height="400px" width="100%">
+              <LineChartJs />
+            </Box>
           </Card>
         </GridItem>
         <GridItem xs={12} md={6}>
           <Card padding="1.4rem 1.2rem">
             <ChartTitle title="Most Loved Color" subtitle="Radar Chart" />
-            <RadarChartJs />
+            <Box height="400px" width="100%">
+              <RadarChartJs />
+            </Box>
           </Card>
         </GridItem>
         <GridItem xs={12} md={6}>
           <Card padding="1.4rem 1.2rem">
             <ChartTitle title="Average Skills" subtitle="Polar Chart" />
-            <PolarChartJs />
+            <Box height="400px" width="100%">
+              <PolarChartJs />
+            </Box>
           </Card>
         </GridItem>
         <GridItem xs={12}>
@@ -52,31 +58,41 @@ const ChartJs = () => {
               title="JavaScript vs TypeScript"
               subtitle="Bubble Chart"
             />
-            <BubbleChartJs />
+            <Box width="100%" height="400px">
+              <BubbleChartJs />
+            </Box>
           </Card>
         </GridItem>
         <GridItem xs={12}>
           <Card padding="1.4rem 1.2rem">
             <ChartTitle title="Streaming Platform" subtitle="Scatter Chart" />
-            <ScatterChartJs />
+            <Box height="400px" width="100%">
+              <ScatterChartJs />
+            </Box>
           </Card>
         </GridItem>
         <GridItem xs={12}>
           <Card padding="1.4rem 1.2rem">
             <ChartTitle title="Data Science" subtitle="Area Chart" />
-            <AreaChartJs />
+            <Box height="400px" width="100%">
+              <AreaChartJs />
+            </Box>
           </Card>
         </GridItem>
         <GridItem xs={12} md={6}>
           <Card padding="1.4rem 1.2rem">
             <ChartTitle title="Latest Statistic" subtitle="Bar Chart" />
-            <VerticalBarChartJs />
+            <Box height="400px" width="100%">
+              <VerticalBarChartJs />
+            </Box>
           </Card>
         </GridItem>
         <GridItem xs={12} md={6}>
           <Card padding="1.4rem 1.2rem">
             <ChartTitle title="Expense" subtitle="Bar Chart" />
-            <HorizontalBarChartJs />
+            <Box height="400px" width="100%">
+              <HorizontalBarChartJs />
+            </Box>
           </Card>
         </GridItem>
       </GridInnerContainer>
