@@ -4,10 +4,12 @@ import Box from "../box/Box";
 import { BoxProps } from "../box/type";
 
 const ScrollContainer = forwardRef<HTMLDivElement, Props>((props, ref) => {
-  const { maxHeight, children, classes, onClick, scrollBarSize } = props;
+  const { maxHeight, children, classes, onClick, scrollBarSize, height } =
+    props;
   return (
     <StyledScrollContainer
       className={classes ? classes : ""}
+      height={height}
       maxHeight={maxHeight}
       onClick={onClick}
       scrollBarSize={scrollBarSize}
@@ -23,6 +25,7 @@ export default ScrollContainer;
 
 interface Props extends BoxProps {
   maxHeight: string;
+  height?: string;
   children: ReactNode;
   classes?: string;
   onClick?: () => void;
@@ -31,6 +34,7 @@ interface Props extends BoxProps {
 
 const StyledScrollContainer = styled("div")<{
   maxHeight: string;
+  height?: string;
   scrollBarSize?: string;
 }>`
   width: 100%;
@@ -39,8 +43,8 @@ const StyledScrollContainer = styled("div")<{
 
   & .scroll-content {
     width: 100%;
-    height: ${({ maxHeight }) => maxHeight};
     max-height: ${({ maxHeight }) => maxHeight};
+    ${({ height }) => height && `height: ${height};`}
     overflow-y: auto;
   }
 
