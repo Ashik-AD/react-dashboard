@@ -9,12 +9,12 @@ import React, {
 import styled from "styled-components";
 import Box from "../box/Box";
 import Card from "../card/Card";
+import ScrollContainer from "../scroll-container/ScrollContainer";
 import DropdownItem from "./DropdownItem";
 
 const DropdownV2: FC<DropdownV2Props> = (props) => {
   const { labelContent, dropdownList, width } = props;
   const [shouldShow, setShouldShow] = useState(false);
-
   useEffect(() => {
     if (shouldShow) {
       document.body.style.overflow = "hidden";
@@ -23,14 +23,13 @@ const DropdownV2: FC<DropdownV2Props> = (props) => {
       document.body.style.overflowY = "auto";
       document.body.style.paddingRight = "0";
     }
+    return () => {
+      document.body.style.overflowY = "auto";
+      document.body.style.paddingRight = "auto";
+    };
   }, [shouldShow]);
 
   const toggleDropdown = () => setShouldShow((prevState) => !prevState);
-  // const buttonChildrens = React.isValidElement(labelContent)
-  //   ? React.Children.map(labelContent, (elements) =>
-  //       React.cloneElement(elements, { onClick: () => toggleDropdown() })
-  //     )
-  //   : labelContent;
   return (
     <StyledDropdownWrapper>
       <div onClick={toggleDropdown} className="dropdown-button" role="button">
@@ -39,40 +38,44 @@ const DropdownV2: FC<DropdownV2Props> = (props) => {
       {shouldShow ? (
         <>
           <Card position="absolute" className={`dropdown`} width={width}>
-            <ul>
-              {dropdownList.map((item, idx) => {
-                if (item.type === "component") {
-                  return (
-                    <Box key={idx} my={4}>
-                      {item.content}
-                    </Box>
-                  );
-                } else if (item.type === "children" && item.children) {
-                  const childrens = React.Children.map(item.children, (child) =>
-                    React.cloneElement(child as ReactElement, {
-                      onClick: () => {
-                        toggleDropdown();
-                        item.onClickHandle && item.onClickHandle();
-                      },
-                    })
-                  );
-                  return childrens;
-                } else {
-                  return (
-                    <DropdownItem
-                      key={idx}
-                      title={item.title!}
-                      titleAlt={item.titleAlt}
-                      icon={item.icon}
-                      onClickHandle={() => {
-                        item.onClickHandle && item.onClickHandle();
-                        toggleDropdown();
-                      }}
-                    />
-                  );
-                }
-              })}
-            </ul>
+            <ScrollContainer maxHeight="90vh">
+              <ul>
+                {dropdownList.map((item, idx) => {
+                  if (item.type === "component") {
+                    return (
+                      <Box key={idx} my={4}>
+                        {item.content}
+                      </Box>
+                    );
+                  } else if (item.type === "children" && item.children) {
+                    const childrens = React.Children.map(
+                      item.children,
+                      (child) =>
+                        React.cloneElement(child as ReactElement, {
+                          onClick: () => {
+                            toggleDropdown();
+                            item.onClickHandle && item.onClickHandle();
+                          },
+                        })
+                    );
+                    return childrens;
+                  } else {
+                    return (
+                      <DropdownItem
+                        key={idx}
+                        title={item.title!}
+                        titleAlt={item.titleAlt}
+                        icon={item.icon}
+                        onClickHandle={() => {
+                          item.onClickHandle && item.onClickHandle();
+                          toggleDropdown();
+                        }}
+                      />
+                    );
+                  }
+                })}
+              </ul>
+            </ScrollContainer>
           </Card>
           <div className="dropdown-overlay" onClick={toggleDropdown} />
         </>
@@ -110,6 +113,7 @@ const StyledDropdownWrapper = styled("div")`
   & > .dropdown {
     top: 120%;
     right: 0px;
+    max-height: 90vh;
     z-index: 1400;
     transition: 300ms;
     overflow: hidden;
