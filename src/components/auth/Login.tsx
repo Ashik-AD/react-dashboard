@@ -1,3 +1,4 @@
+import { FC, ReactNode, useEffect } from "react";
 import { Icon } from "@iconify/react";
 import { createRef, useState } from "react";
 import { Link } from "react-router-dom";
@@ -23,7 +24,12 @@ export interface LoginFormDate {
   remember?: boolean;
 }
 
-const Login = ({ onSubmit }: { onSubmit: (inputs: LoginFormDate) => void }) => {
+interface Props {
+  onSubmit: (inputs: LoginFormDate) => void;
+  hyperComponent?: ReactNode;
+}
+
+const Login: FC<Props> = ({ onSubmit, hyperComponent }) => {
   const { isToggle, handleTogglePassword } = useTogglePassword();
   const [isRemember, setIsRemember] = useState(false);
   const [error, setError] = useState<string>("");
@@ -32,7 +38,16 @@ const Login = ({ onSubmit }: { onSubmit: (inputs: LoginFormDate) => void }) => {
 
   const handleSubmit = () => {
     if (!emailRef.current?.value || !passwordRef.current?.value) {
-      setError("Invalid email/password. Please enter valid email & password");
+      setError("Please enter email & password");
+      return;
+    }
+    if (
+      emailRef.current.value !== "admin@triolo.com" ||
+      passwordRef.current.value !== "admin123"
+    ) {
+      setError(
+        "Invalid email or password. Please enter valid email & password."
+      );
       return;
     }
     onSubmit({
@@ -43,6 +58,12 @@ const Login = ({ onSubmit }: { onSubmit: (inputs: LoginFormDate) => void }) => {
     setError("");
   };
 
+  useEffect(() => {
+    return () => {
+      setIsRemember(false);
+    };
+  }, []);
+
   return (
     <AuthFormContainer>
       <Box width="100%" mb={20}>
@@ -51,6 +72,7 @@ const Login = ({ onSubmit }: { onSubmit: (inputs: LoginFormDate) => void }) => {
             title="Welcome to Triolo"
             subtitle="Please sing-in to your account and start the adventure"
           />
+          {hyperComponent}
           <Box display="flex" flexDirection="column" space={1}>
             {error && (
               <Alert severity="error" alertTitle="Authentication Failure!">

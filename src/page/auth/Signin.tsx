@@ -6,6 +6,7 @@ import AuthLayout from "../../components/layout/auth-form/AuthLayout";
 import useAuth from "../../hooks/useAuth";
 import useLocalStorage from "../../hooks/useLocalStorage";
 import useNavigation from "../../hooks/useNavigation";
+import { Text } from "../../ui";
 
 const Signin = () => {
   const { isAuthenticated } = useAuth();
@@ -29,7 +30,27 @@ const Signin = () => {
     <AuthLayout
       RightContent={
         <ColorBox backgroundTheme="foreground">
-          <Login onSubmit={handleSubmit} />
+          <Login
+            hyperComponent={
+              <ColorBox
+                transparency={2}
+                borderRadius={"0.2rem"}
+                padding="0.8rem 1rem"
+                display="flex"
+                flexDirection="column"
+                space={1}
+                my={21}
+              >
+                <Text varient="caption" weight="medium" skinColor paragraph>
+                  Email: <b>admin@triolo.com</b>
+                </Text>
+                <Text varient="caption" weight="medium" skinColor paragraph>
+                  Passcode: <b>admin123</b>
+                </Text>
+              </ColorBox>
+            }
+            onSubmit={handleSubmit}
+          />
         </ColorBox>
       }
       LeftContent={
