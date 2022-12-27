@@ -7,19 +7,18 @@ const ProtectedRoute = ({ children }: { children: ReactNode }) => {
   const { pathname } = useLocation();
   const { isAuthenticated } = useAuth();
   useEffect(() => {
-    if (!isAuthenticated && typeof isAuthenticated === "boolean") {
-      navigate("/auth/login/");
-    } else {
-      if (pathname === "/") {
-        navigate("/dashboards/crm/");
+    if (typeof isAuthenticated === "boolean") {
+      if (!isAuthenticated) {
+        navigate("/auth/login/");
+      } else {
+        if (pathname === "/") {
+          navigate("/dashboards/crm/");
+        }
       }
     }
   }, [isAuthenticated]);
   if (typeof isAuthenticated !== "boolean") {
-    return null;
-  }
-  if (typeof isAuthenticated !== "boolean") {
-    return null;
+    return <></>;
   }
   return <>{children}</>;
 };
