@@ -195,7 +195,10 @@ const Register = ({ onSubmit }: SubmitForm) => {
         </Box>
       </Form>
       <Text varient="body2" align="center">
-        Already have an account? <Link to="/auth/login/">Sign in instead</Link>
+        Already have an account?{" "}
+        <Link to="/auth/login/" className="text-primary">
+          Sign in instead
+        </Link>
       </Text>
       <DividerWithLabel label="or" />
       <ConnectionOptions />
