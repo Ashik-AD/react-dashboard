@@ -70,7 +70,7 @@ const Login: FC<Props> = ({ onSubmit, hyperComponent }) => {
         <Form onSubmit={handleSubmit} preventDefault>
           <FormHeading
             title="Welcome to Triolo"
-            subtitle="Please sing-in to your account and start the adventure"
+            subtitle="Please sign-in to your account and start the adventure"
           />
           {hyperComponent}
           <Box display="flex" flexDirection="column" space={1}>
