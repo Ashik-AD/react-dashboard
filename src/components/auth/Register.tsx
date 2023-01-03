@@ -17,13 +17,12 @@ import AuthFormContainer from "./AuthFormContainer";
 import ConnectionOptions from "./ConnectionOptions";
 import FormHeading from "./FormHeading";
 
-type Errors = "username" | "password" | "email";
 export interface FormData {
   username: string;
   password: string;
   email: string;
 }
-
+type Errors = FormData;
 interface SubmitForm {
   onSubmit: (formdata: FormData) => void;
 }
@@ -49,34 +48,32 @@ const Register = ({ onSubmit }: SubmitForm) => {
     username: "",
   });
 
-  const [errors, setErrors] = useState<{
-    email: string;
-    password: string;
-    username: string;
-  }>({
+  const [errors, setErrors] = useState<Errors>({
     email: "",
     password: "",
     username: "",
   });
 
-  const handleChangeInput = useCallback(
-    (event: React.ChangeEvent<HTMLInputElement>) => {
-      const { name, value } = event.target;
-      setInputs((prevState) => ({
-        ...prevState,
-        [name]: value,
-      }));
-    },
-    []
-  );
+  const handleChangeInput = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = event.currentTarget;
+    setInputs((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }));
+
+    if (name !== "password" && errors[name as keyof Errors]) {
+      setErrors((prevError) => ({ ...prevError, [name]: "" }));
+    }
+  };
 
   const handleError = useCallback(
-    (key: Errors, message: string) =>
+    (key: keyof Errors, message: string) =>
       setErrors((prevState) => ({ ...prevState, [key]: message })),
     []
   );
   const clearError = useCallback(
-    (key: Errors) => setErrors((prevState) => ({ ...prevState, [key]: "" })),
+    (key: keyof Errors) =>
+      setErrors((prevState) => ({ ...prevState, [key]: "" })),
     []
   );
 
@@ -103,9 +100,10 @@ const Register = ({ onSubmit }: SubmitForm) => {
     clearError("username");
   }, [inputs.username]);
 
-  const handleSubmit = useCallback(() => {
+  const handleSubmit = () => {
     const { username, password, email } = inputs;
     let hasError: boolean = false;
+
     if (!username) {
       hasError = true;
       handleError("username", "Please enter username");
@@ -115,6 +113,7 @@ const Register = ({ onSubmit }: SubmitForm) => {
       hasError = true;
       handleError("email", "Please enter your email");
     }
+
     if (!password) {
       hasError = true;
       handleError("password", "Please enter your password");
@@ -122,14 +121,14 @@ const Register = ({ onSubmit }: SubmitForm) => {
     if (hasError) {
       return false;
     }
-
     const isValideEmail = validEmail(inputs.email);
     if (!isValideEmail) {
       handleError("email", "Invalid email address. Please enter valid email!");
       return;
     }
     onSubmit({ ...inputs });
-  }, []);
+  };
+
   return (
     <AuthFormContainer>
       <Form autcomplete="OFF" onSubmit={handleSubmit} preventDefault>
