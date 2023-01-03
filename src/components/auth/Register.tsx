@@ -191,7 +191,7 @@ const Register = ({ onSubmit }: SubmitForm) => {
             checked={isAgreeTnC}
             onChange={() => setIsAgreeTnC((prevState) => !prevState)}
           />
-          <Button type="submit">Sing up</Button>
+          <Button type="submit">Sign up</Button>
         </Box>
       </Form>
       <Text varient="body2" align="center">
