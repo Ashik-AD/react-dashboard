@@ -1,6 +1,6 @@
-import { FC, ReactNode, useEffect } from "react";
+import React, { FC, ReactNode, useEffect } from "react";
 import { Icon } from "@iconify/react";
-import { createRef, useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import useTogglePassword from "../../hooks/useTogglePassword";
 import {
@@ -18,41 +18,51 @@ import AuthFormContainer from "./AuthFormContainer";
 import ConnectionOptions from "./ConnectionOptions";
 import FormHeading from "./FormHeading";
 
-export interface LoginFormDate {
+export interface LoginFormData {
   email: string;
   password: string;
   remember?: boolean;
 }
 
 interface Props {
-  onSubmit: (inputs: LoginFormDate) => void;
+  onSubmit: (inputs: LoginFormData) => void;
   hyperComponent?: ReactNode;
 }
 
 const Login: FC<Props> = ({ onSubmit, hyperComponent }) => {
   const { isToggle, handleTogglePassword } = useTogglePassword();
+  const [inputs, setInputs] = useState<LoginFormData>({
+    email: "",
+    password: "",
+  });
+
   const [isRemember, setIsRemember] = useState(false);
   const [error, setError] = useState<string>("");
-  const emailRef = createRef<HTMLInputElement>();
-  const passwordRef = createRef<HTMLInputElement>();
+
+  const handleChangeInput = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.currentTarget;
+    setInputs((prevInputs) => ({ ...prevInputs, [name]: value }));
+
+    if (error) {
+      setError("");
+    }
+  };
 
   const handleSubmit = () => {
-    if (!emailRef.current?.value || !passwordRef.current?.value) {
+    const { email, password } = inputs;
+    if (!email || !password) {
       setError("Please enter email & password");
       return;
     }
-    if (
-      emailRef.current.value !== "admin@triolo.com" ||
-      passwordRef.current.value !== "admin123"
-    ) {
+    if (email.toLowerCase() !== "admin@triolo.com" || password !== "admin123") {
       setError(
         "Invalid email or password. Please enter valid email & password."
       );
       return;
     }
     onSubmit({
-      email: emailRef.current.value,
-      password: emailRef.current.value,
+      email,
+      password,
       remember: isRemember,
     });
     setError("");
@@ -79,13 +89,20 @@ const Login: FC<Props> = ({ onSubmit, hyperComponent }) => {
                 {error}
               </Alert>
             )}
-            <TextField type="text" name="email" label="Email" ref={emailRef} />
+            <TextField
+              type="text"
+              name="email"
+              label="Email"
+              value={inputs.email}
+              onChange={handleChangeInput}
+            />
             <Box>
               <TextField
                 type={!isToggle ? "password" : "text"}
                 name="password"
                 label="password"
-                ref={passwordRef}
+                value={inputs.password}
+                onChange={handleChangeInput}
                 endAdornment={
                   <IconButton
                     onClick={handleTogglePassword}
@@ -121,7 +138,10 @@ const Login: FC<Props> = ({ onSubmit, hyperComponent }) => {
       </Box>
       <Box mb={20}>
         <Text varient="body2" align="center" secondary paragraph>
-          New on platform? <Link to="/auth/register/">Create an account</Link>
+          New on platform?{" "}
+          <Link to="/auth/register/" className="text-primary">
+            Create an account
+          </Link>
         </Text>
       </Box>
       <DividerWithLabel label="Or" />

@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import AuthBanner from "../../components/auth/AuthBanner";
-import Login, { LoginFormDate } from "../../components/auth/Login";
+import Login, { LoginFormData } from "../../components/auth/Login";
 import ColorBox from "../../components/box/ColorBox";
 import AuthLayout from "../../components/layout/auth-form/AuthLayout";
 import useAuth from "../../hooks/useAuth";
@@ -17,7 +17,7 @@ const Signin = () => {
       navigate("/dashboards/crm/");
     }
   }, [isAuthenticated]);
-  const handleSubmit = (inputs: LoginFormDate) => {
+  const handleSubmit = (inputs: LoginFormData) => {
     addLocalStorage({
       fullname: "John Doe",
       username: "@moruo",
