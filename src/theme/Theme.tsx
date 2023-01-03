@@ -74,7 +74,7 @@ const Theme: FC<{ children: React.ReactNode }> = ({ children }) => {
       ...prevState,
       layout: {
         ...prevState.layout,
-        footerPositoin: position,
+        footerPosition: position,
       },
     }));
     addLocalStorage({ ...storage, footerPosition: position });
