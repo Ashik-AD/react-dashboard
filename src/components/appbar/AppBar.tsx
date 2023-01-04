@@ -60,7 +60,7 @@ const AppBar = () => {
           py={12}
           px={layout === "horizontal" ? 20 : 0}
         >
-          <Box display="flex">
+          <Box display="flex" align="center">
             <MenuSideNav />
             <SearchIcon />
           </Box>
