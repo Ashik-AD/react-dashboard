@@ -57,7 +57,6 @@ const AppBar = () => {
           justify="space-between"
           align="center"
           height="100%"
-          py={12}
           px={layout === "horizontal" ? 20 : 0}
         >
           <Box display="flex" align="center">
