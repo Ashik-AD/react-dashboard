@@ -46,7 +46,7 @@ const StyledFooter = styled("footer")`
   align-item: center;
   justify-content: space-between;
   padding: 1rem 1.2rem;
-  z-index: 1;
+  z-index: 999;
 
   &.footer_position--fixed {
     position: sticky;
