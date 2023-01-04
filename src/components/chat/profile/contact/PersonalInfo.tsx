@@ -1,10 +1,5 @@
-import {
-  AccessTime,
-  LocalPhoneOutlined,
-  MailOutline,
-} from "@mui/icons-material";
-import { FiGithub } from "react-icons/fi";
 import styled from "styled-components";
+import { Icon } from "@iconify/react";
 import { Text } from "../../../../ui";
 import Box from "../../../box/Box";
 import SectionTitle from "../SectionTitle";
@@ -12,20 +7,20 @@ import SectionTitle from "../SectionTitle";
 const PersonalInfo = ({ userName }: { userName: string }) => {
   const infoList = [
     {
-      icon: <MailOutline />,
+      icon: "mdi:email-outline",
       label: `${userName.replaceAll(" ", "_")}@email.com`,
     },
     {
-      icon: <LocalPhoneOutlined />,
+      icon: "mdi:phone-outline",
       label: "+977-98-2-4965817",
     },
     {
-      icon: <FiGithub />,
+      icon: "mdi:github",
       label: userName,
       link: "http://github.com/Ashik-AD",
     },
     {
-      icon: <AccessTime />,
+      icon: "mdi:clock-time-five-outline",
       label: "Sun - Fri 10AM - 8PM",
     },
   ];
@@ -34,7 +29,7 @@ const PersonalInfo = ({ userName }: { userName: string }) => {
       {info.link ? (
         <a href={info.link} className="info-list">
           <Text varient="body2" lineHeight="0px" size={20}>
-            {info.icon}
+            <Icon icon={info.icon} />
           </Text>
           <Text varient="body2" skinColor>
             {info.label}
@@ -43,7 +38,7 @@ const PersonalInfo = ({ userName }: { userName: string }) => {
       ) : (
         <div className="info-list">
           <Text varient="body2" size={20} lineHeight="0px">
-            {info.icon}
+            <Icon icon={info.icon} />
           </Text>
           <Text varient="body2">{info.label}</Text>
         </div>

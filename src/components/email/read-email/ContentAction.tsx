@@ -1,21 +1,15 @@
 import { FC } from "react";
-import { TbDotsVertical } from "react-icons/tb";
 import { IconButton } from "../../../ui";
 import Box from "../../box/Box";
 import DropdownV2 from "../../dropdown/DropdownV2";
-
-import {
-  AttachmentOutlined,
-  ForwardOutlined,
-  ReplyOutlined,
-} from "@mui/icons-material";
+import { Icon } from "@iconify/react";
 
 const ContentAction: FC<Props> = ({ hasAttachments }) => {
   return (
     <Box display="flex">
       {hasAttachments ? (
         <IconButton varient="text" contentOpacity={7} fontSize={20}>
-          <AttachmentOutlined />
+          <Icon icon="mdi:attachment" />
         </IconButton>
       ) : (
         <></>
@@ -25,17 +19,17 @@ const ContentAction: FC<Props> = ({ hasAttachments }) => {
         width="180px"
         labelContent={
           <IconButton varient="text" contentOpacity={7} fontSize={20}>
-            <TbDotsVertical />
+            <Icon icon="mdi:dots-vertical" />
           </IconButton>
         }
         dropdownList={[
           {
             title: "Reply",
-            icon: <ReplyOutlined />,
+            icon: <Icon icon="mdi:reply" />,
           },
           {
             title: "Forward",
-            icon: <ForwardOutlined />,
+            icon: <Icon icon="mdi:share" />,
           },
         ]}
       />

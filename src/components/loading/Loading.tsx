@@ -1,7 +1,8 @@
-import { Text } from "../../ui";
-import Box from "../box/Box";
-import { AiOutlineLoading } from "react-icons/ai";
 import styled from "styled-components";
+import Box from "../box/Box";
+import { Text } from "../../ui";
+import { Icon } from "@iconify/react";
+
 const Loading = () => (
   <Box
     width="100%"
@@ -13,7 +14,7 @@ const Loading = () => (
   >
     <StyledLoading className="loading-content">
       <Text size={32} align="center" lineHeight="48px" skinColor paragraph>
-        <AiOutlineLoading className="spin" />
+        <Icon icon="line-md:loading-twotone-loop" className="spin" />
       </Text>
       <Text varient="body2" weight="medium" align="center" paragraph>
         Loading...

@@ -1,11 +1,12 @@
 import Box from "../box/Box";
-import { BsFileEarmarkPdfFill } from "react-icons/bs";
 import {
   Timeline,
   TimelineItem,
   TimelineItemContent,
   TimelineSeparator,
 } from "../timeline";
+import { Icon } from "@iconify/react";
+
 import { Avatar, Text } from "../../ui";
 
 const TimelineDummy = () => {
@@ -20,7 +21,7 @@ const TimelineDummy = () => {
         >
           <Box display="flex" align="center" space={0.4}>
             <Text color="error" size={26}>
-              <BsFileEarmarkPdfFill />
+              <Icon icon="bxs:file-pdf" />
             </Text>
             <Text varient="body2" weight="bold">
               bookingCard.pdf

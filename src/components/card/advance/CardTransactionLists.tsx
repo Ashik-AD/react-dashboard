@@ -1,10 +1,7 @@
 import AdvanceCard from "./CardAdvance";
 import AdvCardItemTransaction from "../../card-items/AdvCardItemTransaction";
 import formatNumber from "../../../utils/formatNumber";
-import { RiPaypalFill, RiWallet3Fill } from "react-icons/ri";
-import { BsCreditCardFill } from "react-icons/bs";
-import { FaCcMastercard } from "react-icons/fa";
-import { TrendingUp } from "@mui/icons-material";
+import { Icon } from "@iconify/react";
 
 const formatData = (
   id: number,
@@ -12,7 +9,7 @@ const formatData = (
   tag: string,
   total: number,
   status: "inc" | "dec",
-  avatar: { type?: "icon" | "image"; icon?: any; image?: any },
+  avatar: { type: "icon" | "image"; icon?: string; image?: string },
   color: string,
   iconColor: string
 ) => ({ id, title, tag, total, status, avatar, color, iconColor });
@@ -24,7 +21,7 @@ const transactions = [
     "Received Money",
     23232,
     "inc",
-    { type: "icon", icon: <RiPaypalFill /> },
+    { type: "icon", icon: "logos:paypal" },
     "info",
     "info"
   ),
@@ -34,7 +31,7 @@ const transactions = [
     "Credit Card",
     212,
     "dec",
-    { type: "icon", icon: <BsCreditCardFill /> },
+    { type: "icon", icon: "bi:credit-card-2-front-fill" },
     "warning",
     "warning"
   ),
@@ -44,7 +41,7 @@ const transactions = [
     "Netflix",
     344,
     "dec",
-    { type: "icon", icon: <FaCcMastercard /> },
+    { type: "icon", icon: "bxs:credit-card-alt" },
     "success",
     "success"
   ),
@@ -54,7 +51,7 @@ const transactions = [
     "Mac'D",
     122,
     "inc",
-    { type: "icon", icon: <RiWallet3Fill /> },
+    { type: "icon", icon: "mingcute:wallet-fill" },
     "error",
     "error"
   ),
@@ -64,7 +61,7 @@ const transactions = [
     "Refund",
     5452,
     "inc",
-    { type: "icon", icon: <TrendingUp /> },
+    { type: "icon", icon: "mdi:trending-up" },
     "info",
     "info"
   ),
@@ -74,7 +71,7 @@ const transactions = [
     "Buy Watch",
     1500,
     "dec",
-    { type: "icon", icon: <RiWallet3Fill /> },
+    { type: "icon", icon: "mingcute:wallet-fill" },
     "error",
     "error"
   ),
@@ -88,11 +85,14 @@ const CardTransactionLists = () => {
       renderItem={(item) => (
         <AdvCardItemTransaction
           {...item}
-          avatar={item.avatar as any}
-          arrow={true}
+          avatar={{
+            type: item.avatar.type,
+            icon: <Icon icon={item.avatar.icon!} />,
+          }}
           total={formatNumber(item.total)}
-          currency={true}
           trending={{ show: true }}
+          arrow
+          currency
         />
       )}
     />
