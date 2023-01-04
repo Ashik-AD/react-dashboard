@@ -106,4 +106,12 @@ const StyledNotification = styled("div")`
         ? "rgba(255, 255, 255, 10%)"
         : "rgb(221 221 221 / 50%)"};
   }
+
+  @media (max-width: 600px) {
+    & .dropdown {
+      min-width: calc(350px - 2.4rem);
+      width: 100%;
+      right: -65px;
+    }
+  }
 `;
