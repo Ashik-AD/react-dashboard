@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { Text } from "../../../ui";
 import Box from "../../box/Box";
 import checkForImage from "../../../utils/checkImage";
-import getFileIcon from "./fileType";
+import { Icon } from "@iconify/react";
 
 const Attachments: FC<Props> = ({ value: attachments }) => {
   if (attachments.length < 0) return <></>;
@@ -37,11 +37,10 @@ const Attachments: FC<Props> = ({ value: attachments }) => {
         </Box>
       );
     }
-    const extType = file.split(".").pop();
     return (
-      <Box display="flex" align="center" key={file} space={0.6}>
+      <Box display="flex" align="center" key={file} space={0.2}>
         <Text size={24} skinColor>
-          {getFileIcon(extType!)}
+          <Icon icon="mdi:file-document-outline" />
         </Text>
         <Text varient="caption" secondary>
           {file}
