@@ -53,6 +53,6 @@ const StyledFooter = styled("footer")`
     bottom: 0;
     border-radius: 0.6rem;
     margin: 0 auto;
-    width: calc(100% - 2rem);
+    width: calc(100% - 2.4rem);
   }
 `;
