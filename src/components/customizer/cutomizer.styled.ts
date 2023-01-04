@@ -10,7 +10,8 @@ const CustomizerBody = styled("div") <{ visible: boolean }>`
   min-width: 290px;
   width: 100%;
   top: 0;
-  right: ${({ visible }) => (visible ? 0 : "-410px")};
+  right: ${({ visible }) => (visible ? 0 : "-100%")};
+
   box-shadow: -6px 1px 9px 0px #0000001a;
   transition: right 0.2s ease-in;
   z-index: 2;
