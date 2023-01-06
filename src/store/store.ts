@@ -1,11 +1,12 @@
-import { applyMiddleware, createStore, AnyAction } from 'redux';
-import thunkMiddleware, { ThunkDispatch } from 'redux-thunk'
-import { composeWithDevTools } from 'redux-devtools-extension'
+import {configureStore} from '@reduxjs/toolkit'
+import { AnyAction } from 'redux';
+import  { ThunkDispatch } from 'redux-thunk'
 import rootReducer from './rootReducer'
 
-const composedEnhancer = composeWithDevTools(applyMiddleware(thunkMiddleware))
-
-const store = createStore(rootReducer, composedEnhancer);
+const store = configureStore({
+    reducer: rootReducer,
+    devTools: true
+})
 
 export type RootState = ReturnType<typeof store.getState>;
 export type AppDispatch = typeof store.dispatch & AppThunk;
