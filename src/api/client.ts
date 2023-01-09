@@ -1,11 +1,8 @@
 
-const isAppInProd = import.meta.env.PROD;
-const rootPath = !isAppInProd ? "/api" : "https://react-dashboard-server-production.up.railway.app/api";
+const rootPath = import.meta.env.PROD ? "https://react-dashboard-server-production.up.railway.app/api" : "/api";
 
 export async function client(endpoint: string, { body, ...customConfig } :any = {}) {
     const headers = { 'Content-Type': 'application/json' }
-    const paths = endpoint.replaceAll("/", " ").trim().split(" ");
-    // const modeProdJsonPath = paths.length >= 2 ? paths[paths.length - 1]: ""
     const config = {
         method: body ? "POST" : "GET",
         ...customConfig,
@@ -21,7 +18,7 @@ export async function client(endpoint: string, { body, ...customConfig } :any = 
 
     let data;
     try {
-        const response = await window.fetch(`${rootPath}${!isAppInProd ? endpoint : `/${paths[0]}/`}`, config);
+        const response = await window.fetch(`${rootPath}${endpoint}`, config);
         const data = await response.json();
         if (response.ok) {
              return data;
