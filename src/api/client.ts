@@ -1,6 +1,6 @@
 
 const isAppInProd = import.meta.env.PROD;
-const rootPath = !isAppInProd ? "/api" : "https://react-dashboard-server-production.up.railway.app";
+const rootPath = !isAppInProd ? "/api" : "https://react-dashboard-server-production.up.railway.app/api";
 
 export async function client(endpoint: string, { body, ...customConfig } :any = {}) {
     const headers = { 'Content-Type': 'application/json' }
