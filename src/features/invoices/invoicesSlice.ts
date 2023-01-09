@@ -1,6 +1,6 @@
 import { AnyAction } from 'redux'
 import { client } from '../../api/client';
-import { AppDispatch, RootState } from '../../store/store';
+import { AppDispatch } from '../../store/store';
 import { fetchInvoice } from './creator';
 import { InvoiceActionName } from './types/action';
 import type { InvoiceList, InvoiceState } from "./types/definition";
