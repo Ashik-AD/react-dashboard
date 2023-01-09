@@ -51,10 +51,11 @@ const columns: DataGridColoumn[] = [
     width: "10%",
   },
 ];
-const selectInvoice = (state: RootState) => state.invoice.data;
 const InvoiceTable = () => {
-  const invoiceList: InvoiceList[] = useAppSelector(selectInvoice);
-  if (!invoiceList) return <></>;
+  const invoiceList: InvoiceList[] = useAppSelector(
+    (state) => state.invoice.data
+  );
+  if (!invoiceList || invoiceList.length === 0) return <></>;
   return (
     <DataGrid
       rows={invoiceList}
