@@ -1,12 +1,12 @@
 import { BusinessCenterOutlined, Done } from "@mui/icons-material";
 import { FC, ReactNode } from "react";
-import type { UserList } from "../../../features/users/types/definition";
+import type { UsersDataType } from "../../../features/users/types/definition";
 import { Avatar, Button, Chip, CustomAvatar, Divider, Text } from "../../../ui";
 import Box from "../../box/Box";
 import Card from "../../card/Card";
 import userRole from "../user-role/userRole.list";
 
-const ViewUserProfile: FC<UserList> = (props) => {
+const ViewUserProfile: FC<UsersDataType> = (props) => {
   const {
     avatar,
     avatarColor,

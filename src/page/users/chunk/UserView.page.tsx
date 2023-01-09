@@ -1,7 +1,7 @@
 import { Route, Routes, useNavigate, useLocation } from "react-router-dom";
 import { GridInnerContainer, GridItem } from "../../../components/layout";
 import { useAppSelector } from "../../../hooks";
-import type { UserList } from "../../../features/users/types/definition";
+import type { UsersDataType } from "../../../features/users/types/definition";
 import ViewUserProfile from "../../../components/users/view/ViewUserProfile";
 import PlanMinified from "../../../components/users/plans/PlanMinified";
 import Box from "../../../components/box/Box";
@@ -23,10 +23,10 @@ import {
 } from "@mui/icons-material";
 import Loading from "../../../components/loading/Loading";
 
-const selectUserDetail = (list?: UserList[], id?: number | null) =>
+const selectUserDetail = (list?: UsersDataType[], id?: number | null) =>
   list ? (id ? list.find((item) => item.id === id) : list[0]) : null;
 
-export const UserDetailCtx = createContext<Partial<UserList>>({});
+export const UserDetailCtx = createContext<Partial<UsersDataType>>({});
 type PathKeys =
   | "overview"
   | "view"

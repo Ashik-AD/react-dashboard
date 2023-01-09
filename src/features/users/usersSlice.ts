@@ -3,7 +3,7 @@ import { client } from "../../api/client";
 import type { AppDispatch } from "../../store/store";
 import { fetchUserListAction } from "./creator";
 import UserListActionName from "./types/action";
-import type { UserList, UserListParams, UserListState } from "./types/definition";
+import type { UsersDataType, UserListParams, UserListState } from "./types/definition";
 
 const INITIAL_STATE: UserListState = {
     data: [],
@@ -41,7 +41,7 @@ const userReducer = (state = INITIAL_STATE, action: AnyAction): UserListState =>
             const hasFilterParams = (params.currentPlan || params.role || params.status) ? true : false;
 
             if (hasFilterParams || params.q) {
-                let filteredUsers: UserList[] = [];
+                let filteredUsers: UsersDataType[] = [];
                 const forEachUser = forEach(hasFilterParams ? state.data : state.allData);
 
                 const combineProp = combinator(parseParams(params));
@@ -97,8 +97,8 @@ export async function fetchUserList(dispatch: AppDispatch) {
 const toLowerCase = (str: string) => str.toLowerCase();
 
 type Params = [k: keyof UserListParams, v: string][]
-const combinator = (params: Params) => (obj: UserList) => {
-    let isSatisfied = params.every((k) => obj[k[0] as keyof UserList] === k[1]);
+const combinator = (params: Params) => (obj: UsersDataType) => {
+    let isSatisfied = params.every((k) => obj[k[0] as keyof UsersDataType] === k[1]);
     return isSatisfied;
 }
 

@@ -1,6 +1,6 @@
 import { FC } from "react";
 import styled from "styled-components";
-import { UserList } from "../../../features/users/types/definition";
+import { UsersDataType } from "../../../features/users/types/definition";
 import useModal from "../../../hooks/useModal";
 import { Button, Text } from "../../../ui";
 import Box from "../../box/Box";
@@ -11,7 +11,7 @@ import TableCell from "../../table/TableCell";
 import TableRow from "../../table/TableRow";
 import EditBillingAddress from "./EditBillingAddress";
 
-const BillingAddress: FC<Partial<UserList>> = (props) => {
+const BillingAddress: FC<Partial<UsersDataType>> = (props) => {
   const { email, contact, country, company } = props;
   const { show, toggleModal } = useModal();
   return (

@@ -12,7 +12,7 @@ export interface UserListParams {
     currentPlan: UserPlan | '';
 }
 
-export interface UserList {
+export interface UsersDataType {
     id: number;
     fullName: string;
     company: string;
@@ -28,8 +28,8 @@ export interface UserList {
 }
 
 export interface UserListState {
-    data: Array<UserList> | [];
+    data: Array<UsersDataType> | [];
     total: number;
-    allData: Array<UserList> | [];
+    allData: Array<UsersDataType> | [];
     params: UserListParams;
 }
