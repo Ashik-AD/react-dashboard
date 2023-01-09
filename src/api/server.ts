@@ -22,7 +22,7 @@ export default function () {
                 return dashboard[collectionName];
             })
             this.get('/api/emails/', () => email)
-            this.get('/api/chats/:collectionName', (sch, req) => {
+            this.get('/api/chat/:collectionName', (sch, req) => {
                 const {collectionName} = req.params;
                 return chats[collectionName]
             })

@@ -4,9 +4,7 @@ import ChartPlaceholder from "../../components/ChartPlaceholder";
 import Apex from "../Apex";
 
 const RadarChart = () => {
-  const { data, loading } = useFetch<any[]>(
-    "/6395f24bc5b3a64f1bc908f4/mobileComparison"
-  );
+  const { data, loading } = useFetch<any[]>("/charts/mobileComparison");
   const options: ApexOptions = {
     chart: {
       parentHeightOffset: 0,

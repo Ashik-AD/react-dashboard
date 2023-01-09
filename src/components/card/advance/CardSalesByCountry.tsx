@@ -5,7 +5,7 @@ import useFetch from "../../../hooks/useFetch";
 
 const CardSalesByCountry = () => {
   const { data, loading } = useFetch<SalesByCountryAPI>(
-    "/6395f168c5b3a64f1bc90862/salesByCountry"
+    "/dashboards/salesByCountry"
   );
   if (loading || !data) return <></>;
   return (

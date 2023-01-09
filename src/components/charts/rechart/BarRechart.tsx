@@ -9,9 +9,7 @@ import CustomLegend from "./component/CustomLegend";
 import CustomTooltip from "./component/CustomTooltip";
 
 const BarRechart = () => {
-  const { data, loading } = useFetch<any[]>(
-    "/6395f2606a51bc4f704ce29c/turnover"
-  );
+  const { data, loading } = useFetch<any[]>("/rechart/turnover");
   if (!data || loading) return <Box height="400px">{""}</Box>;
   return (
     <ResponsiveContainer height={400} width="100%">

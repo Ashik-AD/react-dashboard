@@ -9,17 +9,11 @@ import { GridInnerContainer, GridItem } from "../../../../components/layout";
 import Loading from "../../../../components/loading/Loading";
 import ConnectionDropdown from "../../../../components/user-profile/components/ConnectionDropdown";
 import useFetch from "../../../../hooks/useFetch";
-import {
-  Avatar,
-  Button,
-  Chip,
-  IconButton,
-  Text,
-} from "../../../../ui";
+import { Avatar, Button, Chip, IconButton, Text } from "../../../../ui";
 
 const Connections = () => {
   const { data, loading, error } = useFetch<ConnectionAPI[]>(
-    "/6395f1e7c5b3a64f1bc908ba/connections"
+    "/user_profile/connections"
   );
 
   if (loading) return <Loading />;

@@ -4,9 +4,7 @@ import Apex from "../Apex";
 import ChartPlaceholder from "../../components/ChartPlaceholder";
 
 const ColumnChart = () => {
-  const { data, loading } = useFetch<any[]>(
-    "/6395f24bc5b3a64f1bc908f4/brandTurnover"
-  );
+  const { data, loading } = useFetch<any[]>("/charts/brandTurnover");
   const chartOptions: ApexOptions = {
     chart: {
       type: "bar",

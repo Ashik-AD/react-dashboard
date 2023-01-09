@@ -7,7 +7,7 @@ import useFetch from "../../../../hooks/useFetch";
 
 const Account = () => {
   const { data, loading } = useFetch<ProfileSettings>(
-    "/6395f1e7c5b3a64f1bc908ba/profileFormSetting"
+    "/user_profile/profileFormSetting"
   );
   if (loading) return <Loading />;
   return (

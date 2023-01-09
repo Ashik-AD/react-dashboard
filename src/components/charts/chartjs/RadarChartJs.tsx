@@ -43,7 +43,7 @@ const RadarChartJs = () => {
     },
   };
   const { data, loading } = useFetch<ChartData<"radar">>(
-    "/6395f24bc5b3a64f1bc908f4/mostlovedColor"
+    "/charts/mostlovedColor"
   );
   if (!data || loading) return <Box height="400px">{""}</Box>;
   return <Radar width="100%" options={options} data={data} />;

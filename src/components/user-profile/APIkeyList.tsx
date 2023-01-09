@@ -9,7 +9,7 @@ import Loading from "../loading/Loading";
 
 const APIkeyList = () => {
   const { data, loading } = useFetch<Array<APIkeyListAPI>>(
-    "/6395f1e7c5b3a64f1bc908ba/apiKey"
+    "/user_profile/apiKey"
   );
   return (
     <Card padding="1.6rem">

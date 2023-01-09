@@ -22,7 +22,7 @@ interface ConnectionsAPI {
 
 const ConnectionList = () => {
   const { data, loading } = useFetch<Array<ConnectionsAPI>>(
-    "/6395f1e7c5b3a64f1bc908ba/connections"
+    "/user_profile/connections"
   );
   if (loading || !data) return <></>;
 

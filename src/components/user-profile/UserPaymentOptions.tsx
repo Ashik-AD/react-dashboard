@@ -10,7 +10,7 @@ import Loading from "../loading/Loading";
 
 const UserPaymentOptions = () => {
   const { data, loading } = useFetch<Array<PaymentMethodOption>>(
-    "/6395f1e7c5b3a64f1bc908ba/paymentMethods"
+    "/user_profile/paymentMethods"
   );
   return (
     <Card padding="1.6rem">

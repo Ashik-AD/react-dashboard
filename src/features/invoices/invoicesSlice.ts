@@ -38,8 +38,8 @@ const invoiceReducer = (state = INITIAL_STATE, action: AnyAction): InvoiceState 
 }
 export default invoiceReducer;
 
-export const fetchInvoiceData = async (dispatch: AppDispatch, getState: RootState) => {
-    const response = await client.get('/6395f1bbc5b3a64f1bc9089c');
+export const fetchInvoiceData = async (dispatch: AppDispatch) => {
+    const response = await client.get('/invoices/');
     dispatch(fetchInvoice(response))
 }
 

@@ -4,9 +4,7 @@ import ChartPlaceholder from "../../components/ChartPlaceholder";
 import Apex from "../Apex";
 
 const ScatterChart = () => {
-  const { data, loading } = useFetch<any[]>(
-    "/6395f24bc5b3a64f1bc908f4/frameworkUsage"
-  );
+  const { data, loading } = useFetch<any[]>("/charts/frameworkUsage");
   const chartOptions: ApexOptions = {
     chart: {
       type: "bar",

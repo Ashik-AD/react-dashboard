@@ -9,9 +9,7 @@ import Box from "../../box/Box";
 import CustomTooltip from "./component/CustomTooltip";
 
 const LineRechart = () => {
-  const { data, loading } = useFetch<any[]>(
-    "/6395f2606a51bc4f704ce29c/balance"
-  );
+  const { data, loading } = useFetch<any[]>("/rechart/balance");
   if (!data || loading) return <Box height="400px">{""}</Box>;
   return (
     <ResponsiveContainer width="100%" height={400}>

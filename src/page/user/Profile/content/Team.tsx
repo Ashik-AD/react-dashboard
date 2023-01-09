@@ -10,7 +10,7 @@ import AvatarGroup from "../../../../ui/avatar/AvatarGroup";
 
 const Team = () => {
   const { data, loading, error } = useFetch<Array<TeamAPI>>(
-    "/6395f1e7c5b3a64f1bc908ba/teams/"
+    "/user_profile/teams/"
   );
   if (loading) return <Loading />;
   if (!data || error) return <></>;

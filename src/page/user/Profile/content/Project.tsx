@@ -14,7 +14,7 @@ import { Chip, Divider, Text } from "../../../../ui";
 
 const Project = () => {
   const { data, loading, error } = useFetch<Array<ProjectAPI>>(
-    "/6395f1e7c5b3a64f1bc908ba/projects"
+    "/user_profile/projects"
   );
   if (loading) return <Loading />;
   if (!data || error) return <></>;

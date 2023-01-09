@@ -7,9 +7,7 @@ import ChartPlaceholder from "../components/ChartPlaceholder";
 import CustomLegend from "./component/CustomLegend";
 
 const RechartScatter = () => {
-  const { data, loading } = useFetch<any[]>(
-    "/6395f2606a51bc4f704ce29c/frameworkUsage"
-  );
+  const { data, loading } = useFetch<any[]>("/rechart/frameworkUsage");
   if (!data || loading) return <ChartPlaceholder />;
   return (
     <ResponsiveContainer width="100%" height={400}>

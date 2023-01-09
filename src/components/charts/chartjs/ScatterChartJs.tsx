@@ -45,7 +45,7 @@ const ScatterChartJs = () => {
     },
   };
   const { data, loading } = useFetch<ChartData<"scatter">>(
-    "/6395f24bc5b3a64f1bc908f4/streamingPlatform"
+    "/charts/streamingPlatform"
   );
   if (!data || loading) return <ChartPlaceholder />;
   return <Scatter width="100%" options={options} data={data} />;

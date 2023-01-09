@@ -31,9 +31,7 @@ const columns: DataGridColoumn[] = [
 ];
 
 const DataGridMembers = () => {
-  const { data, loading } = useFetch<Array<MembersAPI>>(
-    "/6395f168c5b3a64f1bc90862/members"
-  );
+  const { data, loading } = useFetch<Array<MembersAPI>>("/dashboards/members");
   if (loading || !data) return <Card height="400px"></Card>;
   return (
     <Card>

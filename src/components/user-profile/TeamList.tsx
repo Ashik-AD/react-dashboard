@@ -16,7 +16,7 @@ interface TeamAPI {
 }
 const TeamList = () => {
   const { data, loading, error } = useFetch<Array<TeamAPI>>(
-    "/6395f1e7c5b3a64f1bc908ba/teamList/"
+    "/user_profile/teamList/"
   );
   if (loading || error || !data) return <></>;
 

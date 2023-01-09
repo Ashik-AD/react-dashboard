@@ -122,15 +122,15 @@ export default function chatReducer(state = INITIAL_STATE, action: AnyAction): C
 }
 
 export const fetchUserProfile = async (dispatch: AppThunk) => {
-        const res = await client.get("/6395f1a8c5b3a64f1bc9088e/userProfile");
+        const res = await client.get("/chat/userProfile");
         dispatch(fetchChatUserProfile(res));
     
 }
 export const fetchChat = async (dispatch: AppThunk) => {
-    const res = await client.get('/6395f1a8c5b3a64f1bc9088e/chats');
+    const res = await client.get('/chat/chats');
     dispatch(fetchChats(res))
 }
 export const fetchChatContact = async (dispatch: AppThunk) => {
-    const res = await client.get("/6395f1a8c5b3a64f1bc9088e/chatContacts");
+    const res = await client.get("/chat/chatContacts");
     dispatch(fetchChatContacts(res));
 }

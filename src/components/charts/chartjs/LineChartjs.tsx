@@ -50,9 +50,10 @@ const LineChartJs = () => {
     },
   };
 
-  const { data, loading } = useFetch<
-    { label: string; color: string; data: Array<Number> }[]
-  >("/6395f24bc5b3a64f1bc908f4/techData");
+  const { data, loading } =
+    useFetch<{ label: string; color: string; data: Array<Number> }[]>(
+      "/charts/techData"
+    );
   if (!data || loading) return <ChartPlaceholder />;
   return (
     <Line

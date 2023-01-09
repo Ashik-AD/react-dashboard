@@ -11,9 +11,7 @@ import PricingCard from "./PricingCard";
 
 const PricingCards = () => {
   const [showAnnually, setShowAnnually] = useState<boolean>(true);
-  const { data } = useFetch<Array<PricingPlanAPI>>(
-    "/6395f1ff6a51bc4f704ce267/pricingPlans"
-  );
+  const { data } = useFetch<Array<PricingPlanAPI>>("/pricing/pricingPlans");
 
   if (!data) return <></>;
 

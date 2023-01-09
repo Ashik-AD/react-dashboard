@@ -38,9 +38,7 @@ const renderCustomizedLabel = ({
   );
 };
 const PieRechart = () => {
-  const { data, loading } = useFetch<any[]>(
-    "/6395f2606a51bc4f704ce29c/expense"
-  );
+  const { data, loading } = useFetch<any[]>("/rechart/expense");
   const windowWidth = useWindowResize();
   const innerRadius = windowWidth < 600 ? 70 : 90;
   if (!data || loading) return <ChartPlaceholder />;

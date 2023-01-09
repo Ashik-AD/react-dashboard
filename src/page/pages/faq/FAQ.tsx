@@ -5,7 +5,7 @@ import FAQMain from "./content/FAQMain";
 
 import FAQFooter from "../../../components/faq/FAQFooter";
 const FAQ = () => {
-  const { data, loading } = useFetch<FandQAPI>("/6395f222c5b3a64f1bc908db/");
+  const { data, loading } = useFetch<FandQAPI>("/faq/");
   if (!data || loading) return <></>;
   return (
     <Box display="flex" flexDirection="column" space={1.6}>

@@ -3,9 +3,7 @@ import useFetch from "../../../../hooks/useFetch";
 import Apex from "../Apex";
 import ChartPlaceholder from "../../components/ChartPlaceholder";
 const AreaChart = () => {
-  const { data, loading } = useFetch<any[]>(
-    "/6395f24bc5b3a64f1bc908f4/websiteAnalytic"
-  );
+  const { data, loading } = useFetch<any[]>("/charts/websiteAnalytic");
   const chartOptions: ApexOptions = {
     chart: {
       type: "area",

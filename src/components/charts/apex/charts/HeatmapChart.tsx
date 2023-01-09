@@ -10,7 +10,7 @@ const HeatmapChart = () => {
       mode: { foreground },
     },
   } = useTheme();
-  const { data, loading } = useFetch<any[]>("/6395f24bc5b3a64f1bc908f4/sales");
+  const { data, loading } = useFetch<any[]>("/charts/sales");
   const options: ApexOptions = {
     chart: {
       type: "heatmap",
