@@ -10,7 +10,6 @@ import { TrendingUp } from "@mui/icons-material";
 
 import type { DataGridColoumn } from "../../layout/data-grid/type";
 import { InvoiceList } from "../../../features/invoices/types/definition";
-import { RootState } from "../../../store/store";
 import { useAppSelector } from "../../../hooks";
 import InvoiceListAction from "./InvoiceListAction";
 
