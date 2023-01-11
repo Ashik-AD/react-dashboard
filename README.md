@@ -1,6 +1,6 @@
 <!-- PROJECT LOGO -->
 <div align="center">
-  <a href="https://github.com/ashik-ad/react-dashbaord">
+  <a href="https://github.com/Ashik-AD/react-dashbaord">
     <img src="./src/assets/logo.png" alt="Logo" width="80" height="80">
   </a>
 
@@ -9,7 +9,7 @@
   <p align="center">
     A static Reactjs admin dashbaord mockup/clone
     <br />
-    <a href="https://github.com/ashik-ad/react-dashboard/issues">Report Bug</a>
+    <a href="https://github.com/Ashik-AD/react-dashboard/issues">Report Bug</a>
 </div>
 
 ## About The Project
@@ -38,7 +38,7 @@ This a static admin dashboard mockup/clone from <a href="https://demos.themesele
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/ashik-ad/react-dashboard.git
+   git clone https://github.com/Ashik-AD/react-dashboard.git
    ```
 2. Install NPM packages
    ```sh
