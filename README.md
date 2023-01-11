@@ -52,7 +52,7 @@ This a static admin dashboard mockup/clone from <a href="https://demos.themesele
 ## In the future
 
 - [ ] Add real authentication
-- [ ] Add Skeletion loading indicators
+- [ ] Add Skeleton loading indicators
 
 ## Acknowledgments
 
