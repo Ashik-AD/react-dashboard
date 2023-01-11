@@ -18,7 +18,7 @@
 
 This a static admin dashboard mockup/clone from <a href="https://demos.themeselection.com/materio-mui-react-nextjs-admin-template">Materio Theme</a>. This has been built for learning purpose spefically focus in Reactjs. Feel free to use this project if you might find it usefull to you.
 
-### <a href="htttps://triolo.vercel.app">Demo 🚀</a>
+### <a href="https://triolo.vercel.app">Demo 🚀</a>
 
 ### Built With
 
