@@ -16,7 +16,7 @@
 
 <img src="https://i.ibb.co/dBKzVtZ/screenshot.png" />
 
-This a static admin dashboard mockup/clone from <a href="https://demos.themeselection.com/materio-mui-react-nextjs-admin-template">Materio Theme</a>. This has been built for learning purpose spefically focus in Reactjs. Feel free to use this project if you might find it usefull to you.
+This is a static admin dashboard mockup/clone from <a href="https://demos.themeselection.com/materio-mui-react-nextjs-admin-template">Materio Theme</a>. This has been built for learning purpose specifically focus in Reactjs. Feel free to use this project if you might find it usefull to you.
 
 ### <a href="https://triolo.vercel.app">Demo 🚀</a>
 
