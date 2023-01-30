@@ -1,6 +1,5 @@
 
-// const rootPath = import.meta.env.PROD ? "https://react-dashboard-server-production.up.railway.app/api" : "/api";
-const rootPath = "/api";
+const rootPath = import.meta.env.PROD ? "https://react-dashboard-server.onrender.com/api" : "/api";
 
 export async function client(endpoint: string, { body, ...customConfig } :any = {}) {
     const headers = { 'Content-Type': 'application/json' }
