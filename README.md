@@ -1,13 +1,13 @@
 <!-- PROJECT LOGO -->
 <div align="center">
-  <a href="https://github.com/Ashik-AD/react-dashbaord">
+  <a href="https://github.com/Ashik-AD/react-dashboard">
     <img src="./src/assets/logo.png" alt="Logo" width="80" height="80">
   </a>
 
 <h3 align="center">Triolo</h3>
 
   <p align="center">
-    A static Reactjs admin dashbaord mockup/clone
+    A static Reactjs admin dashboard mockup/clone
     <br />
     <a href="https://github.com/Ashik-AD/react-dashboard/issues">Report Bug</a>
 </div>
