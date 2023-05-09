@@ -23,7 +23,6 @@ const useAuth = () => {
                 }
                 else {
                     setIsAuthenticated(false)
-    
                 }
             }
 
