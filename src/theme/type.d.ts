@@ -1,4 +1,4 @@
-import { Dark, Light, PrimaryColor } from "./colors";
+import type { Dark, Light, PrimaryColor } from "./colors";
 
 export type Skin = 'default' | 'bordered'
 

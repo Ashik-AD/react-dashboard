@@ -1,4 +1,4 @@
-import React, { CSSProperties } from "react";
+import { CSSProperties, ReactNode } from "react";
 
 export type Headings = | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 
@@ -25,7 +25,7 @@ export default interface TextType {
     varient?: Varient;
     heading?: Headings;
     align?: Alignment;
-    children: string | number | React.ReactNode;
+    children: ReactNode;
     paragraph?: boolean;
     styles?: CSSProperties;
     weight?: weight;

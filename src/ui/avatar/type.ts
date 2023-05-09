@@ -22,7 +22,7 @@ export interface StyleBaseProps {
     varient?: varient;
 }
 export interface CustomAvatarProps extends Base {
-    children: ReactNode | string;
+    children: ReactNode;
     color?: string | 'skin';
     skin?: 'light' | 'light-static';
     fontSize?: number;

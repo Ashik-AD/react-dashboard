@@ -5,7 +5,7 @@ type Color = 'success' | 'info' | 'warning' | 'error';
 
 export interface ButtonType {
   varient?: Varient;
-  children: string | ReactNode;
+  children: ReactNode;
   color?: Color | string;
   onClick?: (eve: React.MouseEvent<HTMLElement>) => void;
   className?: string;

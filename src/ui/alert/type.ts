@@ -5,5 +5,5 @@ export interface AlertOptions {
     severity: "error" | "warning" | "info" | "success";
     varient?: "outlined" | "filled";
     action?: ReactNode;
-    children?: string | ReactNode;
+    children?: ReactNode;
 }
